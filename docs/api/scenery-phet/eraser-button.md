@@ -14,7 +14,7 @@ sourceRefs:
 
 # EraserButton
 
-`EraserButton` (from `scenerystack/scenery-phet`) is a [`RectangularPushButton`](/api/sun/rectangular-push-button) preloaded with an eraser icon (a raster image built into scenery-phet) and PhET's standard yellow button color. Use it for "clear" actions — wiping a drawing, clearing accumulated data points, removing user-placed objects — that are narrower in scope than a full [`ResetAllButton`](/api/scenery-phet/reset-all-button), which resets the entire screen.
+`EraserButton` (from `scenerystack/scenery-phet`) is a [`RectangularPushButton`](/api/sun/rectangular-push-button) preloaded with an eraser icon (an `Image` node built from an SVG asset baked into scenery-phet, not a `Shape`-based icon) and PhET's standard yellow button color. Use it for "clear" actions — wiping a drawing, clearing accumulated data points, removing user-placed objects — that are narrower in scope than a full [`ResetAllButton`](/api/scenery-phet/reset-all-button), which resets the entire screen.
 
 ```ts
 import { EraserButton } from 'scenerystack/scenery-phet';

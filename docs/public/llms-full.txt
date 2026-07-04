@@ -2123,7 +2123,7 @@ This is the general shape for any procedurally-driven feedback: construct one ge
 Page: BooleanProperty
 URL: https://veillette.github.io/Almanach/api/axon/boolean-property
 Source: docs/api/axon/boolean-property.md
-Category: API | Tags: axon, BooleanProperty | Status: complete
+Category: API | Tags: axon, BooleanProperty | Status: verified
 ========================================================================
 
 # BooleanProperty
@@ -2172,7 +2172,7 @@ To derive a boolean from other Properties (`a && b`, `a || b`, `!a`), don't writ
 Page: DerivedProperty
 URL: https://veillette.github.io/Almanach/api/axon/derived-property
 Source: docs/api/axon/derived-property.md
-Category: API | Tags: axon, DerivedProperty | Status: complete
+Category: API | Tags: axon, DerivedProperty | Status: verified
 ========================================================================
 
 # DerivedProperty
@@ -2249,7 +2249,7 @@ If you need to react to several Properties without producing a *new* Property va
 Page: DynamicProperty
 URL: https://veillette.github.io/Almanach/api/axon/dynamic-property
 Source: docs/api/axon/dynamic-property.md
-Category: API | Tags: axon, DynamicProperty, Property, MappedProperty | Status: complete
+Category: API | Tags: axon, DynamicProperty, Property, MappedProperty | Status: verified
 ========================================================================
 
 # DynamicProperty
@@ -2318,7 +2318,7 @@ const dynamicProperty = new DynamicProperty( currentProperty, {
 Page: Emitter
 URL: https://veillette.github.io/Almanach/api/axon/emitter
 Source: docs/api/axon/emitter.md
-Category: API | Tags: axon, Emitter, events | Status: complete
+Category: API | Tags: axon, Emitter, events | Status: verified
 ========================================================================
 
 # Emitter
@@ -2704,7 +2704,7 @@ Because `PatternStringProperty` is built on `DerivedProperty`, it lazy-links to 
 Page: Property
 URL: https://veillette.github.io/Almanach/api/axon/property
 Source: docs/api/axon/property.md
-Category: API | Tags: axon, Property, reactive | Status: complete
+Category: API | Tags: axon, Property, reactive | Status: verified
 ========================================================================
 
 # Property
@@ -3400,7 +3400,7 @@ Because all circles are packed into one `Shape` on a single `Path`, if you set b
 Page: Bounds2
 URL: https://veillette.github.io/Almanach/api/dot/bounds2
 Source: docs/api/dot/bounds2.md
-Category: API | Tags: dot, Bounds2, bounds | Status: complete
+Category: API | Tags: dot, Bounds2, bounds | Status: verified
 ========================================================================
 
 # Bounds2
@@ -3480,7 +3480,7 @@ Both constants throw if you call a mutating method (`setMinMax`, `dilate`, `tran
 Page: Bounds3
 URL: https://veillette.github.io/Almanach/api/dot/bounds3
 Source: docs/api/dot/bounds3.md
-Category: API | Tags: dot, Bounds3, bounds | Status: complete
+Category: API | Tags: dot, Bounds3, bounds | Status: verified
 ========================================================================
 
 # Bounds3
@@ -3560,7 +3560,7 @@ Just like `Bounds2.transformed()`, `Bounds3.transformed( matrix )` re-fits the b
 Page: Complex
 URL: https://veillette.github.io/Almanach/api/dot/complex
 Source: docs/api/dot/complex.md
-Category: API | Tags: dot, Complex, math | Status: complete
+Category: API | Tags: dot, Complex, math | Status: verified
 ========================================================================
 
 # Complex
@@ -3634,7 +3634,7 @@ If your coefficients and expected roots are all real numbers, `scenerystack/dot`
 Page: Dimension2
 URL: https://veillette.github.io/Almanach/api/dot/dimension2
 Source: docs/api/dot/dimension2.md
-Category: API | Tags: dot, Dimension2, bounds | Status: complete
+Category: API | Tags: dot, Dimension2, bounds | Status: verified
 ========================================================================
 
 # Dimension2
@@ -3682,7 +3682,7 @@ Unlike `Vector2`/`Bounds2`, `Dimension2` doesn't have paired immutable+mutable v
 Page: LinearFunction
 URL: https://veillette.github.io/Almanach/api/dot/linear-function
 Source: docs/api/dot/linear-function.md
-Category: API | Tags: dot, LinearFunction, math | Status: complete
+Category: API | Tags: dot, LinearFunction, math | Status: verified
 ========================================================================
 
 # LinearFunction
@@ -3738,7 +3738,7 @@ modelToTrackX.evaluate( 150 ); // 300, not 450 — clamped to the b-domain
 Page: Matrix3
 URL: https://veillette.github.io/Almanach/api/dot/matrix3
 Source: docs/api/dot/matrix3.md
-Category: API | Tags: dot, Matrix3, transform | Status: complete
+Category: API | Tags: dot, Matrix3, transform | Status: verified
 ========================================================================
 
 # Matrix3
@@ -3811,7 +3811,7 @@ Mutating counterparts exist for the constructor-style operations too — `setToT
 Page: Matrix4
 URL: https://veillette.github.io/Almanach/api/dot/matrix4
 Source: docs/api/dot/matrix4.md
-Category: API | Tags: dot, Matrix4, transform | Status: complete
+Category: API | Tags: dot, Matrix4, transform | Status: verified
 ========================================================================
 
 # Matrix4
@@ -3886,7 +3886,7 @@ All of the above are immutable-returning; `Matrix4` also supports in-place mutat
 Page: Random
 URL: https://veillette.github.io/Almanach/api/dot/random
 Source: docs/api/dot/random.md
-Category: API | Tags: dot, Random, dotRandom, math | Status: complete
+Category: API | Tags: dot, Random, dotRandom, math | Status: verified
 ========================================================================
 
 # Random
@@ -3944,7 +3944,7 @@ SceneryStack simulations use the shared `dotRandom` singleton (not `new Random()
 Page: Range
 URL: https://veillette.github.io/Almanach/api/dot/range
 Source: docs/api/dot/range.md
-Category: API | Tags: dot, Range | Status: complete
+Category: API | Tags: dot, Range | Status: verified
 ========================================================================
 
 # Range
@@ -4018,7 +4018,7 @@ Reaching for `range.defaultValue` on a plain `Range` throws immediately — that
 Page: RangeWithValue
 URL: https://veillette.github.io/Almanach/api/dot/range-with-value
 Source: docs/api/dot/range-with-value.md
-Category: API | Tags: dot, RangeWithValue, Range | Status: complete
+Category: API | Tags: dot, RangeWithValue, Range | Status: verified
 ========================================================================
 
 # RangeWithValue
@@ -4066,7 +4066,7 @@ Unlike `min`/`max` (settable, with the validation above), `defaultValue` is fixe
 Page: Ray2
 URL: https://veillette.github.io/Almanach/api/dot/ray2
 Source: docs/api/dot/ray2.md
-Category: API | Tags: dot, Ray2, math, hit-testing | Status: complete
+Category: API | Tags: dot, Ray2, math, hit-testing | Status: verified
 ========================================================================
 
 # Ray2
@@ -4192,7 +4192,7 @@ Every `transform*` method has an `inverse*` counterpart that applies the inverse
 Page: Utils
 URL: https://veillette.github.io/Almanach/api/dot/dot-utils
 Source: docs/api/dot/dot-utils.md
-Category: API | Tags: dot, Utils, math | Status: complete
+Category: API | Tags: dot, Utils, math | Status: verified
 ========================================================================
 
 # Utils
@@ -6080,7 +6080,7 @@ A field named `buttonOptions` merges deeply with a same-named field from an earl
 Page: Bucket
 URL: https://veillette.github.io/Almanach/api/phetcommon/bucket
 Source: docs/api/phetcommon/bucket.md
-Category: API | Tags: phetcommon, Bucket, SphereBucket, model | Status: complete
+Category: API | Tags: phetcommon, Bucket, SphereBucket, model | Status: verified
 ========================================================================
 
 # Bucket
@@ -6407,7 +6407,7 @@ If a URL supplies a value that fails validation (wrong type, not in `validValues
 Page: AlignBox
 URL: https://veillette.github.io/Almanach/api/scenery/align-box
 Source: docs/api/scenery/align-box.md
-Category: API | Tags: scenery, AlignBox, layout | Status: complete
+Category: API | Tags: scenery, AlignBox, layout | Status: verified
 ========================================================================
 
 # AlignBox
@@ -6466,7 +6466,7 @@ Unlike most layout-participating Nodes, `AlignBox` defaults to `sizable: false` 
 Page: AlignGroup
 URL: https://veillette.github.io/Almanach/api/scenery/align-group
 Source: docs/api/scenery/align-group.md
-Category: API | Tags: scenery, AlignGroup, AlignBox, layout | Status: complete
+Category: API | Tags: scenery, AlignGroup, AlignBox, layout | Status: verified
 ========================================================================
 
 # AlignGroup
@@ -6519,7 +6519,7 @@ Per source: since many `sun` UI components don't support resizing their contents
 Page: AnimatedPanZoomListener
 URL: https://veillette.github.io/Almanach/api/scenery/animated-pan-zoom-listener
 Source: docs/api/scenery/animated-pan-zoom-listener.md
-Category: API | Tags: scenery, AnimatedPanZoomListener, input, pan, zoom, accessibility | Status: complete
+Category: API | Tags: scenery, AnimatedPanZoomListener, input, pan, zoom, accessibility | Status: verified
 ========================================================================
 
 # AnimatedPanZoomListener
@@ -6582,7 +6582,7 @@ Specific to `AnimatedPanZoomListener`:
 Page: Circle
 URL: https://veillette.github.io/Almanach/api/scenery/circle
 Source: docs/api/scenery/circle.md
-Category: API | Tags: scenery, Circle, Path | Status: complete
+Category: API | Tags: scenery, Circle, Path | Status: verified
 ========================================================================
 
 # Circle
@@ -6765,7 +6765,7 @@ Constructing a `Display` does not wire up mouse/touch/keyboard listeners by itse
 Page: FlowBox
 URL: https://veillette.github.io/Almanach/api/scenery/flow-box
 Source: docs/api/scenery/flow-box.md
-Category: API | Tags: scenery, FlowBox, HBox, VBox, layout | Status: complete
+Category: API | Tags: scenery, FlowBox, HBox, VBox, layout | Status: verified
 ========================================================================
 
 # FlowBox
@@ -6794,11 +6794,11 @@ Adding, removing, or reordering `row.children` afterward re-lays-out the remaini
 | --- | --- | --- |
 | `orientation` | `'horizontal'` | `'horizontal'` (row) or `'vertical'` (column) — fixed by `HBox`/`VBox` |
 | `spacing` | `0` | Gap between adjacent children along the main axis |
-| `lineSpacing` | — | Gap between wrapped lines, when `wrap: true` |
+| `lineSpacing` | `0` | Gap between wrapped lines, when `wrap: true` |
 | `align` | `'center'` | Cross-axis alignment for children — for a horizontal `FlowBox`: `'top'`, `'bottom'`, `'center'`, or `'origin'`; for a vertical one: `'left'`, `'right'`, `'center'`, or `'origin'` |
 | `stretch` | `false` | Whether children grow to fill the cross axis (requires the child to be resizable on that axis) |
-| `grow` | — | How much a child should grow to fill leftover main-axis space, relative to other children's `grow` |
-| `justify` | — | How extra main-axis space is distributed, e.g. `'left'`/`'right'`/`'center'` (horizontal) or `'top'`/`'bottom'`/`'center'` (vertical), plus `'spaceBetween'`, `'spaceAround'`, `'spaceEvenly'` |
+| `grow` | `0` | How much a child should grow to fill leftover main-axis space, relative to other children's `grow` |
+| `justify` | `'spaceBetween'` | How extra main-axis space is distributed, e.g. `'left'`/`'right'`/`'center'` (horizontal) or `'top'`/`'bottom'`/`'center'` (vertical), plus `'spaceBetween'`, `'spaceAround'`, `'spaceEvenly'` |
 | `wrap` | `false` | Whether children flow onto additional lines instead of overflowing |
 | `resize` | `true` | Whether the FlowBox keeps re-running layout after construction; set `false` and call `updateLayout()` manually for performance-sensitive cases |
 | `forward` | `true` | If `false`, children are laid out in reverse order (useful for RTL locales via `forwardProperty`) |
@@ -6808,7 +6808,7 @@ Adding, removing, or reordering `row.children` afterward re-lays-out the remaini
 Per-child overrides (`align`, `stretch`, `grow`, `margin`, …) can also be set on an individual child via that child's `layoutOptions`, taking precedence over the FlowBox-wide value:
 
 ```ts
-someChild.layoutOptions = { grow: 1, align: 'stretch' };
+someChild.layoutOptions = { grow: 1, stretch: true };
 ```
 
 ## Methods
@@ -6947,7 +6947,7 @@ font.family; // "'Times New Roman', serif"
 Page: GridBox
 URL: https://veillette.github.io/Almanach/api/scenery/grid-box
 Source: docs/api/scenery/grid-box.md
-Category: API | Tags: scenery, GridBox, layout | Status: complete
+Category: API | Tags: scenery, GridBox, layout | Status: verified
 ========================================================================
 
 # GridBox
@@ -7018,7 +7018,7 @@ Passing `rows` or `columns` mutates every listed child's `layoutOptions` to bake
 Page: HBox
 URL: https://veillette.github.io/Almanach/api/scenery/h-box
 Source: docs/api/scenery/h-box.md
-Category: API | Tags: scenery, HBox, VBox, FlowBox, layout | Status: complete
+Category: API | Tags: scenery, HBox, VBox, FlowBox, layout | Status: verified
 ========================================================================
 
 # HBox
@@ -7389,7 +7389,7 @@ Stops must be added in non-decreasing `ratio` order — calling `addColorStop` w
 Page: ManualConstraint
 URL: https://veillette.github.io/Almanach/api/scenery/manual-constraint
 Source: docs/api/scenery/manual-constraint.md
-Category: API | Tags: scenery, ManualConstraint, layout, constraint | Status: complete
+Category: API | Tags: scenery, ManualConstraint, layout, constraint | Status: verified
 ========================================================================
 
 # ManualConstraint
@@ -7439,7 +7439,7 @@ A static `ManualConstraint.create( ancestorNode, nodes, layoutCallback )` is equ
 Page: Node
 URL: https://veillette.github.io/Almanach/api/scenery/node
 Source: docs/api/scenery/node.md
-Category: API | Tags: scenery, Node, scene-graph, transform, bounds | Status: complete
+Category: API | Tags: scenery, Node, scene-graph, transform, bounds | Status: verified
 ========================================================================
 
 # Node
@@ -8130,7 +8130,7 @@ Because Nodes can have multiple parents, there's no single "the trail" for a Nod
 Page: VBox
 URL: https://veillette.github.io/Almanach/api/scenery/v-box
 Source: docs/api/scenery/v-box.md
-Category: API | Tags: scenery, VBox, HBox, FlowBox, layout | Status: complete
+Category: API | Tags: scenery, VBox, HBox, FlowBox, layout | Status: verified
 ========================================================================
 
 # VBox
@@ -8326,7 +8326,7 @@ A `Path` or `Text` Node can be drawn with SVG, Canvas, or WebGL depending on con
 Page: ArrowNode
 URL: https://veillette.github.io/Almanach/api/scenery-phet/arrow-node
 Source: docs/api/scenery-phet/arrow-node.md
-Category: API | Tags: scenery-phet, ArrowNode | Status: complete
+Category: API | Tags: scenery-phet, ArrowNode | Status: verified
 ========================================================================
 
 # ArrowNode
@@ -8396,7 +8396,7 @@ The constructor asserts `headWidth > tailWidth`. If your arrowhead isn't visibly
 Page: BackButton
 URL: https://veillette.github.io/Almanach/api/scenery-phet/back-button
 Source: docs/api/scenery-phet/back-button.md
-Category: API | Tags: scenery-phet, BackButton, button | Status: complete
+Category: API | Tags: scenery-phet, BackButton, button | Status: verified
 ========================================================================
 
 # BackButton
@@ -8446,8 +8446,8 @@ Category: API | Tags: scenery-phet, BicyclePumpNode, pump, particles | Status: c
 
 ```ts
 import { BicyclePumpNode } from 'scenerystack/scenery-phet';
-import { NumberProperty } from 'scenerystack/axon';
-import { Range } from 'scenerystack/dot';
+import { NumberProperty, Property } from 'scenerystack/axon';
+import { Range, Vector2 } from 'scenerystack/dot';
 ```
 
 ## A minimal example
@@ -8509,7 +8509,7 @@ These control two different things: `nodeEnabledProperty` (or the owned default)
 Page: CloseButton
 URL: https://veillette.github.io/Almanach/api/scenery-phet/close-button
 Source: docs/api/scenery-phet/close-button.md
-Category: API | Tags: scenery-phet, CloseButton, button | Status: complete
+Category: API | Tags: scenery-phet, CloseButton, button | Status: verified
 ========================================================================
 
 # CloseButton
@@ -9771,7 +9771,7 @@ Despite the name, `normal1Property`/`normal2Property` values are used directly a
 Page: AccordionBox
 URL: https://veillette.github.io/Almanach/api/sun/accordion-box
 Source: docs/api/sun/accordion-box.md
-Category: API | Tags: sun, AccordionBox | Status: complete
+Category: API | Tags: sun, AccordionBox | Status: verified
 ========================================================================
 
 # AccordionBox
@@ -9843,7 +9843,7 @@ If you pass `expandedProperty` explicitly, `AccordionBox.reset()` does nothing �
 Page: Carousel
 URL: https://veillette.github.io/Almanach/api/sun/carousel
 Source: docs/api/sun/carousel.md
-Category: API | Tags: sun, Carousel, layout | Status: complete
+Category: API | Tags: sun, Carousel, layout | Status: verified
 ========================================================================
 
 # Carousel
@@ -9906,7 +9906,7 @@ Public read-only state: `pageNumberProperty` (current page) and `numberOfPagesPr
 Page: Checkbox
 URL: https://veillette.github.io/Almanach/api/sun/checkbox
 Source: docs/api/sun/checkbox.md
-Category: API | Tags: sun, Checkbox, BooleanProperty | Status: complete
+Category: API | Tags: sun, Checkbox, BooleanProperty | Status: verified
 ========================================================================
 
 # Checkbox
@@ -9965,7 +9965,7 @@ If `content` is (or contains) a `Text`/string-backed Node and you don't set `acc
 Page: ComboBox
 URL: https://veillette.github.io/Almanach/api/sun/combo-box
 Source: docs/api/sun/combo-box.md
-Category: API | Tags: sun, ComboBox | Status: complete
+Category: API | Tags: sun, ComboBox | Status: verified
 ========================================================================
 
 # ComboBox
@@ -10997,7 +10997,7 @@ If `soundManager.initialize()` hasn't run yet (e.g. sound isn't supported in thi
 Page: Disposable
 URL: https://veillette.github.io/Almanach/api/tandem/disposable
 Source: docs/api/tandem/disposable.md
-Category: API | Tags: tandem, axon, Disposable, dispose, lifecycle | Status: complete
+Category: API | Tags: tandem, axon, Disposable, dispose, lifecycle | Status: verified
 ========================================================================
 
 # Disposable
@@ -11052,7 +11052,7 @@ Rather than just documenting that some long-lived singleton (an "About" dialog, 
 Page: IOType
 URL: https://veillette.github.io/Almanach/api/tandem/io-type
 Source: docs/api/tandem/io-type.md
-Category: API | Tags: tandem, phet-io, IOType | Status: complete
+Category: API | Tags: tandem, phet-io, IOType | Status: verified
 ========================================================================
 
 # IOType
@@ -11114,7 +11114,7 @@ Composing already-instrumented `Property`s inside a plain model class (each `Pro
 Page: PhetioCapsule
 URL: https://veillette.github.io/Almanach/api/tandem/phetio-capsule
 Source: docs/api/tandem/phetio-capsule.md
-Category: API | Tags: tandem, phet-io, PhetioCapsule, dynamic-elements | Status: complete
+Category: API | Tags: tandem, phet-io, PhetioCapsule, dynamic-elements | Status: verified
 ========================================================================
 
 # PhetioCapsule
@@ -11165,7 +11165,7 @@ If something is constructed once at startup and lives for the sim's entire lifet
 Page: PhetioGroup
 URL: https://veillette.github.io/Almanach/api/tandem/phetio-group
 Source: docs/api/tandem/phetio-group.md
-Category: API | Tags: tandem, phet-io, PhetioGroup, dynamic-elements | Status: complete
+Category: API | Tags: tandem, phet-io, PhetioGroup, dynamic-elements | Status: verified
 ========================================================================
 
 # PhetioGroup
@@ -11224,7 +11224,7 @@ Calling `.dispose()` on the group container asserts — a `PhetioGroup` is meant
 Page: PhetioObject
 URL: https://veillette.github.io/Almanach/api/tandem/phetio-object
 Source: docs/api/tandem/phetio-object.md
-Category: API | Tags: tandem, phet-io, PhetioObject | Status: complete
+Category: API | Tags: tandem, phet-io, PhetioObject | Status: verified
 ========================================================================
 
 # PhetioObject
@@ -11294,7 +11294,7 @@ Classes like `Node` need to support `mutate()`-style deferred configuration, so 
 Page: Tandem
 URL: https://veillette.github.io/Almanach/api/tandem/tandem
 Source: docs/api/tandem/tandem.md
-Category: API | Tags: tandem, phet-io, Tandem | Status: complete
+Category: API | Tags: tandem, phet-io, Tandem | Status: verified
 ========================================================================
 
 # Tandem
@@ -11983,7 +11983,7 @@ new ScoreDisplayNumberAndStar( scoreProperty: ReadOnlyProperty<number>, provided
 Page: Avoiding Property Leaks
 URL: https://veillette.github.io/Almanach/patterns/avoiding-property-leaks
 Source: docs/patterns/avoiding-property-leaks.md
-Category: Patterns | Tags: axon, Property, memory, dispose, listeners | Status: complete
+Category: Patterns | Tags: axon, Property, memory, dispose, listeners | Status: verified
 ========================================================================
 
 # Avoiding Property Leaks
@@ -12073,7 +12073,7 @@ None of this applies to a `link` call where the listener and the Property it's l
 Page: Composing View Nodes
 URL: https://veillette.github.io/Almanach/patterns/composing-view-nodes
 Source: docs/patterns/composing-view-nodes.md
-Category: Patterns | Tags: scenery, Node, ScreenView, composition, architecture | Status: complete
+Category: Patterns | Tags: scenery, Node, ScreenView, composition, architecture | Status: verified
 ========================================================================
 
 # Composing View Nodes
@@ -12171,7 +12171,7 @@ Prefer passing exactly the model (or Properties) a view Node needs, not the whol
 Page: Dispose and Memory Management
 URL: https://veillette.github.io/Almanach/patterns/dispose-and-memory-management
 Source: docs/patterns/dispose-and-memory-management.md
-Category: Patterns | Tags: dispose, memory, lifecycle | Status: complete
+Category: Patterns | Tags: dispose, memory, lifecycle | Status: verified
 ========================================================================
 
 # Dispose and Memory Management
@@ -12245,7 +12245,7 @@ Most model and view objects in a one-screen sim are created once at startup and 
 Page: Drag Listeners
 URL: https://veillette.github.io/Almanach/patterns/drag-listeners
 Source: docs/patterns/drag-listeners.md
-Category: Patterns | Tags: scenery, input, DragListener, KeyboardDragListener, RichDragListener, interaction | Status: complete
+Category: Patterns | Tags: scenery, input, DragListener, KeyboardDragListener, RichDragListener, interaction | Status: verified
 ========================================================================
 
 # Drag Listeners
@@ -12339,7 +12339,7 @@ bodyNode.addInputListener( new RichDragListener( {
 Page: Emitter vs. Property
 URL: https://veillette.github.io/Almanach/patterns/emitter-vs-property
 Source: docs/patterns/emitter-vs-property.md
-Category: Patterns | Tags: axon, Emitter, Property, architecture | Status: complete
+Category: Patterns | Tags: axon, Emitter, Property, architecture | Status: verified
 ========================================================================
 
 # Emitter vs. Property
@@ -12959,7 +12959,7 @@ If writing a test for a model class turns out to require importing `scenerystack
 Page: The Enumeration Pattern
 URL: https://veillette.github.io/Almanach/patterns/enumeration-pattern
 Source: docs/patterns/enumeration-pattern.md
-Category: Patterns | Tags: axon, EnumerationProperty, enumeration | Status: complete
+Category: Patterns | Tags: axon, EnumerationProperty, enumeration | Status: verified
 ========================================================================
 
 # The Enumeration Pattern
@@ -13219,7 +13219,7 @@ Resist the temptation to have `ResetAllButton`'s listener also manipulate view N
 Page: Color Profiles
 URL: https://veillette.github.io/Almanach/styling/color-profiles
 Source: docs/styling/color-profiles.md
-Category: Styling | Tags: scenery, ProfileColorProperty, colorProfileProperty, projector-mode, colors | Status: complete
+Category: Styling | Tags: scenery, ProfileColorProperty, colorProfileProperty, projector-mode, colors | Status: verified
 ========================================================================
 
 # Color Profiles
@@ -13301,7 +13301,7 @@ A `static readonly COLOR = 'black'` can never change at runtime and scatters col
 Page: High-Contrast / Projector-Mode Deep Dive
 URL: https://veillette.github.io/Almanach/styling/high-contrast-projector-mode
 Source: docs/styling/high-contrast-projector-mode.md
-Category: Styling | Tags: scenery, ProfileColorProperty, projector-mode, contrast, colors | Status: complete
+Category: Styling | Tags: scenery, ProfileColorProperty, projector-mode, contrast, colors | Status: verified
 ========================================================================
 
 # High-Contrast / Projector-Mode Deep Dive
@@ -16448,7 +16448,7 @@ Two kinds of work, both in `roadmap.manifest.json`'s `phase2.targets` array:
 
 ### Phase 3 — Maintenance (ongoing, no fixed page count)
 
-Once Phases 1-2 are substantially built: a cross-link densification pass (add `related`/`prerequisites` now that more targets exist), upgrading `complete` → `verified` pages via an independent source-check pass, and pruning or merging pages that turn out to overlap.
+Once Phases 1-2 are substantially built: a cross-link densification pass (add `related`/`prerequisites` now that more targets exist), upgrading `complete` → `verified` pages via an independent source-check pass, and pruning or merging pages that turn out to overlap. `npm run roadmap:status` reports live counts for all three (status breakdown across every page, plus how many pages still lack `prerequisites`/`related`/`sourceRefs`) — there's no separate manifest for Phase 3 since the targets are "drive the gaps to zero," not a fixed list.
 
 ## Totals
 

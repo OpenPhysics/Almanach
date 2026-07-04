@@ -4,7 +4,7 @@ description: A Property restricted to the values of an EnumerationValue subclass
 category: api
 library: axon
 tags: [axon, EnumerationProperty]
-status: complete
+status: verified
 prerequisites:
   - /api/axon/property
 related:

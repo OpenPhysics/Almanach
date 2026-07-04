@@ -2,7 +2,7 @@
   "site": "https://veillette.github.io/Almanach",
   "title": "Almanach — SceneryStack Knowledge Base",
   "description": "A file-based wiki of SceneryStack knowledge: API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Every page is plain Markdown with structured frontmatter.",
-  "generated": "2026-07-04T16:51:49.590Z",
+  "generated": "2026-07-04T21:44:37.759Z",
   "documentCount": 231,
   "documents": [
     {
@@ -687,7 +687,7 @@
         "axon",
         "BooleanProperty"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/axon/number-property",
         "/api/axon/derived-property"
@@ -712,7 +712,7 @@
         "axon",
         "DerivedProperty"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/axon/multilink",
         "/api/axon/boolean-property",
@@ -740,7 +740,7 @@
         "Property",
         "MappedProperty"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/axon/property",
         "/api/axon/derived-property",
@@ -768,14 +768,16 @@
         "Emitter",
         "events"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/axon/property",
         "/api/axon/derived-property",
         "/api/axon/observable-array",
         "/patterns/emitter-vs-property"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/api/axon/property"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -926,7 +928,7 @@
         "Property",
         "reactive"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/axon/boolean-property",
         "/api/axon/number-property",
@@ -936,7 +938,9 @@
         "/api/axon/multilink",
         "/patterns/emitter-vs-property"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/getting-started/what-is-scenerystack"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -1239,7 +1243,7 @@
         "Bounds2",
         "bounds"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/dot/vector2",
         "/api/dot/range",
@@ -1267,7 +1271,7 @@
         "Bounds3",
         "bounds"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/dot/bounds2",
         "/api/dot/vector3",
@@ -1294,7 +1298,7 @@
         "Complex",
         "math"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/dot/dot-utils"
       ],
@@ -1317,7 +1321,7 @@
         "Dimension2",
         "bounds"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/dot/bounds2"
       ],
@@ -1342,7 +1346,7 @@
         "LinearFunction",
         "math"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/dot/dot-utils",
         "/api/dot/range"
@@ -1366,7 +1370,7 @@
         "Matrix3",
         "transform"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/dot/vector2",
         "/api/dot/bounds2",
@@ -1393,7 +1397,7 @@
         "Matrix4",
         "transform"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/dot/matrix3",
         "/api/dot/vector3",
@@ -1422,13 +1426,15 @@
         "dotRandom",
         "math"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/dot/vector2",
         "/api/dot/bounds2",
         "/api/dot/range"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/api/dot/vector2"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -1446,7 +1452,7 @@
         "dot",
         "Range"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/axon/number-property",
         "/api/dot/bounds2",
@@ -1471,7 +1477,7 @@
         "RangeWithValue",
         "Range"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/dot/range",
         "/api/axon/number-property"
@@ -1498,7 +1504,7 @@
         "math",
         "hit-testing"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/dot/vector2",
         "/api/dot/transform3"
@@ -1554,7 +1560,7 @@
         "Utils",
         "math"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/dot/range",
         "/api/dot/vector2"
@@ -2323,12 +2329,14 @@
         "SphereBucket",
         "model"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/phetcommon/model-view-transform",
         "/api/phetcommon/phetcommon-query-parameters"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/api/tandem/phetio-object"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -2450,7 +2458,7 @@
         "AlignBox",
         "layout"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/scenery/node",
         "/api/scenery/flow-box",
@@ -2480,7 +2488,7 @@
         "AlignBox",
         "layout"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/scenery/align-box",
         "/api/scenery/node",
@@ -2511,7 +2519,7 @@
         "zoom",
         "accessibility"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/scenery/node",
         "/api/scenery/display",
@@ -2540,7 +2548,7 @@
         "Circle",
         "Path"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/scenery/path",
         "/api/scenery/rectangle"
@@ -2623,7 +2631,7 @@
         "VBox",
         "layout"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/scenery/node",
         "/api/scenery/grid-box",
@@ -2708,7 +2716,7 @@
         "GridBox",
         "layout"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/scenery/node",
         "/api/scenery/flow-box",
@@ -2739,7 +2747,7 @@
         "FlowBox",
         "layout"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/scenery/flow-box",
         "/api/scenery/v-box",
@@ -2942,7 +2950,7 @@
         "layout",
         "constraint"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/scenery/node",
         "/api/scenery/flow-box",
@@ -2972,7 +2980,7 @@
         "transform",
         "bounds"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/scenery/path",
         "/api/scenery/display",
@@ -3324,7 +3332,7 @@
         "FlowBox",
         "layout"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/scenery/flow-box",
         "/api/scenery/h-box",
@@ -3409,11 +3417,14 @@
         "scenery-phet",
         "ArrowNode"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
-        "/api/phetcommon/model-view-transform"
+        "/api/phetcommon/model-view-transform",
+        "/api/dot/vector2"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/getting-started/what-is-scenerystack"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -3432,13 +3443,15 @@
         "BackButton",
         "button"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/sun/rectangular-push-button",
         "/api/scenery-phet/eraser-button",
         "/api/scenery-phet/close-button"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/api/sun/rectangular-push-button"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -3469,7 +3482,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 556,
+      "wordCount": 558,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/bicycle-pump-node"
     },
     {
@@ -3484,12 +3497,14 @@
         "CloseButton",
         "button"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/sun/rectangular-push-button",
         "/api/scenery-phet/back-button"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/api/sun/rectangular-push-button"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -4013,10 +4028,11 @@
         "sun",
         "AccordionBox"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/sun/panel",
-        "/api/axon/boolean-property"
+        "/api/axon/boolean-property",
+        "/api/sun/expand-collapse-button"
       ],
       "prerequisites": [
         "/api/sun/panel"
@@ -4039,7 +4055,7 @@
         "Carousel",
         "layout"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/sun/panel",
         "/api/sun/combo-box"
@@ -4065,7 +4081,7 @@
         "Checkbox",
         "BooleanProperty"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/sun/hslider",
         "/api/sun/radio-button-group",
@@ -4091,10 +4107,11 @@
         "sun",
         "ComboBox"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/sun/radio-button-group",
-        "/api/sun/checkbox"
+        "/api/sun/checkbox",
+        "/api/sun/list-box"
       ],
       "prerequisites": [
         "/api/axon/property"
@@ -4576,12 +4593,14 @@
         "dispose",
         "lifecycle"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/tandem/phetio-object",
         "/patterns/dispose-and-memory-management"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/patterns/dispose-and-memory-management"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -4600,14 +4619,17 @@
         "phet-io",
         "IOType"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/tandem/phetio-object",
         "/api/tandem/phetio-group",
         "/api/tandem/phetio-capsule",
         "/guides/phet-io-and-instrumentation"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/guides/phet-io-and-instrumentation",
+        "/api/tandem/phetio-object"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -4627,12 +4649,15 @@
         "PhetioCapsule",
         "dynamic-elements"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/tandem/phetio-group",
         "/api/tandem/phetio-object"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/api/tandem/phetio-object",
+        "/guides/phet-io-and-instrumentation"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -4652,13 +4677,16 @@
         "PhetioGroup",
         "dynamic-elements"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/tandem/phetio-capsule",
         "/api/tandem/phetio-object",
         "/api/tandem/io-type"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/api/tandem/phetio-object",
+        "/guides/phet-io-and-instrumentation"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -4677,7 +4705,7 @@
         "phet-io",
         "PhetioObject"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/tandem/tandem",
         "/api/tandem/io-type",
@@ -4685,7 +4713,10 @@
         "/guides/phet-io-and-instrumentation",
         "/patterns/phet-io-instrumentation-pattern"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/api/tandem/tandem",
+        "/guides/phet-io-and-instrumentation"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -4704,13 +4735,17 @@
         "phet-io",
         "Tandem"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/joist/sim",
         "/api/joist/screen",
-        "/api/scenery-phet/reset-all-button"
+        "/api/scenery-phet/reset-all-button",
+        "/api/tandem/phetio-object",
+        "/guides/phet-io-deep-dive"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/guides/phet-io-and-instrumentation"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -4973,7 +5008,7 @@
         "dispose",
         "listeners"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/patterns/dispose-and-memory-management",
         "/patterns/multilink-pattern",
@@ -5000,7 +5035,7 @@
         "composition",
         "architecture"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/patterns/model-view-separation",
         "/guides/building-your-first-screen",
@@ -5024,7 +5059,7 @@
         "memory",
         "lifecycle"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/patterns/model-view-separation",
         "/api/axon/property",
@@ -5052,13 +5087,17 @@
         "RichDragListener",
         "interaction"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/phetcommon/model-view-transform",
         "/patterns/model-view-separation",
-        "/accessibility/pdom"
+        "/accessibility/pdom",
+        "/api/scenery/rich-drag-listener",
+        "/api/scenery/keyboard-drag-listener"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/patterns/model-view-separation"
+      ],
       "sourceRefs": [],
       "wordCount": 458,
       "url": "https://veillette.github.io/Almanach/patterns/drag-listeners"
@@ -5075,7 +5114,7 @@
         "Property",
         "architecture"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/patterns/model-view-separation",
         "/api/axon/property",
@@ -5281,13 +5320,16 @@
         "EnumerationProperty",
         "enumeration"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/axon/enumeration-property",
         "/patterns/options-pattern",
+        "/patterns/model-view-separation",
+        "/api/phet-core/enumeration-value"
+      ],
+      "prerequisites": [
         "/patterns/model-view-separation"
       ],
-      "prerequisites": [],
       "sourceRefs": [],
       "wordCount": 420,
       "url": "https://veillette.github.io/Almanach/patterns/enumeration-pattern"
@@ -5375,12 +5417,18 @@
         "projector-mode",
         "colors"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
-        "/patterns/model-view-separation"
+        "/patterns/model-view-separation",
+        "/styling/high-contrast-projector-mode",
+        "/api/scenery/color"
       ],
-      "prerequisites": [],
-      "sourceRefs": [],
+      "prerequisites": [
+        "/api/scenery/node"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
       "wordCount": 349,
       "url": "https://veillette.github.io/Almanach/styling/color-profiles"
     },
@@ -5397,7 +5445,7 @@
         "contrast",
         "colors"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/styling/color-profiles",
         "/guides/preferences-and-feature-flags"
@@ -6208,7 +6256,7 @@
       ],
       "prerequisites": [],
       "sourceRefs": [],
-      "wordCount": 1062,
+      "wordCount": 1104,
       "url": "https://veillette.github.io/Almanach/meta/roadmap"
     }
   ]

@@ -20,8 +20,8 @@ sourceRefs:
 
 ```ts
 import { BicyclePumpNode } from 'scenerystack/scenery-phet';
-import { NumberProperty } from 'scenerystack/axon';
-import { Range } from 'scenerystack/dot';
+import { NumberProperty, Property } from 'scenerystack/axon';
+import { Range, Vector2 } from 'scenerystack/dot';
 ```
 
 ## A minimal example

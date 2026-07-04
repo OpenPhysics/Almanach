@@ -2,7 +2,7 @@
   "site": "https://veillette.github.io/Almanach",
   "title": "Almanach — SceneryStack Knowledge Base",
   "description": "A file-based wiki of SceneryStack knowledge: API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Every page is plain Markdown with structured frontmatter.",
-  "generated": "2026-07-04T21:49:47.385Z",
+  "generated": "2026-07-04T21:50:34.625Z",
   "documentCount": 231,
   "documents": [
     {
@@ -381,7 +381,7 @@
         "open-source",
         "workflow"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/getting-started/installation-and-setup",
         "/getting-started/what-is-scenerystack"
@@ -408,7 +408,7 @@
         "profiling",
         "rendering"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/guides/scenery-basics",
         "/guides/scenery-layout",
@@ -1789,17 +1789,19 @@
         "ScreenIcon",
         "Screen"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/joist/screen",
         "/api/joist/home-screen",
         "/api/joist/navigation-bar"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/api/joist/screen"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 411,
+      "wordCount": 431,
       "url": "https://veillette.github.io/Almanach/api/joist/screen-icon"
     },
     {
@@ -1813,14 +1815,16 @@
         "joist",
         "ScreenView"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/joist/screen",
         "/api/joist/sim",
         "/api/scenery-phet/reset-all-button",
         "/getting-started/your-first-simulation"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/api/joist/screen"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -2277,11 +2281,14 @@
         "array",
         "collections"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
-        "/api/phet-core/optionize-and-merge"
+        "/api/phet-core/optionize-and-merge",
+        "/api/phet-core/assertion-helpers"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/getting-started/what-is-scenerystack"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -2302,12 +2309,14 @@
         "assertions",
         "options"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/patterns/options-pattern",
         "/api/phet-core/optionize-and-merge"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/patterns/options-pattern"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -2327,12 +2336,15 @@
         "Enumeration",
         "enumeration"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/patterns/enumeration-pattern",
-        "/api/phet-core/optionize-and-merge"
+        "/api/phet-core/optionize-and-merge",
+        "/api/axon/enumeration-property"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/patterns/enumeration-pattern"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -2353,12 +2365,15 @@
         "combineOptions",
         "options"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/patterns/options-pattern",
-        "/api/phet-core/enumeration-value"
+        "/api/phet-core/enumeration-value",
+        "/api/phet-core/assertion-helpers"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/patterns/options-pattern"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -3337,7 +3352,7 @@
         "PhetFont",
         "font"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/scenery-phet/phet-font",
         "/api/scenery/rich-text",
@@ -3366,7 +3381,7 @@
         "hit-testing",
         "coordinates"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/scenery/node",
         "/api/scenery/display",
@@ -3425,7 +3440,7 @@
         "speech",
         "accessibility"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/accessibility/voicing",
         "/api/scenery/interactive-highlighting",
@@ -4112,7 +4127,9 @@
         "/patterns/multilink-pattern",
         "/api/axon/derived-property"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/api/scenery-phet/probe-node"
+      ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
@@ -5889,7 +5906,7 @@
         "KeyboardListener",
         "keyboard"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/accessibility/pdom",
         "/accessibility/alternative-input-overview",
@@ -5973,11 +5990,16 @@
         "tagName",
         "accessibleName"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
-        "/patterns/drag-listeners"
+        "/patterns/drag-listeners",
+        "/accessibility/focus-highlights",
+        "/accessibility/alternative-input-overview",
+        "/accessibility/internationalized-accessible-names"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/getting-started/what-is-scenerystack"
+      ],
       "sourceRefs": [],
       "wordCount": 468,
       "url": "https://veillette.github.io/Almanach/accessibility/pdom"
@@ -6209,7 +6231,7 @@
         "scenery",
         "layout"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/patterns/options-pattern",
         "/accessibility/pdom",
@@ -6317,9 +6339,12 @@
         "/meta/glossary",
         "/meta/roadmap",
         "/meta/authoring-guide",
+        "/meta/page-template",
         "/getting-started/what-is-scenerystack"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        "/getting-started/what-is-scenerystack"
+      ],
       "sourceRefs": [],
       "wordCount": 980,
       "url": "https://veillette.github.io/Almanach/meta/faq"

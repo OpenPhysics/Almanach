@@ -1134,7 +1134,7 @@ Because `PatternStringProperty` is a `DerivedProperty` under the hood, treat it 
 Page: Modifying SceneryStack
 URL: https://veillette.github.io/Almanach/guides/modifying-scenerystack
 Source: docs/guides/modifying-scenerystack.md
-Category: Guides | Tags: contributing, open-source, workflow | Status: complete
+Category: Guides | Tags: contributing, open-source, workflow | Status: verified
 ========================================================================
 
 # Modifying SceneryStack
@@ -1206,7 +1206,7 @@ Your project now imports the patched code through the exact same `scenerystack/<
 Page: Performance and Profiling
 URL: https://veillette.github.io/Almanach/guides/performance-and-profiling
 Source: docs/guides/performance-and-profiling.md
-Category: Guides | Tags: scenery, performance, profiling, rendering | Status: complete
+Category: Guides | Tags: scenery, performance, profiling, rendering | Status: verified
 ========================================================================
 
 # Performance and Profiling
@@ -4728,7 +4728,7 @@ new Screen<M extends TModel, V extends ScreenView>(
 Page: ScreenIcon
 URL: https://veillette.github.io/Almanach/api/joist/screen-icon
 Source: docs/api/joist/screen-icon.md
-Category: API | Tags: joist, ScreenIcon, Screen | Status: complete
+Category: API | Tags: joist, ScreenIcon, Screen | Status: verified
 ========================================================================
 
 # ScreenIcon
@@ -4766,7 +4766,7 @@ new ScreenIcon( iconNode: Node, providedOptions?: ScreenIconOptions )
 
 | Option | Default | Effect |
 | --- | --- | --- |
-| `size` | `ScreenIcon.MINIMUM_HOME_SCREEN_ICON_SIZE` (`Dimension2( 548, 373 )`) | Size of the background rectangle. Pass `Screen.MINIMUM_NAVBAR_ICON_SIZE` when building a `navigationBarIcon` specifically, so it matches the navigation bar's smaller aspect |
+| `size` | `Screen.MINIMUM_HOME_SCREEN_ICON_SIZE` (`Dimension2( 548, 373 )`) | Size of the background rectangle. There's no `ScreenIcon.MINIMUM_HOME_SCREEN_ICON_SIZE` static — the default value is mirrored on `Screen` (and also importable as the standalone `MINIMUM_HOME_SCREEN_ICON_SIZE` export). Pass `Screen.MINIMUM_NAVBAR_ICON_SIZE` when building a `navigationBarIcon` specifically, so it matches the navigation bar's smaller aspect |
 | `maxIconWidthProportion` | `0.85` | Max proportion of the background's width the icon is scaled to fill |
 | `maxIconHeightProportion` | `0.85` | Max proportion of the background's height the icon is scaled to fill |
 | `fill` | `'white'` | Background rectangle fill |
@@ -4789,7 +4789,7 @@ new ScreenIcon( iconNode: Node, providedOptions?: ScreenIconOptions )
 Page: ScreenView
 URL: https://veillette.github.io/Almanach/api/joist/screen-view
 Source: docs/api/joist/screen-view.md
-Category: API | Tags: joist, ScreenView | Status: complete
+Category: API | Tags: joist, ScreenView | Status: verified
 ========================================================================
 
 # ScreenView
@@ -5830,7 +5830,7 @@ Each concrete subclass builds its own `AtomNode[]` (using real bond geometry —
 Page: arrayRemove, arrayDifference, and cleanArray
 URL: https://veillette.github.io/Almanach/api/phet-core/collection-utilities
 Source: docs/api/phet-core/collection-utilities.md
-Category: API | Tags: phet-core, arrayRemove, arrayDifference, cleanArray, array, collections | Status: complete
+Category: API | Tags: phet-core, arrayRemove, arrayDifference, cleanArray, array, collections | Status: verified
 ========================================================================
 
 # arrayRemove, arrayDifference, and cleanArray
@@ -5902,7 +5902,7 @@ Calling `arrayRemove` on a value that isn't actually in the array throws (`item 
 Page: assertHasProperties and assertMutuallyExclusiveOptions
 URL: https://veillette.github.io/Almanach/api/phet-core/assertion-helpers
 Source: docs/api/phet-core/assertion-helpers.md
-Category: API | Tags: phet-core, assertHasProperties, assertMutuallyExclusiveOptions, assertions, options | Status: complete
+Category: API | Tags: phet-core, assertHasProperties, assertMutuallyExclusiveOptions, assertions, options | Status: verified
 ========================================================================
 
 # assertHasProperties and assertMutuallyExclusiveOptions
@@ -5958,7 +5958,7 @@ Call these directly — don't wrap them in `assert && assertHasProperties(...)` 
 Page: EnumerationValue
 URL: https://veillette.github.io/Almanach/api/phet-core/enumeration-value
 Source: docs/api/phet-core/enumeration-value.md
-Category: API | Tags: phet-core, EnumerationValue, Enumeration, enumeration | Status: complete
+Category: API | Tags: phet-core, EnumerationValue, Enumeration, enumeration | Status: verified
 ========================================================================
 
 # EnumerationValue
@@ -6007,7 +6007,7 @@ Calling `new Enumeration( Direction )` seals `Direction` in `EnumerationValue.se
 Page: optionize and merge
 URL: https://veillette.github.io/Almanach/api/phet-core/optionize-and-merge
 Source: docs/api/phet-core/optionize-and-merge.md
-Category: API | Tags: phet-core, optionize, merge, combineOptions, options | Status: complete
+Category: API | Tags: phet-core, optionize, merge, combineOptions, options | Status: verified
 ========================================================================
 
 # optionize and merge
@@ -8002,7 +8002,7 @@ const row = new HBox( {
 Page: Text
 URL: https://veillette.github.io/Almanach/api/scenery/text
 Source: docs/api/scenery/text.md
-Category: API | Tags: scenery, Text, PhetFont, font | Status: complete
+Category: API | Tags: scenery, Text, PhetFont, font | Status: verified
 ========================================================================
 
 # Text
@@ -8060,7 +8060,7 @@ messageProperty.value = 'Score: 10'; // scoreText updates automatically
 Page: Trail
 URL: https://veillette.github.io/Almanach/api/scenery/trail
 Source: docs/api/scenery/trail.md
-Category: API | Tags: scenery, Trail, scene-graph, hit-testing, coordinates | Status: complete
+Category: API | Tags: scenery, Trail, scene-graph, hit-testing, coordinates | Status: verified
 ========================================================================
 
 # Trail
@@ -8166,7 +8166,7 @@ For a horizontal (row) layout, use [`HBox`](/api/scenery/h-box) instead; for the
 Page: Voicing
 URL: https://veillette.github.io/Almanach/api/scenery/voicing
 Source: docs/api/scenery/voicing.md
-Category: API | Tags: scenery, Voicing, voicing, speech, accessibility | Status: complete
+Category: API | Tags: scenery, Voicing, voicing, speech, accessibility | Status: verified
 ========================================================================
 
 # Voicing
@@ -14262,7 +14262,7 @@ When checking a PR (your own or someone else's) for stray hardcoded English, gre
 Page: Keyboard Input and Hotkeys
 URL: https://veillette.github.io/Almanach/accessibility/keyboard-input-and-hotkeys
 Source: docs/accessibility/keyboard-input-and-hotkeys.md
-Category: Accessibility | Tags: scenery, KeyboardListener, keyboard | Status: complete
+Category: Accessibility | Tags: scenery, KeyboardListener, keyboard | Status: verified
 ========================================================================
 
 # Keyboard Input and Hotkeys
@@ -14494,7 +14494,7 @@ Most common component sounds (checkboxes, push buttons, radio buttons, sliders) 
 Page: The Parallel DOM (PDOM)
 URL: https://veillette.github.io/Almanach/accessibility/pdom
 Source: docs/accessibility/pdom.md
-Category: Accessibility | Tags: scenery, pdom, accessibility, a11y, screen-reader, tagName, accessibleName | Status: complete
+Category: Accessibility | Tags: scenery, pdom, accessibility, a11y, screen-reader, tagName, accessibleName | Status: verified
 ========================================================================
 
 # The Parallel DOM (PDOM)
@@ -14520,7 +14520,7 @@ const infoSection = new Node( {
 const resetShape = new Rectangle( 0, 0, 40, 40, {
   tagName: 'button',
   accessibleName: 'Reset Masses',
-  helpText: 'Return both masses to their starting values.'
+  accessibleHelpText: 'Return both masses to their starting values.'
 } );
 ```
 
@@ -14531,10 +14531,10 @@ const resetShape = new Rectangle( 0, 0, 40, 40, {
 | `labelTagName` / `labelContent` | A sibling label element (e.g. an `h3` before the content) |
 | `descriptionContent` | A sibling description paragraph |
 | `accessibleName` | The name announced by screen readers (higher-level API; prefer this) |
-| `helpText` | Supplementary guidance announced with the element |
+| `accessibleHelpText` | Supplementary guidance announced with the element |
 | `focusable` | Whether the element is in the tab order (interactive `tagName`s like `'button'` already are) |
 
-Common UI components from `sun` (buttons, sliders, checkboxes) come with sensible PDOM structure built in — you typically only supply `accessibleName` and `helpText`.
+Common UI components from `sun` (buttons, sliders, checkboxes) come with sensible PDOM structure built in — you typically only supply `accessibleName` and `accessibleHelpText`.
 
 ## Focus order with pdomOrder
 
@@ -15688,7 +15688,7 @@ Every `Property` above has a `tandem` and is therefore part of the PhET-iO API. 
 Page: Scenery Layout Examples
 URL: https://veillette.github.io/Almanach/examples/scenery-layout-examples
 Source: docs/examples/scenery-layout-examples.md
-Category: Examples | Tags: example, scenery, layout | Status: complete
+Category: Examples | Tags: example, scenery, layout | Status: verified
 ========================================================================
 
 # Scenery Layout Examples

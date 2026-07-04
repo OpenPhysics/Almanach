@@ -32,7 +32,7 @@ prerequisites:
 
 **Naming and description**
 - [ ] Every interactive element announces a name (`accessibleName`) that identifies what it does without requiring the visual label as context — "Reset Masses" reads correctly on its own; "Button" or a name duplicated across three unrelated controls does not.
-- [ ] `helpText`/description content is heard when expected and isn't redundant with the name (a help text that just repeats the accessible name verbatim is noise, not guidance).
+- [ ] `accessibleHelpText`/description content is heard when expected and isn't redundant with the name (a help text that just repeats the accessible name verbatim is noise, not guidance).
 - [ ] Headings (`labelTagName: 'h3'`, etc.) let a screen-reader user jump between sections using heading navigation, the way they would on a well-structured web page.
 
 **State changes**

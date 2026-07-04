@@ -64,7 +64,7 @@ Two kinds of work, both in `roadmap.manifest.json`'s `phase2.targets` array:
 
 ### Phase 3 — Maintenance (ongoing, no fixed page count)
 
-Once Phases 1-2 are substantially built: a cross-link densification pass (add `related`/`prerequisites` now that more targets exist), upgrading `complete` → `verified` pages via an independent source-check pass, and pruning or merging pages that turn out to overlap.
+Once Phases 1-2 are substantially built: a cross-link densification pass (add `related`/`prerequisites` now that more targets exist), upgrading `complete` → `verified` pages via an independent source-check pass, and pruning or merging pages that turn out to overlap. `npm run roadmap:status` reports live counts for all three (status breakdown across every page, plus how many pages still lack `prerequisites`/`related`/`sourceRefs`) — there's no separate manifest for Phase 3 since the targets are "drive the gaps to zero," not a fixed list.
 
 ## Totals
 

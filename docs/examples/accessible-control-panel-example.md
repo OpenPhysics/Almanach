@@ -31,8 +31,9 @@ import { NumberProperty, BooleanProperty, StringProperty } from 'scenerystack/ax
 import { Range } from 'scenerystack/dot';
 import { Tandem } from 'scenerystack/tandem';
 
-type Shape = 'circle' | 'square';
-
+// 'circle' | 'square' are this Property's only ever-valid values (enforced at runtime by
+// validValues below), but the Property itself is still typed as StringProperty (Property<string>)
+// so it lines up with RectangularRadioButtonGroupItem<string> below without extra casting.
 class PanelModel {
   public readonly speedProperty: NumberProperty;
   public readonly gravityEnabledProperty: BooleanProperty;
@@ -47,7 +48,7 @@ class PanelModel {
       tandem: tandem.createTandem( 'gravityEnabledProperty' )
     } );
     this.shapeProperty = new StringProperty( 'circle', {
-      validValues: [ 'circle', 'square' ] as Shape[],
+      validValues: [ 'circle', 'square' ],
       tandem: tandem.createTandem( 'shapeProperty' )
     } );
   }
@@ -91,7 +92,7 @@ function createPanelContent( model: PanelModel, tandem: Tandem ) {
     }
   );
 
-  const shapeItems: RectangularRadioButtonGroupItem<'circle' | 'square'>[] = [
+  const shapeItems: RectangularRadioButtonGroupItem<string>[] = [
     { value: 'circle', createNode: () => new Text( 'Circle' ) },
     { value: 'square', createNode: () => new Text( 'Square' ) }
   ];

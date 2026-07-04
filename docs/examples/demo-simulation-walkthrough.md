@@ -101,10 +101,10 @@ class DemoScreenView extends ScreenView {
 
     circle.center = this.layoutBounds.center;
 
+    this.children = [ circle, controls ];
+
     // Explicit PDOM traversal order: circle isn't interactive, so it's left out entirely.
     this.pdomOrder = [ slider, resetAllButton ];
-
-    this.children = [ circle, controls ];
   }
 }
 ```

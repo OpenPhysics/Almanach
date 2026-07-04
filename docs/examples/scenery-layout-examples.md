@@ -107,7 +107,7 @@ const settingsGrid = new GridBox( {
 Every child's `layoutOptions.row`/`layoutOptions.column` places it in the grid; `xAlign`/`yAlign` control alignment *within* each cell, and `xSpacing`/`ySpacing` control the gaps between columns/rows.
 
 ::: tip `row`/`column` live in `layoutOptions`, not on the child directly
-`GridBox` reads placement from each child's `layoutOptions` object (`{ row, column }`, or `{ x, y, horizontalSpan, verticalSpan }` for the lower-level form), not from a constructor argument to `GridBox` itself. Setting `someNode.layoutOptions = { row: 2, column: 0 }` after construction re-triggers layout the same way changing `children` does.
+`GridBox` reads placement from each child's `layoutOptions` object (`{ row, column, horizontalSpan, verticalSpan }`), not from a constructor argument to `GridBox` itself. Setting `someNode.layoutOptions = { row: 2, column: 0 }` after construction re-triggers layout the same way changing `children` does.
 :::
 
 ## Nesting FlowBox inside GridBox

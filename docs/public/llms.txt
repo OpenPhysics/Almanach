@@ -6,27 +6,153 @@ Full content of every page is available at https://veillette.github.io/Almanach/
 
 ## Getting Started
 
+- [Installation and Setup](https://veillette.github.io/Almanach/getting-started/installation-and-setup): Setting up a new SceneryStack project - npm install, TypeScript config, and dev tooling.
+- [Project Structure Conventions](https://veillette.github.io/Almanach/getting-started/project-structure-conventions): Standard folder/file layout of a SceneryStack repo (model/view split, strings, images).
+- [Running and Building a Simulation](https://veillette.github.io/Almanach/getting-started/running-and-building-a-simulation): Dev server workflow and production build output for a SceneryStack sim.
+- [Scenery Application vs. Standalone Library](https://veillette.github.io/Almanach/getting-started/scenery-application-vs-standalone-library): Choosing between a full joist-based Sim application and using scenery as a standalone rendering library.
+- [Supported Browsers](https://veillette.github.io/Almanach/getting-started/supported-browsers): Browser/platform support matrix and graceful-degradation considerations.
 - [What is SceneryStack?](https://veillette.github.io/Almanach/getting-started/what-is-scenerystack): Overview of the SceneryStack framework, its constituent libraries, and how to install and import it.
+- [Your First Simulation](https://veillette.github.io/Almanach/getting-started/your-first-simulation): Scaffolding a minimal one-screen simulation with Sim, Screen, and ScreenView.
+
+## Guides
+
+- [Accessible Interaction Tutorial](https://veillette.github.io/Almanach/guides/accessible-interaction-tutorial): Making a custom draggable Node fully accessible end-to-end.
+- [Building Your First Screen](https://veillette.github.io/Almanach/guides/building-your-first-screen): Step-by-step model/view/Screen wiring for a new screen in a multi-screen sim.
+- [Modifying SceneryStack](https://veillette.github.io/Almanach/guides/modifying-scenerystack): Workflow for patching or contributing to the underlying common-code libraries.
+- [PhET-iO and Instrumentation](https://veillette.github.io/Almanach/guides/phet-io-and-instrumentation): Conceptual guide to PhET-iO - what instrumentation buys you and how Tandem fits in.
+- [Preferences and Feature Flags](https://veillette.github.io/Almanach/guides/preferences-and-feature-flags): Using the Preferences dialog and query parameters to configure sim behavior.
+- [Scenery Basics](https://veillette.github.io/Almanach/guides/scenery-basics): Introduction to the scene graph - the Node tree, render layers, and coordinate frames.
+- [Scenery Input](https://veillette.github.io/Almanach/guides/scenery-input): Overview of scenery's input system - pointers, listeners, and event phases.
+- [Scenery Layout](https://veillette.github.io/Almanach/guides/scenery-layout): Overview of scenery's auto-layout system - FlowBox, GridBox, AlignBox, and layout options.
+- [Translation and Localization](https://veillette.github.io/Almanach/guides/translation-and-localization): String management with StringProperty and the PhET translation pipeline.
+- [UI Components Overview](https://veillette.github.io/Almanach/guides/ui-components-overview): Tour of the sun and scenery-phet component libraries and when to reach for each.
 
 ## API
 
+
+### axon
+
+- [BooleanProperty](https://veillette.github.io/Almanach/api/axon/boolean-property): A Property<boolean> with a toggle() convenience method.
+- [DerivedProperty](https://veillette.github.io/Almanach/api/axon/derived-property): A read-only Property computed from one or more dependencies.
+- [Emitter](https://veillette.github.io/Almanach/api/axon/emitter): Discrete events that are not state.
+- [EnumerationProperty](https://veillette.github.io/Almanach/api/axon/enumeration-property): A Property restricted to the values of an EnumerationValue subclass.
+- [Multilink](https://veillette.github.io/Almanach/api/axon/multilink): Reacting to several Properties at once without manually chaining links.
+- [NumberProperty](https://veillette.github.io/Almanach/api/axon/number-property): A Property<number> with an optional range for validation and UI binding.
+- [Observable Array](https://veillette.github.io/Almanach/api/axon/observable-array): createObservableArray: a Property-like array with add/remove item emitters.
+- [Property](https://veillette.github.io/Almanach/api/axon/property): The base observable value wrapper underlying all reactive state.
+- [StringProperty](https://veillette.github.io/Almanach/api/axon/string-property): A Property<string>'s role in localizable, translatable values.
+
+### dot
+
+- [Bounds2](https://veillette.github.io/Almanach/api/dot/bounds2): An axis-aligned rectangle used for layout, drag bounds, and hit-testing.
+- [Matrix3](https://veillette.github.io/Almanach/api/dot/matrix3): The 3x3 transform matrix behind Node transforms and ModelViewTransform2.
+- [Range](https://veillette.github.io/Almanach/api/dot/range): A min/max pair used for NumberProperty validation and slider ranges.
+- [Utils](https://veillette.github.io/Almanach/api/dot/dot-utils): dot's numeric helper functions: clamp, linear, roundSymmetric, and friends.
+- [Vector2](https://veillette.github.io/Almanach/api/dot/vector2): The 2D vector/point class used throughout SceneryStack's math and positioning APIs.
+- [Vector3](https://veillette.github.io/Almanach/api/dot/vector3): The 3D vector class used for color math and 3D-flavored simulations.
+
+### joist
+
+- [Screen](https://veillette.github.io/Almanach/api/joist/screen): Pairing a model factory and view factory into one selectable unit of a Sim.
+- [ScreenView](https://veillette.github.io/Almanach/api/joist/screen-view): The root Node of a Screen's view, with layoutBounds and visibleBoundsProperty.
+- [Sim](https://veillette.github.io/Almanach/api/joist/sim): The top-level application object owning Screens, the navigation bar, and the sim loop.
+
+### kite
+
+- [Shape](https://veillette.github.io/Almanach/api/kite/shape): kite's path-description class behind Path, and its common construction/query methods.
 
 ### phetcommon
 
 - [ModelViewTransform2](https://veillette.github.io/Almanach/api/phetcommon/model-view-transform): Mapping between model coordinates (physical units, y-up) and view coordinates (pixels, y-down) with ModelViewTransform2.
 
+### scenery
+
+- [AlignBox](https://veillette.github.io/Almanach/api/scenery/align-box): A single-child container for alignment and fixed-size placement within layouts.
+- [Circle](https://veillette.github.io/Almanach/api/scenery/circle): A Path subclass for drawing circles by radius.
+- [Display](https://veillette.github.io/Almanach/api/scenery/display): The root object that turns a Node tree into rendered/attached DOM output.
+- [FlowBox](https://veillette.github.io/Almanach/api/scenery/flow-box): A single-axis (row/column) auto-layout container.
+- [GridBox](https://veillette.github.io/Almanach/api/scenery/grid-box): A two-dimensional grid auto-layout container.
+- [Image](https://veillette.github.io/Almanach/api/scenery/image): A Node that renders a raster image with optional Property-driven swapping.
+- [Line](https://veillette.github.io/Almanach/api/scenery/line): A Path subclass for drawing single line segments.
+- [Node](https://veillette.github.io/Almanach/api/scenery/node): The base class of every item in the scene graph and its core options.
+- [Path](https://veillette.github.io/Almanach/api/scenery/path): A Node that renders a kite Shape with fill/stroke.
+- [PressListener and FireListener](https://veillette.github.io/Almanach/api/scenery/fire-listener): The base classes behind clickable/pressable Nodes.
+- [Rectangle](https://veillette.github.io/Almanach/api/scenery/rectangle): A Path subclass for drawing (optionally rounded) rectangles.
+- [RichText](https://veillette.github.io/Almanach/api/scenery/rich-text): A Text-like Node supporting a constrained markup subset for mixed styling.
+- [Text](https://veillette.github.io/Almanach/api/scenery/text): A Node that renders a single string of plain text.
+
+### scenery-phet
+
+- [ArrowNode](https://veillette.github.io/Almanach/api/scenery-phet/arrow-node): A configurable arrow shape used for vectors, force diagrams, and callouts.
+- [NumberControl](https://veillette.github.io/Almanach/api/scenery-phet/number-control): A composite slider + label + value-readout control bound to a NumberProperty.
+- [PhetFont](https://veillette.github.io/Almanach/api/scenery-phet/phet-font): The standard font class used across every SceneryStack simulation.
+- [ResetAllButton](https://veillette.github.io/Almanach/api/scenery-phet/reset-all-button): The standard circular reset control wired to a model's reset() method.
+- [StopwatchNode](https://veillette.github.io/Almanach/api/scenery-phet/stopwatch-node): A draggable digital stopwatch bound to a Stopwatch model element.
+- [ThermometerNode](https://veillette.github.io/Almanach/api/scenery-phet/thermometer-node): A fluid-level thermometer visualization bound to a temperature Property.
+- [TimeControlNode](https://veillette.github.io/Almanach/api/scenery-phet/time-control-node): The standard play/pause/step-forward control for time-based simulations.
+
+### sun
+
+- [AccordionBox](https://veillette.github.io/Almanach/api/sun/accordion-box): An expandable/collapsible titled container bound to an expandedProperty.
+- [Checkbox](https://veillette.github.io/Almanach/api/sun/checkbox): A checkbox bound to a BooleanProperty, with label-Node composition.
+- [ComboBox](https://veillette.github.io/Almanach/api/sun/combo-box): A dropdown selector bound to a Property over an enumerated set of items.
+- [HSlider](https://veillette.github.io/Almanach/api/sun/hslider): The horizontal slider bound to a NumberProperty and Range.
+- [Panel](https://veillette.github.io/Almanach/api/sun/panel): A bordered/background container used to group related controls.
+- [Radio Button Groups](https://veillette.github.io/Almanach/api/sun/radio-button-group): Mutually-exclusive selection bound to a Property (rectangular and Aqua styles).
+- [RectangularPushButton](https://veillette.github.io/Almanach/api/sun/rectangular-push-button): The standard rectangular momentary-action button.
+- [TextPushButton](https://veillette.github.io/Almanach/api/sun/text-push-button): A push button whose content is a text label.
+- [Toggle Buttons](https://veillette.github.io/Almanach/api/sun/toggle-button): The rectangular/round toggle-button family bound to a BooleanProperty or two-state value.
+
+### tandem
+
+- [Tandem](https://veillette.github.io/Almanach/api/tandem/tandem): The naming/instrumentation handle giving every PhET-iO-tracked element a stable tree address.
+
+### twixt
+
+- [Animation and Easing](https://veillette.github.io/Almanach/api/twixt/animation): Animating a Property's value smoothly over time instead of setting it instantly.
+
 ## Patterns
 
+- [Dispose and Memory Management](https://veillette.github.io/Almanach/patterns/dispose-and-memory-management): The dispose() convention - when Nodes/Properties/listeners must clean up.
 - [Drag Listeners](https://veillette.github.io/Almanach/patterns/drag-listeners): Making nodes draggable with DragListener, KeyboardDragListener, and RichDragListener, wired to a model positionProperty through a transform.
+- [Emitter vs. Property](https://veillette.github.io/Almanach/patterns/emitter-vs-property): When to model state as a Property versus a discrete event as an Emitter.
 - [Model-View Separation](https://veillette.github.io/Almanach/patterns/model-view-separation): The foundational SceneryStack architecture - axon Properties form the model, scenery Nodes observe it, and nothing flows the other way.
+- [Multi-Screen Sim Structure](https://veillette.github.io/Almanach/patterns/multi-screen-sim-structure): Structuring model/view code across multiple Screens in one Sim.
+- [PhET-iO Instrumentation Pattern](https://veillette.github.io/Almanach/patterns/phet-io-instrumentation-pattern): Deciding what to instrument with Tandem and structuring a PhET-iO-ready model.
+- [Query Parameters Pattern](https://veillette.github.io/Almanach/patterns/query-parameters-pattern): Using query parameters to drive optional/debug behavior.
+- [The Enumeration Pattern](https://veillette.github.io/Almanach/patterns/enumeration-pattern): Modeling closed sets of values instead of string literals.
+- [The Multilink Pattern](https://veillette.github.io/Almanach/patterns/multilink-pattern): Combining multiple Properties into one derived reaction.
+- [The Options Pattern](https://veillette.github.io/Almanach/patterns/options-pattern): The options-object convention for configuring Nodes and components.
+- [The Reset-All Pattern](https://veillette.github.io/Almanach/patterns/reset-all-pattern): Wiring every model Property's reset() through one ResetAllButton.
 
 ## Styling
 
 - [Color Profiles](https://veillette.github.io/Almanach/styling/color-profiles): Centralizing colors with ProfileColorProperty so an application can switch between default and projector color schemes at runtime.
+- [Iconography Conventions](https://veillette.github.io/Almanach/styling/iconography-conventions): Building consistent icons for buttons and controls.
+- [Layout Container Conventions](https://veillette.github.io/Almanach/styling/layout-container-conventions): Styling conventions when composing FlowBox/GridBox/AlignBox layouts.
+- [Panels and Backgrounds](https://veillette.github.io/Almanach/styling/panels-and-backgrounds): Conventions for grouping controls with Panel/AccordionBox.
+- [Stroke and Line Styling](https://veillette.github.io/Almanach/styling/stroke-and-line-styling): Conventions for stroke width, dash patterns, and line joins/caps.
+- [Typography and Fonts](https://veillette.github.io/Almanach/styling/typography-and-fonts): Using PhetFont consistently and font-size/weight conventions.
 
 ## Accessibility
 
+- [Alternative Input Overview](https://veillette.github.io/Almanach/accessibility/alternative-input-overview): How pointer, keyboard, and switch/AT input all route through the same listeners.
+- [Describing Dynamic State](https://veillette.github.io/Almanach/accessibility/describing-dynamic-state): Writing description content that updates as model state changes.
+- [Focus Highlights](https://veillette.github.io/Almanach/accessibility/focus-highlights): Customizing focus highlights for focusable Nodes.
+- [Keyboard Input and Hotkeys](https://veillette.github.io/Almanach/accessibility/keyboard-input-and-hotkeys): KeyboardListener and Hotkey for custom keyboard shortcuts beyond dragging.
+- [Sound Design](https://veillette.github.io/Almanach/accessibility/sound-design): Using scenery-phet/tambo sound generators for non-speech audio feedback.
 - [The Parallel DOM (PDOM)](https://veillette.github.io/Almanach/accessibility/pdom): How scenery renders an invisible, semantic HTML tree alongside the canvas so screen readers and keyboards can use the application.
+- [Voicing](https://veillette.github.io/Almanach/accessibility/voicing): Speech-synthesis descriptions triggered by interaction, layered on the PDOM.
+
+## Examples
+
+- [Accessible Control Panel Example](https://veillette.github.io/Almanach/examples/accessible-control-panel-example): A fully accessible control panel combining sun components with PDOM.
+- [Building a Two-Screen Simulation](https://veillette.github.io/Almanach/examples/building-a-two-screen-simulation): Full example wiring two Screens with shared and per-screen model code.
+- [Demo Simulation Walkthrough](https://veillette.github.io/Almanach/examples/demo-simulation-walkthrough): Annotated tour of a minimal end-to-end demo sim.
+- [PhET-iO Instrumented Sim Example](https://veillette.github.io/Almanach/examples/phet-io-instrumented-sim-example): A minimal simulation instrumented end-to-end with Tandem.
+- [Scenery Layout Examples](https://veillette.github.io/Almanach/examples/scenery-layout-examples): Worked FlowBox/GridBox layouts for common UI arrangements.
+- [Standalone Scenery App Example](https://veillette.github.io/Almanach/examples/standalone-scenery-app-example): Using scenery as a standalone rendering library outside the joist shell.
+- [Three.js Integration](https://veillette.github.io/Almanach/examples/three-js-integration): Embedding a Three.js WebGL scene inside a scenery Node.
 
 ## Meta
 

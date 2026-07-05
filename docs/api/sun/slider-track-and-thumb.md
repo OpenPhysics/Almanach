@@ -22,14 +22,14 @@ sourceRefs:
 ```ts
 import { HSlider, DefaultSliderTrack } from 'scenerystack/sun';
 import { NumberProperty, Property } from 'scenerystack/axon';
-import { Range } from 'scenerystack/dot';
+import { Range, Dimension2 } from 'scenerystack/dot';
 import { Tandem } from 'scenerystack/tandem';
 
 const volumeProperty = new NumberProperty( 50, { range: new Range( 0, 100 ) } );
 const rangeProperty = new Property( new Range( 0, 100 ) );
 
 const customTrack = new DefaultSliderTrack( volumeProperty, rangeProperty, {
-  size: new (await import('scenerystack/dot')).Dimension2( 160, 3 ),
+  size: new Dimension2( 160, 3 ),
   fillEnabled: 'green',
   fillDisabled: 'lightgray',
   cornerRadius: 1.5,
@@ -57,7 +57,7 @@ import { Rectangle } from 'scenerystack/scenery';
 
 const visual = new Rectangle( 0, 0, 160, 3, { fill: 'purple' } );
 const track = new SliderTrack( volumeProperty, visual, new Range( 0, 100 ), {
-  size: new (await import('scenerystack/dot')).Dimension2( 160, 3 )
+  size: new Dimension2( 160, 3 )
 } );
 ```
 

@@ -45,7 +45,7 @@ const hornButton = new RectangularMomentaryButton(
 
 ## `MomentaryButtonModel`
 
-Both classes construct a `MomentaryButtonModel<T>` internally, the non-visual model (extending [`ButtonModel`](/api/sun/push-button-model#buttonmodel-the-shared-base), not `PushButtonModel`) that owns the on/off logic: `downProperty` transitioning to `true` sets `valueProperty` to `valueOn`; transitioning to `false` sets it back to `valueOff`. For alternative-input (keyboard/switch) activation, it behaves like a toggle instead — one activation turns it on, the next turns it off — and it always reverts to `valueOff` if the button loses focus while on.
+Both classes construct a `MomentaryButtonModel<T>` internally, the non-visual model (extending the shared `ButtonModel` base documented on [PushButtonModel](/api/sun/push-button-model), not `PushButtonModel` itself) that owns the on/off logic: `downProperty` transitioning to `true` sets `valueProperty` to `valueOn`; transitioning to `false` sets it back to `valueOff`. For alternative-input (keyboard/switch) activation, it behaves like a toggle instead — one activation turns it on, the next turns it off — and it always reverts to `valueOff` if the button loses focus while on.
 
 `Property.valueComparisonStrategy` must be `'reference'` (the default) for the bound Property, since the model compares `valueProperty.value` against `valueOn`/`valueOff` with `===`.
 

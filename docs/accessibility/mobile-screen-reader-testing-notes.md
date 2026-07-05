@@ -46,7 +46,7 @@ Desktop screen readers commonly support jumping directly to headings (`labelTagN
 
 Not everything changes on mobile — the underlying PDOM structure a sim builds is the same regardless of input surface, so these desktop-checklist items still apply unchanged:
 
-- Accessible names still need to identify the control without relying on visual context (see [the checklist](/accessibility/screen-reader-testing-checklist#naming-and-description)).
+- Accessible names still need to identify the control without relying on visual context (see [the checklist](/accessibility/screen-reader-testing-checklist#the-checklist)).
 - Dynamic content changes still need to be communicated via [reactive descriptions or `addAccessibleResponse`](/accessibility/describing-dynamic-state), not silently rendered.
 - A rapidly-changing live value still needs throttling so the screen reader isn't spammed — this is, if anything, more noticeable on a phone's smaller, closer speaker.
 

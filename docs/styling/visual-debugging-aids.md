@@ -8,6 +8,7 @@ related:
   - /guides/performance-and-profiling
   - /patterns/query-parameters-pattern
   - /patterns/drag-listeners
+  - /api/scenery/hit-testing-and-picking
 prerequisites:
   - /getting-started/running-and-building-a-simulation
 sourceRefs:
@@ -23,7 +24,7 @@ Every SceneryStack simulation ships with a set of debug-overlay query parameters
 | Query parameter | Shows | Use it to catch |
 | --- | --- | --- |
 | `?showPointerAreas` | Each Node's `mouseArea`/`touchArea` as an overlay | A touch target that's smaller (or larger) than intended — see [Icon Sizing and Button Padding Standards](/styling/icon-sizing-and-button-padding-standards) for the dilation options these overlays are visualizing |
-| `?showHitAreas` | The actual hit-testing region scenery is using for pointer input, which may differ from the drawn shape for a `Path` with a custom `mouseArea`/hit-testing override — the lower-level mechanics of hit testing are a candidate for their own future `/api/scenery/hit-testing-and-picking` reference page, not yet written as of this page | An interactive region that's misaligned with what's drawn — a draggable whose grabbable area doesn't match its visible bounds |
+| `?showHitAreas` | The actual hit-testing region scenery is using for pointer input, which may differ from the drawn shape for a `Path` with a custom `mouseArea`/hit-testing override — see [Hit-Testing and Picking](/api/scenery/hit-testing-and-picking) for the `pickable`/`mouseArea`/`touchArea` mechanics these overlays are visualizing | An interactive region that's misaligned with what's drawn — a draggable whose grabbable area doesn't match its visible bounds |
 | `?showCanvasNodeBounds` | Bounds overlays specifically for `CanvasNode` subtrees | A `CanvasNode` whose declared `canvasBounds` doesn't match what it actually paints — content clipped at the overlay's edge is a sign the bounds are too small |
 | `?showFittedBlockBounds` | The boundaries of scenery's internal Canvas/SVG/WebGL rendering blocks | Unexpected repaint/relayout scope — see [Performance and Profiling](/guides/performance-and-profiling) |
 | `?dev` | A bundle of internal developer-facing overlays and checks | A general first pass when narrowing down where in the tree a problem lives, before reaching for a more specific flag above |

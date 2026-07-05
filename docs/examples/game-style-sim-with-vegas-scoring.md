@@ -104,7 +104,7 @@ class GameScreenView extends ScreenView {
     // A stand-in "challenge" view - in a real game this would be the actual question UI.
     this.challengeNode = new Node( { visible: false } );
 
-    // Shown once model.allLevelsCompletedProperty flips true - see wireUpCompletion() below.
+    // Shown once model.allLevelsCompletedProperty flips true - see the .link() call below.
     this.allLevelsCompletedNode = new AllLevelsCompletedNode( () => {
       this.allLevelsCompletedNode.visible = false;
       this.levelSelectionNode.visible = true;
@@ -192,7 +192,7 @@ onReadyToLaunch( () => {
 | One `LevelSelectionButton` per level, built from `model.levelScoreProperties` | The entry point into each level, showing its live score without the view hand-tracking button state |
 | `ScoreDisplayNumberAndStar` as `createScoreDisplay` | The compact score readout fits `LevelSelectionButton`'s small footprint better than the default `ScoreDisplayStars` once more than a couple of points are possible |
 | `GameAudioPlayer`, one instance, called from wherever a challenge resolves | Standard sounds for standard moments — no bespoke `SoundClip` wiring needed for the common correct/incorrect/game-over cases (see [A Sound-Rich Simulation with Tambo](/examples/sound-rich-simulation-with-tambo) for building *custom* sounds when the standard set isn't enough) |
-| `AllLevelsCompletedNode`, shown/hidden manually based on `model.allLevelsCompletedProperty` | Not a `Dialog` — this example owns showing/hiding it itself, exactly as documented on the [`AllLevelsCompletedNode`](/api/vegas/all-levels-completed-node#its-not-a-modal-dialog--you-own-the-overlay) page |
+| `AllLevelsCompletedNode`, shown/hidden manually based on `model.allLevelsCompletedProperty` | Not a `Dialog` — this example owns showing/hiding it itself, exactly as documented on the [`AllLevelsCompletedNode`](/api/vegas/all-levels-completed-node) page |
 
 ::: tip Model owns "which levels are complete," not the buttons
 `model.allLevelsCompletedProperty` is a `DerivedProperty` over the model's own per-level completion state — the view only *reacts* to it (showing `AllLevelsCompletedNode`) rather than deciding for itself when the game is finished. This keeps [model-view separation](/patterns/model-view-separation) intact even though the "game is over" condition spans every level's state at once.

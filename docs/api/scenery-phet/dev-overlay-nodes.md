@@ -37,7 +37,7 @@ Clicking (or tapping) the node opens `https://phet.colorado.edu/webgl-disabled-p
 
 ## PointerCoordinatesNode
 
-A tiny `Node` (a background `Rectangle` behind a `RichText`) that follows the pointer and displays both its view-space and model-space coordinates, updated on every `move` event. It's explicitly a debugging tool — the doc comment on the source calls out that it was "originally implemented for use in gas-properties... exclusively for debugging" — not something to ship visible in a released sim.
+A tiny `Node` (a background `Rectangle` behind a `RichText`, styled with [`PhetFont`](/api/scenery-phet/phet-font) by default) that follows the pointer and displays both its view-space and model-space coordinates, updated on every `move` event, using a [`ModelViewTransform2`](/api/phetcommon/model-view-transform) to convert between the two. It's explicitly a debugging tool — the doc comment on the source calls out that it was "originally implemented for use in gas-properties... exclusively for debugging" — not something to ship visible in a released sim.
 
 ```ts
 const modelViewTransform = ModelViewTransform2.createIdentity();

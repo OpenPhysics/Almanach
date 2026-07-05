@@ -3,7 +3,7 @@ title: FormulaNode
 description: Renders a LaTeX-style math formula via KaTeX, as a DOM Node embedded in the scene graph.
 category: api
 library: scenery-phet
-tags: [scenery-phet, FormulaNode, KaTeX, LaTeX, math]
+tags: [scenery-phet, FormulaNode, katex, latex, math]
 status: complete
 related:
   - /api/scenery-phet/math-symbol-font

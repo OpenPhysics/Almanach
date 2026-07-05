@@ -21,8 +21,7 @@ sourceRefs:
 
 ```ts
 import { MenuItem } from 'scenerystack/sun';
-import { Property } from 'scenerystack/axon';
-import { StringProperty } from 'scenerystack/axon';
+import { Property, StringProperty } from 'scenerystack/axon';
 
 const closeMyMenu = () => { myMenuPopup.visible = false; };
 

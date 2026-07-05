@@ -90,7 +90,7 @@ class Particle extends PhetioObject {
 
 class ParticleCollectorModel {
   public readonly fieldSettings: FieldSettings;
-  public readonly particleGroup: PhetioGroup<Particle, [ number ]>;
+  public readonly particleGroup: PhetioGroup<Particle>;
 
   public constructor( tandem: Tandem ) {
     this.fieldSettings = new FieldSettings( tandem.createTandem( 'fieldSettings' ) );

@@ -10,6 +10,7 @@ related:
   - /guides/scenery-layout
   - /guides/performance-and-profiling
   - /api/scenery/node
+  - /api/scenery/hit-testing-and-picking
 prerequisites:
   - /guides/scenery-basics
 sourceRefs:
@@ -31,7 +32,7 @@ Work through these in order — each is more specific than the last, and any one
 | `node.bounds` / `node.localBounds` | A Node with empty or `NaN` bounds (e.g. a `Path` built from an empty `Shape`, or geometry computed from a not-yet-loaded value) often silently draws nothing rather than throwing — check `bounds` in the console for `NaN` or a zero-size rectangle |
 | Ancestor visibility | `visible`/`opacity` on this Node don't matter if an **ancestor** in the tree is invisible or fully transparent — walk up the parent chain, not just the Node itself, when a whole region is missing |
 | Being added at all | A Node constructed but never `addChild`-ed anywhere in the displayed tree is, correctly, never painted — confirm the Node is actually reachable from the `Display`'s root, not just that it exists |
-| `pickable` (a distinct but related symptom) | `pickable = false` doesn't hide anything visually, but if the *symptom* you're chasing is actually "clicks pass through" rather than "nothing draws," this — not `visible` — is the property to check; see [Scenery Basics](/guides/scenery-basics#render-layers-canvas-svg-and-webgl) |
+| `pickable` (a distinct but related symptom) | `pickable = false` doesn't hide anything visually, but if the *symptom* you're chasing is actually "clicks pass through" rather than "nothing draws," this — not `visible` — is the property to check; see [Hit-Testing and Picking](/api/scenery/hit-testing-and-picking) |
 
 ## "My layout isn't updating"
 
@@ -64,3 +65,4 @@ When it's unclear whether a missing/misplaced Node is a visibility, layout, or s
 - [Scenery Layout](/guides/scenery-layout) — the layout containers and options referenced above
 - [Performance and Profiling](/guides/performance-and-profiling) — the built-in debug query parameters, applied to slowness rather than incorrectness
 - [Display](/api/scenery/display) — the object that actually paints the tree these bugs live in
+- [Hit-Testing and Picking](/api/scenery/hit-testing-and-picking) — the full `pickable`/`mouseArea`/`touchArea` model referenced above

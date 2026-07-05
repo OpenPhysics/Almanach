@@ -7,6 +7,7 @@ status: complete
 related:
   - /patterns/drag-listeners
   - /cookbook/snapping-a-draggable-node-to-a-grid
+  - /api/scenery/drag-listener
   - /api/phetcommon/model-view-transform
   - /patterns/model-view-separation
 prerequisites:
@@ -19,14 +20,14 @@ prerequisites:
 
 ## Where a constraint hooks in
 
-Both `DragListener` and `KeyboardDragListener` (see [Drag Listeners](/patterns/drag-listeners)) accept a `dragBoundsProperty` for clamping, and a `constrainValue`-shaped hook for arbitrary transformations of the dragged value before it's applied — the same shape [`HSlider`'s `constrainValue` option](/api/sun/hslider) already uses to let a slider snap to a grid of values instead of continuous ones. A grid-snap, an axis lock, and a bounds clamp are all the same kind of hook applied with different transformation functions — none of them require a different listener class or a departure from the ordinary drag-listener wiring.
+[`DragListener`](/api/scenery/drag-listener) (and, by extension, [`RichDragListener`](/api/scenery/rich-drag-listener), which shares the same drag options) accepts both a `dragBoundsProperty` for clamping to a `Bounds2`, and a `mapPosition` option — `( point: Vector2 ) => Vector2`, applied *before* `dragBoundsProperty` — for arbitrary transformations of the dragged model position, which is exactly the hook a grid-snap function plugs into. This is the same shape [`HSlider`'s `constrainValue` option](/api/sun/hslider) uses to let a slider snap to a grid of values instead of continuous ones — a grid-snap, an axis lock, and a bounds clamp are all the same kind of hook applied with a different transformation function, none of them requiring a different listener class or a departure from the ordinary [drag-listener](/patterns/drag-listeners) wiring.
 
 ## Why constrain dragging at all
 
 | Constraint | Solves |
 | --- | --- |
 | Snap to a grid | The model has a natural discrete structure (a board game's cells, a periodic table slot, integer-only positions) where "anywhere in between" is not a meaningful or valid state |
-| Clamp to bounds (`dragBoundsProperty`) | Keeps a draggable object reachable and recoverable — nothing draggable off the visible play area with no way back, part of the [Drag Listeners](/patterns/drag-listeners#tip-checklist-for-a-well-behaved-draggable) checklist for a well-behaved draggable |
+| Clamp to bounds (`dragBoundsProperty`) | Keeps a draggable object reachable and recoverable — nothing draggable off the visible play area with no way back, part of the [Drag Listeners](/patterns/drag-listeners) checklist for a well-behaved draggable |
 | Restrict to one axis | The underlying model quantity is genuinely one-dimensional (a single slider-like value, a position along a fixed path) even though the visual control might otherwise invite two-dimensional dragging |
 
 The unifying principle: a constraint exists because the **model** has a restriction the raw pointer position doesn't know about — free-form pointer motion is inherently continuous and two-dimensional, and a constraint is how that gets reconciled with a model whose valid states are a smaller set (a grid, a range, a line). Adding a constraint is a model-driven decision, not a view polish choice — reach for it because the model's state genuinely only makes sense in discrete/bounded/one-dimensional terms, not merely because snapping "feels nice."

@@ -13,6 +13,8 @@ related:
   - /api/bamboo/linear-equation-plot
   - /api/bamboo/axis-nodes
   - /api/bamboo/gridlines-and-tick-marks
+  - /api/bamboo/canvas-line-plot
+  - /guides/performance-and-profiling
   - /patterns/dispose-and-memory-management
 prerequisites:
   - /guides/scenery-basics
@@ -72,24 +74,34 @@ All five extend either `scenery`'s `Path` or `Node` and rebuild their drawn geom
 
 ## Axes and gridlines: decoration, not structure
 
-[`AxisLine`/`AxisArrowNode`](/api/bamboo/axis-nodes) draw the x/y axis lines themselves (plain or arrow-tipped), and a separate gridlines/tick-marks family (see [Gridlines and Tick Marks](/api/bamboo/gridlines-and-tick-marks)) draws the repeating reference lines and labeled ticks behind or alongside the data. Both are, like the plots, independent Nodes constructed against the same `ChartTransform` — a chart with no axis or gridline Nodes at all is still a perfectly valid, if sparse, bamboo chart; they're additive decoration, not something a plot depends on to render correctly.
+[`AxisLine`/`AxisArrowNode`](/api/bamboo/axis-nodes) draw the x/y axis lines themselves (plain or arrow-tipped), and [`GridLineSet`, `TickMarkSet`, and `TickLabelSet`](/api/bamboo/gridlines-and-tick-marks) draw the repeating reference lines, tick marks, and numeric tick labels behind or alongside the data, all at a fixed model-coordinate spacing. All of these are, like the plots, independent Nodes constructed against the same `ChartTransform` — a chart with no axis or gridline Nodes at all is still a perfectly valid, if sparse, bamboo chart; they're additive decoration, not something a plot depends on to render correctly.
 
 ## Composing a full chart
 
 A typical bamboo chart is a `Node` (or the `ScreenView` itself) with several bamboo Nodes as children, all built from one `ChartTransform`, layered in the usual scenery stacking order — background/gridlines first, data plots in the middle, axes and labels on top:
 
 ```ts
+import { GridLineSet } from 'scenerystack/bamboo';
+
+const verticalGridLines = new GridLineSet( chartTransform, Orientation.VERTICAL, 1, {
+  stroke: 'lightGray'
+} );
+
 const chartNode = new Node( {
   children: [
-    chartRectangle,     // background + border
-    // gridLineSet,      // reference gridlines, if used
-    linePlot,            // the data itself
-    xAxis                // axis line/arrow on top
+    chartRectangle,       // background + border
+    verticalGridLines,    // reference gridlines, behind the data
+    linePlot,             // the data itself
+    xAxis                 // axis line/arrow on top
   ]
 } );
 ```
 
 Panning or zooming the whole chart is then a single `chartTransform.setModelXRange( newRange )` (or `setViewWidth`/`setViewHeight` for a resize) — every child Node listening to `changedEmitter` redraws itself in response, with no coordination code needed between them.
+
+## Large datasets: CanvasLinePlot instead of LinePlot
+
+Every plot type above extends an ordinary scenery `Path`/`Node`, which means a dataset large enough (many thousands of points, redrawn every frame) can start to show up as real overhead — one scenery drawable's bookkeeping cost, multiplied by every point. [`CanvasLinePlot`](/api/bamboo/canvas-line-plot) is bamboo's answer for that specific case: it paints the same kind of `(Vector2 | null)[]` dataset as `LinePlot`, but directly to a `CanvasRenderingContext2D` via a shared `ChartCanvasNode`, rather than building a scenery `Shape`. Reach for it only once profiling (see [Performance and Profiling](/guides/performance-and-profiling)) actually shows `LinePlot`'s per-point overhead as the bottleneck — for anything smaller, `LinePlot`'s automatic redraw wiring and ordinary `Path` semantics (hit-testing, easy composition with other Nodes) are simpler to work with.
 
 ::: tip Dispose a chart's Nodes the same as any dynamically-created view
 Every bamboo Node holds a listener on its `ChartTransform`'s `changedEmitter`, which its own `dispose()` removes — but if a chart itself is created and destroyed dynamically (not for the sim's lifetime), the usual [Dispose and Memory Management](/patterns/dispose-and-memory-management) discipline still applies: dispose each plot/axis Node (and the `ChartTransform` itself, via its own `dispose()`) when the chart is torn down, the same as any other transient view.
@@ -100,3 +112,5 @@ Every bamboo Node holds a listener on its `ChartTransform`'s `changedEmitter`, w
 - [ChartTransform](/api/bamboo/chart-transform) — the full API for the shared coordinate object this page is built around
 - [LinePlot](/api/bamboo/line-plot), [BarPlot](/api/bamboo/bar-plot), [ScatterPlot](/api/bamboo/scatter-plot), [AreaPlot](/api/bamboo/area-plot), [LinearEquationPlot](/api/bamboo/linear-equation-plot) — the individual plot types
 - [AxisLine and AxisArrowNode](/api/bamboo/axis-nodes) — axis decoration
+- [GridLineSet, TickMarkSet, and TickLabelSet](/api/bamboo/gridlines-and-tick-marks) — gridline/tick decoration
+- [CanvasLinePlot](/api/bamboo/canvas-line-plot) — the Canvas-painted variant for very large datasets

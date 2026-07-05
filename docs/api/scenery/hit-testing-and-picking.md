@@ -3,7 +3,7 @@ title: Hit-Testing and Picking
 description: How scenery decides what a pointer is over, and the Node options that shape it.
 category: api
 library: scenery
-tags: [scenery, Picker, pickable, mouseArea, touchArea, cursor, input]
+tags: [scenery, Picker, pickable, mouse-area, touch-area, cursor, input]
 status: complete
 related:
   - /api/scenery/node

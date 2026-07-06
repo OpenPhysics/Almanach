@@ -1,0 +1,5 @@
+/* Prevent Scenery canvas from overflowing doc layout on narrow viewports. */
+.scenery-demo__canvas canvas {
+  display: block;
+  max-width: 100%;
+}

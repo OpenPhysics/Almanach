@@ -2376,6 +2376,34 @@ import { Checkbox, HSlider, RectangularPushButton, ComboBox, AccordionBox, Panel
 | [`AccordionBox`](/api/sun/accordion-box) | Collapsible titled container, e.g. an optional "advanced controls" section |
 | `ABSwitch` / `ToggleSwitch` | A labeled two-state switch, an alternative to `Checkbox` for some layouts |
 
+## Live demos
+
+These controls have interactive embeds on their API pages. Try them here, then follow the links for full option tables.
+
+### `sun`
+
+<SceneryDemo demo="checkbox" />
+
+[Checkbox API](/api/sun/checkbox)
+
+<SceneryDemo demo="hslider" />
+
+[HSlider API](/api/sun/hslider)
+
+<SceneryDemo demo="rectangular-push-button" />
+
+[RectangularPushButton API](/api/sun/rectangular-push-button)
+
+### `scenery-phet`
+
+<SceneryDemo demo="number-control" />
+
+[NumberControl API](/api/scenery-phet/number-control)
+
+<SceneryDemo demo="reset-all-button" />
+
+[ResetAllButton API](/api/scenery-phet/reset-all-button)
+
 Compose these with [`FlowBox`/`GridBox`](/guides/scenery-layout) rather than positioning each one by hand:
 
 ```ts
@@ -14822,6 +14850,8 @@ const frequencyControl = new NumberControl(
 );
 ```
 
+<SceneryDemo demo="number-control" />
+
 ## Constructor
 
 ```ts
@@ -15719,6 +15749,8 @@ class MyScreenView extends ScreenView {
   }
 }
 ```
+
+<SceneryDemo demo="reset-all-button" />
 
 ## Options
 
@@ -18225,6 +18257,8 @@ const gravityCheckbox = new Checkbox(
 );
 ```
 
+<SceneryDemo demo="checkbox" />
+
 Clicking anywhere on the checkbox (box or label) toggles `gravityEnabledProperty.value`; the box updates to reflect the Property whenever it changes, from any source.
 
 ## Options
@@ -18484,6 +18518,8 @@ const slider = new HSlider( temperatureProperty, new Range( 0, 100 ), {
   tandem: Tandem.REQUIRED
 } );
 ```
+
+<SceneryDemo demo="hslider" />
 
 The `Range` passed to the constructor is the *track's* full range; pass a `Property<Range>` instead of a plain `Range` if you want the enabled portion of the track to change dynamically without moving the track's endpoints (see `enabledRangeProperty`, below).
 
@@ -19156,6 +19192,8 @@ const stepButton = new RectangularPushButton( {
   tandem: Tandem.REQUIRED
 } );
 ```
+
+<SceneryDemo demo="rectangular-push-button" />
 
 `content` accepts any `Node`, so an icon (e.g. a `Path` built from a shape) works just as well as text. If your button's content is specifically a text label, [`TextPushButton`](/api/sun/text-push-button) saves you the boilerplate of constructing a `Text` node yourself.
 
@@ -30031,6 +30069,27 @@ VitePress additionally fails the build on dead Markdown links, so inline links l
 - **Cross-link generously** with site-absolute paths (`/api/phetcommon/model-view-transform`), and mirror the most important links in `related` (unordered "see also") or `prerequisites` (ordered "read this first").
 - Use tables for option/method summaries and `::: tip` / `::: warning` containers for the one thing readers must not miss.
 
+## Live interactive demos
+
+Some pages embed a real SceneryStack control via the globally registered `<SceneryDemo>` component (see `docs/.vitepress/theme/` and `docs/.vitepress/demos/`). Demos are **supplementary UI** — they do not replace the runnable TypeScript snippet above them. `llms-full.txt` and other generated indexes contain only Markdown; agents never execute the embed.
+
+### When to add a demo
+
+Add a live embed when the page documents an **interactive control** (button, slider, checkbox, composite control) where seeing or trying the widget helps more than reading options tables. Skip demos for non-visual APIs (`Range`, `Vector2`, model patterns, meta pages).
+
+### Authoring a new demo
+
+1. Create `docs/.vitepress/demos/<demo-id>.ts` exporting `createDemo( rootNode )` and optional `width` / `height`. Use `Tandem.OPTIONAL` (not `Tandem.REQUIRED`) — Almanach embeds are not PhET-iO instrumented sims.
+2. Register the id in `docs/.vitepress/demos/registry.ts`.
+3. Add `<SceneryDemo demo="<demo-id>" />` to the Markdown page **after** its primary code snippet.
+4. Run `npm run demos:check` and `npm run build`.
+
+`createDemo` must return a dispose function that tears down listeners, Properties, and Nodes — see [Dispose and Memory Management](/patterns/dispose-and-memory-management). Use helpers in `docs/.vitepress/demos/shared/` for common layout (centering in the fixed-size canvas).
+
+Fixed canvas dimensions (typically 400×120–180) prevent layout shift in the VitePress page chrome. Demos load SceneryStack **client-side only** via dynamic `import()`; do not add static `scenerystack/*` imports to theme components.
+
+Almanach pins `scenerystack@3.0.0` as a devDependency for demos; bump it together with [SceneryStack Version Compatibility Notes](/meta/scenerystack-version-compatibility).
+
 ## Generated artifacts
 
 `npm run generate` (also run automatically as part of `npm run build`) writes three files into `docs/public/`, which are served at the site root:
@@ -30362,8 +30421,8 @@ Category: Meta | Tags: conventions, versioning, sourceRefs, contributing | Statu
 
 Almanach documents the published `scenerystack` npm package, not a specific PhET source checkout — but "the published package" is a moving target. This page records which version backs Almanach's content, so a reader (or a contributor picking up further work) can tell how much to trust a given page's specifics against whatever `scenerystack` version they're actually running.
 
-::: tip Almanach's own repository doesn't depend on scenerystack
-Almanach is a documentation site, not a SceneryStack application — its own `package.json` lists only `vitepress` and the tooling used to generate the sidebar/`llms.txt`/`manifest.json`, not `scenerystack` itself. The version note below describes what content was checked against *during authoring* (by installing or inspecting the package out-of-band), not a dependency this repository builds against.
+::: tip Almanach embeds SceneryStack for live demos
+Almanach's `package.json` includes a pinned `scenerystack@3.0.0` devDependency used only by the optional `<SceneryDemo>` embeds on select pages. Prose and code snippets remain the source of truth for agents; the version note below describes what content was checked against during authoring.
 :::
 
 ## What's verified against which version

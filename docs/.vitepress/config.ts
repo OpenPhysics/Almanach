@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress';
 import { buildSidebar } from './sidebar.js';
 
 // Served from https://veillette.github.io/Almanach/ (project pages).
-// Change this single constant if the site moves to a custom domain.
-export const BASE = '/Almanach/';
+// Override with VITEPRESS_BASE=/ for local dev (see package.json "dev" script).
+export const BASE = process.env.VITEPRESS_BASE ?? '/Almanach/';
 
 export default defineConfig( {
   title: 'Almanach',
@@ -11,6 +11,23 @@ export default defineConfig( {
   base: BASE,
   cleanUrls: true,
   lastUpdated: true,
+
+  vite: {
+    ssr: {
+      // Keep SceneryStack out of the SSR bundle — demos load it client-side only.
+      external: [ 'scenerystack', /^scenerystack\// ]
+    },
+    optimizeDeps: {
+      include: [
+        'scenerystack/scenery',
+        'scenerystack/sun',
+        'scenerystack/scenery-phet',
+        'scenerystack/axon',
+        'scenerystack/dot',
+        'scenerystack/tandem'
+      ]
+    }
+  },
 
   themeConfig: {
     nav: [

@@ -2,7 +2,7 @@
   "site": "https://veillette.github.io/Almanach",
   "title": "Almanach — SceneryStack Knowledge Base",
   "description": "A file-based knowledge base of SceneryStack knowledge: API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Every page is plain Markdown with structured frontmatter.",
-  "generated": "2026-07-06T05:24:07.203Z",
+  "generated": "2026-07-06T05:46:43.653Z",
   "documentCount": 423,
   "documents": [
     {
@@ -864,7 +864,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 581,
+      "wordCount": 633,
       "url": "https://veillette.github.io/Almanach/guides/ui-components-overview"
     },
     {
@@ -6375,7 +6375,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 477,
+      "wordCount": 480,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/number-control"
     },
     {
@@ -6737,7 +6737,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 332,
+      "wordCount": 335,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/reset-all-button"
     },
     {
@@ -7858,7 +7858,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 337,
+      "wordCount": 340,
       "url": "https://veillette.github.io/Almanach/api/sun/checkbox"
     },
     {
@@ -7989,7 +7989,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 461,
+      "wordCount": 464,
       "url": "https://veillette.github.io/Almanach/api/sun/hslider"
     },
     {
@@ -8296,7 +8296,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 428,
+      "wordCount": 431,
       "url": "https://veillette.github.io/Almanach/api/sun/rectangular-push-button"
     },
     {
@@ -12002,7 +12002,7 @@
       ],
       "prerequisites": [],
       "sourceRefs": [],
-      "wordCount": 1015,
+      "wordCount": 1244,
       "url": "https://veillette.github.io/Almanach/meta/authoring-guide"
     },
     {
@@ -12127,7 +12127,7 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
-      "wordCount": 637,
+      "wordCount": 623,
       "url": "https://veillette.github.io/Almanach/meta/scenerystack-version-compatibility"
     }
   ]

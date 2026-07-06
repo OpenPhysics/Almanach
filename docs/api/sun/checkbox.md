@@ -34,6 +34,8 @@ const gravityCheckbox = new Checkbox(
 );
 ```
 
+<SceneryDemo demo="checkbox" />
+
 Clicking anywhere on the checkbox (box or label) toggles `gravityEnabledProperty.value`; the box updates to reflect the Property whenever it changes, from any source.
 
 ## Options

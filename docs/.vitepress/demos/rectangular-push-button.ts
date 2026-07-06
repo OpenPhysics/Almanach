@@ -1,0 +1,41 @@
+import { NumberProperty } from 'scenerystack/axon';
+import { Text } from 'scenerystack/scenery';
+import { RectangularPushButton } from 'scenerystack/sun';
+import { Tandem } from 'scenerystack/tandem';
+import { centerInDisplay } from './shared/center-in-display.js';
+import type { DemoModule } from './types.js';
+
+export const width = 400;
+export const height = 120;
+
+export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): () => void {
+  const countProperty = new NumberProperty( 0 );
+  const label = new Text( 'Step (0)' );
+
+  const button = new RectangularPushButton( {
+    content: label,
+    baseColor: 'yellow',
+    listener: () => {
+      countProperty.value++;
+    },
+    tandem: Tandem.OPTIONAL
+  } );
+
+  const unlinkLabel = countProperty.link( count => {
+    label.string = `Step (${count})`;
+  } );
+
+  rootNode.addChild( button );
+  const unlinkCenter = centerInDisplay( button, width, height );
+
+  return () => {
+    unlinkCenter();
+    unlinkLabel();
+    button.dispose();
+    countProperty.dispose();
+    label.dispose();
+  };
+}
+
+const demo: DemoModule = { createDemo, width, height };
+export default demo;

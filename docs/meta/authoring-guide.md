@@ -98,6 +98,27 @@ VitePress additionally fails the build on dead Markdown links, so inline links l
 - **Cross-link generously** with site-absolute paths (`/api/phetcommon/model-view-transform`), and mirror the most important links in `related` (unordered "see also") or `prerequisites` (ordered "read this first").
 - Use tables for option/method summaries and `::: tip` / `::: warning` containers for the one thing readers must not miss.
 
+## Live interactive demos
+
+Some pages embed a real SceneryStack control via the globally registered `<SceneryDemo>` component (see `docs/.vitepress/theme/` and `docs/.vitepress/demos/`). Demos are **supplementary UI** — they do not replace the runnable TypeScript snippet above them. `llms-full.txt` and other generated indexes contain only Markdown; agents never execute the embed.
+
+### When to add a demo
+
+Add a live embed when the page documents an **interactive control** (button, slider, checkbox, composite control) where seeing or trying the widget helps more than reading options tables. Skip demos for non-visual APIs (`Range`, `Vector2`, model patterns, meta pages).
+
+### Authoring a new demo
+
+1. Create `docs/.vitepress/demos/<demo-id>.ts` exporting `createDemo( rootNode )` and optional `width` / `height`. Use `Tandem.OPTIONAL` (not `Tandem.REQUIRED`) — Almanach embeds are not PhET-iO instrumented sims.
+2. Register the id in `docs/.vitepress/demos/registry.ts`.
+3. Add `<SceneryDemo demo="<demo-id>" />` to the Markdown page **after** its primary code snippet.
+4. Run `npm run demos:check` and `npm run build`.
+
+`createDemo` must return a dispose function that tears down listeners, Properties, and Nodes — see [Dispose and Memory Management](/patterns/dispose-and-memory-management). Use helpers in `docs/.vitepress/demos/shared/` for common layout (centering in the fixed-size canvas via `centerInDisplay`).
+
+Fixed canvas dimensions (typically 400×120–180) prevent layout shift in the VitePress page chrome. Demos load SceneryStack **client-side only** via dynamic `import()`; do not add static `scenerystack/*` imports to theme components.
+
+Almanach pins `scenerystack@3.0.0` as a devDependency for demos; bump it together with [SceneryStack Version Compatibility Notes](/meta/scenerystack-version-compatibility).
+
 ## Generated artifacts
 
 `npm run generate` (also run automatically as part of `npm run build`) writes three files into `docs/public/`, which are served at the site root:

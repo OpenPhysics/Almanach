@@ -45,6 +45,8 @@ class MyScreenView extends ScreenView {
 }
 ```
 
+<SceneryDemo demo="reset-all-button" />
+
 ## Options
 
 `ResetAllButtonOptions` is `SelfOptions & ResetButtonOptions` (minus `xMargin`/`yMargin`, which `ResetAllButton` fixes itself). The `listener` option is inherited all the way from `RoundPushButton` — call your model's (and view's) `reset()` from it.

@@ -17,8 +17,8 @@ sourceRefs:
 
 Almanach documents the published `scenerystack` npm package, not a specific PhET source checkout — but "the published package" is a moving target. This page records which version backs Almanach's content, so a reader (or a contributor picking up further work) can tell how much to trust a given page's specifics against whatever `scenerystack` version they're actually running.
 
-::: tip Almanach's own repository doesn't depend on scenerystack
-Almanach is a documentation site, not a SceneryStack application — its own `package.json` lists only `vitepress` and the tooling used to generate the sidebar/`llms.txt`/`manifest.json`, not `scenerystack` itself. The version note below describes what content was checked against *during authoring* (by installing or inspecting the package out-of-band), not a dependency this repository builds against.
+::: tip Almanach embeds SceneryStack for live demos
+Almanach's `package.json` includes a pinned `scenerystack@3.0.0` devDependency used only by the optional `<SceneryDemo>` embeds on select pages. Prose and code snippets remain the source of truth for agents; the version note below describes what content was checked against during authoring.
 :::
 
 ## What's verified against which version

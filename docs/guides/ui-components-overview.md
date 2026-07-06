@@ -47,6 +47,34 @@ import { Checkbox, HSlider, RectangularPushButton, ComboBox, AccordionBox, Panel
 | [`AccordionBox`](/api/sun/accordion-box) | Collapsible titled container, e.g. an optional "advanced controls" section |
 | `ABSwitch` / `ToggleSwitch` | A labeled two-state switch, an alternative to `Checkbox` for some layouts |
 
+## Live demos
+
+These controls have interactive embeds on their API pages. Try them here, then follow the links for full option tables.
+
+### `sun`
+
+<SceneryDemo demo="checkbox" />
+
+[Checkbox API](/api/sun/checkbox)
+
+<SceneryDemo demo="hslider" />
+
+[HSlider API](/api/sun/hslider)
+
+<SceneryDemo demo="rectangular-push-button" />
+
+[RectangularPushButton API](/api/sun/rectangular-push-button)
+
+### `scenery-phet`
+
+<SceneryDemo demo="number-control" />
+
+[NumberControl API](/api/scenery-phet/number-control)
+
+<SceneryDemo demo="reset-all-button" />
+
+[ResetAllButton API](/api/scenery-phet/reset-all-button)
+
 Compose these with [`FlowBox`/`GridBox`](/guides/scenery-layout) rather than positioning each one by hand:
 
 ```ts

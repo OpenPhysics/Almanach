@@ -44,6 +44,8 @@ const frequencyControl = new NumberControl(
 );
 ```
 
+<SceneryDemo demo="number-control" />
+
 ## Constructor
 
 ```ts

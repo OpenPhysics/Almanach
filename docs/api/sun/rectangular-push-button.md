@@ -34,6 +34,8 @@ const stepButton = new RectangularPushButton( {
 } );
 ```
 
+<SceneryDemo demo="rectangular-push-button" />
+
 `content` accepts any `Node`, so an icon (e.g. a `Path` built from a shape) works just as well as text. If your button's content is specifically a text label, [`TextPushButton`](/api/sun/text-push-button) saves you the boilerplate of constructing a `Text` node yourself.
 
 ## Options

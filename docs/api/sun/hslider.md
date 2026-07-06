@@ -34,6 +34,8 @@ const slider = new HSlider( temperatureProperty, new Range( 0, 100 ), {
 } );
 ```
 
+<SceneryDemo demo="hslider" />
+
 The `Range` passed to the constructor is the *track's* full range; pass a `Property<Range>` instead of a plain `Range` if you want the enabled portion of the track to change dynamically without moving the track's endpoints (see `enabledRangeProperty`, below).
 
 ## Options

@@ -1,6 +1,6 @@
 ---
 title: FAQ
-description: Answers to the questions a newcomer to this wiki or to SceneryStack itself would plausibly ask first.
+description: Answers to the questions a newcomer to Almanach or to SceneryStack itself would plausibly ask first.
 category: meta
 tags: [faq, conventions, contributing]
 status: complete
@@ -18,15 +18,15 @@ related:
 
 ## Is this the same as PhET Simulations?
 
-No, though they're closely related. [PhET Interactive Simulations](https://phet.colorado.edu) is the project that publishes the free interactive science/math sims at phet.colorado.edu. **SceneryStack** is the open-source TypeScript framework PhET built those sims on top of and later packaged for outside use — a scene graph, a reactive-state library, UI components, and an application shell (see [What is SceneryStack?](/getting-started/what-is-scenerystack)). **This wiki (Almanach)** documents SceneryStack, the framework, for anyone building their own interactive with it — not the PhET sims themselves, and not the PhET organization's internal engineering conventions beyond what's needed to use the published package.
+No, though they're closely related. [PhET Interactive Simulations](https://phet.colorado.edu) is the project that publishes the free interactive science/math sims at phet.colorado.edu. **SceneryStack** is the open-source TypeScript framework PhET built those sims on top of and later packaged for outside use — a scene graph, a reactive-state library, UI components, and an application shell (see [What is SceneryStack?](/getting-started/what-is-scenerystack)). **Almanach** documents SceneryStack, the framework, for anyone building their own interactive with it — not the PhET sims themselves, and not the PhET organization's internal engineering conventions beyond what's needed to use the published package.
 
 ## Do I need to know PhET's internal repo structure to use scenerystack?
 
-No. The published `scenerystack` npm package re-exports the simulation-author-facing parts of PhET's many internal repositories as flat subpaths (`scenerystack/scenery`, `scenerystack/axon`, …) — you don't need to know that `Sim`/`ScreenView` originate in a repo called `joist`, or that the package bundles work from a dozen-plus separate source repositories at all. This wiki deliberately keeps to that same boundary: per [the Roadmap](/meta/roadmap), internal build/branding/rendering-primitive subpaths (`chipper`, `perennial`, `brand`, `splash`, `init`, `assert`, `adapted-from-phet`, `alpenglow`) are explicitly out of scope for documentation here, because they're not part of the simulation-author-facing surface.
+No. The published `scenerystack` npm package re-exports the simulation-author-facing parts of PhET's many internal repositories as flat subpaths (`scenerystack/scenery`, `scenerystack/axon`, …) — you don't need to know that `Sim`/`ScreenView` originate in a repo called `joist`, or that the package bundles work from a dozen-plus separate source repositories at all. Almanach deliberately keeps to that same boundary: per [the Roadmap](/meta/roadmap), internal build/branding/rendering-primitive subpaths (`chipper`, `perennial`, `brand`, `splash`, `init`, `assert`, `adapted-from-phet`, `alpenglow`) are explicitly out of scope for documentation here, because they're not part of the simulation-author-facing surface.
 
-## Which package version does this wiki document?
+## Which package version does Almanach document?
 
-`scenerystack` **v3.0.0** (see [`npmjs.com/package/scenerystack`](https://www.npmjs.com/package/scenerystack)). Code samples throughout this wiki use real imports checked against that version's source. If you're using a materially newer or older major version, treat class/option names here as a strong starting point, not a guarantee — check the [official reference](https://scenerystack.org/reference/) for anything version-sensitive, and see [SceneryStack Version Compatibility Notes](/meta/scenerystack-version-compatibility) for when a re-verification pass is due.
+`scenerystack` **v3.0.0** (see [`npmjs.com/package/scenerystack`](https://www.npmjs.com/package/scenerystack)). Code samples throughout Almanach use real imports checked against that version's source. If you're using a materially newer or older major version, treat class/option names here as a strong starting point, not a guarantee — check the [official reference](https://scenerystack.org/reference/) for anything version-sensitive, and see [SceneryStack Version Compatibility Notes](/meta/scenerystack-version-compatibility) for when a re-verification pass is due.
 
 ## How current is this documentation?
 
@@ -34,7 +34,7 @@ It varies page by page, by design. Every page carries a `status` of `stub`, `dra
 
 ## Is this an official SceneryStack or PhET resource?
 
-Treat it as a community-maintained reference grounded in the real published package and the official [scenerystack.org/reference](https://scenerystack.org/reference/) site, rather than assuming it's the canonical source — when this wiki and the official reference disagree, the official reference wins. Every page's `sourceRefs` frontmatter field (where present) links to what its technical claims were checked against.
+Treat it as a community-maintained reference grounded in the real published package and the official [scenerystack.org/reference](https://scenerystack.org/reference/) site, rather than assuming it's the canonical source — when Almanach and the official reference disagree, the official reference wins. Every page's `sourceRefs` frontmatter field (where present) links to what its technical claims were checked against.
 
 ## Can I use SceneryStack outside of a PhET-style multi-screen sim?
 
@@ -52,17 +52,17 @@ Both are intentional, visible markers, not an oversight — see [The `status` li
 
 Read [the Authoring Guide](/meta/authoring-guide) for the frontmatter schema and folder taxonomy, then [the Roadmap](/meta/roadmap#open-work) for what's already covered versus open. Every page's frontmatter and cross-links are validated by `npm run generate` (and by CI), so a page that doesn't follow the schema, or that links to a path that doesn't exist, fails the build loudly rather than silently shipping broken.
 
-## Where do I report a bug in SceneryStack itself, as opposed to this wiki?
+## Where do I report a bug in SceneryStack itself, as opposed to Almanach?
 
-This wiki doesn't own SceneryStack's source — file framework bugs against the upstream project (see the `bugs`/`homepage` links on [the npm package page](https://www.npmjs.com/package/scenerystack)), and reserve issues in this wiki's own repository for problems with the documentation itself (a wrong claim, a broken cross-link, a missing page).
+Almanach doesn't own SceneryStack's source — file framework bugs against the upstream project (see the `bugs`/`homepage` links on [the npm package page](https://www.npmjs.com/package/scenerystack)), and reserve issues in Almanach's own repository for problems with the documentation itself (a wrong claim, a broken cross-link, a missing page).
 
 ## My import or build isn't working — is that covered here?
 
 Almanach documents the API surface, not project setup and tooling failures — for those, see [Troubleshooting Common Setup Errors](/getting-started/troubleshooting-common-setup-errors) (Node version mismatches, wrong import subpaths, `tsconfig.json` module resolution) and [Supported Browsers](/getting-started/supported-browsers) for platform-level compatibility questions.
 
-## Is this wiki usable by an LLM agent, not just a human?
+## Is Almanach usable by an LLM agent, not just a human?
 
-Yes, deliberately. `npm run generate` writes `/llms.txt` (per-page links and descriptions), `/llms-full.txt` (the full text of every page), and `/manifest.json` (all frontmatter plus computed metadata) into the site root, so an agent can fetch a single file for the whole wiki's content instead of crawling pages one at a time — see [Generated artifacts](/meta/authoring-guide#generated-artifacts).
+Yes, deliberately. `npm run generate` writes `/llms.txt` (per-page links and descriptions), `/llms-full.txt` (the full text of every page), and `/manifest.json` (all frontmatter plus computed metadata) into the site root, so an agent can fetch a single file for the whole knowledge base's content instead of crawling pages one at a time — see [Generated artifacts](/meta/authoring-guide#generated-artifacts).
 
 ::: tip Start at "What is SceneryStack?" if you're new to the framework itself
 This FAQ assumes you already know roughly what SceneryStack is; if you don't, [What is SceneryStack?](/getting-started/what-is-scenerystack) is the actual starting point, with [the Glossary](/meta/glossary) as a reference for any unfamiliar term you hit along the way.

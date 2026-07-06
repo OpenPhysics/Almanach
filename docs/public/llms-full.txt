@@ -1,6 +1,6 @@
 # Almanach — SceneryStack Knowledge Base
 
-> A file-based wiki of SceneryStack knowledge: API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Every page is plain Markdown with structured frontmatter.
+> A file-based knowledge base of SceneryStack knowledge: API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Every page is plain Markdown with structured frontmatter.
 
 This file contains the full text of all 420 pages. Each page begins with a "===" separator line.
 
@@ -580,7 +580,7 @@ This model/view split is the foundational pattern of every SceneryStack applicat
 
 ## Where to go next
 
-- [Model-View Separation](/patterns/model-view-separation) — the architecture every page in this wiki assumes
+- [Model-View Separation](/patterns/model-view-separation) — the architecture every page in Almanach assumes
 - [ModelViewTransform2](/api/phetcommon/model-view-transform) — mapping between model and view coordinates
 - [Drag Listeners](/patterns/drag-listeners) — making nodes interactive
 - [The Parallel DOM (PDOM)](/accessibility/pdom) — building accessible simulations
@@ -1182,7 +1182,7 @@ Ordering matters mostly for feedback speed: type-checking and linting fail in se
 
 Once a sim can be served (locally, or from the CI job's own build output), running it under `?fuzz` for a fixed duration and failing the job on any uncaught exception (see [Fuzz-Testing a Simulation Locally](/cookbook/fuzz-testing-a-simulation-locally)) extends the "does this crash" question from "did a human happen to try this sequence of clicks" to "did we throw a few thousand randomized ones at it." This is the one check in the table that needs an actual browser (typically headless, via Playwright/Puppeteer or similar) rather than just Node.js — budget it as a separate, slower CI job if the rest of the pipeline is otherwise browser-free.
 
-## A concrete illustration: this wiki's own CI
+## A concrete illustration: Almanach's own CI
 
 This documentation site isn't a simulation, but its own CI pipeline (`.github/workflows/ci.yml` in this repository) follows the same shape at a smaller scale, and is a real, inspectable example of the pattern: checkout, install with `npm ci` (not `npm install` — reproducible against the lockfile), then two validation steps (`npm run generate`, which fails loudly on frontmatter/link errors, and `npx vitepress build docs`, the production build) — both gating whether a pull request can merge. A separate workflow (`.github/workflows/deploy.yml`) only runs the production build and publishes it, on pushes to `main`, after those checks would already have passed on the corresponding PR. The same two-workflow split — one that verifies on every change, one that builds-and-publishes only on `main` — is a reasonable default for a sim repo too: run type-check/lint/tests/build/fuzz on every PR, and reserve the publish step (see [Deploying a Simulation to GitHub Pages](/getting-started/deploying-to-github-pages)) for a separate workflow gated on the first one passing.
 
@@ -2295,7 +2295,7 @@ In a full PhET-style project, you don't hand-construct every `StringProperty` yo
 3. Translators submit additional per-locale JSON files (`<sim-name>-strings_fr.json`, etc.) through PhET's translation tooling, without touching any TypeScript.
 4. At runtime, the active locale determines which JSON file's values populate the generated `StringProperty` instances — the application code that consumes them (`Text`, `RichText`, any `TReadOnlyProperty<string>` consumer) never changes.
 
-The exact generation step is part of the PhET build tooling and out of scope for simulation-author-facing code in this wiki, but the contract you write against is stable regardless: **every generated string is a `Property<string>`**, with the same `.value`/`.link()` API described in [`StringProperty`](/api/axon/string-property) and [`Property`](/api/axon/property).
+The exact generation step is part of the PhET build tooling and out of scope for simulation-author-facing code in Almanach, but the contract you write against is stable regardless: **every generated string is a `Property<string>`**, with the same `.value`/`.link()` API described in [`StringProperty`](/api/axon/string-property) and [`Property`](/api/axon/property).
 
 ## Interpolating values into translated strings
 
@@ -10535,7 +10535,7 @@ Category: API | Tags: scenery, Pattern, paint, fill, stroke, image | Status: ver
 
 # Pattern (paint)
 
-`Pattern` (from `scenerystack/scenery`) is a paint type — assignable to a `fill` or `stroke` alongside [`Color`](/api/scenery/color) and the gradient paints — that repeats an image tile in both directions to fill a shape, matching the CSS/Canvas notion of a repeating image pattern. This is unrelated to the "design pattern" write-ups in this wiki's [`patterns/`](/patterns/options-pattern) section (options pattern, enumeration pattern, etc.) — this `Pattern` is a rendering primitive, not a coding convention.
+`Pattern` (from `scenerystack/scenery`) is a paint type — assignable to a `fill` or `stroke` alongside [`Color`](/api/scenery/color) and the gradient paints — that repeats an image tile in both directions to fill a shape, matching the CSS/Canvas notion of a repeating image pattern. This is unrelated to the "design pattern" write-ups in Almanach's [`patterns/`](/patterns/options-pattern) section (options pattern, enumeration pattern, etc.) — this `Pattern` is a rendering primitive, not a coding convention.
 
 ```ts
 import { Pattern, Rectangle } from 'scenerystack/scenery';
@@ -20701,7 +20701,7 @@ vibrationManager.setVibrationIntensity( Intensity.LOW );
 | `interactionSuccess( vibrationManageriOS )` | A function (not a pattern array) that fires three rapid transient vibrations; takes a `VibrationManageriOS` instance, a separate iOS-bridge class — see the warning below |
 
 ::: warning This page could not be fully verified against a working example
-`vibrationManager` and the plain interval-array entries of `VibrationPatterns` (`FLUTTER`, `HEARTBEAT`, `HZ_10`, etc.) are straightforward and confirmed real exports of `scenerystack/tappi`. However, `VibrationPatterns.interactionSuccess` takes a `VibrationManageriOS` parameter — a class whose own source marks it `@deprecated` and which is **not** re-exported from `tappi.ts`, so it isn't actually constructable via the public `scenerystack/tappi` API. Tappi is a newly-documented, niche library in this wiki; treat this page as a draft until an independent pass has exercised it against a real device or emulator.
+`vibrationManager` and the plain interval-array entries of `VibrationPatterns` (`FLUTTER`, `HEARTBEAT`, `HZ_10`, etc.) are straightforward and confirmed real exports of `scenerystack/tappi`. However, `VibrationPatterns.interactionSuccess` takes a `VibrationManageriOS` parameter — a class whose own source marks it `@deprecated` and which is **not** re-exported from `tappi.ts`, so it isn't actually constructable via the public `scenerystack/tappi` API. Tappi is a newly-documented, niche library in Almanach; treat this page as a draft until an independent pass has exercised it against a real device or emulator.
 :::
 
 
@@ -23195,8 +23195,8 @@ The same question — "is there conceptually one of these for the whole sim, or 
 
 A related but distinct convention in SceneryStack/PhET code is registering an exported class (not an instance) with that library's `Namespace` object — e.g. a library's top-level module calling `myLibrary.register( 'MyClass', MyClass )` once, at the bottom of the file that defines `MyClass`. This is orthogonal to the singleton-vs-constructed-instance question above: a `Namespace`-registered class is still ordinarily constructed per use (`new MyClass()` wherever it's needed) exactly like any other class — registration exists so tooling and debugging utilities can look a class up by name/namespace path at runtime, not to make the class itself shared or singleton-like. Don't conflate "this class is registered on its library's namespace" with "this class is a singleton" — the two conventions solve different problems and most registered classes are constructed freely, many times, throughout a sim's lifetime.
 
-::: warning Namespace registration is a real PhET convention, not independently verified against this wiki's other pages
-The general shape described above (`libraryNamespace.register( 'ClassName', ClassName )`, called once per class definition) reflects the real, long-standing PhET-repo convention, but no other page in this wiki currently documents `Namespace` itself in depth — treat the specifics here as a reasonable description pending a dedicated `api/phet-core/namespace` page, not a fully cross-checked reference.
+::: warning Namespace registration is a real PhET convention, not independently verified against Almanach's other pages
+The general shape described above (`libraryNamespace.register( 'ClassName', ClassName )`, called once per class definition) reflects the real, long-standing PhET-repo convention, but no other page in Almanach currently documents `Namespace` itself in depth — treat the specifics here as a reasonable description pending a dedicated `api/phet-core/namespace` page, not a fully cross-checked reference.
 :::
 
 ## Deciding which shape a *new* class of your own should take
@@ -24787,7 +24787,7 @@ Category: Accessibility | Tags: accessibility, cognitive-load, plain-language, c
 
 # Cognitive Accessibility Considerations
 
-Most of this wiki's accessibility content — [the PDOM](/accessibility/pdom), [Voicing](/accessibility/voicing), [focus highlights](/accessibility/focus-highlights), [sound design](/accessibility/sound-design) — addresses *sensory and motor* accessibility: can the content be perceived and operated without sight, without a mouse, without hearing. **Cognitive accessibility** is a distinct axis: can the content be *understood and used without unnecessary mental effort*, independent of whether the user can see the screen or operate a mouse just fine. A sim can pass every PDOM/keyboard/contrast check and still be needlessly hard to use for a learner who is overwhelmed by cluttered layout, jargon-heavy labels, or an unexplained countdown.
+Most of Almanach's accessibility content — [the PDOM](/accessibility/pdom), [Voicing](/accessibility/voicing), [focus highlights](/accessibility/focus-highlights), [sound design](/accessibility/sound-design) — addresses *sensory and motor* accessibility: can the content be perceived and operated without sight, without a mouse, without hearing. **Cognitive accessibility** is a distinct axis: can the content be *understood and used without unnecessary mental effort*, independent of whether the user can see the screen or operate a mouse just fine. A sim can pass every PDOM/keyboard/contrast check and still be needlessly hard to use for a learner who is overwhelmed by cluttered layout, jargon-heavy labels, or an unexplained countdown.
 
 ## Why this doesn't reduce to the other accessibility axes
 
@@ -27904,7 +27904,7 @@ Category: Cookbook | Tags: scenery, Color, ProfileColorProperty, accessibility, 
 
 **Task:** a sim distinguishes several categories by color alone (particle types, chart series, on/off states) and needs to stay usable for the ~8% of men and ~0.5% of women with red-green color-vision deficiency (the most common forms: deuteranopia/protanopia), without requiring a whole colorimetry background to get right.
 
-The two practical rules that cover almost every case: **never make red vs. green the only distinguishing signal**, and **pair color with a second channel** (shape, position, a text label, a line pattern) wherever color is conveying information a user must act on. Everything below is applying those two rules through the wiki's existing color tools — [`Color`](/api/scenery/color) and [`ProfileColorProperty`](/styling/color-profiles) — not a separate palette system.
+The two practical rules that cover almost every case: **never make red vs. green the only distinguishing signal**, and **pair color with a second channel** (shape, position, a text label, a line pattern) wherever color is conveying information a user must act on. Everything below is applying those two rules through Almanach's existing color tools — [`Color`](/api/scenery/color) and [`ProfileColorProperty`](/styling/color-profiles) — not a separate palette system.
 
 ## A palette that avoids the classic failure mode
 
@@ -29153,7 +29153,7 @@ Fuzzing is randomized, so a crash found in one run may not reproduce with the sa
 A few minutes of `?fuzz&ea` locally, right after adding or modifying a `DragListener`/`KeyboardListener`/custom input listener, catches the class of bug fuzzing is good at — an unexpected state transition mid-interaction — while the change is still fresh in mind, rather than waiting for a pre-release fuzz pass to surface it days or weeks later.
 :::
 
-::: warning This page's specific parameter names are a reasonable default, not independently verified against this wiki's other pages
+::: warning This page's specific parameter names are a reasonable default, not independently verified against Almanach's other pages
 `fuzz`, `fuzzMouse`, `fuzzTouch`, `fuzzBoard`, `fuzzRate`, and `ea` are widely-used, well-established query parameters across PhET simulations, but — unlike the [Query Parameters Pattern](/patterns/query-parameters-pattern) page's `QueryStringMachine.getAll` mechanics, which were checked directly against source — the exact set and spelling of fuzz-specific parameters were not independently cross-checked against a `scenerystack` source file as part of writing this page. Treat the general recipe (`?fuzz`, paired with `?ea`) as solid, and double-check the narrower modality flags (`fuzzMouse`/`fuzzTouch`/`fuzzBoard`/`fuzzRate`) against a running sim's actual behavior before depending on one in a CI script.
 :::
 
@@ -29741,7 +29741,7 @@ Category: Meta | Tags: conventions, frontmatter, contributing | Status: complete
 
 # Authoring Guide
 
-This wiki is designed to grow to hundreds of documents without any configuration edits. Everything — the sidebar, `llms.txt`, `llms-full.txt`, and `manifest.json` — is generated from the Markdown files and their frontmatter. Follow the conventions below and your page appears everywhere automatically.
+Almanach is designed to grow to hundreds of documents without any configuration edits. Everything — the sidebar, `llms.txt`, `llms-full.txt`, and `manifest.json` — is generated from the Markdown files and their frontmatter. Follow the conventions below and your page appears everywhere automatically.
 
 If you're looking for open work rather than writing an ad hoc page, see [the Roadmap](/meta/roadmap#open-work) first — it tracks what's still `draft`, what's missing cross-links, and other concrete gaps.
 
@@ -29764,9 +29764,9 @@ If you're looking for open work rather than writing an ad hoc page, see [the Roa
 | `accessibility/` | PDOM, keyboard input, focus, voicing, sound-as-accessibility |
 | `examples/` | Complete, runnable worked scenarios combining multiple concepts end-to-end |
 | `cookbook/` | Short, task-oriented "how do I…" recipes that recombine already-documented APIs — narrower than `examples` (one task, not a full scenario) and more concrete than `patterns` (a recipe, not an architectural convention) |
-| `meta/` | Documentation about this wiki itself |
+| `meta/` | Documentation about Almanach itself |
 
-New top-level folders may be added as the wiki grows; they appear in the sidebar automatically (add an entry to the `SECTIONS` maps in `docs/.vitepress/sidebar.ts` and `scripts/generate-llm-artifacts.ts` only to control their label and ordering).
+New top-level folders may be added as Almanach grows; they appear in the sidebar automatically (add an entry to the `SECTIONS` maps in `docs/.vitepress/sidebar.ts` and `scripts/generate-llm-artifacts.ts` only to control their label and ordering).
 
 **`api/` is subfoldered by library**, one directory per `scenerystack/*` subpath (e.g. `api/axon/property.md`, `api/scenery/node.md`). This is the one deliberate exception to "flat folder of pages": `api/` is expected to hold far more pages than any other category, across many distinct libraries, so it needs a second level of grouping to stay navigable. `docs/.vitepress/sidebar.ts`'s `collectPages` renders each library subfolder as its own collapsible sidebar group automatically — no config needed per library. Every other category stays flat.
 
@@ -29816,7 +29816,7 @@ Validation rules (enforced by `npm run generate`, and by CI on every push):
 - `tags` is a non-empty array of strings.
 - `status` is one of `stub`, `draft`, `complete`, `verified`.
 - Every `related` and `prerequisites` entry resolves to an existing document — broken cross-references fail the build.
-- `sourceRefs`, if present, is an array of URL strings (not resolution-checked — they point outside the wiki).
+- `sourceRefs`, if present, is an array of URL strings (not resolution-checked — they point outside Almanach).
 
 VitePress additionally fails the build on dead Markdown links, so inline links like `[Drag Listeners](/patterns/drag-listeners)` are also checked.
 
@@ -29851,15 +29851,15 @@ Category: Meta | Tags: faq, conventions, contributing | Status: complete
 
 ## Is this the same as PhET Simulations?
 
-No, though they're closely related. [PhET Interactive Simulations](https://phet.colorado.edu) is the project that publishes the free interactive science/math sims at phet.colorado.edu. **SceneryStack** is the open-source TypeScript framework PhET built those sims on top of and later packaged for outside use — a scene graph, a reactive-state library, UI components, and an application shell (see [What is SceneryStack?](/getting-started/what-is-scenerystack)). **This wiki (Almanach)** documents SceneryStack, the framework, for anyone building their own interactive with it — not the PhET sims themselves, and not the PhET organization's internal engineering conventions beyond what's needed to use the published package.
+No, though they're closely related. [PhET Interactive Simulations](https://phet.colorado.edu) is the project that publishes the free interactive science/math sims at phet.colorado.edu. **SceneryStack** is the open-source TypeScript framework PhET built those sims on top of and later packaged for outside use — a scene graph, a reactive-state library, UI components, and an application shell (see [What is SceneryStack?](/getting-started/what-is-scenerystack)). **Almanach** documents SceneryStack, the framework, for anyone building their own interactive with it — not the PhET sims themselves, and not the PhET organization's internal engineering conventions beyond what's needed to use the published package.
 
 ## Do I need to know PhET's internal repo structure to use scenerystack?
 
-No. The published `scenerystack` npm package re-exports the simulation-author-facing parts of PhET's many internal repositories as flat subpaths (`scenerystack/scenery`, `scenerystack/axon`, …) — you don't need to know that `Sim`/`ScreenView` originate in a repo called `joist`, or that the package bundles work from a dozen-plus separate source repositories at all. This wiki deliberately keeps to that same boundary: per [the Roadmap](/meta/roadmap), internal build/branding/rendering-primitive subpaths (`chipper`, `perennial`, `brand`, `splash`, `init`, `assert`, `adapted-from-phet`, `alpenglow`) are explicitly out of scope for documentation here, because they're not part of the simulation-author-facing surface.
+No. The published `scenerystack` npm package re-exports the simulation-author-facing parts of PhET's many internal repositories as flat subpaths (`scenerystack/scenery`, `scenerystack/axon`, …) — you don't need to know that `Sim`/`ScreenView` originate in a repo called `joist`, or that the package bundles work from a dozen-plus separate source repositories at all. Almanach deliberately keeps to that same boundary: per [the Roadmap](/meta/roadmap), internal build/branding/rendering-primitive subpaths (`chipper`, `perennial`, `brand`, `splash`, `init`, `assert`, `adapted-from-phet`, `alpenglow`) are explicitly out of scope for documentation here, because they're not part of the simulation-author-facing surface.
 
-## Which package version does this wiki document?
+## Which package version does Almanach document?
 
-`scenerystack` **v3.0.0** (see [`npmjs.com/package/scenerystack`](https://www.npmjs.com/package/scenerystack)). Code samples throughout this wiki use real imports checked against that version's source. If you're using a materially newer or older major version, treat class/option names here as a strong starting point, not a guarantee — check the [official reference](https://scenerystack.org/reference/) for anything version-sensitive, and see [SceneryStack Version Compatibility Notes](/meta/scenerystack-version-compatibility) for when a re-verification pass is due.
+`scenerystack` **v3.0.0** (see [`npmjs.com/package/scenerystack`](https://www.npmjs.com/package/scenerystack)). Code samples throughout Almanach use real imports checked against that version's source. If you're using a materially newer or older major version, treat class/option names here as a strong starting point, not a guarantee — check the [official reference](https://scenerystack.org/reference/) for anything version-sensitive, and see [SceneryStack Version Compatibility Notes](/meta/scenerystack-version-compatibility) for when a re-verification pass is due.
 
 ## How current is this documentation?
 
@@ -29867,7 +29867,7 @@ It varies page by page, by design. Every page carries a `status` of `stub`, `dra
 
 ## Is this an official SceneryStack or PhET resource?
 
-Treat it as a community-maintained reference grounded in the real published package and the official [scenerystack.org/reference](https://scenerystack.org/reference/) site, rather than assuming it's the canonical source — when this wiki and the official reference disagree, the official reference wins. Every page's `sourceRefs` frontmatter field (where present) links to what its technical claims were checked against.
+Treat it as a community-maintained reference grounded in the real published package and the official [scenerystack.org/reference](https://scenerystack.org/reference/) site, rather than assuming it's the canonical source — when Almanach and the official reference disagree, the official reference wins. Every page's `sourceRefs` frontmatter field (where present) links to what its technical claims were checked against.
 
 ## Can I use SceneryStack outside of a PhET-style multi-screen sim?
 
@@ -29885,17 +29885,17 @@ Both are intentional, visible markers, not an oversight — see [The `status` li
 
 Read [the Authoring Guide](/meta/authoring-guide) for the frontmatter schema and folder taxonomy, then [the Roadmap](/meta/roadmap#open-work) for what's already covered versus open. Every page's frontmatter and cross-links are validated by `npm run generate` (and by CI), so a page that doesn't follow the schema, or that links to a path that doesn't exist, fails the build loudly rather than silently shipping broken.
 
-## Where do I report a bug in SceneryStack itself, as opposed to this wiki?
+## Where do I report a bug in SceneryStack itself, as opposed to Almanach?
 
-This wiki doesn't own SceneryStack's source — file framework bugs against the upstream project (see the `bugs`/`homepage` links on [the npm package page](https://www.npmjs.com/package/scenerystack)), and reserve issues in this wiki's own repository for problems with the documentation itself (a wrong claim, a broken cross-link, a missing page).
+Almanach doesn't own SceneryStack's source — file framework bugs against the upstream project (see the `bugs`/`homepage` links on [the npm package page](https://www.npmjs.com/package/scenerystack)), and reserve issues in Almanach's own repository for problems with the documentation itself (a wrong claim, a broken cross-link, a missing page).
 
 ## My import or build isn't working — is that covered here?
 
 Almanach documents the API surface, not project setup and tooling failures — for those, see [Troubleshooting Common Setup Errors](/getting-started/troubleshooting-common-setup-errors) (Node version mismatches, wrong import subpaths, `tsconfig.json` module resolution) and [Supported Browsers](/getting-started/supported-browsers) for platform-level compatibility questions.
 
-## Is this wiki usable by an LLM agent, not just a human?
+## Is Almanach usable by an LLM agent, not just a human?
 
-Yes, deliberately. `npm run generate` writes `/llms.txt` (per-page links and descriptions), `/llms-full.txt` (the full text of every page), and `/manifest.json` (all frontmatter plus computed metadata) into the site root, so an agent can fetch a single file for the whole wiki's content instead of crawling pages one at a time — see [Generated artifacts](/meta/authoring-guide#generated-artifacts).
+Yes, deliberately. `npm run generate` writes `/llms.txt` (per-page links and descriptions), `/llms-full.txt` (the full text of every page), and `/manifest.json` (all frontmatter plus computed metadata) into the site root, so an agent can fetch a single file for the whole knowledge base's content instead of crawling pages one at a time — see [Generated artifacts](/meta/authoring-guide#generated-artifacts).
 
 ::: tip Start at "What is SceneryStack?" if you're new to the framework itself
 This FAQ assumes you already know roughly what SceneryStack is; if you don't, [What is SceneryStack?](/getting-started/what-is-scenerystack) is the actual starting point, with [the Glossary](/meta/glossary) as a reference for any unfamiliar term you hit along the way.
@@ -29911,7 +29911,7 @@ Category: Meta | Tags: glossary, reference, terminology, conventions | Status: c
 
 # Glossary
 
-Definitions for terms this wiki uses repeatedly without re-explaining every time. Each entry links to the page where the concept is covered in full — this page is for "what does that word mean," not a replacement for reading the linked page.
+Definitions for terms Almanach uses repeatedly without re-explaining every time. Each entry links to the page where the concept is covered in full — this page is for "what does that word mean," not a replacement for reading the linked page.
 
 ## accessibleHelpText
 
@@ -29959,7 +29959,7 @@ The keyboard-driven equivalent of pointer dragging — moves a `positionProperty
 
 ## Model-View Separation
 
-The foundational architecture every page in this wiki assumes: model classes hold state as `Property`/`Emitter` and know nothing about scenery; view classes (`Node` subclasses) observe that state and never hold state of their own. See [Model-View Separation](/patterns/model-view-separation).
+The foundational architecture every page in Almanach assumes: model classes hold state as `Property`/`Emitter` and know nothing about scenery; view classes (`Node` subclasses) observe that state and never hold state of their own. See [Model-View Separation](/patterns/model-view-separation).
 
 ## ModelViewTransform2
 
@@ -30125,7 +30125,7 @@ Full rationale and the frontmatter schema (`library`, `prerequisites`, `sourceRe
 
 **In-scope libraries** (confirmed against the installed `scenerystack` package's `exports` map and source): `axon, dot, kite, scenery, sun, scenery-phet, joist, twixt, tandem, phetcommon, tambo, bamboo, vegas, mobius, nitroglycerin, utterance-queue, phet-core, query-string-machine, tappi`. `adapted-from-phet, alpenglow, assert, brand, chipper, init, perennial, sim, splash` are internal build/branding/rendering-primitive concerns and are **out of scope** — don't create `api/<one of these>/` folders for them.
 
-Coverage depth is intentionally uneven: the libraries most simulation authors touch daily (`axon, dot, kite, scenery, sun, scenery-phet, joist, twixt, tandem, phetcommon`) go deepest; libraries like `mobius`, `nitroglycerin`, and `tappi` have only first-pass coverage of their most central classes. This wiki documents "the classes and patterns a simulation author actually reaches for," not every export — `scenery` and `scenery-phet` alone have several hundred exports each, most of them internal helpers, string modules, or image/audio assets that don't warrant their own page.
+Coverage depth is intentionally uneven: the libraries most simulation authors touch daily (`axon, dot, kite, scenery, sun, scenery-phet, joist, twixt, tandem, phetcommon`) go deepest; libraries like `mobius`, `nitroglycerin`, and `tappi` have only first-pass coverage of their most central classes. Almanach documents "the classes and patterns a simulation author actually reaches for," not every export — `scenery` and `scenery-phet` alone have several hundred exports each, most of them internal helpers, string modules, or image/audio assets that don't warrant their own page.
 
 ## How to contribute a page
 
@@ -30143,11 +30143,11 @@ There is no separate checklist to tick — progress is read directly from frontm
 - **6 pages are still `status: draft`**, meaning they're fully written but haven't had their technical claims checked against real source yet: `patterns/singleton-and-namespace-conventions.md`, `accessibility/mobile-screen-reader-testing-notes.md`, `api/tappi/vibration-indicator-and-controller.md`, `api/tappi/vibration-manager-and-patterns.md`, `guides/haptics-and-alternative-feedback-channels.md`, `cookbook/fuzz-testing-a-simulation-locally.md`. Verifying one of these against the real `scenerystack` package and moving it to `complete`/`verified` is a good first contribution.
 - **Independent verification pass**: 188 pages are `status: complete` but haven't yet had an independent pass cross-check their technical claims against real SceneryStack source (`status: verified`). This includes ~89 pages added in the most recent expansion pass, which focused on previously-undocumented `sun` and `scenery-phet` visual components (buttons/toggles, sliders, icons/decorative nodes, keyboard-help/a11y interaction patterns) plus a smaller set of `scenery`/`vegas`/`twixt`/`joist` gaps. `npm run coverage:status` prints the live count and, going forward, should trend toward 0.
 - **Cross-link gaps**: some pages are missing `prerequisites`, `related`, or `sourceRefs` entries. `npm run coverage:status` reports live counts; run it and pick a page to tighten up.
-- **Re-verification against newer `scenerystack` releases**: this wiki's content was checked against `scenerystack@3.0.0`; see [SceneryStack Version Compatibility Notes](/meta/scenerystack-version-compatibility) for what to do once a newer major version ships.
+- **Re-verification against newer `scenerystack` releases**: Almanach's content was checked against `scenerystack@3.0.0`; see [SceneryStack Version Compatibility Notes](/meta/scenerystack-version-compatibility) for what to do once a newer major version ships.
 - **Known overlap candidates** (each pair reads as intentionally layered rather than duplicated, but worth a second look): `api/sun/list-box.md` vs. `api/sun/combo-box.md` (the former is thin and almost entirely "see ComboBox instead"); `guides/phet-io-and-instrumentation.md` vs. `guides/phet-io-deep-dive.md` vs. `patterns/phet-io-instrumentation-pattern.md`; `patterns/state-persistence-and-save-restore-patterns.md` vs. `patterns/phet-io-instrumentation-pattern.md`/`patterns/reset-all-pattern.md`; `api/scenery/parallel-dom-deep-dive.md` vs. `accessibility/pdom.md`.
 - **Stale filenames** (title/content already correct and self-documented in-page, but the filename predates a scope correction): `api/phetcommon/phetcommon-query-parameters.md` actually documents `StringUtils`; `api/scenery-phet/heat-cool-control.md` actually documents `HeaterCoolerNode`. Renaming either requires auditing every cross-link that references the old path.
-- **Deeper class-level coverage**: each in-scope library has more real, unverified-as-candidates exports than this wiki documents (internal helpers and asset modules aside). Rather than a fixed target list, find genuine gaps by introspecting the installed package (`node -e "console.log(Object.keys(require('scenerystack/<lib>')))"` against the built package, or read its `src/<lib>.ts` barrel file) and cross-checking against what's already documented before adding a page.
-- The 5 `meta/*` pages (`authoring-guide`, `faq`, `glossary`, `page-template`, this file) stay at `complete` rather than `verified` — that status is about checking claims against SceneryStack source, which doesn't apply to pages that are about the wiki itself.
+- **Deeper class-level coverage**: each in-scope library has more real, unverified-as-candidates exports than Almanach documents (internal helpers and asset modules aside). Rather than a fixed target list, find genuine gaps by introspecting the installed package (`node -e "console.log(Object.keys(require('scenerystack/<lib>')))"` against the built package, or read its `src/<lib>.ts` barrel file) and cross-checking against what's already documented before adding a page.
+- The 5 `meta/*` pages (`authoring-guide`, `faq`, `glossary`, `page-template`, this file) stay at `complete` rather than `verified` — that status is about checking claims against SceneryStack source, which doesn't apply to pages that are about Almanach itself.
 
 
 ========================================================================
@@ -30159,15 +30159,15 @@ Category: Meta | Tags: conventions, versioning, sourceRefs, contributing | Statu
 
 # SceneryStack Version Compatibility Notes
 
-This wiki documents the published `scenerystack` npm package, not a specific PhET source checkout — but "the published package" is a moving target. This page records which version backs the wiki's content, so a reader (or a contributor picking up further work) can tell how much to trust a given page's specifics against whatever `scenerystack` version they're actually running.
+Almanach documents the published `scenerystack` npm package, not a specific PhET source checkout — but "the published package" is a moving target. This page records which version backs Almanach's content, so a reader (or a contributor picking up further work) can tell how much to trust a given page's specifics against whatever `scenerystack` version they're actually running.
 
-::: tip This wiki's own repository doesn't depend on scenerystack
+::: tip Almanach's own repository doesn't depend on scenerystack
 Almanach is a documentation site, not a SceneryStack application — its own `package.json` lists only `vitepress` and the tooling used to generate the sidebar/`llms.txt`/`manifest.json`, not `scenerystack` itself. The version note below describes what content was checked against *during authoring* (by installing or inspecting the package out-of-band), not a dependency this repository builds against.
 :::
 
 ## What's verified against which version
 
-Every `api/` page and most narrative pages in this wiki were checked — directly, by inspecting the installed package's `exports` map and TypeScript source, not by assumption — against `scenerystack@3.0.0` (see [the FAQ](/meta/faq#which-package-version-does-this-wiki-document)). A page whose `status` is `verified` had its technical claims independently cross-checked against that same source; this wiki has not (yet) been re-verified against a subsequent major release.
+Every `api/` page and most narrative pages in Almanach were checked — directly, by inspecting the installed package's `exports` map and TypeScript source, not by assumption — against `scenerystack@3.0.0` (see [the FAQ](/meta/faq#which-package-version-does-almanach-document)). A page whose `status` is `verified` had its technical claims independently cross-checked against that same source; Almanach has not (yet) been re-verified against a subsequent major release.
 
 ## When to revisit a page's status/sourceRefs
 
@@ -30176,16 +30176,16 @@ Every `api/` page and most narrative pages in this wiki were checked — directl
 - **A new `scenerystack` major (or minor with breaking changes) release ships.** Renamed classes, changed default option values, and removed/added exports are exactly the class of inaccuracy an independent verification pass is built to catch — a new release re-opens that risk for any page whose claims were checked against the old version.
 - **A page is still `draft`, not `complete`/`verified`.** Per [the `status` lifecycle](/meta/authoring-guide#the-status-lifecycle), `draft` already means "not yet checked against real source" — such a page should be checked against the *current* published version when someone picks it up, not necessarily `3.0.0` specifically. See [the Roadmap's open work](/meta/roadmap#open-work) for the current list of `draft` pages.
 - **A page's `sourceRefs` only points at the generic npm package page**, rather than a specific class/source file or the official reference — that's a weaker citation than a page whose `sourceRefs` links to something checkable line-by-line, and is a lower-priority but real candidate for a future tightening pass.
-- **The [official reference](https://scenerystack.org/reference/) disagrees with this wiki.** As [the FAQ](/meta/faq#is-this-an-official-scenerystack-or-phet-resource) already states, the official reference wins in any disagreement — treat that as a signal the wiki page is stale for the version currently in use, not that the reference is wrong.
+- **The [official reference](https://scenerystack.org/reference/) disagrees with Almanach.** As [the FAQ](/meta/faq#is-this-an-official-scenerystack-or-phet-resource) already states, the official reference wins in any disagreement — treat that as a signal the page is stale for the version currently in use, not that the reference is wrong.
 
 ## What a future re-verification pass should do
 
 A version-driven re-verification pass (triggered by a SceneryStack release rather than being the first pass) should:
 
-1. Note the new version's number here, alongside `3.0.0`, once a meaningful fraction of the wiki has actually been re-checked against it — don't bump the version claimed above until the content backs it up.
+1. Note the new version's number here, alongside `3.0.0`, once a meaningful fraction of Almanach has actually been re-checked against it — don't bump the version claimed above until the content backs it up.
 2. Prioritize `api/` pages over narrative pages — class shapes, option names, and defaults are exactly what a version bump is most likely to change, where `patterns`/`guides`/`styling`/`accessibility` content tends to describe conventions that outlive a specific release.
 3. Downgrade a page's `status` from `verified` back to `draft` (never leave it silently `verified` against stale claims) if re-checking surfaces a real discrepancy, and cite the new `sourceRefs` once corrected — consistent with how [the Authoring Guide](/meta/authoring-guide#the-status-lifecycle) defines what each status actually promises a reader.
 
 ::: warning `verified` describes a point-in-time check, not an ongoing guarantee
-A `verified` page was checked against `scenerystack@3.0.0` at some point — it is not automatically re-checked when a new version ships. Nothing in this wiki's tooling currently detects "this page's claims are now stale because the package moved on"; that detection is exactly the gap this page exists to flag until a version-driven re-verification pass (see above) actually happens.
+A `verified` page was checked against `scenerystack@3.0.0` at some point — it is not automatically re-checked when a new version ships. Nothing in Almanach's tooling currently detects "this page's claims are now stale because the package moved on"; that detection is exactly the gap this page exists to flag until a version-driven re-verification pass (see above) actually happens.
 :::

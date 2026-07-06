@@ -15,16 +15,16 @@ hero:
 
 features:
   - title: Plain files, no database
-    details: Every page is a Markdown file with structured frontmatter, versioned in git. The whole wiki is greppable, diffable, and reviewable through pull requests.
+    details: Every page is a Markdown file with structured frontmatter, versioned in git. The whole knowledge base is greppable, diffable, and reviewable through pull requests.
   - title: Built for LLM agents
-    details: A generator script emits llms.txt, llms-full.txt, and manifest.json so agents can discover, ingest, or query the entire wiki with a single fetch.
+    details: A generator script emits llms.txt, llms-full.txt, and manifest.json so agents can discover, ingest, or query the entire knowledge base with a single fetch.
   - title: Scales to 1000 documents
     details: The sidebar and all indexes are generated from the filesystem and frontmatter. Adding a document is just adding a file — no configuration edits.
 ---
 
 ## For LLM agents
 
-Three machine-readable views of this wiki are generated from the same Markdown sources and served at the site root:
+Three machine-readable views of Almanach are generated from the same Markdown sources and served at the site root:
 
 | File | Purpose |
 | --- | --- |

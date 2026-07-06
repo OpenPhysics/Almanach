@@ -1,6 +1,6 @@
 ---
 title: Authoring Guide
-description: Conventions for adding documents to this wiki - folder taxonomy, required frontmatter schema, and how the generated indexes work.
+description: Conventions for adding documents to Almanach - folder taxonomy, required frontmatter schema, and how the generated indexes work.
 category: meta
 tags: [conventions, frontmatter, contributing]
 status: complete
@@ -8,7 +8,7 @@ status: complete
 
 # Authoring Guide
 
-This wiki is designed to grow to hundreds of documents without any configuration edits. Everything — the sidebar, `llms.txt`, `llms-full.txt`, and `manifest.json` — is generated from the Markdown files and their frontmatter. Follow the conventions below and your page appears everywhere automatically.
+Almanach is designed to grow to hundreds of documents without any configuration edits. Everything — the sidebar, `llms.txt`, `llms-full.txt`, and `manifest.json` — is generated from the Markdown files and their frontmatter. Follow the conventions below and your page appears everywhere automatically.
 
 If you're looking for open work rather than writing an ad hoc page, see [the Roadmap](/meta/roadmap#open-work) first — it tracks what's still `draft`, what's missing cross-links, and other concrete gaps.
 
@@ -31,9 +31,9 @@ If you're looking for open work rather than writing an ad hoc page, see [the Roa
 | `accessibility/` | PDOM, keyboard input, focus, voicing, sound-as-accessibility |
 | `examples/` | Complete, runnable worked scenarios combining multiple concepts end-to-end |
 | `cookbook/` | Short, task-oriented "how do I…" recipes that recombine already-documented APIs — narrower than `examples` (one task, not a full scenario) and more concrete than `patterns` (a recipe, not an architectural convention) |
-| `meta/` | Documentation about this wiki itself |
+| `meta/` | Documentation about Almanach itself |
 
-New top-level folders may be added as the wiki grows; they appear in the sidebar automatically (add an entry to the `SECTIONS` maps in `docs/.vitepress/sidebar.ts` and `scripts/generate-llm-artifacts.ts` only to control their label and ordering).
+New top-level folders may be added as Almanach grows; they appear in the sidebar automatically (add an entry to the `SECTIONS` maps in `docs/.vitepress/sidebar.ts` and `scripts/generate-llm-artifacts.ts` only to control their label and ordering).
 
 **`api/` is subfoldered by library**, one directory per `scenerystack/*` subpath (e.g. `api/axon/property.md`, `api/scenery/node.md`). This is the one deliberate exception to "flat folder of pages": `api/` is expected to hold far more pages than any other category, across many distinct libraries, so it needs a second level of grouping to stay navigable. `docs/.vitepress/sidebar.ts`'s `collectPages` renders each library subfolder as its own collapsible sidebar group automatically — no config needed per library. Every other category stays flat.
 
@@ -83,7 +83,7 @@ Validation rules (enforced by `npm run generate`, and by CI on every push):
 - `tags` is a non-empty array of strings.
 - `status` is one of `stub`, `draft`, `complete`, `verified`.
 - Every `related` and `prerequisites` entry resolves to an existing document — broken cross-references fail the build.
-- `sourceRefs`, if present, is an array of URL strings (not resolution-checked — they point outside the wiki).
+- `sourceRefs`, if present, is an array of URL strings (not resolution-checked — they point outside Almanach).
 
 VitePress additionally fails the build on dead Markdown links, so inline links like `[Drag Listeners](/patterns/drag-listeners)` are also checked.
 

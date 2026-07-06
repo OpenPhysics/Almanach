@@ -17,7 +17,7 @@ sourceRefs:
 
 # Cognitive Accessibility Considerations
 
-Most of this wiki's accessibility content — [the PDOM](/accessibility/pdom), [Voicing](/accessibility/voicing), [focus highlights](/accessibility/focus-highlights), [sound design](/accessibility/sound-design) — addresses *sensory and motor* accessibility: can the content be perceived and operated without sight, without a mouse, without hearing. **Cognitive accessibility** is a distinct axis: can the content be *understood and used without unnecessary mental effort*, independent of whether the user can see the screen or operate a mouse just fine. A sim can pass every PDOM/keyboard/contrast check and still be needlessly hard to use for a learner who is overwhelmed by cluttered layout, jargon-heavy labels, or an unexplained countdown.
+Most of Almanach's accessibility content — [the PDOM](/accessibility/pdom), [Voicing](/accessibility/voicing), [focus highlights](/accessibility/focus-highlights), [sound design](/accessibility/sound-design) — addresses *sensory and motor* accessibility: can the content be perceived and operated without sight, without a mouse, without hearing. **Cognitive accessibility** is a distinct axis: can the content be *understood and used without unnecessary mental effort*, independent of whether the user can see the screen or operate a mouse just fine. A sim can pass every PDOM/keyboard/contrast check and still be needlessly hard to use for a learner who is overwhelmed by cluttered layout, jargon-heavy labels, or an unexplained countdown.
 
 ## Why this doesn't reduce to the other accessibility axes
 

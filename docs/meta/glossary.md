@@ -1,6 +1,6 @@
 ---
 title: Glossary
-description: Alphabetical definitions of SceneryStack and PhET-specific terms used throughout this wiki, each linked to the page that covers it in depth.
+description: Alphabetical definitions of SceneryStack and PhET-specific terms used throughout Almanach, each linked to the page that covers it in depth.
 category: meta
 tags: [glossary, reference, terminology, conventions]
 status: complete
@@ -15,7 +15,7 @@ related:
 
 # Glossary
 
-Definitions for terms this wiki uses repeatedly without re-explaining every time. Each entry links to the page where the concept is covered in full — this page is for "what does that word mean," not a replacement for reading the linked page.
+Definitions for terms Almanach uses repeatedly without re-explaining every time. Each entry links to the page where the concept is covered in full — this page is for "what does that word mean," not a replacement for reading the linked page.
 
 ## accessibleHelpText
 
@@ -63,7 +63,7 @@ The keyboard-driven equivalent of pointer dragging — moves a `positionProperty
 
 ## Model-View Separation
 
-The foundational architecture every page in this wiki assumes: model classes hold state as `Property`/`Emitter` and know nothing about scenery; view classes (`Node` subclasses) observe that state and never hold state of their own. See [Model-View Separation](/patterns/model-view-separation).
+The foundational architecture every page in Almanach assumes: model classes hold state as `Property`/`Emitter` and know nothing about scenery; view classes (`Node` subclasses) observe that state and never hold state of their own. See [Model-View Separation](/patterns/model-view-separation).
 
 ## ModelViewTransform2
 

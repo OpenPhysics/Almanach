@@ -1,5 +1,5 @@
 /**
- * Scans every wiki page under docs/, validates its frontmatter against the
+ * Scans every documentation page under docs/, validates its frontmatter against the
  * schema documented in docs/meta/authoring-guide.md, and emits three
  * machine-readable artifacts into docs/public/ (served at the site root):
  *
@@ -21,7 +21,7 @@ const DOCS_DIR = path.join( ROOT, 'docs' );
 const OUT_DIR = path.join( DOCS_DIR, 'public' );
 const SITE_URL = 'https://veillette.github.io/Almanach';
 const SITE_TITLE = 'Almanach — SceneryStack Knowledge Base';
-const SITE_SUMMARY = 'A file-based wiki of SceneryStack knowledge: API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Every page is plain Markdown with structured frontmatter.';
+const SITE_SUMMARY = 'A file-based knowledge base of SceneryStack knowledge: API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Every page is plain Markdown with structured frontmatter.';
 
 // Category order and labels, mirrored in docs/.vitepress/sidebar.ts
 const CATEGORIES: Record<string, string> = {
@@ -77,7 +77,7 @@ const pages: PageRecord[] = [];
 for ( const file of walkMarkdownFiles( DOCS_DIR ) ) {
   const relative = path.relative( DOCS_DIR, file );
 
-  // The home page uses VitePress's `layout: home` and is not a wiki article.
+  // The home page uses VitePress's `layout: home` and is not a documentation article.
   if ( relative === 'index.md' ) {
     continue;
   }

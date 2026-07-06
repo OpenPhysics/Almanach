@@ -17,7 +17,7 @@ sourceRefs:
 
 **Task:** a sim distinguishes several categories by color alone (particle types, chart series, on/off states) and needs to stay usable for the ~8% of men and ~0.5% of women with red-green color-vision deficiency (the most common forms: deuteranopia/protanopia), without requiring a whole colorimetry background to get right.
 
-The two practical rules that cover almost every case: **never make red vs. green the only distinguishing signal**, and **pair color with a second channel** (shape, position, a text label, a line pattern) wherever color is conveying information a user must act on. Everything below is applying those two rules through the wiki's existing color tools — [`Color`](/api/scenery/color) and [`ProfileColorProperty`](/styling/color-profiles) — not a separate palette system.
+The two practical rules that cover almost every case: **never make red vs. green the only distinguishing signal**, and **pair color with a second channel** (shape, position, a text label, a line pattern) wherever color is conveying information a user must act on. Everything below is applying those two rules through Almanach's existing color tools — [`Color`](/api/scenery/color) and [`ProfileColorProperty`](/styling/color-profiles) — not a separate palette system.
 
 ## A palette that avoids the classic failure mode
 

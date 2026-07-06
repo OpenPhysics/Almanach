@@ -1,6 +1,6 @@
 # Almanach
 
-A file-based knowledge wiki for [SceneryStack](https://scenerystack.org) — API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Designed to be equally consumable by humans (a browsable [VitePress](https://vitepress.dev) site) and LLM agents (generated `llms.txt`, `llms-full.txt`, and `manifest.json`).
+A file-based knowledge base for [SceneryStack](https://scenerystack.org) — API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Designed to be equally consumable by humans (a browsable [VitePress](https://vitepress.dev) site) and LLM agents (generated `llms.txt`, `llms-full.txt`, and `manifest.json`).
 
 **No database.** Every page is a Markdown file with structured frontmatter, versioned in this repository under [`docs/`](docs/).
 
@@ -20,7 +20,7 @@ npm run dev        # local dev server with live reload
 
 ## For LLM agents
 
-Three machine-readable views of the wiki are generated from the Markdown sources and served at the site root (and committed in [`docs/public/`](docs/public/)):
+Three machine-readable views of Almanach are generated from the Markdown sources and served at the site root (and committed in [`docs/public/`](docs/public/)):
 
 - **`llms.txt`** — index of every page with one-line descriptions ([llms.txt convention](https://llmstxt.org/))
 - **`llms-full.txt`** — full text of every page in a single file

@@ -1,8 +1,8 @@
 {
   "site": "https://veillette.github.io/Almanach",
   "title": "Almanach — SceneryStack Knowledge Base",
-  "description": "A file-based wiki of SceneryStack knowledge: API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Every page is plain Markdown with structured frontmatter.",
-  "generated": "2026-07-05T13:41:41.787Z",
+  "description": "A file-based knowledge base of SceneryStack knowledge: API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Every page is plain Markdown with structured frontmatter.",
+  "generated": "2026-07-06T04:52:32.381Z",
   "documentCount": 420,
   "documents": [
     {
@@ -219,7 +219,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 353,
+      "wordCount": 352,
       "url": "https://veillette.github.io/Almanach/getting-started/what-is-scenerystack"
     },
     {
@@ -405,7 +405,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 834,
+      "wordCount": 833,
       "url": "https://veillette.github.io/Almanach/guides/continuous-integration-for-scenerystack-projects"
     },
     {
@@ -826,7 +826,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 567,
+      "wordCount": 566,
       "url": "https://veillette.github.io/Almanach/guides/translation-and-localization"
     },
     {
@@ -4538,7 +4538,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 323,
+      "wordCount": 322,
       "url": "https://veillette.github.io/Almanach/api/scenery/pattern-paint"
     },
     {
@@ -9003,7 +9003,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 630,
+      "wordCount": 629,
       "url": "https://veillette.github.io/Almanach/api/tappi/vibration-manager-and-patterns"
     },
     {
@@ -9951,7 +9951,7 @@
         "/patterns/model-view-separation"
       ],
       "sourceRefs": [],
-      "wordCount": 1009,
+      "wordCount": 1007,
       "url": "https://veillette.github.io/Almanach/patterns/singleton-and-namespace-conventions"
     },
     {
@@ -10517,7 +10517,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 905,
+      "wordCount": 904,
       "url": "https://veillette.github.io/Almanach/accessibility/cognitive-accessibility-considerations"
     },
     {
@@ -11264,7 +11264,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 741,
+      "wordCount": 740,
       "url": "https://veillette.github.io/Almanach/cookbook/colorblind-safe-palette"
     },
     {
@@ -11633,7 +11633,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 732,
+      "wordCount": 731,
       "url": "https://veillette.github.io/Almanach/cookbook/fuzz-testing-a-simulation-locally"
     },
     {
@@ -11810,7 +11810,7 @@
       "path": "/meta/authoring-guide",
       "sourceFile": "docs/meta/authoring-guide.md",
       "title": "Authoring Guide",
-      "description": "Conventions for adding documents to this wiki - folder taxonomy, required frontmatter schema, and how the generated indexes work.",
+      "description": "Conventions for adding documents to Almanach - folder taxonomy, required frontmatter schema, and how the generated indexes work.",
       "category": "meta",
       "tags": [
         "conventions",
@@ -11821,14 +11821,14 @@
       "related": [],
       "prerequisites": [],
       "sourceRefs": [],
-      "wordCount": 1019,
+      "wordCount": 1015,
       "url": "https://veillette.github.io/Almanach/meta/authoring-guide"
     },
     {
       "path": "/meta/faq",
       "sourceFile": "docs/meta/faq.md",
       "title": "FAQ",
-      "description": "Answers to the questions a newcomer to this wiki or to SceneryStack itself would plausibly ask first.",
+      "description": "Answers to the questions a newcomer to Almanach or to SceneryStack itself would plausibly ask first.",
       "category": "meta",
       "tags": [
         "faq",
@@ -11847,14 +11847,14 @@
         "/getting-started/what-is-scenerystack"
       ],
       "sourceRefs": [],
-      "wordCount": 973,
+      "wordCount": 964,
       "url": "https://veillette.github.io/Almanach/meta/faq"
     },
     {
       "path": "/meta/glossary",
       "sourceFile": "docs/meta/glossary.md",
       "title": "Glossary",
-      "description": "Alphabetical definitions of SceneryStack and PhET-specific terms used throughout this wiki, each linked to the page that covers it in depth.",
+      "description": "Alphabetical definitions of SceneryStack and PhET-specific terms used throughout Almanach, each linked to the page that covers it in depth.",
       "category": "meta",
       "tags": [
         "glossary",
@@ -11873,14 +11873,14 @@
         "/getting-started/what-is-scenerystack"
       ],
       "sourceRefs": [],
-      "wordCount": 1024,
+      "wordCount": 1022,
       "url": "https://veillette.github.io/Almanach/meta/glossary"
     },
     {
       "path": "/meta/page-template",
       "sourceFile": "docs/meta/page-template.md",
       "title": "Page Template",
-      "description": "A copy-pasteable frontmatter and section skeleton for authors starting a new wiki page.",
+      "description": "A copy-pasteable frontmatter and section skeleton for authors starting a new page.",
       "category": "meta",
       "tags": [
         "template",
@@ -11904,7 +11904,7 @@
       "path": "/meta/roadmap",
       "sourceFile": "docs/meta/roadmap.md",
       "title": "Roadmap",
-      "description": "What this wiki currently covers, the taxonomy behind that coverage, and the concrete work that remains open.",
+      "description": "What Almanach currently covers, the taxonomy behind that coverage, and the concrete work that remains open.",
       "category": "meta",
       "tags": [
         "roadmap",
@@ -11920,14 +11920,14 @@
       ],
       "prerequisites": [],
       "sourceRefs": [],
-      "wordCount": 889,
+      "wordCount": 885,
       "url": "https://veillette.github.io/Almanach/meta/roadmap"
     },
     {
       "path": "/meta/scenerystack-version-compatibility",
       "sourceFile": "docs/meta/scenerystack-version-compatibility.md",
       "title": "SceneryStack Version Compatibility Notes",
-      "description": "Which scenerystack package version this wiki's content was checked against, and when a page's status/sourceRefs should be revisited as SceneryStack releases new versions.",
+      "description": "Which scenerystack package version Almanach's content was checked against, and when a page's status/sourceRefs should be revisited as SceneryStack releases new versions.",
       "category": "meta",
       "tags": [
         "conventions",
@@ -11946,7 +11946,7 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
-      "wordCount": 646,
+      "wordCount": 637,
       "url": "https://veillette.github.io/Almanach/meta/scenerystack-version-compatibility"
     }
   ]

@@ -44,7 +44,7 @@ In a full PhET-style project, you don't hand-construct every `StringProperty` yo
 3. Translators submit additional per-locale JSON files (`<sim-name>-strings_fr.json`, etc.) through PhET's translation tooling, without touching any TypeScript.
 4. At runtime, the active locale determines which JSON file's values populate the generated `StringProperty` instances — the application code that consumes them (`Text`, `RichText`, any `TReadOnlyProperty<string>` consumer) never changes.
 
-The exact generation step is part of the PhET build tooling and out of scope for simulation-author-facing code in this wiki, but the contract you write against is stable regardless: **every generated string is a `Property<string>`**, with the same `.value`/`.link()` API described in [`StringProperty`](/api/axon/string-property) and [`Property`](/api/axon/property).
+The exact generation step is part of the PhET build tooling and out of scope for simulation-author-facing code in Almanach, but the contract you write against is stable regardless: **every generated string is a `Property<string>`**, with the same `.value`/`.link()` API described in [`StringProperty`](/api/axon/string-property) and [`Property`](/api/axon/property).
 
 ## Interpolating values into translated strings
 

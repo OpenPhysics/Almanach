@@ -59,7 +59,7 @@ This model/view split is the foundational pattern of every SceneryStack applicat
 
 ## Where to go next
 
-- [Model-View Separation](/patterns/model-view-separation) — the architecture every page in this wiki assumes
+- [Model-View Separation](/patterns/model-view-separation) — the architecture every page in Almanach assumes
 - [ModelViewTransform2](/api/phetcommon/model-view-transform) — mapping between model and view coordinates
 - [Drag Listeners](/patterns/drag-listeners) — making nodes interactive
 - [The Parallel DOM (PDOM)](/accessibility/pdom) — building accessible simulations

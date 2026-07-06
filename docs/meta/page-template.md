@@ -1,6 +1,6 @@
 ---
 title: Page Template
-description: A copy-pasteable frontmatter and section skeleton for authors starting a new wiki page.
+description: A copy-pasteable frontmatter and section skeleton for authors starting a new page.
 category: meta
 tags: [template, contributing, conventions]
 status: complete

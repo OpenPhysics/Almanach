@@ -49,8 +49,8 @@ The same question — "is there conceptually one of these for the whole sim, or 
 
 A related but distinct convention in SceneryStack/PhET code is registering an exported class (not an instance) with that library's `Namespace` object — e.g. a library's top-level module calling `myLibrary.register( 'MyClass', MyClass )` once, at the bottom of the file that defines `MyClass`. This is orthogonal to the singleton-vs-constructed-instance question above: a `Namespace`-registered class is still ordinarily constructed per use (`new MyClass()` wherever it's needed) exactly like any other class — registration exists so tooling and debugging utilities can look a class up by name/namespace path at runtime, not to make the class itself shared or singleton-like. Don't conflate "this class is registered on its library's namespace" with "this class is a singleton" — the two conventions solve different problems and most registered classes are constructed freely, many times, throughout a sim's lifetime.
 
-::: warning Namespace registration is a real PhET convention, not independently verified against this wiki's other pages
-The general shape described above (`libraryNamespace.register( 'ClassName', ClassName )`, called once per class definition) reflects the real, long-standing PhET-repo convention, but no other page in this wiki currently documents `Namespace` itself in depth — treat the specifics here as a reasonable description pending a dedicated `api/phet-core/namespace` page, not a fully cross-checked reference.
+::: warning Namespace registration is a real PhET convention, not independently verified against Almanach's other pages
+The general shape described above (`libraryNamespace.register( 'ClassName', ClassName )`, called once per class definition) reflects the real, long-standing PhET-repo convention, but no other page in Almanach currently documents `Namespace` itself in depth — treat the specifics here as a reasonable description pending a dedicated `api/phet-core/namespace` page, not a fully cross-checked reference.
 :::
 
 ## Deciding which shape a *new* class of your own should take

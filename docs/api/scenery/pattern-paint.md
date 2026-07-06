@@ -17,7 +17,7 @@ sourceRefs:
 
 # Pattern (paint)
 
-`Pattern` (from `scenerystack/scenery`) is a paint type — assignable to a `fill` or `stroke` alongside [`Color`](/api/scenery/color) and the gradient paints — that repeats an image tile in both directions to fill a shape, matching the CSS/Canvas notion of a repeating image pattern. This is unrelated to the "design pattern" write-ups in this wiki's [`patterns/`](/patterns/options-pattern) section (options pattern, enumeration pattern, etc.) — this `Pattern` is a rendering primitive, not a coding convention.
+`Pattern` (from `scenerystack/scenery`) is a paint type — assignable to a `fill` or `stroke` alongside [`Color`](/api/scenery/color) and the gradient paints — that repeats an image tile in both directions to fill a shape, matching the CSS/Canvas notion of a repeating image pattern. This is unrelated to the "design pattern" write-ups in Almanach's [`patterns/`](/patterns/options-pattern) section (options pattern, enumeration pattern, etc.) — this `Pattern` is a rendering primitive, not a coding convention.
 
 ```ts
 import { Pattern, Rectangle } from 'scenerystack/scenery';

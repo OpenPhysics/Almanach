@@ -2,37 +2,36 @@
   "site": "https://veillette.github.io/Almanach",
   "title": "Almanach — SceneryStack Knowledge Base",
   "description": "A file-based knowledge base of SceneryStack knowledge: API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Every page is plain Markdown with structured frontmatter.",
-  "generated": "2026-07-09T09:37:09.196Z",
+  "generated": "2026-07-10T01:08:49.728Z",
   "documentCount": 423,
   "documents": [
     {
-      "path": "/getting-started/deploying-to-github-pages",
-      "sourceFile": "docs/getting-started/deploying-to-github-pages.md",
-      "title": "Deploying a Simulation to GitHub Pages",
-      "description": "Building a static SceneryStack simulation and publishing it to GitHub Pages via the gh-pages branch or GitHub Actions.",
+      "path": "/getting-started/what-is-scenerystack",
+      "sourceFile": "docs/getting-started/what-is-scenerystack.md",
+      "title": "What is SceneryStack?",
+      "description": "Overview of the SceneryStack framework, its constituent libraries, and how to install and import it.",
       "category": "getting-started",
       "tags": [
-        "deployment",
-        "github-pages",
-        "build",
-        "ci"
+        "overview",
+        "installation",
+        "scenery",
+        "axon",
+        "dot",
+        "sun",
+        "joist"
       ],
       "status": "verified",
       "related": [
-        "/getting-started/running-and-building-a-simulation",
-        "/getting-started/troubleshooting-common-setup-errors",
-        "/getting-started/supported-browsers"
+        "/patterns/model-view-separation",
+        "/api/phetcommon/model-view-transform"
       ],
-      "prerequisites": [
-        "/getting-started/installation-and-setup",
-        "/getting-started/running-and-building-a-simulation"
-      ],
+      "prerequisites": [],
       "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://vite.dev/guide/static-deploy.html"
+        "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 948,
-      "url": "https://veillette.github.io/Almanach/getting-started/deploying-to-github-pages"
+      "navOrder": 1,
+      "wordCount": 352,
+      "url": "https://veillette.github.io/Almanach/getting-started/what-is-scenerystack"
     },
     {
       "path": "/getting-started/installation-and-setup",
@@ -58,169 +57,9 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/learn/setup/"
       ],
+      "navOrder": 2,
       "wordCount": 411,
       "url": "https://veillette.github.io/Almanach/getting-started/installation-and-setup"
-    },
-    {
-      "path": "/getting-started/project-structure-conventions",
-      "sourceFile": "docs/getting-started/project-structure-conventions.md",
-      "title": "Project Structure Conventions",
-      "description": "Standard folder/file layout of a SceneryStack repo (model/view split, strings, images).",
-      "category": "getting-started",
-      "tags": [
-        "conventions",
-        "project-structure",
-        "repo-layout"
-      ],
-      "status": "verified",
-      "related": [
-        "/getting-started/running-and-building-a-simulation",
-        "/patterns/model-view-separation",
-        "/guides/translation-and-localization"
-      ],
-      "prerequisites": [
-        "/getting-started/installation-and-setup"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 432,
-      "url": "https://veillette.github.io/Almanach/getting-started/project-structure-conventions"
-    },
-    {
-      "path": "/getting-started/running-and-building-a-simulation",
-      "sourceFile": "docs/getting-started/running-and-building-a-simulation.md",
-      "title": "Running and Building a Simulation",
-      "description": "Dev server workflow and production build output for a SceneryStack sim.",
-      "category": "getting-started",
-      "tags": [
-        "build",
-        "tooling",
-        "dev-server"
-      ],
-      "status": "verified",
-      "related": [
-        "/getting-started/installation-and-setup",
-        "/getting-started/project-structure-conventions",
-        "/getting-started/supported-browsers"
-      ],
-      "prerequisites": [
-        "/getting-started/installation-and-setup"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 368,
-      "url": "https://veillette.github.io/Almanach/getting-started/running-and-building-a-simulation"
-    },
-    {
-      "path": "/getting-started/scenery-application-vs-standalone-library",
-      "sourceFile": "docs/getting-started/scenery-application-vs-standalone-library.md",
-      "title": "Scenery Application vs. Standalone Library",
-      "description": "Choosing between a full joist-based Sim application and using scenery as a standalone rendering library.",
-      "category": "getting-started",
-      "tags": [
-        "joist",
-        "scenery",
-        "standalone",
-        "architecture"
-      ],
-      "status": "verified",
-      "related": [
-        "/getting-started/your-first-simulation",
-        "/guides/scenery-basics",
-        "/api/scenery/display",
-        "/api/scenery/node",
-        "/api/joist/sim"
-      ],
-      "prerequisites": [
-        "/getting-started/installation-and-setup"
-      ],
-      "sourceRefs": [
-        "https://scenerystack.org/learn/scenery-application/",
-        "https://scenerystack.org/learn/standalone-library/"
-      ],
-      "wordCount": 518,
-      "url": "https://veillette.github.io/Almanach/getting-started/scenery-application-vs-standalone-library"
-    },
-    {
-      "path": "/getting-started/supported-browsers",
-      "sourceFile": "docs/getting-started/supported-browsers.md",
-      "title": "Supported Browsers",
-      "description": "Browser/platform support matrix and graceful-degradation considerations.",
-      "category": "getting-started",
-      "tags": [
-        "browsers",
-        "compatibility",
-        "deployment"
-      ],
-      "status": "verified",
-      "related": [
-        "/getting-started/running-and-building-a-simulation",
-        "/guides/scenery-basics"
-      ],
-      "prerequisites": [
-        "/getting-started/installation-and-setup"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 394,
-      "url": "https://veillette.github.io/Almanach/getting-started/supported-browsers"
-    },
-    {
-      "path": "/getting-started/troubleshooting-common-setup-errors",
-      "sourceFile": "docs/getting-started/troubleshooting-common-setup-errors.md",
-      "title": "Troubleshooting Common Setup Errors",
-      "description": "The most likely failure modes when starting a new scenerystack project - Node version mismatches, wrong import subpaths, missing peer deps, and TypeScript module resolution.",
-      "category": "getting-started",
-      "tags": [
-        "troubleshooting",
-        "setup",
-        "typescript",
-        "tooling"
-      ],
-      "status": "verified",
-      "related": [
-        "/getting-started/installation-and-setup",
-        "/getting-started/supported-browsers",
-        "/getting-started/running-and-building-a-simulation"
-      ],
-      "prerequisites": [
-        "/getting-started/installation-and-setup"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 943,
-      "url": "https://veillette.github.io/Almanach/getting-started/troubleshooting-common-setup-errors"
-    },
-    {
-      "path": "/getting-started/what-is-scenerystack",
-      "sourceFile": "docs/getting-started/what-is-scenerystack.md",
-      "title": "What is SceneryStack?",
-      "description": "Overview of the SceneryStack framework, its constituent libraries, and how to install and import it.",
-      "category": "getting-started",
-      "tags": [
-        "overview",
-        "installation",
-        "scenery",
-        "axon",
-        "dot",
-        "sun",
-        "joist"
-      ],
-      "status": "verified",
-      "related": [
-        "/patterns/model-view-separation",
-        "/api/phetcommon/model-view-transform"
-      ],
-      "prerequisites": [],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 352,
-      "url": "https://veillette.github.io/Almanach/getting-started/what-is-scenerystack"
     },
     {
       "path": "/getting-started/your-first-simulation",
@@ -251,414 +90,178 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/learn/simulation/"
       ],
+      "navOrder": 3,
       "wordCount": 508,
       "url": "https://veillette.github.io/Almanach/getting-started/your-first-simulation"
     },
     {
-      "path": "/guides/accessible-interaction-tutorial",
-      "sourceFile": "docs/guides/accessible-interaction-tutorial.md",
-      "title": "Accessible Interaction Tutorial",
-      "description": "Making a custom draggable Node fully accessible end-to-end.",
-      "category": "guides",
+      "path": "/getting-started/running-and-building-a-simulation",
+      "sourceFile": "docs/getting-started/running-and-building-a-simulation.md",
+      "title": "Running and Building a Simulation",
+      "description": "Dev server workflow and production build output for a SceneryStack sim.",
+      "category": "getting-started",
       "tags": [
-        "accessibility",
-        "tutorial",
-        "pdom",
-        "keyboard"
-      ],
-      "status": "verified",
-      "related": [
-        "/accessibility/pdom",
-        "/patterns/drag-listeners",
-        "/guides/scenery-input",
-        "/patterns/model-view-separation"
-      ],
-      "prerequisites": [
-        "/accessibility/pdom",
-        "/patterns/drag-listeners"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 717,
-      "url": "https://veillette.github.io/Almanach/guides/accessible-interaction-tutorial"
-    },
-    {
-      "path": "/guides/advanced-layout-techniques",
-      "sourceFile": "docs/guides/advanced-layout-techniques.md",
-      "title": "Advanced Layout Techniques",
-      "description": "Nesting FlowBox/GridBox containers, escaping to ManualConstraint for one-off positioning, and using AlignGroup to size content consistently across containers.",
-      "category": "guides",
-      "tags": [
-        "scenery",
-        "layout",
-        "manual-constraint",
-        "align-group"
-      ],
-      "status": "verified",
-      "related": [
-        "/guides/scenery-layout",
-        "/guides/scenery-basics",
-        "/api/scenery/align-box",
-        "/api/scenery/flow-box",
-        "/api/scenery/grid-box"
-      ],
-      "prerequisites": [
-        "/guides/scenery-layout"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://scenerystack.org/learn/scenery-layout/"
-      ],
-      "wordCount": 1157,
-      "url": "https://veillette.github.io/Almanach/guides/advanced-layout-techniques"
-    },
-    {
-      "path": "/guides/building-your-first-screen",
-      "sourceFile": "docs/guides/building-your-first-screen.md",
-      "title": "Building Your First Screen",
-      "description": "Step-by-step model/view/Screen wiring for a new screen in a multi-screen sim.",
-      "category": "guides",
-      "tags": [
-        "screen",
-        "tutorial",
-        "joist"
-      ],
-      "status": "verified",
-      "related": [
-        "/getting-started/your-first-simulation",
-        "/patterns/model-view-separation",
-        "/guides/scenery-layout",
-        "/guides/phet-io-and-instrumentation",
-        "/api/joist/screen",
-        "/api/joist/screen-view"
-      ],
-      "prerequisites": [
-        "/getting-started/your-first-simulation",
-        "/patterns/model-view-separation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 698,
-      "url": "https://veillette.github.io/Almanach/guides/building-your-first-screen"
-    },
-    {
-      "path": "/guides/chart-and-data-visualization-with-bamboo",
-      "sourceFile": "docs/guides/chart-and-data-visualization-with-bamboo.md",
-      "title": "Chart and Data Visualization with Bamboo",
-      "description": "Subsystem overview of bamboo - the ChartTransform every plot shares, the family of Plot Node types built on it, and axis/gridline decoration.",
-      "category": "guides",
-      "tags": [
-        "bamboo",
-        "chart",
-        "data-visualization",
-        "ChartTransform"
-      ],
-      "status": "complete",
-      "related": [
-        "/api/bamboo/chart-transform",
-        "/api/bamboo/line-plot",
-        "/api/bamboo/bar-plot",
-        "/api/bamboo/scatter-plot",
-        "/api/bamboo/area-plot",
-        "/api/bamboo/linear-equation-plot",
-        "/api/bamboo/axis-nodes",
-        "/api/bamboo/gridlines-and-tick-marks",
-        "/api/bamboo/canvas-line-plot",
-        "/guides/performance-and-profiling",
-        "/patterns/dispose-and-memory-management"
-      ],
-      "prerequisites": [
-        "/guides/scenery-basics",
-        "/api/bamboo/chart-transform"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 1057,
-      "url": "https://veillette.github.io/Almanach/guides/chart-and-data-visualization-with-bamboo"
-    },
-    {
-      "path": "/guides/continuous-integration-for-scenerystack-projects",
-      "sourceFile": "docs/guides/continuous-integration-for-scenerystack-projects.md",
-      "title": "Continuous Integration for SceneryStack Projects",
-      "description": "What a CI pipeline for a SceneryStack simulation repository typically checks - type-checking, linting, a production build, unit tests, and automated fuzzing.",
-      "category": "guides",
-      "tags": [
-        "ci",
-        "testing",
         "build",
         "tooling",
-        "quality"
-      ],
-      "status": "complete",
-      "related": [
-        "/guides/testing-and-qa-strategy-overview",
-        "/getting-started/running-and-building-a-simulation",
-        "/patterns/testing-model-logic-headlessly",
-        "/cookbook/fuzz-testing-a-simulation-locally"
-      ],
-      "prerequisites": [
-        "/getting-started/running-and-building-a-simulation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 833,
-      "url": "https://veillette.github.io/Almanach/guides/continuous-integration-for-scenerystack-projects"
-    },
-    {
-      "path": "/guides/debugging-common-scenery-rendering-issues",
-      "sourceFile": "docs/guides/debugging-common-scenery-rendering-issues.md",
-      "title": "Debugging Common Scenery Rendering Issues",
-      "description": "A walkthrough of the most common visual bugs in a scenery scene graph - Nodes that won't show, layout that won't update, and z-order surprises - and the debug tools that narrow each one down.",
-      "category": "guides",
-      "tags": [
-        "scenery",
-        "debugging",
-        "rendering",
-        "layout",
-        "troubleshooting"
-      ],
-      "status": "complete",
-      "related": [
-        "/api/scenery/display",
-        "/guides/scenery-basics",
-        "/guides/scenery-layout",
-        "/guides/performance-and-profiling",
-        "/api/scenery/node",
-        "/api/scenery/hit-testing-and-picking"
-      ],
-      "prerequisites": [
-        "/guides/scenery-basics"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 1077,
-      "url": "https://veillette.github.io/Almanach/guides/debugging-common-scenery-rendering-issues"
-    },
-    {
-      "path": "/guides/haptics-and-alternative-feedback-channels",
-      "sourceFile": "docs/guides/haptics-and-alternative-feedback-channels.md",
-      "title": "Haptics and Alternative Feedback Channels",
-      "description": "Sound (tambo) and vibration (tappi) as feedback channels beyond the visual scene graph - when a simulation benefits from each, and how they relate to accessibility.",
-      "category": "guides",
-      "tags": [
-        "tambo",
-        "tappi",
-        "sound",
-        "vibration",
-        "haptics",
-        "accessibility"
-      ],
-      "status": "verified",
-      "related": [
-        "/guides/working-with-sound",
-        "/accessibility/sound-design",
-        "/api/tappi/vibration-manager-and-patterns",
-        "/api/tappi/vibration-indicator-and-controller",
-        "/guides/scenery-basics"
-      ],
-      "prerequisites": [
-        "/guides/scenery-basics"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://scenerystack.org/reference/"
-      ],
-      "wordCount": 732,
-      "url": "https://veillette.github.io/Almanach/guides/haptics-and-alternative-feedback-channels"
-    },
-    {
-      "path": "/guides/internationalization-deep-dive",
-      "sourceFile": "docs/guides/internationalization-deep-dive.md",
-      "title": "Internationalization Deep Dive",
-      "description": "Runtime locale switching, right-to-left layout, and PatternStringProperty for pluralization and placeholders, building on the translation pipeline basics.",
-      "category": "guides",
-      "tags": [
-        "localization",
-        "i18n",
-        "rtl",
-        "strings"
-      ],
-      "status": "verified",
-      "related": [
-        "/guides/translation-and-localization",
-        "/api/axon/pattern-string-property",
-        "/api/axon/string-property"
-      ],
-      "prerequisites": [
-        "/guides/translation-and-localization"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 920,
-      "url": "https://veillette.github.io/Almanach/guides/internationalization-deep-dive"
-    },
-    {
-      "path": "/guides/modifying-scenerystack",
-      "sourceFile": "docs/guides/modifying-scenerystack.md",
-      "title": "Modifying SceneryStack",
-      "description": "Workflow for patching or contributing to the underlying common-code libraries.",
-      "category": "guides",
-      "tags": [
-        "contributing",
-        "open-source",
-        "workflow"
+        "dev-server"
       ],
       "status": "verified",
       "related": [
         "/getting-started/installation-and-setup",
-        "/getting-started/what-is-scenerystack"
+        "/getting-started/project-structure-conventions",
+        "/getting-started/supported-browsers"
       ],
       "prerequisites": [
         "/getting-started/installation-and-setup"
       ],
       "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://github.com/phetsims"
+        "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 404,
-      "url": "https://veillette.github.io/Almanach/guides/modifying-scenerystack"
+      "navOrder": 4,
+      "wordCount": 368,
+      "url": "https://veillette.github.io/Almanach/getting-started/running-and-building-a-simulation"
     },
     {
-      "path": "/guides/performance-and-profiling",
-      "sourceFile": "docs/guides/performance-and-profiling.md",
-      "title": "Performance and Profiling",
-      "description": "Finding and fixing slow rendering or update-loop performance in a SceneryStack simulation - profiling query parameters, Node/Property overhead, and Canvas/SVG/WebGL tradeoffs.",
-      "category": "guides",
+      "path": "/getting-started/project-structure-conventions",
+      "sourceFile": "docs/getting-started/project-structure-conventions.md",
+      "title": "Project Structure Conventions",
+      "description": "Standard folder/file layout of a SceneryStack repo (model/view split, strings, images).",
+      "category": "getting-started",
       "tags": [
-        "scenery",
-        "performance",
-        "profiling",
-        "rendering"
+        "conventions",
+        "project-structure",
+        "repo-layout"
       ],
       "status": "verified",
       "related": [
-        "/guides/scenery-basics",
-        "/guides/scenery-layout",
-        "/getting-started/supported-browsers",
-        "/api/axon/property",
-        "/api/axon/derived-property"
+        "/getting-started/running-and-building-a-simulation",
+        "/patterns/model-view-separation",
+        "/guides/translation-and-localization"
       ],
       "prerequisites": [
+        "/getting-started/installation-and-setup"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 5,
+      "wordCount": 432,
+      "url": "https://veillette.github.io/Almanach/getting-started/project-structure-conventions"
+    },
+    {
+      "path": "/getting-started/scenery-application-vs-standalone-library",
+      "sourceFile": "docs/getting-started/scenery-application-vs-standalone-library.md",
+      "title": "Scenery Application vs. Standalone Library",
+      "description": "Choosing between a full joist-based Sim application and using scenery as a standalone rendering library.",
+      "category": "getting-started",
+      "tags": [
+        "joist",
+        "scenery",
+        "standalone",
+        "architecture"
+      ],
+      "status": "verified",
+      "related": [
+        "/getting-started/your-first-simulation",
+        "/guides/scenery-basics",
+        "/api/scenery/display",
+        "/api/scenery/node",
+        "/api/joist/sim"
+      ],
+      "prerequisites": [
+        "/getting-started/installation-and-setup"
+      ],
+      "sourceRefs": [
+        "https://scenerystack.org/learn/scenery-application/",
+        "https://scenerystack.org/learn/standalone-library/"
+      ],
+      "navOrder": 6,
+      "wordCount": 518,
+      "url": "https://veillette.github.io/Almanach/getting-started/scenery-application-vs-standalone-library"
+    },
+    {
+      "path": "/getting-started/supported-browsers",
+      "sourceFile": "docs/getting-started/supported-browsers.md",
+      "title": "Supported Browsers",
+      "description": "Browser/platform support matrix and graceful-degradation considerations.",
+      "category": "getting-started",
+      "tags": [
+        "browsers",
+        "compatibility",
+        "deployment"
+      ],
+      "status": "verified",
+      "related": [
+        "/getting-started/running-and-building-a-simulation",
         "/guides/scenery-basics"
       ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 1165,
-      "url": "https://veillette.github.io/Almanach/guides/performance-and-profiling"
-    },
-    {
-      "path": "/guides/phet-io-and-instrumentation",
-      "sourceFile": "docs/guides/phet-io-and-instrumentation.md",
-      "title": "PhET-iO and Instrumentation",
-      "description": "Conceptual guide to PhET-iO - what instrumentation buys you and how Tandem fits in.",
-      "category": "guides",
-      "tags": [
-        "phet-io",
-        "tandem",
-        "instrumentation"
-      ],
-      "status": "verified",
-      "related": [
-        "/getting-started/your-first-simulation",
-        "/patterns/model-view-separation",
-        "/guides/building-your-first-screen"
-      ],
       "prerequisites": [
-        "/getting-started/your-first-simulation"
+        "/getting-started/installation-and-setup"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 686,
-      "url": "https://veillette.github.io/Almanach/guides/phet-io-and-instrumentation"
+      "navOrder": 7,
+      "wordCount": 394,
+      "url": "https://veillette.github.io/Almanach/getting-started/supported-browsers"
     },
     {
-      "path": "/guides/phet-io-deep-dive",
-      "sourceFile": "docs/guides/phet-io-deep-dive.md",
-      "title": "PhET-iO Deep Dive",
-      "description": "PhetioGroup and PhetioCapsule for dynamically created elements, authoring a custom IOType, and how PhET-iO state save/restore actually works.",
-      "category": "guides",
+      "path": "/getting-started/troubleshooting-common-setup-errors",
+      "sourceFile": "docs/getting-started/troubleshooting-common-setup-errors.md",
+      "title": "Troubleshooting Common Setup Errors",
+      "description": "The most likely failure modes when starting a new scenerystack project - Node version mismatches, wrong import subpaths, missing peer deps, and TypeScript module resolution.",
+      "category": "getting-started",
       "tags": [
-        "phet-io",
-        "tandem",
-        "instrumentation",
-        "phetio-group",
-        "phetio-capsule"
+        "troubleshooting",
+        "setup",
+        "typescript",
+        "tooling"
       ],
       "status": "verified",
       "related": [
-        "/guides/phet-io-and-instrumentation",
-        "/patterns/phet-io-instrumentation-pattern",
-        "/api/tandem/tandem"
-      ],
-      "prerequisites": [
-        "/guides/phet-io-and-instrumentation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 1213,
-      "url": "https://veillette.github.io/Almanach/guides/phet-io-deep-dive"
-    },
-    {
-      "path": "/guides/preferences-and-feature-flags",
-      "sourceFile": "docs/guides/preferences-and-feature-flags.md",
-      "title": "Preferences and Feature Flags",
-      "description": "Using the Preferences dialog and query parameters to configure sim behavior.",
-      "category": "guides",
-      "tags": [
-        "preferences",
-        "query-parameters",
-        "joist"
-      ],
-      "status": "verified",
-      "related": [
-        "/getting-started/your-first-simulation",
-        "/guides/translation-and-localization",
+        "/getting-started/installation-and-setup",
+        "/getting-started/supported-browsers",
         "/getting-started/running-and-building-a-simulation"
       ],
       "prerequisites": [
-        "/getting-started/your-first-simulation"
+        "/getting-started/installation-and-setup"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 581,
-      "url": "https://veillette.github.io/Almanach/guides/preferences-and-feature-flags"
+      "navOrder": 8,
+      "wordCount": 943,
+      "url": "https://veillette.github.io/Almanach/getting-started/troubleshooting-common-setup-errors"
     },
     {
-      "path": "/guides/publishing-and-distributing-a-simulation",
-      "sourceFile": "docs/guides/publishing-and-distributing-a-simulation.md",
-      "title": "Publishing and Distributing a Simulation",
-      "description": "What a SceneryStack production build produces and the common ways to host it - static hosting, GitHub Pages, or a project's own server.",
-      "category": "guides",
+      "path": "/getting-started/deploying-to-github-pages",
+      "sourceFile": "docs/getting-started/deploying-to-github-pages.md",
+      "title": "Deploying a Simulation to GitHub Pages",
+      "description": "Building a static SceneryStack simulation and publishing it to GitHub Pages via the gh-pages branch or GitHub Actions.",
+      "category": "getting-started",
       "tags": [
         "deployment",
+        "github-pages",
         "build",
-        "hosting",
-        "distribution"
+        "ci"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/getting-started/running-and-building-a-simulation",
-        "/getting-started/deploying-to-github-pages",
+        "/getting-started/troubleshooting-common-setup-errors",
         "/getting-started/supported-browsers"
       ],
       "prerequisites": [
+        "/getting-started/installation-and-setup",
         "/getting-started/running-and-building-a-simulation"
       ],
       "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
+        "https://www.npmjs.com/package/scenerystack",
+        "https://vite.dev/guide/static-deploy.html"
       ],
-      "wordCount": 745,
-      "url": "https://veillette.github.io/Almanach/guides/publishing-and-distributing-a-simulation"
+      "navOrder": 9,
+      "wordCount": 948,
+      "url": "https://veillette.github.io/Almanach/getting-started/deploying-to-github-pages"
     },
     {
       "path": "/guides/scenery-basics",
@@ -686,8 +289,68 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
+      "navOrder": 1,
       "wordCount": 717,
       "url": "https://veillette.github.io/Almanach/guides/scenery-basics"
+    },
+    {
+      "path": "/guides/working-with-model-view-transforms",
+      "sourceFile": "docs/guides/working-with-model-view-transforms.md",
+      "title": "Working with Model-View Transforms",
+      "description": "Why SceneryStack simulations separate model coordinates from view pixels, and the common ModelViewTransform2 usage patterns that follow from it.",
+      "category": "guides",
+      "tags": [
+        "phetcommon",
+        "dot",
+        "coordinates",
+        "transform",
+        "ModelViewTransform2"
+      ],
+      "status": "complete",
+      "related": [
+        "/api/phetcommon/model-view-transform",
+        "/patterns/model-view-separation",
+        "/patterns/drag-listeners",
+        "/guides/scenery-basics"
+      ],
+      "prerequisites": [
+        "/patterns/model-view-separation",
+        "/api/phetcommon/model-view-transform"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 2,
+      "wordCount": 795,
+      "url": "https://veillette.github.io/Almanach/guides/working-with-model-view-transforms"
+    },
+    {
+      "path": "/guides/scenery-layout",
+      "sourceFile": "docs/guides/scenery-layout.md",
+      "title": "Scenery Layout",
+      "description": "Overview of scenery's auto-layout system - FlowBox, GridBox, AlignBox, and layout options.",
+      "category": "guides",
+      "tags": [
+        "scenery",
+        "layout",
+        "flow-box",
+        "grid-box"
+      ],
+      "status": "verified",
+      "related": [
+        "/guides/scenery-basics",
+        "/guides/building-your-first-screen",
+        "/api/scenery/node"
+      ],
+      "prerequisites": [
+        "/guides/scenery-basics"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 3,
+      "wordCount": 746,
+      "url": "https://veillette.github.io/Almanach/guides/scenery-layout"
     },
     {
       "path": "/guides/scenery-input",
@@ -714,122 +377,9 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
+      "navOrder": 4,
       "wordCount": 745,
       "url": "https://veillette.github.io/Almanach/guides/scenery-input"
-    },
-    {
-      "path": "/guides/scenery-layout",
-      "sourceFile": "docs/guides/scenery-layout.md",
-      "title": "Scenery Layout",
-      "description": "Overview of scenery's auto-layout system - FlowBox, GridBox, AlignBox, and layout options.",
-      "category": "guides",
-      "tags": [
-        "scenery",
-        "layout",
-        "flow-box",
-        "grid-box"
-      ],
-      "status": "verified",
-      "related": [
-        "/guides/scenery-basics",
-        "/guides/building-your-first-screen",
-        "/api/scenery/node"
-      ],
-      "prerequisites": [
-        "/guides/scenery-basics"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 746,
-      "url": "https://veillette.github.io/Almanach/guides/scenery-layout"
-    },
-    {
-      "path": "/guides/sim-lifecycle-and-startup-sequence",
-      "sourceFile": "docs/guides/sim-lifecycle-and-startup-sequence.md",
-      "title": "Sim Lifecycle and Startup Sequence",
-      "description": "The real sequence from Sim construction through start(), screen selection, and the running animation loop that steps Properties and listeners every frame.",
-      "category": "guides",
-      "tags": [
-        "joist",
-        "Sim",
-        "Screen",
-        "lifecycle",
-        "animation-loop"
-      ],
-      "status": "complete",
-      "related": [
-        "/api/joist/sim",
-        "/api/joist/screen",
-        "/api/joist/screen-view",
-        "/guides/scenery-basics",
-        "/api/axon/timer"
-      ],
-      "prerequisites": [
-        "/api/joist/sim",
-        "/getting-started/your-first-simulation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 800,
-      "url": "https://veillette.github.io/Almanach/guides/sim-lifecycle-and-startup-sequence"
-    },
-    {
-      "path": "/guides/testing-and-qa-strategy-overview",
-      "sourceFile": "docs/guides/testing-and-qa-strategy-overview.md",
-      "title": "Testing and QA Strategy Overview",
-      "description": "The layers of testing a SceneryStack simulation benefits from - headless unit tests, manual QA passes, and automated fuzz-testing.",
-      "category": "guides",
-      "tags": [
-        "testing",
-        "qa",
-        "fuzz-testing",
-        "qunit",
-        "quality"
-      ],
-      "status": "complete",
-      "related": [
-        "/patterns/testing-model-logic-headlessly",
-        "/cookbook/fuzz-testing-a-simulation-locally",
-        "/guides/continuous-integration-for-scenerystack-projects",
-        "/patterns/query-parameters-pattern"
-      ],
-      "prerequisites": [
-        "/patterns/model-view-separation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 818,
-      "url": "https://veillette.github.io/Almanach/guides/testing-and-qa-strategy-overview"
-    },
-    {
-      "path": "/guides/translation-and-localization",
-      "sourceFile": "docs/guides/translation-and-localization.md",
-      "title": "Translation and Localization",
-      "description": "String management with StringProperty and the PhET translation pipeline.",
-      "category": "guides",
-      "tags": [
-        "localization",
-        "i18n",
-        "strings"
-      ],
-      "status": "verified",
-      "related": [
-        "/api/axon/string-property",
-        "/guides/preferences-and-feature-flags",
-        "/getting-started/project-structure-conventions"
-      ],
-      "prerequisites": [
-        "/api/axon/string-property",
-        "/getting-started/what-is-scenerystack"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 566,
-      "url": "https://veillette.github.io/Almanach/guides/translation-and-localization"
     },
     {
       "path": "/guides/ui-components-overview",
@@ -864,38 +414,138 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
+      "navOrder": 5,
       "wordCount": 633,
       "url": "https://veillette.github.io/Almanach/guides/ui-components-overview"
     },
     {
-      "path": "/guides/working-with-model-view-transforms",
-      "sourceFile": "docs/guides/working-with-model-view-transforms.md",
-      "title": "Working with Model-View Transforms",
-      "description": "Why SceneryStack simulations separate model coordinates from view pixels, and the common ModelViewTransform2 usage patterns that follow from it.",
+      "path": "/guides/accessible-interaction-tutorial",
+      "sourceFile": "docs/guides/accessible-interaction-tutorial.md",
+      "title": "Accessible Interaction Tutorial",
+      "description": "Making a custom draggable Node fully accessible end-to-end.",
       "category": "guides",
       "tags": [
-        "phetcommon",
-        "dot",
-        "coordinates",
-        "transform",
-        "ModelViewTransform2"
+        "accessibility",
+        "tutorial",
+        "pdom",
+        "keyboard"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
-        "/api/phetcommon/model-view-transform",
-        "/patterns/model-view-separation",
+        "/accessibility/pdom",
         "/patterns/drag-listeners",
-        "/guides/scenery-basics"
+        "/guides/scenery-input",
+        "/patterns/model-view-separation"
       ],
       "prerequisites": [
-        "/patterns/model-view-separation",
-        "/api/phetcommon/model-view-transform"
+        "/accessibility/pdom",
+        "/patterns/drag-listeners"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 795,
-      "url": "https://veillette.github.io/Almanach/guides/working-with-model-view-transforms"
+      "navOrder": 6,
+      "wordCount": 717,
+      "url": "https://veillette.github.io/Almanach/guides/accessible-interaction-tutorial"
+    },
+    {
+      "path": "/guides/building-your-first-screen",
+      "sourceFile": "docs/guides/building-your-first-screen.md",
+      "title": "Building Your First Screen",
+      "description": "Step-by-step model/view/Screen wiring for a new screen in a multi-screen sim.",
+      "category": "guides",
+      "tags": [
+        "screen",
+        "tutorial",
+        "joist"
+      ],
+      "status": "verified",
+      "related": [
+        "/getting-started/your-first-simulation",
+        "/patterns/model-view-separation",
+        "/guides/scenery-layout",
+        "/guides/phet-io-and-instrumentation",
+        "/api/joist/screen",
+        "/api/joist/screen-view"
+      ],
+      "prerequisites": [
+        "/getting-started/your-first-simulation",
+        "/patterns/model-view-separation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 7,
+      "wordCount": 698,
+      "url": "https://veillette.github.io/Almanach/guides/building-your-first-screen"
+    },
+    {
+      "path": "/guides/advanced-layout-techniques",
+      "sourceFile": "docs/guides/advanced-layout-techniques.md",
+      "title": "Advanced Layout Techniques",
+      "description": "Nesting FlowBox/GridBox containers, escaping to ManualConstraint for one-off positioning, and using AlignGroup to size content consistently across containers.",
+      "category": "guides",
+      "tags": [
+        "scenery",
+        "layout",
+        "manual-constraint",
+        "align-group"
+      ],
+      "status": "verified",
+      "related": [
+        "/guides/scenery-layout",
+        "/guides/scenery-basics",
+        "/api/scenery/align-box",
+        "/api/scenery/flow-box",
+        "/api/scenery/grid-box"
+      ],
+      "prerequisites": [
+        "/guides/scenery-layout"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack",
+        "https://scenerystack.org/learn/scenery-layout/"
+      ],
+      "navOrder": 8,
+      "wordCount": 1157,
+      "url": "https://veillette.github.io/Almanach/guides/advanced-layout-techniques"
+    },
+    {
+      "path": "/guides/chart-and-data-visualization-with-bamboo",
+      "sourceFile": "docs/guides/chart-and-data-visualization-with-bamboo.md",
+      "title": "Chart and Data Visualization with Bamboo",
+      "description": "Subsystem overview of bamboo - the ChartTransform every plot shares, the family of Plot Node types built on it, and axis/gridline decoration.",
+      "category": "guides",
+      "tags": [
+        "bamboo",
+        "chart",
+        "data-visualization",
+        "ChartTransform"
+      ],
+      "status": "complete",
+      "related": [
+        "/api/bamboo/chart-transform",
+        "/api/bamboo/line-plot",
+        "/api/bamboo/bar-plot",
+        "/api/bamboo/scatter-plot",
+        "/api/bamboo/area-plot",
+        "/api/bamboo/linear-equation-plot",
+        "/api/bamboo/axis-nodes",
+        "/api/bamboo/gridlines-and-tick-marks",
+        "/api/bamboo/canvas-line-plot",
+        "/guides/performance-and-profiling",
+        "/patterns/dispose-and-memory-management"
+      ],
+      "prerequisites": [
+        "/guides/scenery-basics",
+        "/api/bamboo/chart-transform"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 9,
+      "wordCount": 1057,
+      "url": "https://veillette.github.io/Almanach/guides/chart-and-data-visualization-with-bamboo"
     },
     {
       "path": "/guides/working-with-sound",
@@ -920,8 +570,390 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
+      "navOrder": 10,
       "wordCount": 894,
       "url": "https://veillette.github.io/Almanach/guides/working-with-sound"
+    },
+    {
+      "path": "/guides/haptics-and-alternative-feedback-channels",
+      "sourceFile": "docs/guides/haptics-and-alternative-feedback-channels.md",
+      "title": "Haptics and Alternative Feedback Channels",
+      "description": "Sound (tambo) and vibration (tappi) as feedback channels beyond the visual scene graph - when a simulation benefits from each, and how they relate to accessibility.",
+      "category": "guides",
+      "tags": [
+        "tambo",
+        "tappi",
+        "sound",
+        "vibration",
+        "haptics",
+        "accessibility"
+      ],
+      "status": "verified",
+      "related": [
+        "/guides/working-with-sound",
+        "/accessibility/sound-design",
+        "/api/tappi/vibration-manager-and-patterns",
+        "/api/tappi/vibration-indicator-and-controller",
+        "/guides/scenery-basics"
+      ],
+      "prerequisites": [
+        "/guides/scenery-basics"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack",
+        "https://scenerystack.org/reference/"
+      ],
+      "navOrder": 11,
+      "wordCount": 732,
+      "url": "https://veillette.github.io/Almanach/guides/haptics-and-alternative-feedback-channels"
+    },
+    {
+      "path": "/guides/debugging-common-scenery-rendering-issues",
+      "sourceFile": "docs/guides/debugging-common-scenery-rendering-issues.md",
+      "title": "Debugging Common Scenery Rendering Issues",
+      "description": "A walkthrough of the most common visual bugs in a scenery scene graph - Nodes that won't show, layout that won't update, and z-order surprises - and the debug tools that narrow each one down.",
+      "category": "guides",
+      "tags": [
+        "scenery",
+        "debugging",
+        "rendering",
+        "layout",
+        "troubleshooting"
+      ],
+      "status": "complete",
+      "related": [
+        "/api/scenery/display",
+        "/guides/scenery-basics",
+        "/guides/scenery-layout",
+        "/guides/performance-and-profiling",
+        "/api/scenery/node",
+        "/api/scenery/hit-testing-and-picking"
+      ],
+      "prerequisites": [
+        "/guides/scenery-basics"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 12,
+      "wordCount": 1077,
+      "url": "https://veillette.github.io/Almanach/guides/debugging-common-scenery-rendering-issues"
+    },
+    {
+      "path": "/guides/performance-and-profiling",
+      "sourceFile": "docs/guides/performance-and-profiling.md",
+      "title": "Performance and Profiling",
+      "description": "Finding and fixing slow rendering or update-loop performance in a SceneryStack simulation - profiling query parameters, Node/Property overhead, and Canvas/SVG/WebGL tradeoffs.",
+      "category": "guides",
+      "tags": [
+        "scenery",
+        "performance",
+        "profiling",
+        "rendering"
+      ],
+      "status": "verified",
+      "related": [
+        "/guides/scenery-basics",
+        "/guides/scenery-layout",
+        "/getting-started/supported-browsers",
+        "/api/axon/property",
+        "/api/axon/derived-property"
+      ],
+      "prerequisites": [
+        "/guides/scenery-basics"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 13,
+      "wordCount": 1165,
+      "url": "https://veillette.github.io/Almanach/guides/performance-and-profiling"
+    },
+    {
+      "path": "/guides/translation-and-localization",
+      "sourceFile": "docs/guides/translation-and-localization.md",
+      "title": "Translation and Localization",
+      "description": "String management with StringProperty and the PhET translation pipeline.",
+      "category": "guides",
+      "tags": [
+        "localization",
+        "i18n",
+        "strings"
+      ],
+      "status": "verified",
+      "related": [
+        "/api/axon/string-property",
+        "/guides/preferences-and-feature-flags",
+        "/getting-started/project-structure-conventions"
+      ],
+      "prerequisites": [
+        "/api/axon/string-property",
+        "/getting-started/what-is-scenerystack"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 14,
+      "wordCount": 566,
+      "url": "https://veillette.github.io/Almanach/guides/translation-and-localization"
+    },
+    {
+      "path": "/guides/internationalization-deep-dive",
+      "sourceFile": "docs/guides/internationalization-deep-dive.md",
+      "title": "Internationalization Deep Dive",
+      "description": "Runtime locale switching, right-to-left layout, and PatternStringProperty for pluralization and placeholders, building on the translation pipeline basics.",
+      "category": "guides",
+      "tags": [
+        "localization",
+        "i18n",
+        "rtl",
+        "strings"
+      ],
+      "status": "verified",
+      "related": [
+        "/guides/translation-and-localization",
+        "/api/axon/pattern-string-property",
+        "/api/axon/string-property"
+      ],
+      "prerequisites": [
+        "/guides/translation-and-localization"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 15,
+      "wordCount": 920,
+      "url": "https://veillette.github.io/Almanach/guides/internationalization-deep-dive"
+    },
+    {
+      "path": "/guides/sim-lifecycle-and-startup-sequence",
+      "sourceFile": "docs/guides/sim-lifecycle-and-startup-sequence.md",
+      "title": "Sim Lifecycle and Startup Sequence",
+      "description": "The real sequence from Sim construction through start(), screen selection, and the running animation loop that steps Properties and listeners every frame.",
+      "category": "guides",
+      "tags": [
+        "joist",
+        "Sim",
+        "Screen",
+        "lifecycle",
+        "animation-loop"
+      ],
+      "status": "complete",
+      "related": [
+        "/api/joist/sim",
+        "/api/joist/screen",
+        "/api/joist/screen-view",
+        "/guides/scenery-basics",
+        "/api/axon/timer"
+      ],
+      "prerequisites": [
+        "/api/joist/sim",
+        "/getting-started/your-first-simulation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 16,
+      "wordCount": 800,
+      "url": "https://veillette.github.io/Almanach/guides/sim-lifecycle-and-startup-sequence"
+    },
+    {
+      "path": "/guides/preferences-and-feature-flags",
+      "sourceFile": "docs/guides/preferences-and-feature-flags.md",
+      "title": "Preferences and Feature Flags",
+      "description": "Using the Preferences dialog and query parameters to configure sim behavior.",
+      "category": "guides",
+      "tags": [
+        "preferences",
+        "query-parameters",
+        "joist"
+      ],
+      "status": "verified",
+      "related": [
+        "/getting-started/your-first-simulation",
+        "/guides/translation-and-localization",
+        "/getting-started/running-and-building-a-simulation"
+      ],
+      "prerequisites": [
+        "/getting-started/your-first-simulation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 17,
+      "wordCount": 581,
+      "url": "https://veillette.github.io/Almanach/guides/preferences-and-feature-flags"
+    },
+    {
+      "path": "/guides/phet-io-and-instrumentation",
+      "sourceFile": "docs/guides/phet-io-and-instrumentation.md",
+      "title": "PhET-iO and Instrumentation",
+      "description": "Conceptual guide to PhET-iO - what instrumentation buys you and how Tandem fits in.",
+      "category": "guides",
+      "tags": [
+        "phet-io",
+        "tandem",
+        "instrumentation"
+      ],
+      "status": "verified",
+      "related": [
+        "/getting-started/your-first-simulation",
+        "/patterns/model-view-separation",
+        "/guides/building-your-first-screen"
+      ],
+      "prerequisites": [
+        "/getting-started/your-first-simulation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 18,
+      "wordCount": 686,
+      "url": "https://veillette.github.io/Almanach/guides/phet-io-and-instrumentation"
+    },
+    {
+      "path": "/guides/phet-io-deep-dive",
+      "sourceFile": "docs/guides/phet-io-deep-dive.md",
+      "title": "PhET-iO Deep Dive",
+      "description": "PhetioGroup and PhetioCapsule for dynamically created elements, authoring a custom IOType, and how PhET-iO state save/restore actually works.",
+      "category": "guides",
+      "tags": [
+        "phet-io",
+        "tandem",
+        "instrumentation",
+        "phetio-group",
+        "phetio-capsule"
+      ],
+      "status": "verified",
+      "related": [
+        "/guides/phet-io-and-instrumentation",
+        "/patterns/phet-io-instrumentation-pattern",
+        "/api/tandem/tandem"
+      ],
+      "prerequisites": [
+        "/guides/phet-io-and-instrumentation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 19,
+      "wordCount": 1213,
+      "url": "https://veillette.github.io/Almanach/guides/phet-io-deep-dive"
+    },
+    {
+      "path": "/guides/testing-and-qa-strategy-overview",
+      "sourceFile": "docs/guides/testing-and-qa-strategy-overview.md",
+      "title": "Testing and QA Strategy Overview",
+      "description": "The layers of testing a SceneryStack simulation benefits from - headless unit tests, manual QA passes, and automated fuzz-testing.",
+      "category": "guides",
+      "tags": [
+        "testing",
+        "qa",
+        "fuzz-testing",
+        "qunit",
+        "quality"
+      ],
+      "status": "complete",
+      "related": [
+        "/patterns/testing-model-logic-headlessly",
+        "/cookbook/fuzz-testing-a-simulation-locally",
+        "/guides/continuous-integration-for-scenerystack-projects",
+        "/patterns/query-parameters-pattern"
+      ],
+      "prerequisites": [
+        "/patterns/model-view-separation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 20,
+      "wordCount": 818,
+      "url": "https://veillette.github.io/Almanach/guides/testing-and-qa-strategy-overview"
+    },
+    {
+      "path": "/guides/continuous-integration-for-scenerystack-projects",
+      "sourceFile": "docs/guides/continuous-integration-for-scenerystack-projects.md",
+      "title": "Continuous Integration for SceneryStack Projects",
+      "description": "What a CI pipeline for a SceneryStack simulation repository typically checks - type-checking, linting, a production build, unit tests, and automated fuzzing.",
+      "category": "guides",
+      "tags": [
+        "ci",
+        "testing",
+        "build",
+        "tooling",
+        "quality"
+      ],
+      "status": "complete",
+      "related": [
+        "/guides/testing-and-qa-strategy-overview",
+        "/getting-started/running-and-building-a-simulation",
+        "/patterns/testing-model-logic-headlessly",
+        "/cookbook/fuzz-testing-a-simulation-locally"
+      ],
+      "prerequisites": [
+        "/getting-started/running-and-building-a-simulation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 21,
+      "wordCount": 833,
+      "url": "https://veillette.github.io/Almanach/guides/continuous-integration-for-scenerystack-projects"
+    },
+    {
+      "path": "/guides/modifying-scenerystack",
+      "sourceFile": "docs/guides/modifying-scenerystack.md",
+      "title": "Modifying SceneryStack",
+      "description": "Workflow for patching or contributing to the underlying common-code libraries.",
+      "category": "guides",
+      "tags": [
+        "contributing",
+        "open-source",
+        "workflow"
+      ],
+      "status": "verified",
+      "related": [
+        "/getting-started/installation-and-setup",
+        "/getting-started/what-is-scenerystack"
+      ],
+      "prerequisites": [
+        "/getting-started/installation-and-setup"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack",
+        "https://github.com/phetsims"
+      ],
+      "navOrder": 22,
+      "wordCount": 404,
+      "url": "https://veillette.github.io/Almanach/guides/modifying-scenerystack"
+    },
+    {
+      "path": "/guides/publishing-and-distributing-a-simulation",
+      "sourceFile": "docs/guides/publishing-and-distributing-a-simulation.md",
+      "title": "Publishing and Distributing a Simulation",
+      "description": "What a SceneryStack production build produces and the common ways to host it - static hosting, GitHub Pages, or a project's own server.",
+      "category": "guides",
+      "tags": [
+        "deployment",
+        "build",
+        "hosting",
+        "distribution"
+      ],
+      "status": "complete",
+      "related": [
+        "/getting-started/running-and-building-a-simulation",
+        "/getting-started/deploying-to-github-pages",
+        "/getting-started/supported-browsers"
+      ],
+      "prerequisites": [
+        "/getting-started/running-and-building-a-simulation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 23,
+      "wordCount": 745,
+      "url": "https://veillette.github.io/Almanach/guides/publishing-and-distributing-a-simulation"
     },
     {
       "path": "/api/axon/boolean-property",
@@ -9609,65 +9641,35 @@
       "url": "https://veillette.github.io/Almanach/api/vegas/score-display-number-and-star"
     },
     {
-      "path": "/patterns/avoiding-property-leaks",
-      "sourceFile": "docs/patterns/avoiding-property-leaks.md",
-      "title": "Avoiding Property Leaks",
-      "description": "Listener-unlinking discipline for Properties, DerivedProperties, and Multilinks so dynamically created objects don't leak their whole dependency chain.",
-      "category": "patterns",
-      "tags": [
-        "axon",
-        "Property",
-        "memory",
-        "dispose",
-        "listeners"
-      ],
-      "status": "verified",
-      "related": [
-        "/patterns/dispose-and-memory-management",
-        "/patterns/multilink-pattern",
-        "/api/axon/property",
-        "/api/axon/derived-property"
-      ],
-      "prerequisites": [
-        "/patterns/dispose-and-memory-management"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://scenerystack.org/reference/"
-      ],
-      "wordCount": 633,
-      "url": "https://veillette.github.io/Almanach/patterns/avoiding-property-leaks"
-    },
-    {
-      "path": "/patterns/command-undo-pattern",
-      "sourceFile": "docs/patterns/command-undo-pattern.md",
-      "title": "Command/Undo Pattern for Interactive Sims",
-      "description": "Structuring a reversible user action as a command object with do/undo so a simulation can support undo, if it needs to - built on the same Property-based state that reset() and dispose() already rely on.",
+      "path": "/patterns/model-view-separation",
+      "sourceFile": "docs/patterns/model-view-separation.md",
+      "title": "Model-View Separation",
+      "description": "The foundational SceneryStack architecture - axon Properties form the model, scenery Nodes observe it, and nothing flows the other way.",
       "category": "patterns",
       "tags": [
         "architecture",
-        "undo",
+        "axon",
         "Property",
-        "state",
-        "command-pattern"
+        "DerivedProperty",
+        "MVC"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
-        "/patterns/reset-all-pattern",
-        "/patterns/dispose-and-memory-management",
-        "/patterns/state-persistence-and-save-restore-patterns",
-        "/patterns/model-view-separation"
+        "/api/phetcommon/model-view-transform",
+        "/getting-started/what-is-scenerystack",
+        "/patterns/multilink-pattern",
+        "/patterns/reset-all-pattern"
       ],
       "prerequisites": [
-        "/patterns/model-view-separation",
-        "/patterns/state-persistence-and-save-restore-patterns"
+        "/getting-started/your-first-simulation"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
-      "wordCount": 727,
-      "url": "https://veillette.github.io/Almanach/patterns/command-undo-pattern"
+      "navOrder": 1,
+      "wordCount": 473,
+      "url": "https://veillette.github.io/Almanach/patterns/model-view-separation"
     },
     {
       "path": "/patterns/composing-view-nodes",
@@ -9695,37 +9697,9 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
+      "navOrder": 2,
       "wordCount": 682,
       "url": "https://veillette.github.io/Almanach/patterns/composing-view-nodes"
-    },
-    {
-      "path": "/patterns/constants-file-pattern",
-      "sourceFile": "docs/patterns/constants-file-pattern.md",
-      "title": "Constants File Pattern",
-      "description": "The convention of one MySimConstants.ts module holding every shared magic number, color, and font - the same convention scenery-phet/sun's own SceneryPhetConstants and SunConstants follow.",
-      "category": "patterns",
-      "tags": [
-        "conventions",
-        "constants",
-        "architecture",
-        "SceneryPhetConstants",
-        "SunConstants"
-      ],
-      "status": "complete",
-      "related": [
-        "/styling/spacing-and-sizing-constants",
-        "/patterns/multi-screen-sim-structure",
-        "/patterns/options-pattern"
-      ],
-      "prerequisites": [
-        "/patterns/model-view-separation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://scenerystack.org/reference/"
-      ],
-      "wordCount": 610,
-      "url": "https://veillette.github.io/Almanach/patterns/constants-file-pattern"
     },
     {
       "path": "/patterns/derived-enablement-pattern",
@@ -9755,36 +9729,9 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
+      "navOrder": 3,
       "wordCount": 645,
       "url": "https://veillette.github.io/Almanach/patterns/derived-enablement-pattern"
-    },
-    {
-      "path": "/patterns/dispose-and-memory-management",
-      "sourceFile": "docs/patterns/dispose-and-memory-management.md",
-      "title": "Dispose and Memory Management",
-      "description": "The dispose() convention - when Nodes/Properties/listeners must clean up.",
-      "category": "patterns",
-      "tags": [
-        "dispose",
-        "memory",
-        "lifecycle"
-      ],
-      "status": "verified",
-      "related": [
-        "/patterns/model-view-separation",
-        "/api/axon/property",
-        "/api/axon/derived-property",
-        "/patterns/multilink-pattern"
-      ],
-      "prerequisites": [
-        "/patterns/model-view-separation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://scenerystack.org/reference/"
-      ],
-      "wordCount": 498,
-      "url": "https://veillette.github.io/Almanach/patterns/dispose-and-memory-management"
     },
     {
       "path": "/patterns/drag-listeners",
@@ -9815,65 +9762,9 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
+      "navOrder": 4,
       "wordCount": 458,
       "url": "https://veillette.github.io/Almanach/patterns/drag-listeners"
-    },
-    {
-      "path": "/patterns/emitter-vs-property",
-      "sourceFile": "docs/patterns/emitter-vs-property.md",
-      "title": "Emitter vs. Property",
-      "description": "When to model state as a Property versus a discrete event as an Emitter.",
-      "category": "patterns",
-      "tags": [
-        "axon",
-        "Emitter",
-        "Property",
-        "architecture"
-      ],
-      "status": "verified",
-      "related": [
-        "/patterns/model-view-separation",
-        "/api/axon/property",
-        "/api/axon/emitter",
-        "/api/axon/derived-property"
-      ],
-      "prerequisites": [
-        "/patterns/model-view-separation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://scenerystack.org/reference/"
-      ],
-      "wordCount": 449,
-      "url": "https://veillette.github.io/Almanach/patterns/emitter-vs-property"
-    },
-    {
-      "path": "/patterns/feature-flags-and-preferences-pattern",
-      "sourceFile": "docs/patterns/feature-flags-and-preferences-pattern.md",
-      "title": "Feature Flags and Preferences Pattern",
-      "description": "The narrow convention of gating an in-development or optional feature behind a single, consistently-named boolean Property.",
-      "category": "patterns",
-      "tags": [
-        "query-parameters",
-        "Property",
-        "feature-flag",
-        "preferences"
-      ],
-      "status": "verified",
-      "related": [
-        "/guides/preferences-and-feature-flags",
-        "/patterns/model-view-separation",
-        "/patterns/query-parameters-pattern"
-      ],
-      "prerequisites": [
-        "/guides/preferences-and-feature-flags"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://scenerystack.org/reference/"
-      ],
-      "wordCount": 475,
-      "url": "https://veillette.github.io/Almanach/patterns/feature-flags-and-preferences-pattern"
     },
     {
       "path": "/patterns/grid-snapping-and-constrained-dragging-pattern",
@@ -9903,8 +9794,97 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
+      "navOrder": 5,
       "wordCount": 706,
       "url": "https://veillette.github.io/Almanach/patterns/grid-snapping-and-constrained-dragging-pattern"
+    },
+    {
+      "path": "/patterns/enumeration-pattern",
+      "sourceFile": "docs/patterns/enumeration-pattern.md",
+      "title": "The Enumeration Pattern",
+      "description": "Modeling closed sets of values instead of string literals.",
+      "category": "patterns",
+      "tags": [
+        "axon",
+        "EnumerationProperty",
+        "enumeration"
+      ],
+      "status": "verified",
+      "related": [
+        "/api/axon/enumeration-property",
+        "/patterns/options-pattern",
+        "/patterns/model-view-separation",
+        "/api/phet-core/enumeration-value"
+      ],
+      "prerequisites": [
+        "/patterns/model-view-separation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack",
+        "https://scenerystack.org/reference/"
+      ],
+      "navOrder": 6,
+      "wordCount": 420,
+      "url": "https://veillette.github.io/Almanach/patterns/enumeration-pattern"
+    },
+    {
+      "path": "/patterns/multilink-pattern",
+      "sourceFile": "docs/patterns/multilink-pattern.md",
+      "title": "The Multilink Pattern",
+      "description": "Combining multiple Properties into one derived reaction.",
+      "category": "patterns",
+      "tags": [
+        "axon",
+        "Multilink",
+        "DerivedProperty"
+      ],
+      "status": "verified",
+      "related": [
+        "/api/axon/multilink",
+        "/api/axon/derived-property",
+        "/api/axon/property",
+        "/patterns/model-view-separation"
+      ],
+      "prerequisites": [
+        "/patterns/model-view-separation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack",
+        "https://scenerystack.org/reference/"
+      ],
+      "navOrder": 7,
+      "wordCount": 428,
+      "url": "https://veillette.github.io/Almanach/patterns/multilink-pattern"
+    },
+    {
+      "path": "/patterns/emitter-vs-property",
+      "sourceFile": "docs/patterns/emitter-vs-property.md",
+      "title": "Emitter vs. Property",
+      "description": "When to model state as a Property versus a discrete event as an Emitter.",
+      "category": "patterns",
+      "tags": [
+        "axon",
+        "Emitter",
+        "Property",
+        "architecture"
+      ],
+      "status": "verified",
+      "related": [
+        "/patterns/model-view-separation",
+        "/api/axon/property",
+        "/api/axon/emitter",
+        "/api/axon/derived-property"
+      ],
+      "prerequisites": [
+        "/patterns/model-view-separation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack",
+        "https://scenerystack.org/reference/"
+      ],
+      "navOrder": 8,
+      "wordCount": 449,
+      "url": "https://veillette.github.io/Almanach/patterns/emitter-vs-property"
     },
     {
       "path": "/patterns/immutable-vs-mutable-model-data",
@@ -9935,25 +9915,28 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
+      "navOrder": 9,
       "wordCount": 793,
       "url": "https://veillette.github.io/Almanach/patterns/immutable-vs-mutable-model-data"
     },
     {
-      "path": "/patterns/lazy-initialization-pattern",
-      "sourceFile": "docs/patterns/lazy-initialization-pattern.md",
-      "title": "Lazy Initialization Pattern",
-      "description": "Deferring an expensive object's construction until it's actually needed, instead of paying its cost unconditionally at startup.",
+      "path": "/patterns/constants-file-pattern",
+      "sourceFile": "docs/patterns/constants-file-pattern.md",
+      "title": "Constants File Pattern",
+      "description": "The convention of one MySimConstants.ts module holding every shared magic number, color, and font - the same convention scenery-phet/sun's own SceneryPhetConstants and SunConstants follow.",
       "category": "patterns",
       "tags": [
-        "performance",
+        "conventions",
+        "constants",
         "architecture",
-        "lazy-initialization"
+        "SceneryPhetConstants",
+        "SunConstants"
       ],
       "status": "complete",
       "related": [
-        "/cookbook/lazily-creating-an-expensive-node",
-        "/api/joist/screen",
-        "/guides/performance-and-profiling"
+        "/styling/spacing-and-sizing-constants",
+        "/patterns/multi-screen-sim-structure",
+        "/patterns/options-pattern"
       ],
       "prerequisites": [
         "/patterns/model-view-separation"
@@ -9962,122 +9945,9 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
-      "wordCount": 617,
-      "url": "https://veillette.github.io/Almanach/patterns/lazy-initialization-pattern"
-    },
-    {
-      "path": "/patterns/model-view-separation",
-      "sourceFile": "docs/patterns/model-view-separation.md",
-      "title": "Model-View Separation",
-      "description": "The foundational SceneryStack architecture - axon Properties form the model, scenery Nodes observe it, and nothing flows the other way.",
-      "category": "patterns",
-      "tags": [
-        "architecture",
-        "axon",
-        "Property",
-        "DerivedProperty",
-        "MVC"
-      ],
-      "status": "verified",
-      "related": [
-        "/api/phetcommon/model-view-transform",
-        "/getting-started/what-is-scenerystack",
-        "/patterns/multilink-pattern",
-        "/patterns/reset-all-pattern"
-      ],
-      "prerequisites": [
-        "/getting-started/your-first-simulation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://scenerystack.org/reference/"
-      ],
-      "wordCount": 473,
-      "url": "https://veillette.github.io/Almanach/patterns/model-view-separation"
-    },
-    {
-      "path": "/patterns/multi-screen-sim-structure",
-      "sourceFile": "docs/patterns/multi-screen-sim-structure.md",
-      "title": "Multi-Screen Sim Structure",
-      "description": "Structuring model/view code across multiple Screens in one Sim.",
-      "category": "patterns",
-      "tags": [
-        "joist",
-        "Screen",
-        "Sim",
-        "architecture"
-      ],
-      "status": "verified",
-      "related": [
-        "/api/joist/sim",
-        "/api/joist/screen",
-        "/api/joist/screen-view",
-        "/patterns/model-view-separation",
-        "/patterns/phet-io-instrumentation-pattern"
-      ],
-      "prerequisites": [
-        "/patterns/model-view-separation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 660,
-      "url": "https://veillette.github.io/Almanach/patterns/multi-screen-sim-structure"
-    },
-    {
-      "path": "/patterns/phet-io-instrumentation-pattern",
-      "sourceFile": "docs/patterns/phet-io-instrumentation-pattern.md",
-      "title": "PhET-iO Instrumentation Pattern",
-      "description": "Deciding what to instrument with Tandem and structuring a PhET-iO-ready model.",
-      "category": "patterns",
-      "tags": [
-        "tandem",
-        "phet-io",
-        "architecture"
-      ],
-      "status": "verified",
-      "related": [
-        "/api/tandem/tandem",
-        "/api/joist/sim",
-        "/api/joist/screen",
-        "/patterns/model-view-separation",
-        "/patterns/reset-all-pattern",
-        "/patterns/multi-screen-sim-structure"
-      ],
-      "prerequisites": [
-        "/patterns/model-view-separation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 699,
-      "url": "https://veillette.github.io/Almanach/patterns/phet-io-instrumentation-pattern"
-    },
-    {
-      "path": "/patterns/query-parameters-pattern",
-      "sourceFile": "docs/patterns/query-parameters-pattern.md",
-      "title": "Query Parameters Pattern",
-      "description": "Using query parameters to drive optional/debug behavior.",
-      "category": "patterns",
-      "tags": [
-        "query-parameters",
-        "conventions"
-      ],
-      "status": "verified",
-      "related": [
-        "/patterns/phet-io-instrumentation-pattern",
-        "/patterns/model-view-separation",
-        "/patterns/feature-flags-and-preferences-pattern"
-      ],
-      "prerequisites": [
-        "/getting-started/what-is-scenerystack"
-      ],
-      "sourceRefs": [
-        "https://github.com/phetsims/query-string-machine",
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 479,
-      "url": "https://veillette.github.io/Almanach/patterns/query-parameters-pattern"
+      "navOrder": 10,
+      "wordCount": 610,
+      "url": "https://veillette.github.io/Almanach/patterns/constants-file-pattern"
     },
     {
       "path": "/patterns/singleton-and-namespace-conventions",
@@ -10107,8 +9977,269 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
+      "navOrder": 11,
       "wordCount": 1007,
       "url": "https://veillette.github.io/Almanach/patterns/singleton-and-namespace-conventions"
+    },
+    {
+      "path": "/patterns/lazy-initialization-pattern",
+      "sourceFile": "docs/patterns/lazy-initialization-pattern.md",
+      "title": "Lazy Initialization Pattern",
+      "description": "Deferring an expensive object's construction until it's actually needed, instead of paying its cost unconditionally at startup.",
+      "category": "patterns",
+      "tags": [
+        "performance",
+        "architecture",
+        "lazy-initialization"
+      ],
+      "status": "complete",
+      "related": [
+        "/cookbook/lazily-creating-an-expensive-node",
+        "/api/joist/screen",
+        "/guides/performance-and-profiling"
+      ],
+      "prerequisites": [
+        "/patterns/model-view-separation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack",
+        "https://scenerystack.org/reference/"
+      ],
+      "navOrder": 12,
+      "wordCount": 617,
+      "url": "https://veillette.github.io/Almanach/patterns/lazy-initialization-pattern"
+    },
+    {
+      "path": "/patterns/dispose-and-memory-management",
+      "sourceFile": "docs/patterns/dispose-and-memory-management.md",
+      "title": "Dispose and Memory Management",
+      "description": "The dispose() convention - when Nodes/Properties/listeners must clean up.",
+      "category": "patterns",
+      "tags": [
+        "dispose",
+        "memory",
+        "lifecycle"
+      ],
+      "status": "verified",
+      "related": [
+        "/patterns/model-view-separation",
+        "/api/axon/property",
+        "/api/axon/derived-property",
+        "/patterns/multilink-pattern"
+      ],
+      "prerequisites": [
+        "/patterns/model-view-separation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack",
+        "https://scenerystack.org/reference/"
+      ],
+      "navOrder": 13,
+      "wordCount": 498,
+      "url": "https://veillette.github.io/Almanach/patterns/dispose-and-memory-management"
+    },
+    {
+      "path": "/patterns/avoiding-property-leaks",
+      "sourceFile": "docs/patterns/avoiding-property-leaks.md",
+      "title": "Avoiding Property Leaks",
+      "description": "Listener-unlinking discipline for Properties, DerivedProperties, and Multilinks so dynamically created objects don't leak their whole dependency chain.",
+      "category": "patterns",
+      "tags": [
+        "axon",
+        "Property",
+        "memory",
+        "dispose",
+        "listeners"
+      ],
+      "status": "verified",
+      "related": [
+        "/patterns/dispose-and-memory-management",
+        "/patterns/multilink-pattern",
+        "/api/axon/property",
+        "/api/axon/derived-property"
+      ],
+      "prerequisites": [
+        "/patterns/dispose-and-memory-management"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack",
+        "https://scenerystack.org/reference/"
+      ],
+      "navOrder": 14,
+      "wordCount": 633,
+      "url": "https://veillette.github.io/Almanach/patterns/avoiding-property-leaks"
+    },
+    {
+      "path": "/patterns/reset-all-pattern",
+      "sourceFile": "docs/patterns/reset-all-pattern.md",
+      "title": "The Reset-All Pattern",
+      "description": "Wiring every model Property's reset() through one ResetAllButton.",
+      "category": "patterns",
+      "tags": [
+        "reset",
+        "ResetAllButton",
+        "Property"
+      ],
+      "status": "verified",
+      "related": [
+        "/api/scenery-phet/reset-all-button",
+        "/api/axon/property",
+        "/patterns/model-view-separation"
+      ],
+      "prerequisites": [
+        "/patterns/model-view-separation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack",
+        "https://scenerystack.org/reference/"
+      ],
+      "navOrder": 15,
+      "wordCount": 479,
+      "url": "https://veillette.github.io/Almanach/patterns/reset-all-pattern"
+    },
+    {
+      "path": "/patterns/testing-model-logic-headlessly",
+      "sourceFile": "docs/patterns/testing-model-logic-headlessly.md",
+      "title": "Testing Model Logic Headlessly",
+      "description": "Unit-testing model classes without instantiating scenery Nodes or a Display, so tests run fast and in plain Node.js.",
+      "category": "patterns",
+      "tags": [
+        "testing",
+        "axon",
+        "Property",
+        "model",
+        "node.js"
+      ],
+      "status": "verified",
+      "related": [
+        "/patterns/model-view-separation",
+        "/patterns/dispose-and-memory-management"
+      ],
+      "prerequisites": [
+        "/patterns/model-view-separation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack",
+        "https://scenerystack.org/reference/"
+      ],
+      "navOrder": 16,
+      "wordCount": 662,
+      "url": "https://veillette.github.io/Almanach/patterns/testing-model-logic-headlessly"
+    },
+    {
+      "path": "/patterns/multi-screen-sim-structure",
+      "sourceFile": "docs/patterns/multi-screen-sim-structure.md",
+      "title": "Multi-Screen Sim Structure",
+      "description": "Structuring model/view code across multiple Screens in one Sim.",
+      "category": "patterns",
+      "tags": [
+        "joist",
+        "Screen",
+        "Sim",
+        "architecture"
+      ],
+      "status": "verified",
+      "related": [
+        "/api/joist/sim",
+        "/api/joist/screen",
+        "/api/joist/screen-view",
+        "/patterns/model-view-separation",
+        "/patterns/phet-io-instrumentation-pattern"
+      ],
+      "prerequisites": [
+        "/patterns/model-view-separation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 17,
+      "wordCount": 660,
+      "url": "https://veillette.github.io/Almanach/patterns/multi-screen-sim-structure"
+    },
+    {
+      "path": "/patterns/options-pattern",
+      "sourceFile": "docs/patterns/options-pattern.md",
+      "title": "The Options Pattern",
+      "description": "The options-object convention for configuring Nodes and components.",
+      "category": "patterns",
+      "tags": [
+        "options",
+        "typescript",
+        "conventions"
+      ],
+      "status": "verified",
+      "related": [
+        "/patterns/model-view-separation",
+        "/patterns/dispose-and-memory-management",
+        "/api/scenery-phet/arrow-node"
+      ],
+      "prerequisites": [
+        "/getting-started/what-is-scenerystack"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack",
+        "https://scenerystack.org/reference/"
+      ],
+      "navOrder": 18,
+      "wordCount": 469,
+      "url": "https://veillette.github.io/Almanach/patterns/options-pattern"
+    },
+    {
+      "path": "/patterns/query-parameters-pattern",
+      "sourceFile": "docs/patterns/query-parameters-pattern.md",
+      "title": "Query Parameters Pattern",
+      "description": "Using query parameters to drive optional/debug behavior.",
+      "category": "patterns",
+      "tags": [
+        "query-parameters",
+        "conventions"
+      ],
+      "status": "verified",
+      "related": [
+        "/patterns/phet-io-instrumentation-pattern",
+        "/patterns/model-view-separation",
+        "/patterns/feature-flags-and-preferences-pattern"
+      ],
+      "prerequisites": [
+        "/getting-started/what-is-scenerystack"
+      ],
+      "sourceRefs": [
+        "https://github.com/phetsims/query-string-machine",
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 19,
+      "wordCount": 479,
+      "url": "https://veillette.github.io/Almanach/patterns/query-parameters-pattern"
+    },
+    {
+      "path": "/patterns/phet-io-instrumentation-pattern",
+      "sourceFile": "docs/patterns/phet-io-instrumentation-pattern.md",
+      "title": "PhET-iO Instrumentation Pattern",
+      "description": "Deciding what to instrument with Tandem and structuring a PhET-iO-ready model.",
+      "category": "patterns",
+      "tags": [
+        "tandem",
+        "phet-io",
+        "architecture"
+      ],
+      "status": "verified",
+      "related": [
+        "/api/tandem/tandem",
+        "/api/joist/sim",
+        "/api/joist/screen",
+        "/patterns/model-view-separation",
+        "/patterns/reset-all-pattern",
+        "/patterns/multi-screen-sim-structure"
+      ],
+      "prerequisites": [
+        "/patterns/model-view-separation"
+      ],
+      "sourceRefs": [
+        "https://www.npmjs.com/package/scenerystack"
+      ],
+      "navOrder": 20,
+      "wordCount": 699,
+      "url": "https://veillette.github.io/Almanach/patterns/phet-io-instrumentation-pattern"
     },
     {
       "path": "/patterns/state-persistence-and-save-restore-patterns",
@@ -10137,146 +10268,70 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
+      "navOrder": 21,
       "wordCount": 697,
       "url": "https://veillette.github.io/Almanach/patterns/state-persistence-and-save-restore-patterns"
     },
     {
-      "path": "/patterns/testing-model-logic-headlessly",
-      "sourceFile": "docs/patterns/testing-model-logic-headlessly.md",
-      "title": "Testing Model Logic Headlessly",
-      "description": "Unit-testing model classes without instantiating scenery Nodes or a Display, so tests run fast and in plain Node.js.",
+      "path": "/patterns/command-undo-pattern",
+      "sourceFile": "docs/patterns/command-undo-pattern.md",
+      "title": "Command/Undo Pattern for Interactive Sims",
+      "description": "Structuring a reversible user action as a command object with do/undo so a simulation can support undo, if it needs to - built on the same Property-based state that reset() and dispose() already rely on.",
       "category": "patterns",
       "tags": [
-        "testing",
-        "axon",
+        "architecture",
+        "undo",
         "Property",
-        "model",
-        "node.js"
+        "state",
+        "command-pattern"
       ],
-      "status": "verified",
+      "status": "complete",
       "related": [
-        "/patterns/model-view-separation",
-        "/patterns/dispose-and-memory-management"
-      ],
-      "prerequisites": [
-        "/patterns/model-view-separation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://scenerystack.org/reference/"
-      ],
-      "wordCount": 662,
-      "url": "https://veillette.github.io/Almanach/patterns/testing-model-logic-headlessly"
-    },
-    {
-      "path": "/patterns/enumeration-pattern",
-      "sourceFile": "docs/patterns/enumeration-pattern.md",
-      "title": "The Enumeration Pattern",
-      "description": "Modeling closed sets of values instead of string literals.",
-      "category": "patterns",
-      "tags": [
-        "axon",
-        "EnumerationProperty",
-        "enumeration"
-      ],
-      "status": "verified",
-      "related": [
-        "/api/axon/enumeration-property",
-        "/patterns/options-pattern",
-        "/patterns/model-view-separation",
-        "/api/phet-core/enumeration-value"
-      ],
-      "prerequisites": [
-        "/patterns/model-view-separation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://scenerystack.org/reference/"
-      ],
-      "wordCount": 420,
-      "url": "https://veillette.github.io/Almanach/patterns/enumeration-pattern"
-    },
-    {
-      "path": "/patterns/multilink-pattern",
-      "sourceFile": "docs/patterns/multilink-pattern.md",
-      "title": "The Multilink Pattern",
-      "description": "Combining multiple Properties into one derived reaction.",
-      "category": "patterns",
-      "tags": [
-        "axon",
-        "Multilink",
-        "DerivedProperty"
-      ],
-      "status": "verified",
-      "related": [
-        "/api/axon/multilink",
-        "/api/axon/derived-property",
-        "/api/axon/property",
-        "/patterns/model-view-separation"
-      ],
-      "prerequisites": [
-        "/patterns/model-view-separation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack",
-        "https://scenerystack.org/reference/"
-      ],
-      "wordCount": 428,
-      "url": "https://veillette.github.io/Almanach/patterns/multilink-pattern"
-    },
-    {
-      "path": "/patterns/options-pattern",
-      "sourceFile": "docs/patterns/options-pattern.md",
-      "title": "The Options Pattern",
-      "description": "The options-object convention for configuring Nodes and components.",
-      "category": "patterns",
-      "tags": [
-        "options",
-        "typescript",
-        "conventions"
-      ],
-      "status": "verified",
-      "related": [
-        "/patterns/model-view-separation",
+        "/patterns/reset-all-pattern",
         "/patterns/dispose-and-memory-management",
-        "/api/scenery-phet/arrow-node"
+        "/patterns/state-persistence-and-save-restore-patterns",
+        "/patterns/model-view-separation"
       ],
       "prerequisites": [
-        "/getting-started/what-is-scenerystack"
+        "/patterns/model-view-separation",
+        "/patterns/state-persistence-and-save-restore-patterns"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
-      "wordCount": 469,
-      "url": "https://veillette.github.io/Almanach/patterns/options-pattern"
+      "navOrder": 22,
+      "wordCount": 727,
+      "url": "https://veillette.github.io/Almanach/patterns/command-undo-pattern"
     },
     {
-      "path": "/patterns/reset-all-pattern",
-      "sourceFile": "docs/patterns/reset-all-pattern.md",
-      "title": "The Reset-All Pattern",
-      "description": "Wiring every model Property's reset() through one ResetAllButton.",
+      "path": "/patterns/feature-flags-and-preferences-pattern",
+      "sourceFile": "docs/patterns/feature-flags-and-preferences-pattern.md",
+      "title": "Feature Flags and Preferences Pattern",
+      "description": "The narrow convention of gating an in-development or optional feature behind a single, consistently-named boolean Property.",
       "category": "patterns",
       "tags": [
-        "reset",
-        "ResetAllButton",
-        "Property"
+        "query-parameters",
+        "Property",
+        "feature-flag",
+        "preferences"
       ],
       "status": "verified",
       "related": [
-        "/api/scenery-phet/reset-all-button",
-        "/api/axon/property",
-        "/patterns/model-view-separation"
+        "/guides/preferences-and-feature-flags",
+        "/patterns/model-view-separation",
+        "/patterns/query-parameters-pattern"
       ],
       "prerequisites": [
-        "/patterns/model-view-separation"
+        "/guides/preferences-and-feature-flags"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
-      "wordCount": 479,
-      "url": "https://veillette.github.io/Almanach/patterns/reset-all-pattern"
+      "navOrder": 23,
+      "wordCount": 475,
+      "url": "https://veillette.github.io/Almanach/patterns/feature-flags-and-preferences-pattern"
     },
     {
       "path": "/styling/animation-and-motion-design-conventions",
@@ -12002,7 +12057,7 @@
       ],
       "prerequisites": [],
       "sourceRefs": [],
-      "wordCount": 1246,
+      "wordCount": 1381,
       "url": "https://veillette.github.io/Almanach/meta/authoring-guide"
     },
     {
@@ -12078,7 +12133,7 @@
         "/meta/authoring-guide"
       ],
       "sourceRefs": [],
-      "wordCount": 325,
+      "wordCount": 341,
       "url": "https://veillette.github.io/Almanach/meta/page-template"
     },
     {

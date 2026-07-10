@@ -15,6 +15,7 @@ prerequisites:
 sourceRefs:
   - https://scenerystack.org/learn/scenery-application/
   - https://scenerystack.org/learn/standalone-library/
+navOrder: 6
 ---
 
 # Scenery Application vs. Standalone Library

@@ -15,6 +15,7 @@ prerequisites:
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
   - https://scenerystack.org/learn/scenery-layout/
+navOrder: 8
 ---
 
 # Advanced Layout Techniques

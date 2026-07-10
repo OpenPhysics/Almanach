@@ -15,6 +15,7 @@ prerequisites:
   - /patterns/model-view-separation
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 20
 ---
 
 # PhET-iO Instrumentation Pattern

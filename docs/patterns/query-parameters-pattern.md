@@ -13,6 +13,7 @@ prerequisites:
 sourceRefs:
   - https://github.com/phetsims/query-string-machine
   - https://www.npmjs.com/package/scenerystack
+navOrder: 19
 ---
 
 # Query Parameters Pattern

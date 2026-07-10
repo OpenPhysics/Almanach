@@ -21,6 +21,7 @@ prerequisites:
   - /api/bamboo/chart-transform
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 9
 ---
 
 # Chart and Data Visualization with Bamboo

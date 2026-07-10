@@ -12,6 +12,7 @@ related:
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
   - https://scenerystack.org/learn/setup/
+navOrder: 2
 ---
 
 # Installation and Setup

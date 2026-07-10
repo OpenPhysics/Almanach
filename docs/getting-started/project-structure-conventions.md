@@ -12,6 +12,7 @@ prerequisites:
   - /getting-started/installation-and-setup
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 5
 ---
 
 # Project Structure Conventions

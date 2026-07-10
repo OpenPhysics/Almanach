@@ -14,6 +14,7 @@ prerequisites:
   - /patterns/model-view-separation
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 17
 ---
 
 # Multi-Screen Sim Structure

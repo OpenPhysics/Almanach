@@ -12,6 +12,7 @@ prerequisites:
   - /getting-started/running-and-building-a-simulation
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 23
 ---
 
 # Publishing and Distributing a Simulation

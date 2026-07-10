@@ -32,6 +32,7 @@ status: stub                         # stub -> draft -> complete -> verified as 
 #   - /getting-started/what-is-scenerystack
 # sourceRefs:
 #   - https://www.npmjs.com/package/scenerystack
+# navOrder: 10                        # optional — curated sidebar position within the section; omit to sort alphabetically
 ---
 ```
 

@@ -12,6 +12,7 @@ prerequisites:
   - /getting-started/your-first-simulation
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 18
 ---
 
 # PhET-iO and Instrumentation

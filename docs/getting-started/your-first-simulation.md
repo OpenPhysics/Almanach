@@ -17,6 +17,7 @@ prerequisites:
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
   - https://scenerystack.org/learn/simulation/
+navOrder: 3
 ---
 
 # Your First Simulation

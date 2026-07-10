@@ -14,6 +14,7 @@ prerequisites:
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
   - https://vite.dev/guide/static-deploy.html
+navOrder: 9
 ---
 
 # Deploying a Simulation to GitHub Pages

@@ -26,8 +26,9 @@ const EXCLUDED_DIRS = new Set( [ '.vitepress', 'public', 'node_modules' ] );
 
 /**
  * Builds the VitePress sidebar by scanning every top-level folder under docs/
- * and reading each page's frontmatter title. Pages sort alphabetically by
- * title within their section.
+ * and reading each page's frontmatter. Pages sort by `navOrder` then title
+ * within their section (see compareItems); pages without a `navOrder` fall
+ * back to alphabetical, so uncurated sections — like the API — stay A–Z.
  */
 export function buildSidebar(): DefaultTheme.Sidebar {
   const folders = fs.readdirSync( DOCS_DIR, { withFileTypes: true } )
@@ -54,15 +55,36 @@ export function buildSidebar(): DefaultTheme.Sidebar {
   } ).filter( section => section.items.length > 0 );
 }
 
+// A sidebar item that also carries its frontmatter `navOrder`, used only for
+// sorting — the extra field is never consumed by VitePress.
+type SortableItem = DefaultTheme.SidebarItem & { navOrder?: number };
+
+// Sort key: pages with a finite `navOrder` lead, ascending; pages without one
+// follow, alphabetical by title; ties broken alphabetically. This lets a
+// section carry a curated reading order (Getting Started, Guides, Patterns)
+// while sections that don't set `navOrder` — notably the lookup-oriented API —
+// stay purely alphabetical, and a brand-new page never disrupts a curated flow.
+function compareItems( a: SortableItem, b: SortableItem ): number {
+  const ao = typeof a.navOrder === 'number' && Number.isFinite( a.navOrder );
+  const bo = typeof b.navOrder === 'number' && Number.isFinite( b.navOrder );
+  if ( ao && bo ) {
+    return a.navOrder! - b.navOrder! || ( a.text ?? '' ).localeCompare( b.text ?? '' );
+  }
+  if ( ao ) { return -1; }
+  if ( bo ) { return 1; }
+  return ( a.text ?? '' ).localeCompare( b.text ?? '' );
+}
+
 /**
- * Recursively collects pages under `dir`, sorted alphabetically. A
- * subdirectory (e.g. `api/axon/`) becomes a nested, collapsible sidebar
- * group rather than being flattened, so categories that grow large (like
- * `api/`, organized one subfolder per library) stay navigable.
+ * Recursively collects pages under `dir`, sorted by `navOrder` then
+ * alphabetically. A subdirectory (e.g. `api/axon/`) becomes a nested,
+ * collapsible sidebar group rather than being flattened, so categories that
+ * grow large (like `api/`, organized one subfolder per library) stay
+ * navigable. Library groups never carry a `navOrder`, so they stay A–Z.
  */
 function collectPages( dir: string, urlPrefix: string ): DefaultTheme.SidebarItem[] {
-  const files: DefaultTheme.SidebarItem[] = [];
-  const groups: DefaultTheme.SidebarItem[] = [];
+  const files: SortableItem[] = [];
+  const groups: SortableItem[] = [];
   for ( const entry of fs.readdirSync( dir, { withFileTypes: true } ) ) {
     const fullPath = path.join( dir, entry.name );
     if ( entry.isDirectory() ) {
@@ -80,11 +102,12 @@ function collectPages( dir: string, urlPrefix: string ): DefaultTheme.SidebarIte
       const stem = entry.name.replace( /\.md$/, '' );
       files.push( {
         text: data.title ?? stem,
-        link: `${urlPrefix}/${stem}`
+        link: `${urlPrefix}/${stem}`,
+        navOrder: data.navOrder
       } );
     }
   }
-  files.sort( ( a, b ) => ( a.text ?? '' ).localeCompare( b.text ?? '' ) );
-  groups.sort( ( a, b ) => ( a.text ?? '' ).localeCompare( b.text ?? '' ) );
+  files.sort( compareItems );
+  groups.sort( compareItems );
   return [ ...files, ...groups ];
 }

@@ -6,41 +6,41 @@ Full content of every page is available at https://veillette.github.io/Almanach/
 
 ## Getting Started
 
-- [Deploying a Simulation to GitHub Pages](https://veillette.github.io/Almanach/getting-started/deploying-to-github-pages): Building a static SceneryStack simulation and publishing it to GitHub Pages via the gh-pages branch or GitHub Actions.
+- [What is SceneryStack?](https://veillette.github.io/Almanach/getting-started/what-is-scenerystack): Overview of the SceneryStack framework, its constituent libraries, and how to install and import it.
 - [Installation and Setup](https://veillette.github.io/Almanach/getting-started/installation-and-setup): Setting up a new SceneryStack project - npm install, TypeScript config, and dev tooling.
-- [Project Structure Conventions](https://veillette.github.io/Almanach/getting-started/project-structure-conventions): Standard folder/file layout of a SceneryStack repo (model/view split, strings, images).
+- [Your First Simulation](https://veillette.github.io/Almanach/getting-started/your-first-simulation): Scaffolding a minimal one-screen simulation with Sim, Screen, and ScreenView.
 - [Running and Building a Simulation](https://veillette.github.io/Almanach/getting-started/running-and-building-a-simulation): Dev server workflow and production build output for a SceneryStack sim.
+- [Project Structure Conventions](https://veillette.github.io/Almanach/getting-started/project-structure-conventions): Standard folder/file layout of a SceneryStack repo (model/view split, strings, images).
 - [Scenery Application vs. Standalone Library](https://veillette.github.io/Almanach/getting-started/scenery-application-vs-standalone-library): Choosing between a full joist-based Sim application and using scenery as a standalone rendering library.
 - [Supported Browsers](https://veillette.github.io/Almanach/getting-started/supported-browsers): Browser/platform support matrix and graceful-degradation considerations.
 - [Troubleshooting Common Setup Errors](https://veillette.github.io/Almanach/getting-started/troubleshooting-common-setup-errors): The most likely failure modes when starting a new scenerystack project - Node version mismatches, wrong import subpaths, missing peer deps, and TypeScript module resolution.
-- [What is SceneryStack?](https://veillette.github.io/Almanach/getting-started/what-is-scenerystack): Overview of the SceneryStack framework, its constituent libraries, and how to install and import it.
-- [Your First Simulation](https://veillette.github.io/Almanach/getting-started/your-first-simulation): Scaffolding a minimal one-screen simulation with Sim, Screen, and ScreenView.
+- [Deploying a Simulation to GitHub Pages](https://veillette.github.io/Almanach/getting-started/deploying-to-github-pages): Building a static SceneryStack simulation and publishing it to GitHub Pages via the gh-pages branch or GitHub Actions.
 
 ## Guides
 
+- [Scenery Basics](https://veillette.github.io/Almanach/guides/scenery-basics): Introduction to the scene graph - the Node tree, render layers, and coordinate frames.
+- [Working with Model-View Transforms](https://veillette.github.io/Almanach/guides/working-with-model-view-transforms): Why SceneryStack simulations separate model coordinates from view pixels, and the common ModelViewTransform2 usage patterns that follow from it.
+- [Scenery Layout](https://veillette.github.io/Almanach/guides/scenery-layout): Overview of scenery's auto-layout system - FlowBox, GridBox, AlignBox, and layout options.
+- [Scenery Input](https://veillette.github.io/Almanach/guides/scenery-input): Overview of scenery's input system - pointers, listeners, and event phases.
+- [UI Components Overview](https://veillette.github.io/Almanach/guides/ui-components-overview): Tour of the sun and scenery-phet component libraries and when to reach for each.
 - [Accessible Interaction Tutorial](https://veillette.github.io/Almanach/guides/accessible-interaction-tutorial): Making a custom draggable Node fully accessible end-to-end.
-- [Advanced Layout Techniques](https://veillette.github.io/Almanach/guides/advanced-layout-techniques): Nesting FlowBox/GridBox containers, escaping to ManualConstraint for one-off positioning, and using AlignGroup to size content consistently across containers.
 - [Building Your First Screen](https://veillette.github.io/Almanach/guides/building-your-first-screen): Step-by-step model/view/Screen wiring for a new screen in a multi-screen sim.
+- [Advanced Layout Techniques](https://veillette.github.io/Almanach/guides/advanced-layout-techniques): Nesting FlowBox/GridBox containers, escaping to ManualConstraint for one-off positioning, and using AlignGroup to size content consistently across containers.
 - [Chart and Data Visualization with Bamboo](https://veillette.github.io/Almanach/guides/chart-and-data-visualization-with-bamboo): Subsystem overview of bamboo - the ChartTransform every plot shares, the family of Plot Node types built on it, and axis/gridline decoration.
-- [Continuous Integration for SceneryStack Projects](https://veillette.github.io/Almanach/guides/continuous-integration-for-scenerystack-projects): What a CI pipeline for a SceneryStack simulation repository typically checks - type-checking, linting, a production build, unit tests, and automated fuzzing.
-- [Debugging Common Scenery Rendering Issues](https://veillette.github.io/Almanach/guides/debugging-common-scenery-rendering-issues): A walkthrough of the most common visual bugs in a scenery scene graph - Nodes that won't show, layout that won't update, and z-order surprises - and the debug tools that narrow each one down.
+- [Working with Sound (tambo Overview)](https://veillette.github.io/Almanach/guides/working-with-sound): How tambo fits into a SceneryStack simulation - soundManager as the central mixer, and the sound-generator classes you compose to drive it.
 - [Haptics and Alternative Feedback Channels](https://veillette.github.io/Almanach/guides/haptics-and-alternative-feedback-channels): Sound (tambo) and vibration (tappi) as feedback channels beyond the visual scene graph - when a simulation benefits from each, and how they relate to accessibility.
-- [Internationalization Deep Dive](https://veillette.github.io/Almanach/guides/internationalization-deep-dive): Runtime locale switching, right-to-left layout, and PatternStringProperty for pluralization and placeholders, building on the translation pipeline basics.
-- [Modifying SceneryStack](https://veillette.github.io/Almanach/guides/modifying-scenerystack): Workflow for patching or contributing to the underlying common-code libraries.
+- [Debugging Common Scenery Rendering Issues](https://veillette.github.io/Almanach/guides/debugging-common-scenery-rendering-issues): A walkthrough of the most common visual bugs in a scenery scene graph - Nodes that won't show, layout that won't update, and z-order surprises - and the debug tools that narrow each one down.
 - [Performance and Profiling](https://veillette.github.io/Almanach/guides/performance-and-profiling): Finding and fixing slow rendering or update-loop performance in a SceneryStack simulation - profiling query parameters, Node/Property overhead, and Canvas/SVG/WebGL tradeoffs.
+- [Translation and Localization](https://veillette.github.io/Almanach/guides/translation-and-localization): String management with StringProperty and the PhET translation pipeline.
+- [Internationalization Deep Dive](https://veillette.github.io/Almanach/guides/internationalization-deep-dive): Runtime locale switching, right-to-left layout, and PatternStringProperty for pluralization and placeholders, building on the translation pipeline basics.
+- [Sim Lifecycle and Startup Sequence](https://veillette.github.io/Almanach/guides/sim-lifecycle-and-startup-sequence): The real sequence from Sim construction through start(), screen selection, and the running animation loop that steps Properties and listeners every frame.
+- [Preferences and Feature Flags](https://veillette.github.io/Almanach/guides/preferences-and-feature-flags): Using the Preferences dialog and query parameters to configure sim behavior.
 - [PhET-iO and Instrumentation](https://veillette.github.io/Almanach/guides/phet-io-and-instrumentation): Conceptual guide to PhET-iO - what instrumentation buys you and how Tandem fits in.
 - [PhET-iO Deep Dive](https://veillette.github.io/Almanach/guides/phet-io-deep-dive): PhetioGroup and PhetioCapsule for dynamically created elements, authoring a custom IOType, and how PhET-iO state save/restore actually works.
-- [Preferences and Feature Flags](https://veillette.github.io/Almanach/guides/preferences-and-feature-flags): Using the Preferences dialog and query parameters to configure sim behavior.
-- [Publishing and Distributing a Simulation](https://veillette.github.io/Almanach/guides/publishing-and-distributing-a-simulation): What a SceneryStack production build produces and the common ways to host it - static hosting, GitHub Pages, or a project's own server.
-- [Scenery Basics](https://veillette.github.io/Almanach/guides/scenery-basics): Introduction to the scene graph - the Node tree, render layers, and coordinate frames.
-- [Scenery Input](https://veillette.github.io/Almanach/guides/scenery-input): Overview of scenery's input system - pointers, listeners, and event phases.
-- [Scenery Layout](https://veillette.github.io/Almanach/guides/scenery-layout): Overview of scenery's auto-layout system - FlowBox, GridBox, AlignBox, and layout options.
-- [Sim Lifecycle and Startup Sequence](https://veillette.github.io/Almanach/guides/sim-lifecycle-and-startup-sequence): The real sequence from Sim construction through start(), screen selection, and the running animation loop that steps Properties and listeners every frame.
 - [Testing and QA Strategy Overview](https://veillette.github.io/Almanach/guides/testing-and-qa-strategy-overview): The layers of testing a SceneryStack simulation benefits from - headless unit tests, manual QA passes, and automated fuzz-testing.
-- [Translation and Localization](https://veillette.github.io/Almanach/guides/translation-and-localization): String management with StringProperty and the PhET translation pipeline.
-- [UI Components Overview](https://veillette.github.io/Almanach/guides/ui-components-overview): Tour of the sun and scenery-phet component libraries and when to reach for each.
-- [Working with Model-View Transforms](https://veillette.github.io/Almanach/guides/working-with-model-view-transforms): Why SceneryStack simulations separate model coordinates from view pixels, and the common ModelViewTransform2 usage patterns that follow from it.
-- [Working with Sound (tambo Overview)](https://veillette.github.io/Almanach/guides/working-with-sound): How tambo fits into a SceneryStack simulation - soundManager as the central mixer, and the sound-generator classes you compose to drive it.
+- [Continuous Integration for SceneryStack Projects](https://veillette.github.io/Almanach/guides/continuous-integration-for-scenerystack-projects): What a CI pipeline for a SceneryStack simulation repository typically checks - type-checking, linting, a production build, unit tests, and automated fuzzing.
+- [Modifying SceneryStack](https://veillette.github.io/Almanach/guides/modifying-scenerystack): Workflow for patching or contributing to the underlying common-code libraries.
+- [Publishing and Distributing a Simulation](https://veillette.github.io/Almanach/guides/publishing-and-distributing-a-simulation): What a SceneryStack production build produces and the common ways to host it - static hosting, GitHub Pages, or a project's own server.
 
 ## API
 
@@ -407,29 +407,29 @@ Full content of every page is available at https://veillette.github.io/Almanach/
 
 ## Patterns
 
-- [Avoiding Property Leaks](https://veillette.github.io/Almanach/patterns/avoiding-property-leaks): Listener-unlinking discipline for Properties, DerivedProperties, and Multilinks so dynamically created objects don't leak their whole dependency chain.
-- [Command/Undo Pattern for Interactive Sims](https://veillette.github.io/Almanach/patterns/command-undo-pattern): Structuring a reversible user action as a command object with do/undo so a simulation can support undo, if it needs to - built on the same Property-based state that reset() and dispose() already rely on.
-- [Composing View Nodes](https://veillette.github.io/Almanach/patterns/composing-view-nodes): Building a screen's view as small, composed Node subclasses instead of one giant ScreenView.
-- [Constants File Pattern](https://veillette.github.io/Almanach/patterns/constants-file-pattern): The convention of one MySimConstants.ts module holding every shared magic number, color, and font - the same convention scenery-phet/sun's own SceneryPhetConstants and SunConstants follow.
-- [Derived-Enablement Pattern](https://veillette.github.io/Almanach/patterns/derived-enablement-pattern): Computing a control's enabledProperty from a DerivedProperty over other model state, instead of imperatively setting .enabled from scattered call sites.
-- [Dispose and Memory Management](https://veillette.github.io/Almanach/patterns/dispose-and-memory-management): The dispose() convention - when Nodes/Properties/listeners must clean up.
-- [Drag Listeners](https://veillette.github.io/Almanach/patterns/drag-listeners): Making nodes draggable with DragListener, KeyboardDragListener, and RichDragListener, wired to a model positionProperty through a transform.
-- [Emitter vs. Property](https://veillette.github.io/Almanach/patterns/emitter-vs-property): When to model state as a Property versus a discrete event as an Emitter.
-- [Feature Flags and Preferences Pattern](https://veillette.github.io/Almanach/patterns/feature-flags-and-preferences-pattern): The narrow convention of gating an in-development or optional feature behind a single, consistently-named boolean Property.
-- [Grid-Snapping and Constrained-Dragging Pattern](https://veillette.github.io/Almanach/patterns/grid-snapping-and-constrained-dragging-pattern): When and why to constrain a draggable Node's input - snapping to a grid, clamping to bounds, or restricting to one axis - as distinct decisions layered on top of the ordinary drag-listener pattern.
-- [Immutable vs. Mutable Model Data](https://veillette.github.io/Almanach/patterns/immutable-vs-mutable-model-data): When model state should be an immutable value object replaced wholesale via property.value = newValue, versus mutated in place - and why SceneryStack's math types default to returning new instances.
-- [Lazy Initialization Pattern](https://veillette.github.io/Almanach/patterns/lazy-initialization-pattern): Deferring an expensive object's construction until it's actually needed, instead of paying its cost unconditionally at startup.
 - [Model-View Separation](https://veillette.github.io/Almanach/patterns/model-view-separation): The foundational SceneryStack architecture - axon Properties form the model, scenery Nodes observe it, and nothing flows the other way.
-- [Multi-Screen Sim Structure](https://veillette.github.io/Almanach/patterns/multi-screen-sim-structure): Structuring model/view code across multiple Screens in one Sim.
-- [PhET-iO Instrumentation Pattern](https://veillette.github.io/Almanach/patterns/phet-io-instrumentation-pattern): Deciding what to instrument with Tandem and structuring a PhET-iO-ready model.
-- [Query Parameters Pattern](https://veillette.github.io/Almanach/patterns/query-parameters-pattern): Using query parameters to drive optional/debug behavior.
-- [Singleton and Namespace Conventions](https://veillette.github.io/Almanach/patterns/singleton-and-namespace-conventions): When a library exposes a ready-made shared-instance singleton (like dotRandom or animationFrameTimer) versus when you construct and own your own instance.
-- [State Persistence and Save/Restore Patterns](https://veillette.github.io/Almanach/patterns/state-persistence-and-save-restore-patterns): Structuring model state as enumerable Properties so it can be saved and restored, whether by PhET-iO or by a simulation's own save/load feature.
-- [Testing Model Logic Headlessly](https://veillette.github.io/Almanach/patterns/testing-model-logic-headlessly): Unit-testing model classes without instantiating scenery Nodes or a Display, so tests run fast and in plain Node.js.
+- [Composing View Nodes](https://veillette.github.io/Almanach/patterns/composing-view-nodes): Building a screen's view as small, composed Node subclasses instead of one giant ScreenView.
+- [Derived-Enablement Pattern](https://veillette.github.io/Almanach/patterns/derived-enablement-pattern): Computing a control's enabledProperty from a DerivedProperty over other model state, instead of imperatively setting .enabled from scattered call sites.
+- [Drag Listeners](https://veillette.github.io/Almanach/patterns/drag-listeners): Making nodes draggable with DragListener, KeyboardDragListener, and RichDragListener, wired to a model positionProperty through a transform.
+- [Grid-Snapping and Constrained-Dragging Pattern](https://veillette.github.io/Almanach/patterns/grid-snapping-and-constrained-dragging-pattern): When and why to constrain a draggable Node's input - snapping to a grid, clamping to bounds, or restricting to one axis - as distinct decisions layered on top of the ordinary drag-listener pattern.
 - [The Enumeration Pattern](https://veillette.github.io/Almanach/patterns/enumeration-pattern): Modeling closed sets of values instead of string literals.
 - [The Multilink Pattern](https://veillette.github.io/Almanach/patterns/multilink-pattern): Combining multiple Properties into one derived reaction.
-- [The Options Pattern](https://veillette.github.io/Almanach/patterns/options-pattern): The options-object convention for configuring Nodes and components.
+- [Emitter vs. Property](https://veillette.github.io/Almanach/patterns/emitter-vs-property): When to model state as a Property versus a discrete event as an Emitter.
+- [Immutable vs. Mutable Model Data](https://veillette.github.io/Almanach/patterns/immutable-vs-mutable-model-data): When model state should be an immutable value object replaced wholesale via property.value = newValue, versus mutated in place - and why SceneryStack's math types default to returning new instances.
+- [Constants File Pattern](https://veillette.github.io/Almanach/patterns/constants-file-pattern): The convention of one MySimConstants.ts module holding every shared magic number, color, and font - the same convention scenery-phet/sun's own SceneryPhetConstants and SunConstants follow.
+- [Singleton and Namespace Conventions](https://veillette.github.io/Almanach/patterns/singleton-and-namespace-conventions): When a library exposes a ready-made shared-instance singleton (like dotRandom or animationFrameTimer) versus when you construct and own your own instance.
+- [Lazy Initialization Pattern](https://veillette.github.io/Almanach/patterns/lazy-initialization-pattern): Deferring an expensive object's construction until it's actually needed, instead of paying its cost unconditionally at startup.
+- [Dispose and Memory Management](https://veillette.github.io/Almanach/patterns/dispose-and-memory-management): The dispose() convention - when Nodes/Properties/listeners must clean up.
+- [Avoiding Property Leaks](https://veillette.github.io/Almanach/patterns/avoiding-property-leaks): Listener-unlinking discipline for Properties, DerivedProperties, and Multilinks so dynamically created objects don't leak their whole dependency chain.
 - [The Reset-All Pattern](https://veillette.github.io/Almanach/patterns/reset-all-pattern): Wiring every model Property's reset() through one ResetAllButton.
+- [Testing Model Logic Headlessly](https://veillette.github.io/Almanach/patterns/testing-model-logic-headlessly): Unit-testing model classes without instantiating scenery Nodes or a Display, so tests run fast and in plain Node.js.
+- [Multi-Screen Sim Structure](https://veillette.github.io/Almanach/patterns/multi-screen-sim-structure): Structuring model/view code across multiple Screens in one Sim.
+- [The Options Pattern](https://veillette.github.io/Almanach/patterns/options-pattern): The options-object convention for configuring Nodes and components.
+- [Query Parameters Pattern](https://veillette.github.io/Almanach/patterns/query-parameters-pattern): Using query parameters to drive optional/debug behavior.
+- [PhET-iO Instrumentation Pattern](https://veillette.github.io/Almanach/patterns/phet-io-instrumentation-pattern): Deciding what to instrument with Tandem and structuring a PhET-iO-ready model.
+- [State Persistence and Save/Restore Patterns](https://veillette.github.io/Almanach/patterns/state-persistence-and-save-restore-patterns): Structuring model state as enumerable Properties so it can be saved and restored, whether by PhET-iO or by a simulation's own save/load feature.
+- [Command/Undo Pattern for Interactive Sims](https://veillette.github.io/Almanach/patterns/command-undo-pattern): Structuring a reversible user action as a command object with do/undo so a simulation can support undo, if it needs to - built on the same Property-based state that reset() and dispose() already rely on.
+- [Feature Flags and Preferences Pattern](https://veillette.github.io/Almanach/patterns/feature-flags-and-preferences-pattern): The narrow convention of gating an in-development or optional feature behind a single, consistently-named boolean Property.
 
 ## Styling
 

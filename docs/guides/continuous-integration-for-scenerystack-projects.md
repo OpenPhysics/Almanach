@@ -13,6 +13,7 @@ prerequisites:
   - /getting-started/running-and-building-a-simulation
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 21
 ---
 
 # Continuous Integration for SceneryStack Projects

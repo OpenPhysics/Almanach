@@ -51,6 +51,7 @@ type PageRecord = {
   related: string[];
   prerequisites: string[];
   sourceRefs: string[];
+  navOrder?: number;    // optional — curated sidebar position within a section (see docs/meta/authoring-guide.md)
   wordCount: number;
   content: string;
 };
@@ -120,6 +121,9 @@ for ( const file of walkMarkdownFiles( DOCS_DIR ) ) {
   if ( data.sourceRefs !== undefined && ( !Array.isArray( data.sourceRefs ) || data.sourceRefs.some( ( r: unknown ) => typeof r !== 'string' ) ) ) {
     fileErrors.push( 'frontmatter "sourceRefs" must be an array of URL strings' );
   }
+  if ( data.navOrder !== undefined && ( typeof data.navOrder !== 'number' || !Number.isFinite( data.navOrder ) ) ) {
+    fileErrors.push( 'frontmatter "navOrder" must be a finite number when present' );
+  }
 
   if ( fileErrors.length > 0 ) {
     errors.push( ...fileErrors.map( message => `docs/${relative}: ${message}` ) );
@@ -139,6 +143,7 @@ for ( const file of walkMarkdownFiles( DOCS_DIR ) ) {
     related: data.related ?? [],
     prerequisites: data.prerequisites ?? [],
     sourceRefs: data.sourceRefs ?? [],
+    navOrder: typeof data.navOrder === 'number' ? data.navOrder : undefined,
     wordCount: content.split( /\s+/ ).filter( word => word.length > 0 ).length,
     content: content.trim()
   } );
@@ -167,13 +172,21 @@ if ( errors.length > 0 ) {
   process.exit( 1 );
 }
 
-// Stable ordering: category order above, then library (for api/), then title.
+// Stable ordering matches the visible sidebar: category order above, then
+// library (for api/), then navOrder-then-title so curated sections read in
+// their intended learning order while uncurated ones stay alphabetical.
 const categoryOrder = Object.keys( CATEGORIES );
 pages.sort( ( a, b ) => {
   const byCategory = categoryOrder.indexOf( a.category ) - categoryOrder.indexOf( b.category );
   if ( byCategory !== 0 ) { return byCategory; }
   const byLibrary = ( a.library ?? '' ).localeCompare( b.library ?? '' );
-  return byLibrary !== 0 ? byLibrary : a.title.localeCompare( b.title );
+  if ( byLibrary !== 0 ) { return byLibrary; }
+  const ao = typeof a.navOrder === 'number';
+  const bo = typeof b.navOrder === 'number';
+  if ( ao && bo ) { return a.navOrder! - b.navOrder! || a.title.localeCompare( b.title ); }
+  if ( ao ) { return -1; }
+  if ( bo ) { return 1; }
+  return a.title.localeCompare( b.title );
 } );
 
 fs.mkdirSync( OUT_DIR, { recursive: true } );

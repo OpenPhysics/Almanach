@@ -16,6 +16,7 @@ prerequisites:
   - /patterns/model-view-separation
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 7
 ---
 
 # Building Your First Screen

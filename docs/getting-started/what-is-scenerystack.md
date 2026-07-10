@@ -9,6 +9,7 @@ related:
   - /api/phetcommon/model-view-transform
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 1
 ---
 
 # What is SceneryStack?

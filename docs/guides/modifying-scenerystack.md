@@ -12,6 +12,7 @@ prerequisites:
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
   - https://github.com/phetsims
+navOrder: 22
 ---
 
 # Modifying SceneryStack

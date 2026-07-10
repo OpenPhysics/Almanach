@@ -12,6 +12,7 @@ prerequisites:
   - /guides/translation-and-localization
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 15
 ---
 
 # Internationalization Deep Dive

@@ -11,6 +11,7 @@ prerequisites:
   - /getting-started/installation-and-setup
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 7
 ---
 
 # Supported Browsers

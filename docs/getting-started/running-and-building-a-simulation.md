@@ -12,6 +12,7 @@ prerequisites:
   - /getting-started/installation-and-setup
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 4
 ---
 
 # Running and Building a Simulation

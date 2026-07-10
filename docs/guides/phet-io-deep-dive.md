@@ -12,6 +12,7 @@ prerequisites:
   - /guides/phet-io-and-instrumentation
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 19
 ---
 
 # PhET-iO Deep Dive

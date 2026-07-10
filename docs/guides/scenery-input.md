@@ -13,6 +13,7 @@ prerequisites:
   - /guides/scenery-basics
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 4
 ---
 
 # Scenery Input

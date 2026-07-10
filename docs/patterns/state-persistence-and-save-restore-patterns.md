@@ -19,6 +19,7 @@ prerequisites:
 sourceRefs:
   - 'https://www.npmjs.com/package/scenerystack'
   - 'https://scenerystack.org/reference/'
+navOrder: 21
 ---
 
 # State Persistence and Save/Restore Patterns

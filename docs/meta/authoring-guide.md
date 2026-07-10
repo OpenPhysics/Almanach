@@ -61,10 +61,17 @@ prerequisites:                              # optional — ordered "read this fi
   - /getting-started/what-is-scenerystack
 sourceRefs:                                 # optional — URLs grounding the page's technical claims
   - https://www.npmjs.com/package/scenerystack
+navOrder: 10                                # optional — position in the sidebar within this section; see below
 ---
 ```
 
 `library` only applies to `api/` pages; omit it everywhere else.
+
+### `navOrder` — sidebar position
+
+`navOrder` is an optional number controlling where a page sits within its section. Pages that set it appear first, ascending; pages without it follow, alphabetical by title. **Omitting it is always safe** — a new page simply lands after any curated entries, A–Z.
+
+The learning-oriented sections (**Getting Started**, **Guides**, **Patterns**) carry a curated reading order via `navOrder`, sequenced to respect each page's own `prerequisites` so a newcomer can read top to bottom. The **API** deliberately leaves `navOrder` unset: it's a reference you scan by name, so it stays alphabetical. Add `navOrder` to a page only when you're intentionally curating its section's order, not as a matter of course.
 
 ### The `status` lifecycle
 
@@ -88,6 +95,7 @@ Validation rules (enforced by `npm run generate`, and by CI on every push):
 - `status` is one of `stub`, `draft`, `complete`, `verified`.
 - Every `related` and `prerequisites` entry resolves to an existing document — broken cross-references fail the build.
 - `sourceRefs`, if present, is an array of URL strings (not resolution-checked — they point outside Almanach).
+- `navOrder`, if present, is a finite number.
 
 VitePress additionally fails the build on dead Markdown links, so inline links like `[Drag Listeners](/patterns/drag-listeners)` are also checked.
 

@@ -15,6 +15,7 @@ prerequisites:
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
   - https://scenerystack.org/reference/
+navOrder: 11
 ---
 
 # Haptics and Alternative Feedback Channels

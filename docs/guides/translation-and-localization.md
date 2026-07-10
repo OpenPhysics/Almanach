@@ -13,6 +13,7 @@ prerequisites:
   - /getting-started/what-is-scenerystack
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 14
 ---
 
 # Translation and Localization

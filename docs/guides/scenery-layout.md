@@ -12,6 +12,7 @@ prerequisites:
   - /guides/scenery-basics
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 3
 ---
 
 # Scenery Layout

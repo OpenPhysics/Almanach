@@ -14,6 +14,7 @@ prerequisites:
   - /patterns/drag-listeners
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 6
 ---
 
 # Accessible Interaction Tutorial

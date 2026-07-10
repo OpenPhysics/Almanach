@@ -15,6 +15,7 @@ prerequisites:
   - /getting-started/your-first-simulation
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
+navOrder: 16
 ---
 
 # Sim Lifecycle and Startup Sequence

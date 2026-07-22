@@ -28,8 +28,8 @@ jobs:
       - name: Check demo registry
         run: npm run demos:check
 
-      - name: Type-check demos
-        run: npm run demos:typecheck
+      - name: Type-check
+        run: npm run typecheck
 
       - name: Build site
         run: npx vitepress build docs

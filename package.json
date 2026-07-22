@@ -19,6 +19,7 @@
     "generate": "tsx scripts/generate-llm-artifacts.ts",
     "demos:check": "tsx scripts/check-demos.ts",
     "demos:typecheck": "tsc --noEmit -p tsconfig.demos.json",
+    "typecheck": "tsc --noEmit",
     "coverage:status": "tsx scripts/coverage-status.ts"
   },
   "devDependencies": {

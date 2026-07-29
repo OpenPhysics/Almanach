@@ -20,26 +20,23 @@ sourceRefs:
 
 ```ts
 import { EyeDropperNode } from 'scenerystack/scenery-phet';
-import { Property } from 'scenerystack/axon';
+import { BooleanProperty } from 'scenerystack/axon';
 ```
 
 ## A minimal example
 
 ```ts
-const isDispensingProperty = new Property( false );
-const isEmptyProperty = new Property( false );
+const isDispensingProperty = new BooleanProperty( false );
+const isEmptyProperty = new BooleanProperty( false );
 
-const dropperNode = new EyeDropperNode( {
+const eyeDropper = new EyeDropperNode( {
   isDispensingProperty: isDispensingProperty,
   isEmptyProperty: isEmptyProperty,
-  fluidColor: 'red',
-  tandem: tandem.createTandem( 'dropperNode' )
+  fluidColor: '#4a90d9'
 } );
 
 isDispensingProperty.link( isDispensing => {
-  if ( isDispensing && !isEmptyProperty.value ) {
-    // add fluid to the model here, once per frame while isDispensing is true
-  }
+  // react to squeeze state — e.g. add fluid to the model while dispensing
 } );
 ```
 

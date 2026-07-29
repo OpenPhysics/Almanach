@@ -23,14 +23,13 @@ sourceRefs:
 import { AquaRadioButton } from 'scenerystack/sun';
 import { Text } from 'scenerystack/scenery';
 import { Property } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
-type Shape = 'circle' | 'square';
-const shapeProperty = new Property<Shape>( 'circle' );
+type Choice = 'red' | 'green' | 'blue';
+const choiceProperty = new Property<Choice>( 'red' );
 
-const circleButton = new AquaRadioButton( shapeProperty, 'circle', new Text( 'Circle' ), {
-  tandem: Tandem.REQUIRED
-} );
+const buttons = ( [ 'red', 'green', 'blue' ] as Choice[] ).map( value =>
+  new AquaRadioButton( choiceProperty, value, new Text( value, { fontSize: 18 } ) )
+);
 ```
 
 The constructor is `( property, value, labelNode, options? )` — `property` must use the default `'reference'` `valueComparisonStrategy` (`AquaRadioButton` compares with `===`), `value` is what gets written to `property` when this button fires, and `labelNode` is vertically centered to the right of the circle. Clicking anywhere on the button or its label sets `property.value = value`; the circle fills in automatically whenever `property.value === value`, from any source.

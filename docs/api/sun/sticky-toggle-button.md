@@ -23,23 +23,15 @@ A sticky toggle button pops down (`valueUp`) or stays pressed down (`valueDown`)
 ```ts
 import { RoundStickyToggleButton } from 'scenerystack/sun';
 import { Path } from 'scenerystack/scenery';
-import { Property } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
-import recordIconShape from './recordIconShape.js';
+import { BooleanProperty } from 'scenerystack/axon';
+import { Shape } from 'scenerystack/kite';
 
-type RecordState = 'up' | 'down';
-const recordButtonStateProperty = new Property<RecordState>( 'up' );
+const pressedProperty = new BooleanProperty( false );
 
-const recordButton = new RoundStickyToggleButton(
-  recordButtonStateProperty,
-  'up',   // valueUp
-  'down', // valueDown
-  {
-    content: new Path( recordIconShape, { fill: 'red' } ),
-    baseColor: 'white',
-    tandem: Tandem.REQUIRED
-  }
-);
+const button = new RoundStickyToggleButton( pressedProperty, false, true, {
+  content: new Path( Shape.circle( 10 ), { fill: '#C0392B' } ),
+  baseColor: 'white'
+} );
 ```
 
 `RectangularStickyToggleButton` has the identical `(valueProperty, valueUp, valueDown, options?)` constructor — only the button shape differs.

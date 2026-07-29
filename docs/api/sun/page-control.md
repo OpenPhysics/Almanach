@@ -20,34 +20,33 @@ sourceRefs:
 
 ```ts
 import { Carousel, PageControl, type CarouselItem } from 'scenerystack/sun';
-import { Text, VBox } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
+import { Rectangle, VBox } from 'scenerystack/scenery';
 
-const items: CarouselItem[] = [
-  { createNode: () => new Text( 'Apple' ) },
-  { createNode: () => new Text( 'Banana' ) },
-  { createNode: () => new Text( 'Cherry' ) },
-  { createNode: () => new Text( 'Date' ) },
-  { createNode: () => new Text( 'Elderberry' ) }
-];
+const COLORS = [ '#5B9BD5', '#8FBF5B', '#D9782D', '#B05BD5', '#D5B15B' ];
 
-const fruitCarousel = new Carousel( items, {
+const items: CarouselItem[] = COLORS.map( color => ( {
+  createNode: () => new Rectangle( 0, 0, 50, 50, { fill: color, cornerRadius: 8 } )
+} ) );
+
+const carousel = new Carousel( items, {
+  orientation: 'horizontal',
   itemsPerPage: 2,
-  tandem: Tandem.REQUIRED.createTandem( 'fruitCarousel' )
+  margin: 8
 } );
 
 const pageControl = new PageControl(
-  fruitCarousel.pageNumberProperty,
-  fruitCarousel.numberOfPagesProperty,
+  carousel.pageNumberProperty,
+  carousel.numberOfPagesProperty,
   {
-    interactive: true, // clicking a dot jumps to that page
-    tandem: Tandem.REQUIRED.createTandem( 'pageControl' )
+    interactive: true,
+    orientation: 'horizontal'
   }
 );
 
-const carouselWithPaging = new VBox( {
-  spacing: 6,
-  children: [ fruitCarousel, pageControl ]
+const panel = new VBox( {
+  spacing: 10,
+  align: 'center',
+  children: [ carousel, pageControl ]
 } );
 ```
 

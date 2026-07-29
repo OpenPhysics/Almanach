@@ -25,16 +25,21 @@ sourceRefs:
 ```ts
 import { Slider } from 'scenerystack/sun';
 import { NumberProperty } from 'scenerystack/axon';
-import { Range } from 'scenerystack/dot';
+import { Dimension2, Range } from 'scenerystack/dot';
 import { Orientation } from 'scenerystack/phet-core';
-import { Tandem } from 'scenerystack/tandem';
+import { Text } from 'scenerystack/scenery';
 
-const volumeProperty = new NumberProperty( 50, { range: new Range( 0, 100 ) } );
+const range = new Range( 0, 100 );
+const valueProperty = new NumberProperty( 40, { range: range } );
 
-const slider = new Slider( volumeProperty, new Range( 0, 100 ), {
+const slider = new Slider( valueProperty, range, {
   orientation: Orientation.VERTICAL,
-  tandem: Tandem.REQUIRED
+  trackSize: new Dimension2( 5, 160 ),
+  majorTickLength: 18
 } );
+slider.addMajorTick( 0, new Text( '0', { fontSize: 14 } ) );
+slider.addMajorTick( 50, new Text( '50', { fontSize: 14 } ) );
+slider.addMajorTick( 100, new Text( '100', { fontSize: 14 } ) );
 ```
 
 `Slider`'s constructor signature, `positionProperty`/`Range` handling, tick marks (`addMajorTick`/`addMinorTick`), and most options are identical to what [`HSlider`](/api/sun/hslider) documents — that page's options table (`trackSize`, `thumbSize`, `enabledRangeProperty`, `constrainValue`, `trackNode`/`thumbNode`, …) all come from `Slider` itself. The one option `HSliderOptions` removes that `Slider` still has is `orientation`.

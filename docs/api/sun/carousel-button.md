@@ -20,24 +20,24 @@ sourceRefs:
 
 ```ts
 import { Carousel, type CarouselItem } from 'scenerystack/sun';
-import { Text } from 'scenerystack/scenery';
+import { Rectangle } from 'scenerystack/scenery';
 import { Dimension2 } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
-const items: CarouselItem[] = [
-  { createNode: () => new Text( 'A' ) },
-  { createNode: () => new Text( 'B' ) },
-  { createNode: () => new Text( 'C' ) }
-];
+const COLORS = [ '#5B9BD5', '#8FBF5B', '#D9782D', '#B05BD5', '#D5B15B' ];
+
+const items: CarouselItem[] = COLORS.map( color => ( {
+  createNode: () => new Rectangle( 0, 0, 60, 60, { fill: color, cornerRadius: 8 } )
+} ) );
 
 const carousel = new Carousel( items, {
+  orientation: 'horizontal',
   itemsPerPage: 2,
+  margin: 10,
   // Forwarded straight through to the two CarouselButtons Carousel creates.
   buttonOptions: {
     baseColor: 'rgb( 220, 220, 220 )',
     arrowSize: new Dimension2( 16, 6 )
-  },
-  tandem: Tandem.REQUIRED
+  }
 } );
 ```
 

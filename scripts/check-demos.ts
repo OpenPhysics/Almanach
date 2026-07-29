@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DEMO_IDS } from '../docs/.vitepress/demos/registry.ts';
+import { checkDemoDocCorrespondence } from './check-demo-doc-correspondence.ts';
 
 const DEMOS_DIR = path.resolve( path.dirname( fileURLToPath( import.meta.url ) ), '../docs/.vitepress/demos' );
 
@@ -31,3 +32,4 @@ function checkDemos(): void {
 }
 
 checkDemos();
+checkDemoDocCorrespondence();

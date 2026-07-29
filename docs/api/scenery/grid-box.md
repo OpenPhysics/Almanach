@@ -22,16 +22,20 @@ sourceRefs:
 `GridBox` (from `scenerystack/scenery`) is a [`Node`](/api/scenery/node) that arranges its children in a two-dimensional grid of rows and columns, similar to CSS grid. Where [`FlowBox`](/api/scenery/flow-box) only handles one axis at a time, `GridBox` positions each child at an explicit `(row, column)` cell (or lets it auto-place), independently controlling per-column width and per-row height so everything lines up.
 
 ```ts
-import { GridBox, Rectangle, Circle } from 'scenerystack/scenery';
+import { GridBox, Rectangle } from 'scenerystack/scenery';
 
-const grid = new GridBox( {
+const COLORS = [ '#5B9BD5', '#8FBF5B', '#D9782D', '#B05BD5', '#D5B15B', '#5BD5B1' ];
+
+const cells = COLORS.map( color => new Rectangle( 0, 0, 70, 50, { fill: color, cornerRadius: 6 } ) );
+
+cells[ 0 ].layoutOptions = { column: 0, row: 0, horizontalSpan: 2 };
+cells[ 1 ].layoutOptions = { column: 2, row: 0 };
+cells[ 2 ].layoutOptions = { column: 0, row: 1 };
+
+const gridBox = new GridBox( {
   xSpacing: 10,
-  ySpacing: 8,
-  children: [
-    new Rectangle( 0, 0, 40, 40, { fill: 'teal', layoutOptions: { column: 0, row: 0 } } ),
-    new Circle( 20, { fill: 'crimson', layoutOptions: { column: 1, row: 0 } } ),
-    new Rectangle( 0, 0, 90, 20, { fill: 'goldenrod', layoutOptions: { column: 0, row: 1, horizontalSpan: 2 } } )
-  ]
+  ySpacing: 10,
+  children: cells
 } );
 ```
 

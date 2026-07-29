@@ -20,19 +20,9 @@ sourceRefs:
 `Text` (from `scenerystack/scenery`) is a [`Node`](/api/scenery/node) that displays a single string with a chosen `font`, `fill`, and (optionally) `stroke`. Use it for plain, single-style strings; reach for [`RichText`](/api/scenery/rich-text) instead when a string needs mixed styling (bold, sub/superscript, links) within itself.
 
 ```ts
-import { Text, Font } from 'scenerystack/scenery';
-import { PhetFont } from 'scenerystack/scenery-phet';
+import { Text } from 'scenerystack/scenery';
 
-const label = new Text( 'Hello, world!', {
-  font: new PhetFont( 24 ),
-  fill: 'black'
-} );
-
-// Shorthand font properties instead of a Font instance:
-const caption = new Text( 'caption text', {
-  fontSize: 14,
-  fontWeight: 'bold'
-} );
+const text = new Text( 'Scenery', { fontSize: 28, fill: '#2E5F8A' } );
 ```
 
 Simulations conventionally use [`PhetFont`](/api/scenery-phet/phet-font) (from `scenerystack/scenery-phet`) rather than the browser default or a raw `Font` so that text renders consistently across platforms; `Font` (from `scenerystack/scenery`) is the lower-level class `PhetFont` builds on.

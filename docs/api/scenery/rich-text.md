@@ -21,16 +21,17 @@ sourceRefs:
 
 ```ts
 import { RichText } from 'scenerystack/scenery';
-import { PhetFont } from 'scenerystack/scenery-phet';
 
-const description = new RichText(
-  'RichText supports <b>bold</b>, <i>italic</i>, and H<sub>2</sub>O-style subscripts.',
-  { font: new PhetFont( 16 ), fill: 'black' }
+const richText = new RichText(
+  'H<sub>2</sub>O, E = mc<sup>2</sup>, <b>bold</b> and <i>italic</i>',
+  { font: '22px sans-serif', fill: '#333' }
 );
 
-const withLink = new RichText(
+const linkText = new RichText(
   'See <a href="{{phetWebsite}}">our website</a> for more.',
   {
+    font: '18px sans-serif',
+    fill: '#333',
     links: {
       phetWebsite: 'https://phet.colorado.edu'
     }

@@ -24,15 +24,13 @@ sourceRefs:
 import { ABSwitch } from 'scenerystack/sun';
 import { Text } from 'scenerystack/scenery';
 import { Property } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
-const unitsProperty = new Property<'metric' | 'imperial'>( 'metric' );
+const modeProperty = new Property<'slow' | 'fast'>( 'slow' );
 
-const unitsSwitch = new ABSwitch(
-  unitsProperty,
-  'metric', new Text( 'cm', { tandem: Tandem.REQUIRED.createTandem( 'metricLabelText' ) } ),
-  'imperial', new Text( 'in', { tandem: Tandem.REQUIRED.createTandem( 'imperialLabelText' ) } ),
-  { tandem: Tandem.REQUIRED }
+const abSwitch = new ABSwitch(
+  modeProperty,
+  'slow', new Text( 'Slow', { fontSize: 18 } ),
+  'fast', new Text( 'Fast', { fontSize: 18 } )
 );
 ```
 

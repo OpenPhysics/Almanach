@@ -21,16 +21,17 @@ sourceRefs:
 ```ts
 import { RoundPushButton } from 'scenerystack/sun';
 import { Path } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
-import playIconShape from './playIconShape.js';
+import { Shape } from 'scenerystack/kite';
+import { NumberProperty } from 'scenerystack/axon';
 
-const playButton = new RoundPushButton( {
-  content: new Path( playIconShape, { fill: 'black' } ),
-  baseColor: 'rgb( 0, 200, 0 )',
-  listener: () => {
-    model.play();
-  },
-  tandem: Tandem.REQUIRED
+const countProperty = new NumberProperty( 0 );
+
+const plusShape = new Shape().moveTo( -10, 0 ).lineTo( 10, 0 ).moveTo( 0, -10 ).lineTo( 0, 10 );
+const button = new RoundPushButton( {
+  content: new Path( plusShape, { stroke: 'white', lineWidth: 4, lineCap: 'round' } ),
+  baseColor: '#5B9BD5',
+  radius: 30,
+  listener: () => { countProperty.value += 1; }
 } );
 ```
 

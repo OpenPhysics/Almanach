@@ -20,22 +20,21 @@ sourceRefs:
 `AquaRadioButtonGroup<T>` (from `scenerystack/sun`) lays out an [`AquaRadioButton`](/api/sun/aqua-radio-button) per item and manages selection, focus, and pointer areas as a group — this is the same class documented at a higher level on the [Radio Button Groups](/api/sun/radio-button-group) page; this page covers its API in more detail, plus its two orientation-fixing convenience subclasses.
 
 ```ts
-import { AquaRadioButtonGroup, type AquaRadioButtonGroupItem } from 'scenerystack/sun';
+import { VerticalAquaRadioButtonGroup, type AquaRadioButtonGroupItem } from 'scenerystack/sun';
 import { Text } from 'scenerystack/scenery';
 import { Property } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
-type Shape = 'circle' | 'square';
+type Shape = 'circle' | 'square' | 'triangle';
 const shapeProperty = new Property<Shape>( 'circle' );
 
 const items: AquaRadioButtonGroupItem<Shape>[] = [
-  { value: 'circle', createNode: () => new Text( 'Circle' ) },
-  { value: 'square', createNode: () => new Text( 'Square' ) }
+  { value: 'circle', createNode: () => new Text( 'Circle', { fontSize: 18 } ) },
+  { value: 'square', createNode: () => new Text( 'Square', { fontSize: 18 } ) },
+  { value: 'triangle', createNode: () => new Text( 'Triangle', { fontSize: 18 } ) }
 ];
 
-const shapeGroup = new AquaRadioButtonGroup( shapeProperty, items, {
-  orientation: 'vertical', // the default
-  tandem: Tandem.REQUIRED
+const group = new VerticalAquaRadioButtonGroup( shapeProperty, items, {
+  spacing: 12
 } );
 ```
 
@@ -57,7 +56,7 @@ Both are thin subclasses with the exact same `(property, items, options?)` const
 import { VerticalAquaRadioButtonGroup } from 'scenerystack/sun';
 
 const verticalGroup = new VerticalAquaRadioButtonGroup( shapeProperty, items, {
-  tandem: Tandem.REQUIRED
+  spacing: 12
 } );
 ```
 

@@ -23,18 +23,19 @@ sourceRefs:
 import { VerticalCheckboxGroup, type VerticalCheckboxGroupItem } from 'scenerystack/sun';
 import { Text } from 'scenerystack/scenery';
 import { BooleanProperty } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
-const gravityEnabledProperty = new BooleanProperty( true );
-const frictionEnabledProperty = new BooleanProperty( false );
+const gridProperty = new BooleanProperty( true );
+const labelsProperty = new BooleanProperty( false );
+const valuesProperty = new BooleanProperty( true );
 
 const items: VerticalCheckboxGroupItem[] = [
-  { property: gravityEnabledProperty, createNode: () => new Text( 'Gravity' ), tandemName: 'gravityCheckbox' },
-  { property: frictionEnabledProperty, createNode: () => new Text( 'Friction' ), tandemName: 'frictionCheckbox' }
+  { property: gridProperty, createNode: () => new Text( 'Grid', { fontSize: 18 } ) },
+  { property: labelsProperty, createNode: () => new Text( 'Labels', { fontSize: 18 } ) },
+  { property: valuesProperty, createNode: () => new Text( 'Values', { fontSize: 18 } ) }
 ];
 
-const optionsGroup = new VerticalCheckboxGroup( items, {
-  tandem: Tandem.REQUIRED
+const group = new VerticalCheckboxGroup( items, {
+  spacing: 12
 } );
 ```
 

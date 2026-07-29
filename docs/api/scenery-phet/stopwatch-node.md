@@ -22,21 +22,21 @@ sourceRefs:
 ```ts
 import { Stopwatch, StopwatchNode } from 'scenerystack/scenery-phet';
 import { Property } from 'scenerystack/axon';
-import { Bounds2 } from 'scenerystack/dot';
+import { Bounds2, Range } from 'scenerystack/dot';
 ```
 
 ## A minimal example
 
 ```ts
+const dragBoundsProperty = new Property( new Bounds2( 0, 0, 400, 200 ) );
+
 const stopwatch = new Stopwatch( {
-  tandem: tandem.createTandem( 'stopwatch' )
+  timePropertyOptions: { range: new Range( 0, 100 ) },
+  isVisible: true
 } );
 
-const dragBoundsProperty = new Property( new Bounds2( 0, 0, 768, 504 ) );
-
 const stopwatchNode = new StopwatchNode( stopwatch, {
-  dragBoundsProperty: dragBoundsProperty,
-  tandem: tandem.createTandem( 'stopwatchNode' )
+  dragBoundsProperty: dragBoundsProperty
 } );
 ```
 

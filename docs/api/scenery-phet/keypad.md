@@ -31,17 +31,12 @@ const keypad = new Keypad( Keypad.PositiveAndNegativeFloatingPointLayout, {
   accumulatorOptions: {
     maxDigits: 4,
     maxDigitsRightOfMantissa: 2
-  },
-  tandem: Tandem.REQUIRED.createTandem( 'keypad' )
+  }
 } );
 
-// Read the accumulated value reactively:
-keypad.valueProperty.link( value => {
-  console.log( 'current keypad value:', value ); // number | null
+keypad.stringProperty.link( string => {
+  // react to the accumulated string, e.g. update a readout
 } );
-
-// Programmatically clear it, e.g. after the value is "submitted":
-keypad.clear();
 ```
 
 <SceneryDemo demo="keypad" />

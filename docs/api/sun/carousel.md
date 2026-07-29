@@ -20,21 +20,18 @@ sourceRefs:
 
 ```ts
 import { Carousel, type CarouselItem } from 'scenerystack/sun';
-import { Text } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
+import { Rectangle } from 'scenerystack/scenery';
 
-const items: CarouselItem[] = [
-  { createNode: () => new Text( 'Apple' ) },
-  { createNode: () => new Text( 'Banana' ) },
-  { createNode: () => new Text( 'Cherry' ) },
-  { createNode: () => new Text( 'Date' ) },
-  { createNode: () => new Text( 'Elderberry' ) }
-];
+const COLORS = [ '#5B9BD5', '#8FBF5B', '#D9782D', '#B05BD5', '#D5B15B', '#5BD5B1', '#D55B7A' ];
 
-const fruitCarousel = new Carousel( items, {
-  itemsPerPage: 3,
+const items: CarouselItem[] = COLORS.map( color => ( {
+  createNode: () => new Rectangle( 0, 0, 60, 60, { fill: color, cornerRadius: 8 } )
+} ) );
+
+const carousel = new Carousel( items, {
   orientation: 'horizontal',
-  tandem: Tandem.REQUIRED
+  itemsPerPage: 3,
+  margin: 10
 } );
 ```
 

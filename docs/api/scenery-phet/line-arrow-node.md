@@ -18,6 +18,25 @@ sourceRefs:
 
 `LineArrowNode` (from `scenerystack/scenery-phet`) draws an arrow from three separately-stroked line segments: one for the tail, and two forming a V-shaped, open (unfilled) arrowhead. It exists alongside [`ArrowNode`](/api/scenery-phet/arrow-node) as a deliberately lighter-weight alternative — read on for when to reach for which.
 
+```ts
+const solid = new LineArrowNode( 0, 0, 220, 0, {
+  stroke: '#2E5F8A',
+  headHeight: 18,
+  headWidth: 22,
+  headLineWidth: 3,
+  tailLineWidth: 3
+} );
+
+const cueArrow = new LineArrowNode( 0, 0, 220, 0, {
+  stroke: '#D9782D',
+  headHeight: 18,
+  headWidth: 22,
+  headLineWidth: 3,
+  tailLineWidth: 2,
+  tailLineDash: [ 6, 4 ]
+} );
+```
+
 <SceneryDemo demo="line-arrow-node" />
 
 ## LineArrowNode vs. ArrowNode

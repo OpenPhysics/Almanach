@@ -21,8 +21,15 @@ sourceRefs:
 `GridCheckbox` (from `scenerystack/scenery-phet`) is a [`Checkbox`](/api/sun/checkbox) whose label is a small grid-of-squares icon instead of text — the standard PhET affordance for "show/hide the coordinate grid" controls, most often paired with a [`GridNode`](/api/scenery-phet/grid-node) via a shared `Property<boolean>`. `GridIcon` is the icon itself (an NxN grid of lines drawn as a single `Path`), exported separately in case you need the icon without the checkbox behavior — e.g. inside a toolbar button or a legend.
 
 ```ts
-import { GridCheckbox, GridIcon } from 'scenerystack/scenery-phet';
+import { GridCheckbox, GridNode } from 'scenerystack/scenery-phet';
 import { BooleanProperty } from 'scenerystack/axon';
+
+const gridVisibleProperty = new BooleanProperty( true );
+
+const gridCheckbox = new GridCheckbox( gridVisibleProperty );
+
+// Elsewhere, a GridNode reacts to the same Property:
+grid.visibleProperty = gridVisibleProperty;
 ```
 
 <SceneryDemo demo="grid-checkbox" />
@@ -32,9 +39,7 @@ import { BooleanProperty } from 'scenerystack/axon';
 ```ts
 const gridVisibleProperty = new BooleanProperty( false );
 
-const gridCheckbox = new GridCheckbox( gridVisibleProperty, {
-  tandem: tandem.createTandem( 'gridCheckbox' )
-} );
+const gridCheckbox = new GridCheckbox( gridVisibleProperty );
 
 // Elsewhere, a GridNode reacts to the same Property:
 gridNode.visibleProperty = gridVisibleProperty;

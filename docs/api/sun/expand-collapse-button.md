@@ -21,17 +21,15 @@ sourceRefs:
 ```ts
 import { ExpandCollapseButton } from 'scenerystack/sun';
 import { BooleanProperty } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
-const detailsExpandedProperty = new BooleanProperty( false );
+const expandedProperty = new BooleanProperty( true );
 
-const detailsButton = new ExpandCollapseButton( detailsExpandedProperty, {
-  sideLength: 20,
-  tandem: Tandem.REQUIRED
+const button = new ExpandCollapseButton( expandedProperty, {
+  sideLength: 24
 } );
 ```
 
-Pressing the button flips `detailsExpandedProperty.value`; the button's fill and `+`/`-` symbol update automatically, from any source that changes the Property, not just from a button press.
+Pressing the button flips `expandedProperty.value`; the button's fill and `+`/`-` symbol update automatically, from any source that changes the Property, not just from a button press.
 
 <SceneryDemo demo="expand-collapse-button" />
 

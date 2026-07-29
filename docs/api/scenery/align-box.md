@@ -22,15 +22,15 @@ sourceRefs:
 `AlignBox` (from `scenerystack/scenery`) wraps a single content [`Node`](/api/scenery/node) and positions it within a bounding box (`alignBounds`) according to horizontal/vertical alignment and margins — the scenery equivalent of centering or pinning one element inside a fixed-size slot. It's the standard way to reserve a consistent amount of space for content whose size can vary (e.g. a translated string) inside a [`FlowBox`](/api/scenery/flow-box) or [`GridBox`](/api/scenery/grid-box) cell, without the varying content shifting its neighbors.
 
 ```ts
-import { AlignBox, Circle } from 'scenerystack/scenery';
+import { AlignBox, Rectangle } from 'scenerystack/scenery';
 import { Bounds2 } from 'scenerystack/dot';
 
-const icon = new Circle( 12, { fill: 'seagreen' } );
+const content = new Rectangle( 0, 0, 50, 40, { fill: '#5B9BD5', cornerRadius: 4 } );
 
-const centeredSlot = new AlignBox( icon, {
-  alignBounds: new Bounds2( 0, 0, 60, 60 ),
-  xAlign: 'center',
-  yAlign: 'center'
+const alignBox = new AlignBox( content, {
+  alignBounds: new Bounds2( 0, 0, 180, 160 ),
+  xAlign: 'left',
+  yAlign: 'top'
 } );
 ```
 

@@ -29,9 +29,9 @@ import { Range, Vector2 } from 'scenerystack/dot';
 
 ```ts
 const chartTransform = new ChartTransform( {
-  viewWidth: 300,
-  viewHeight: 200,
-  modelXRange: new Range( 0, 5 ),
+  viewWidth: 260,
+  viewHeight: 160,
+  modelXRange: new Range( -0.5, 4.5 ),
   modelYRange: new Range( 0, 10 )
 } );
 
@@ -44,8 +44,8 @@ const dataSet = [
 ];
 
 const barPlot = new BarPlot( chartTransform, dataSet, {
-  barWidth: 20,
-  pointToPaintableFields: point => ( { fill: point.y > 5 ? 'orange' : 'gray' } )
+  barWidth: 24,
+  pointToPaintableFields: point => ( { fill: point.y > 5 ? '#D9782D' : '#5B9BD5' } )
 } );
 ```
 

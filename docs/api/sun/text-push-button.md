@@ -20,14 +20,15 @@ sourceRefs:
 
 ```ts
 import { TextPushButton } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
+import { NumberProperty } from 'scenerystack/axon';
 
-const resetButton = new TextPushButton( 'Reset', {
-  baseColor: 'orange',
+const countProperty = new NumberProperty( 0 );
+
+const button = new TextPushButton( 'Increment', {
+  baseColor: '#3575D8',
   listener: () => {
-    model.reset();
-  },
-  tandem: Tandem.REQUIRED
+    countProperty.value++;
+  }
 } );
 ```
 

@@ -21,15 +21,16 @@ sourceRefs:
 `VBox` (from `scenerystack/scenery`) is [`FlowBox`](/api/scenery/flow-box) with `orientation` fixed to `'vertical'` — it stacks its children top-to-bottom in a single column. It's the class most code reaches for instead of `FlowBox` directly, since orientation rarely needs to change at runtime; `VBox` accepts every `FlowBox` option (`spacing`, `align`, `stretch`, `grow`, `justify`, `wrap`, margins, …) except `orientation`, which the constructor sets for you and asserts you didn't also pass.
 
 ```ts
-import { VBox, Circle, Rectangle } from 'scenerystack/scenery';
+import { VBox, Rectangle } from 'scenerystack/scenery';
 
 const column = new VBox( {
   spacing: 8,
-  align: 'center',
+  align: 'left',
   children: [
-    new Circle( 15, { fill: 'crimson' } ),
-    new Rectangle( 0, 0, 40, 30, { fill: 'teal' } ),
-    new Circle( 10, { fill: 'goldenrod' } )
+    new Rectangle( 0, 0, 60, 26, { fill: '#5B9BD5', cornerRadius: 4 } ),
+    new Rectangle( 0, 0, 84, 26, { fill: '#8FBF5B', cornerRadius: 4 } ),
+    new Rectangle( 0, 0, 108, 26, { fill: '#D9782D', cornerRadius: 4 } ),
+    new Rectangle( 0, 0, 132, 26, { fill: '#B05BD5', cornerRadius: 4 } )
   ]
 } );
 ```

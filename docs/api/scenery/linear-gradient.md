@@ -22,13 +22,13 @@ sourceRefs:
 ```ts
 import { Rectangle, LinearGradient } from 'scenerystack/scenery';
 
-// Gradient line from (0, 0) to (100, 0) — a horizontal sweep across the Rectangle's width
-const gradient = new LinearGradient( 0, 0, 100, 0 )
-  .addColorStop( 0, 'red' )
-  .addColorStop( 0.5, 'yellow' )
-  .addColorStop( 1, 'green' );
+// Gradient line from (0, 0) to (240, 0) — a horizontal sweep across the Rectangle's width
+const gradient = new LinearGradient( 0, 0, 240, 0 )
+  .addColorStop( 0, '#5B9BD5' )
+  .addColorStop( 0.5, '#8FBF5B' )
+  .addColorStop( 1, '#D9782D' );
 
-const bar = new Rectangle( 0, 0, 100, 20, { fill: gradient } );
+const bar = new Rectangle( 0, 0, 240, 90, { fill: gradient } );
 ```
 
 <SceneryDemo demo="linear-gradient" />

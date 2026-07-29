@@ -21,15 +21,16 @@ sourceRefs:
 `HBox` (from `scenerystack/scenery`) is [`FlowBox`](/api/scenery/flow-box) with `orientation` fixed to `'horizontal'` — it lays its children out left-to-right in a single row. Like [`VBox`](/api/scenery/v-box), it's the class most code reaches for instead of `FlowBox` directly, since orientation rarely changes at runtime; `HBox` accepts every `FlowBox` option (`spacing`, `align`, `stretch`, `grow`, `justify`, `wrap`, margins, …) except `orientation`, which the constructor sets for you and asserts you didn't also pass.
 
 ```ts
-import { HBox, Circle, Rectangle } from 'scenerystack/scenery';
+import { HBox, Rectangle } from 'scenerystack/scenery';
 
 const row = new HBox( {
-  spacing: 10,
-  align: 'center',
+  spacing: 12,
+  align: 'bottom',
   children: [
-    new Circle( 15, { fill: 'crimson' } ),
-    new Rectangle( 0, 0, 40, 30, { fill: 'teal' } ),
-    new Circle( 10, { fill: 'goldenrod' } )
+    new Rectangle( 0, 0, 44, 30, { fill: '#5B9BD5', cornerRadius: 4 } ),
+    new Rectangle( 0, 0, 44, 42, { fill: '#8FBF5B', cornerRadius: 4 } ),
+    new Rectangle( 0, 0, 44, 54, { fill: '#D9782D', cornerRadius: 4 } ),
+    new Rectangle( 0, 0, 44, 66, { fill: '#B05BD5', cornerRadius: 4 } )
   ]
 } );
 ```

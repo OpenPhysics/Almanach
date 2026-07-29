@@ -22,26 +22,24 @@ sourceRefs:
 A momentary button sets a bound `Property<T>` to `valueOn` while the pointer holds it down, and back to `valueOff` the instant it's released — unlike [Sticky Toggle Buttons](/api/sun/sticky-toggle-button), it never latches. `scenerystack/sun` exports `RectangularMomentaryButton<T>` and `RoundMomentaryButton<T>`, both built on the shared `MomentaryButtonModel<T>`. Reach for these for "hold to activate" controls — a horn, a temporary boost, a press-and-hold camera shutter — where releasing should immediately undo the effect.
 
 ```ts
-import { RectangularMomentaryButton } from 'scenerystack/sun';
+import { RectangularMomentaryButton, RoundMomentaryButton } from 'scenerystack/sun';
 import { Text } from 'scenerystack/scenery';
-import { Property } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
+import { BooleanProperty } from 'scenerystack/axon';
 
-const hornStateProperty = new Property<'off' | 'on'>( 'off' );
+const onProperty = new BooleanProperty( false );
 
-const hornButton = new RectangularMomentaryButton(
-  hornStateProperty,
-  'off', // valueOff
-  'on',  // valueOn
-  {
-    content: new Text( 'Horn' ),
-    baseColor: 'orange',
-    tandem: Tandem.REQUIRED
-  }
-);
+const roundButton = new RoundMomentaryButton( onProperty, false, true, {
+  baseColor: '#8FBF5B',
+  radius: 34
+} );
+
+const rectangularButton = new RectangularMomentaryButton( onProperty, false, true, {
+  content: new Text( 'Hold' ),
+  baseColor: '#8FBF5B'
+} );
 ```
 
-`RoundMomentaryButton` has the identical `(property, valueOff, valueOn, options?)` constructor — only the button shape differs, same as `RoundPushButton`/`RectangularPushButton`.
+Both share the `(property, valueOff, valueOn, options?)` constructor — only the button shape differs, same as `RoundPushButton`/`RectangularPushButton`.
 
 <SceneryDemo demo="round-momentary-button" />
 

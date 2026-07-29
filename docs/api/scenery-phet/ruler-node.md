@@ -26,12 +26,17 @@ import { RulerNode } from 'scenerystack/scenery-phet';
 ## A minimal example
 
 ```ts
-const rulerNode = new RulerNode(
-  500,                                        // rulerWidth, in view coordinates
-  40,                                          // rulerHeight
-  100,                                         // majorTickWidth, in the same view coordinates
-  [ '0', '10', '20', '30', '40', '50' ],       // majorTickLabels, one per major tick
-  'cm',                                        // units
+const rulerWidth = 300;
+const rulerHeight = 60;
+const majorTickWidth = 50;
+const majorTickLabels = [ '0', '1', '2', '3', '4', '5', '6' ];
+
+const ruler = new RulerNode(
+  rulerWidth,
+  rulerHeight,
+  majorTickWidth,
+  majorTickLabels,
+  'cm',
   {
     minorTicksPerMajorTick: 4,
     insetsWidth: 15

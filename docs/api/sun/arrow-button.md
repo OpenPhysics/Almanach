@@ -21,17 +21,18 @@ sourceRefs:
 
 ```ts
 import { ArrowButton } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
+import { NumberProperty } from 'scenerystack/axon';
+import { Range } from 'scenerystack/dot';
 
-const incrementButton = new ArrowButton(
-  'right',
-  () => {
-    model.value += 1;
-  },
-  {
-    tandem: Tandem.REQUIRED
-  }
-);
+const range = new Range( 0, 20 );
+const valueProperty = new NumberProperty( 10, { range: range } );
+
+const decrementButton = new ArrowButton( 'left', () => {
+  valueProperty.value = Math.max( range.min, valueProperty.value - 1 );
+} );
+const incrementButton = new ArrowButton( 'right', () => {
+  valueProperty.value = Math.min( range.max, valueProperty.value + 1 );
+} );
 ```
 
 The constructor takes the direction and the fire callback directly (not through a `listener` option — `ArrowButton` sets `options.listener` internally, so `content` and `listener` are omitted from `ArrowButtonOptions`). Unlike a plain `RectangularPushButton`, `ArrowButton` enables `fireOnHold` by default, so press-and-hold repeats the action automatically.

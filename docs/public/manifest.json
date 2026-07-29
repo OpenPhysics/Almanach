@@ -2,8 +2,8 @@
   "site": "https://veillette.github.io/Almanach",
   "title": "Almanach — SceneryStack Knowledge Base",
   "description": "A file-based knowledge base of SceneryStack knowledge: API guides, software patterns, styling, and accessibility conventions for building interactive simulations. Every page is plain Markdown with structured frontmatter.",
-  "generated": "2026-07-16T23:47:20.073Z",
-  "documentCount": 423,
+  "generated": "2026-07-29T03:39:14.235Z",
+  "documentCount": 418,
   "documents": [
     {
       "path": "/getting-started/what-is-scenerystack",
@@ -30,7 +30,7 @@
         "https://www.npmjs.com/package/scenerystack"
       ],
       "navOrder": 1,
-      "wordCount": 352,
+      "wordCount": 356,
       "url": "https://veillette.github.io/Almanach/getting-started/what-is-scenerystack"
     },
     {
@@ -91,7 +91,7 @@
         "https://scenerystack.org/learn/simulation/"
       ],
       "navOrder": 3,
-      "wordCount": 508,
+      "wordCount": 525,
       "url": "https://veillette.github.io/Almanach/getting-started/your-first-simulation"
     },
     {
@@ -176,7 +176,7 @@
         "https://scenerystack.org/learn/standalone-library/"
       ],
       "navOrder": 6,
-      "wordCount": 518,
+      "wordCount": 514,
       "url": "https://veillette.github.io/Almanach/getting-started/scenery-application-vs-standalone-library"
     },
     {
@@ -491,7 +491,7 @@
         "https://www.npmjs.com/package/scenerystack"
       ],
       "navOrder": 7,
-      "wordCount": 698,
+      "wordCount": 743,
       "url": "https://veillette.github.io/Almanach/guides/building-your-first-screen"
     },
     {
@@ -803,7 +803,7 @@
       "path": "/guides/phet-io-and-instrumentation",
       "sourceFile": "docs/guides/phet-io-and-instrumentation.md",
       "title": "PhET-iO and Instrumentation",
-      "description": "Conceptual guide to PhET-iO - what instrumentation buys you and how Tandem fits in.",
+      "description": "Why PhET-iO and Tandem exist in SceneryStack, and why typical SceneryStack apps can ignore them.",
       "category": "guides",
       "tags": [
         "phet-io",
@@ -813,8 +813,7 @@
       "status": "verified",
       "related": [
         "/getting-started/your-first-simulation",
-        "/patterns/model-view-separation",
-        "/guides/building-your-first-screen"
+        "/api/tandem/tandem"
       ],
       "prerequisites": [
         "/getting-started/your-first-simulation"
@@ -823,37 +822,8 @@
         "https://www.npmjs.com/package/scenerystack"
       ],
       "navOrder": 18,
-      "wordCount": 686,
+      "wordCount": 335,
       "url": "https://veillette.github.io/Almanach/guides/phet-io-and-instrumentation"
-    },
-    {
-      "path": "/guides/phet-io-deep-dive",
-      "sourceFile": "docs/guides/phet-io-deep-dive.md",
-      "title": "PhET-iO Deep Dive",
-      "description": "PhetioGroup and PhetioCapsule for dynamically created elements, authoring a custom IOType, and how PhET-iO state save/restore actually works.",
-      "category": "guides",
-      "tags": [
-        "phet-io",
-        "tandem",
-        "instrumentation",
-        "phetio-group",
-        "phetio-capsule"
-      ],
-      "status": "verified",
-      "related": [
-        "/guides/phet-io-and-instrumentation",
-        "/patterns/phet-io-instrumentation-pattern",
-        "/api/tandem/tandem"
-      ],
-      "prerequisites": [
-        "/guides/phet-io-and-instrumentation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "navOrder": 19,
-      "wordCount": 1213,
-      "url": "https://veillette.github.io/Almanach/guides/phet-io-deep-dive"
     },
     {
       "path": "/guides/testing-and-qa-strategy-overview",
@@ -1467,7 +1437,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 437,
+      "wordCount": 360,
       "url": "https://veillette.github.io/Almanach/api/axon/tiny-property"
     },
     {
@@ -2547,8 +2517,7 @@
       "status": "complete",
       "related": [
         "/api/joist/navigation-bar",
-        "/api/joist/home-screen",
-        "/api/tandem/tandem"
+        "/api/joist/home-screen"
       ],
       "prerequisites": [
         "/api/joist/sim",
@@ -2557,7 +2526,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 471,
+      "wordCount": 463,
       "url": "https://veillette.github.io/Almanach/api/joist/joist-button"
     },
     {
@@ -2677,7 +2646,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 851,
+      "wordCount": 837,
       "url": "https://veillette.github.io/Almanach/api/joist/preferences-panel-components"
     },
     {
@@ -2710,7 +2679,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 653,
+      "wordCount": 582,
       "url": "https://veillette.github.io/Almanach/api/joist/region-culture-and-locale-selection"
     },
     {
@@ -2792,7 +2761,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 433,
+      "wordCount": 445,
       "url": "https://veillette.github.io/Almanach/api/joist/screen-view"
     },
     {
@@ -3267,9 +3236,8 @@
         "/api/mobius/scene-and-camera-setup",
         "/api/mobius/three-isometric-node",
         "/api/mobius/three-utils-helpers",
-        "/patterns/phet-io-instrumentation-pattern",
         "/examples/three-js-integration",
-        "/api/tandem/phetio-object"
+        "/guides/phet-io-and-instrumentation"
       ],
       "prerequisites": [
         "/api/mobius/scene-and-camera-setup",
@@ -3278,7 +3246,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 702,
+      "wordCount": 400,
       "url": "https://veillette.github.io/Almanach/api/mobius/node-wrapping-conventions"
     },
     {
@@ -3809,7 +3777,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 552,
+      "wordCount": 557,
       "url": "https://veillette.github.io/Almanach/api/scenery/align-box"
     },
     {
@@ -4014,7 +3982,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 800,
+      "wordCount": 742,
       "url": "https://veillette.github.io/Almanach/api/scenery/drag-listener"
     },
     {
@@ -4164,7 +4132,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 640,
+      "wordCount": 648,
       "url": "https://veillette.github.io/Almanach/api/scenery/grid-box"
     },
     {
@@ -4194,7 +4162,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 262,
+      "wordCount": 286,
       "url": "https://veillette.github.io/Almanach/api/scenery/h-box"
     },
     {
@@ -4712,7 +4680,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 704,
+      "wordCount": 659,
       "url": "https://veillette.github.io/Almanach/api/scenery/press-listener"
     },
     {
@@ -4741,7 +4709,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 708,
+      "wordCount": 653,
       "url": "https://veillette.github.io/Almanach/api/scenery/fire-listener"
     },
     {
@@ -4830,7 +4798,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 394,
+      "wordCount": 393,
       "url": "https://veillette.github.io/Almanach/api/scenery/rich-drag-listener"
     },
     {
@@ -4858,7 +4826,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 422,
+      "wordCount": 419,
       "url": "https://veillette.github.io/Almanach/api/scenery/rich-text"
     },
     {
@@ -5011,7 +4979,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 353,
+      "wordCount": 319,
       "url": "https://veillette.github.io/Almanach/api/scenery/text"
     },
     {
@@ -5099,7 +5067,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 260,
+      "wordCount": 284,
       "url": "https://veillette.github.io/Almanach/api/scenery/v-box"
     },
     {
@@ -5209,7 +5177,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 267,
+      "wordCount": 263,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/back-button"
     },
     {
@@ -5300,7 +5268,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 561,
+      "wordCount": 557,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/bicycle-pump-node"
     },
     {
@@ -5442,7 +5410,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 281,
+      "wordCount": 277,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/close-button"
     },
     {
@@ -5471,7 +5439,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 527,
+      "wordCount": 521,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/combo-box-display"
     },
     {
@@ -5502,7 +5470,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 445,
+      "wordCount": 435,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/conductivity-tester-node"
     },
     {
@@ -5556,7 +5524,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 599,
+      "wordCount": 595,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/drawer"
     },
     {
@@ -5582,7 +5550,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 251,
+      "wordCount": 247,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/eraser-button"
     },
     {
@@ -5609,7 +5577,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 506,
+      "wordCount": 494,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/eye-dropper-node"
     },
     {
@@ -5658,8 +5626,7 @@
       "related": [
         "/api/scenery-phet/bicycle-pump-node",
         "/api/dot/range",
-        "/patterns/drag-listeners",
-        "/patterns/phet-io-instrumentation-pattern"
+        "/patterns/drag-listeners"
       ],
       "prerequisites": [
         "/api/axon/property"
@@ -5667,7 +5634,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 426,
+      "wordCount": 420,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/faucet-node"
     },
     {
@@ -5696,7 +5663,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 399,
+      "wordCount": 395,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/fine-coarse-spinner"
     },
     {
@@ -5817,7 +5784,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 776,
+      "wordCount": 768,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/grab-drag-interaction"
     },
     {
@@ -5847,7 +5814,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 378,
+      "wordCount": 398,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/grid-checkbox"
     },
     {
@@ -5909,7 +5876,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 977,
+      "wordCount": 973,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/group-sort-interaction"
     },
     {
@@ -5963,7 +5930,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 394,
+      "wordCount": 388,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/heater-cooler-node"
     },
     {
@@ -5992,7 +5959,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 418,
+      "wordCount": 400,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/icon-toggle-buttons"
     },
     {
@@ -6018,7 +5985,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 278,
+      "wordCount": 274,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/info-button"
     },
     {
@@ -6115,7 +6082,6 @@
       "status": "complete",
       "related": [
         "/accessibility/keyboard-input-and-hotkeys",
-        "/api/tandem/tandem",
         "/api/axon/derived-string-property"
       ],
       "prerequisites": [
@@ -6124,7 +6090,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 1164,
+      "wordCount": 1137,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/keypad"
     },
     {
@@ -6143,7 +6109,6 @@
       "status": "complete",
       "related": [
         "/api/scenery-phet/probe-node",
-        "/api/tandem/tandem",
         "/api/axon/property"
       ],
       "prerequisites": [
@@ -6152,7 +6117,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 466,
+      "wordCount": 407,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/laser-pointer-node"
     },
     {
@@ -6231,7 +6196,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 539,
+      "wordCount": 590,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/line-arrow-node"
     },
     {
@@ -6353,8 +6318,7 @@
       "related": [
         "/api/scenery-phet/ruler-node",
         "/api/phetcommon/model-view-transform",
-        "/api/axon/derived-property",
-        "/api/tandem/tandem"
+        "/api/axon/derived-property"
       ],
       "prerequisites": [
         "/api/axon/property",
@@ -6363,7 +6327,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 710,
+      "wordCount": 706,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/measuring-tape-node"
     },
     {
@@ -6649,7 +6613,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 748,
+      "wordCount": 732,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/play-control-buttons"
     },
     {
@@ -6677,7 +6641,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 361,
+      "wordCount": 355,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/play-pause-button"
     },
     {
@@ -6757,7 +6721,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 352,
+      "wordCount": 348,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/question-bar"
     },
     {
@@ -6774,7 +6738,6 @@
       "status": "verified",
       "related": [
         "/api/joist/screen-view",
-        "/api/tandem/tandem",
         "/patterns/reset-all-pattern"
       ],
       "prerequisites": [
@@ -6784,7 +6747,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 335,
+      "wordCount": 262,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/reset-all-button"
     },
     {
@@ -6813,7 +6776,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 497,
+      "wordCount": 496,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/ruler-node"
     },
     {
@@ -6984,7 +6947,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 464,
+      "wordCount": 456,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/round-icon-buttons"
     },
     {
@@ -7148,7 +7111,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 304,
+      "wordCount": 300,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/step-backward-button"
     },
     {
@@ -7175,7 +7138,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 286,
+      "wordCount": 282,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/step-forward-button"
     },
     {
@@ -7202,7 +7165,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 266,
+      "wordCount": 219,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/stop-sign-node"
     },
     {
@@ -7228,7 +7191,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 551,
+      "wordCount": 555,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/stopwatch-node"
     },
     {
@@ -7306,7 +7269,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 428,
+      "wordCount": 424,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/time-control-node"
     },
     {
@@ -7332,7 +7295,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 355,
+      "wordCount": 349,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/time-speed-radio-button-group"
     },
     {
@@ -7361,7 +7324,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 376,
+      "wordCount": 368,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/trash-buttons"
     },
     {
@@ -7598,7 +7561,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 689,
+      "wordCount": 679,
       "url": "https://veillette.github.io/Almanach/api/scenery-phet/zoom-button-groups"
     },
     {
@@ -7626,7 +7589,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 497,
+      "wordCount": 454,
       "url": "https://veillette.github.io/Almanach/api/sun/ab-switch"
     },
     {
@@ -7711,7 +7674,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 482,
+      "wordCount": 472,
       "url": "https://veillette.github.io/Almanach/api/sun/accordion-box"
     },
     {
@@ -7738,7 +7701,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 416,
+      "wordCount": 424,
       "url": "https://veillette.github.io/Almanach/api/sun/aqua-radio-button"
     },
     {
@@ -7767,7 +7730,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 528,
+      "wordCount": 542,
       "url": "https://veillette.github.io/Almanach/api/sun/aqua-radio-button-group"
     },
     {
@@ -7794,7 +7757,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 355,
+      "wordCount": 400,
       "url": "https://veillette.github.io/Almanach/api/sun/arrow-button"
     },
     {
@@ -7820,7 +7783,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 484,
+      "wordCount": 467,
       "url": "https://veillette.github.io/Almanach/api/sun/carousel"
     },
     {
@@ -7847,7 +7810,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 425,
+      "wordCount": 426,
       "url": "https://veillette.github.io/Almanach/api/sun/carousel-button"
     },
     {
@@ -7878,7 +7841,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 465,
+      "wordCount": 457,
       "url": "https://veillette.github.io/Almanach/api/sun/carousel-combo-box"
     },
     {
@@ -7905,7 +7868,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 340,
+      "wordCount": 328,
       "url": "https://veillette.github.io/Almanach/api/sun/checkbox"
     },
     {
@@ -7956,7 +7919,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 498,
+      "wordCount": 488,
       "url": "https://veillette.github.io/Almanach/api/sun/combo-box"
     },
     {
@@ -7983,7 +7946,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 479,
+      "wordCount": 475,
       "url": "https://veillette.github.io/Almanach/api/sun/list-box"
     },
     {
@@ -8009,7 +7972,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 307,
+      "wordCount": 299,
       "url": "https://veillette.github.io/Almanach/api/sun/expand-collapse-button"
     },
     {
@@ -8036,7 +7999,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 464,
+      "wordCount": 454,
       "url": "https://veillette.github.io/Almanach/api/sun/hslider"
     },
     {
@@ -8095,7 +8058,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 371,
+      "wordCount": 372,
       "url": "https://veillette.github.io/Almanach/api/sun/momentary-button"
     },
     {
@@ -8123,7 +8086,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 602,
+      "wordCount": 592,
       "url": "https://veillette.github.io/Almanach/api/sun/number-picker"
     },
     {
@@ -8150,7 +8113,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 405,
+      "wordCount": 395,
       "url": "https://veillette.github.io/Almanach/api/sun/number-spinner"
     },
     {
@@ -8176,7 +8139,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 437,
+      "wordCount": 427,
       "url": "https://veillette.github.io/Almanach/api/sun/on-off-switch"
     },
     {
@@ -8202,7 +8165,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 412,
+      "wordCount": 385,
       "url": "https://veillette.github.io/Almanach/api/sun/page-control"
     },
     {
@@ -8229,7 +8192,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 332,
+      "wordCount": 328,
       "url": "https://veillette.github.io/Almanach/api/sun/panel"
     },
     {
@@ -8260,7 +8223,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 565,
+      "wordCount": 555,
       "url": "https://veillette.github.io/Almanach/api/sun/push-button-model"
     },
     {
@@ -8286,7 +8249,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 534,
+      "wordCount": 524,
       "url": "https://veillette.github.io/Almanach/api/sun/radio-button-group"
     },
     {
@@ -8316,7 +8279,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 602,
+      "wordCount": 594,
       "url": "https://veillette.github.io/Almanach/api/sun/rectangular-button"
     },
     {
@@ -8343,7 +8306,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 431,
+      "wordCount": 387,
       "url": "https://veillette.github.io/Almanach/api/sun/rectangular-push-button"
     },
     {
@@ -8370,7 +8333,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 374,
+      "wordCount": 366,
       "url": "https://veillette.github.io/Almanach/api/sun/rectangular-radio-button"
     },
     {
@@ -8399,7 +8362,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 424,
+      "wordCount": 416,
       "url": "https://veillette.github.io/Almanach/api/sun/round-button"
     },
     {
@@ -8425,7 +8388,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 458,
+      "wordCount": 486,
       "url": "https://veillette.github.io/Almanach/api/sun/round-push-button"
     },
     {
@@ -8457,7 +8420,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 478,
+      "wordCount": 518,
       "url": "https://veillette.github.io/Almanach/api/sun/slider"
     },
     {
@@ -8486,7 +8449,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 771,
+      "wordCount": 759,
       "url": "https://veillette.github.io/Almanach/api/sun/slider-track-and-thumb"
     },
     {
@@ -8516,7 +8479,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 415,
+      "wordCount": 401,
       "url": "https://veillette.github.io/Almanach/api/sun/sticky-toggle-button"
     },
     {
@@ -8542,7 +8505,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 284,
+      "wordCount": 287,
       "url": "https://veillette.github.io/Almanach/api/sun/text-push-button"
     },
     {
@@ -8569,7 +8532,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 419,
+      "wordCount": 409,
       "url": "https://veillette.github.io/Almanach/api/sun/toggle-button"
     },
     {
@@ -8623,7 +8586,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 441,
+      "wordCount": 431,
       "url": "https://veillette.github.io/Almanach/api/sun/toggle-switch"
     },
     {
@@ -8650,7 +8613,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 388,
+      "wordCount": 367,
       "url": "https://veillette.github.io/Almanach/api/sun/vertical-checkbox-group"
     },
     {
@@ -8677,7 +8640,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 298,
+      "wordCount": 288,
       "url": "https://veillette.github.io/Almanach/api/sun/v-slider"
     },
     {
@@ -8831,46 +8794,33 @@
       "path": "/api/tandem/built-in-io-types",
       "sourceFile": "docs/api/tandem/built-in-io-types.md",
       "title": "Built-in IOTypes",
-      "description": "A survey of tandem's ready-made IOType instances for JS primitives and common container shapes, and when to reach for one instead of writing a custom IOType.",
+      "description": "Ready-made PhET-iO serializers for primitives and containers — usually ignore unless you are building PhET-iO.",
       "category": "api",
       "library": "tandem",
       "tags": [
         "tandem",
         "phet-io",
-        "IOType",
-        "BooleanIO",
-        "NumberIO",
-        "StringIO",
-        "ReferenceIO",
-        "ArrayIO",
-        "EnumerationIO",
-        "MapIO",
-        "NullableIO",
-        "ObjectLiteralIO",
-        "OrIO",
-        "Float64ArrayIO",
-        "VoidIO"
+        "IOType"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/tandem/io-type",
-        "/api/tandem/phetio-object",
-        "/api/axon/property"
+        "/guides/phet-io-and-instrumentation"
       ],
       "prerequisites": [
-        "/api/tandem/io-type"
+        "/guides/phet-io-and-instrumentation"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 654,
+      "wordCount": 42,
       "url": "https://veillette.github.io/Almanach/api/tandem/built-in-io-types"
     },
     {
       "path": "/api/tandem/disposable",
       "sourceFile": "docs/api/tandem/disposable.md",
       "title": "Disposable",
-      "description": "The base dispose-lifecycle class that PhetioObject (and therefore Node and every instrumented type) builds on.",
+      "description": "The base dispose-lifecycle class that Node, Property, and other long-lived types build on.",
       "category": "api",
       "library": "tandem",
       "tags": [
@@ -8882,8 +8832,8 @@
       ],
       "status": "verified",
       "related": [
-        "/api/tandem/phetio-object",
-        "/patterns/dispose-and-memory-management"
+        "/patterns/dispose-and-memory-management",
+        "/api/tandem/phetio-object"
       ],
       "prerequisites": [
         "/patterns/dispose-and-memory-management"
@@ -8891,14 +8841,14 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 469,
+      "wordCount": 451,
       "url": "https://veillette.github.io/Almanach/api/tandem/disposable"
     },
     {
       "path": "/api/tandem/io-type",
       "sourceFile": "docs/api/tandem/io-type.md",
       "title": "IOType",
-      "description": "Declares a class's PhET-iO serialization - state schema, methods, and documentation - independent of its runtime implementation.",
+      "description": "PhET-iO serialization descriptor — usually ignore unless you are building PhET-iO.",
       "category": "api",
       "library": "tandem",
       "tags": [
@@ -8908,111 +8858,105 @@
       ],
       "status": "verified",
       "related": [
+        "/guides/phet-io-and-instrumentation",
         "/api/tandem/phetio-object",
-        "/api/tandem/phetio-group",
-        "/api/tandem/phetio-capsule",
-        "/guides/phet-io-and-instrumentation"
+        "/api/tandem/built-in-io-types"
       ],
       "prerequisites": [
-        "/guides/phet-io-and-instrumentation",
-        "/api/tandem/phetio-object"
+        "/guides/phet-io-and-instrumentation"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 541,
+      "wordCount": 53,
       "url": "https://veillette.github.io/Almanach/api/tandem/io-type"
     },
     {
       "path": "/api/tandem/phetio-capsule",
       "sourceFile": "docs/api/tandem/phetio-capsule.md",
       "title": "PhetioCapsule",
-      "description": "A PhET-iO-aware container for a single, lazily-created instrumented element, like an on-demand dialog.",
+      "description": "PhET-iO container for a single lazily created instrumented element — usually ignore unless you are building PhET-iO.",
       "category": "api",
       "library": "tandem",
       "tags": [
         "tandem",
         "phet-io",
-        "PhetioCapsule",
-        "dynamic-elements"
+        "PhetioCapsule"
       ],
       "status": "verified",
       "related": [
+        "/guides/phet-io-and-instrumentation",
         "/api/tandem/phetio-group",
         "/api/tandem/phetio-object"
       ],
       "prerequisites": [
-        "/api/tandem/phetio-object",
         "/guides/phet-io-and-instrumentation"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 451,
+      "wordCount": 40,
       "url": "https://veillette.github.io/Almanach/api/tandem/phetio-capsule"
     },
     {
       "path": "/api/tandem/phetio-group",
       "sourceFile": "docs/api/tandem/phetio-group.md",
       "title": "PhetioGroup",
-      "description": "A PhET-iO-aware container for a dynamically-growing/shrinking collection of instrumented elements, like electrons created during a sim.",
+      "description": "PhET-iO container for a dynamic collection of instrumented elements — usually ignore unless you are building PhET-iO.",
       "category": "api",
       "library": "tandem",
       "tags": [
         "tandem",
         "phet-io",
-        "PhetioGroup",
-        "dynamic-elements"
+        "PhetioGroup"
       ],
       "status": "verified",
       "related": [
+        "/guides/phet-io-and-instrumentation",
         "/api/tandem/phetio-capsule",
-        "/api/tandem/phetio-object",
-        "/api/tandem/io-type"
+        "/api/tandem/phetio-object"
       ],
       "prerequisites": [
-        "/api/tandem/phetio-object",
         "/guides/phet-io-and-instrumentation"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 490,
+      "wordCount": 51,
       "url": "https://veillette.github.io/Almanach/api/tandem/phetio-group"
     },
     {
       "path": "/api/tandem/phetio-id-utils-and-naming",
       "sourceFile": "docs/api/tandem/phetio-id-utils-and-naming.md",
       "title": "PhetioIDUtils and Tandem Naming Conventions",
-      "description": "Static string utilities for building and inspecting phetioIDs, and the naming conventions a tree of Tandems produces.",
+      "description": "String helpers for PhET-iO element IDs — usually ignore unless you are building PhET-iO.",
       "category": "api",
       "library": "tandem",
       "tags": [
         "tandem",
         "phet-io",
         "PhetioIDUtils",
-        "Tandem",
-        "phetioID"
+        "Tandem"
       ],
-      "status": "complete",
+      "status": "verified",
       "related": [
         "/api/tandem/tandem",
-        "/api/tandem/phetio-object"
+        "/guides/phet-io-and-instrumentation"
       ],
       "prerequisites": [
-        "/api/tandem/tandem"
+        "/guides/phet-io-and-instrumentation"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 609,
+      "wordCount": 56,
       "url": "https://veillette.github.io/Almanach/api/tandem/phetio-id-utils-and-naming"
     },
     {
       "path": "/api/tandem/phetio-object",
       "sourceFile": "docs/api/tandem/phetio-object.md",
       "title": "PhetioObject",
-      "description": "The base class giving any object PhET-iO instrumentation - a tandem, an IOType, and metadata like phetioState/phetioReadOnly.",
+      "description": "Base class for PhET-iO instrumentation — usually ignore unless you are building PhET-iO.",
       "category": "api",
       "library": "tandem",
       "tags": [
@@ -9022,27 +8966,24 @@
       ],
       "status": "verified",
       "related": [
-        "/api/tandem/tandem",
-        "/api/tandem/io-type",
-        "/api/tandem/disposable",
         "/guides/phet-io-and-instrumentation",
-        "/patterns/phet-io-instrumentation-pattern"
+        "/api/tandem/tandem",
+        "/api/tandem/disposable"
       ],
       "prerequisites": [
-        "/api/tandem/tandem",
         "/guides/phet-io-and-instrumentation"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 611,
+      "wordCount": 75,
       "url": "https://veillette.github.io/Almanach/api/tandem/phetio-object"
     },
     {
       "path": "/api/tandem/tandem",
       "sourceFile": "docs/api/tandem/tandem.md",
       "title": "Tandem",
-      "description": "The naming/instrumentation handle giving every PhET-iO-tracked element a stable tree address.",
+      "description": "The naming handle PhET-iO uses for instrumented elements — usually ignore it in SceneryStack apps.",
       "category": "api",
       "library": "tandem",
       "tags": [
@@ -9052,11 +8993,8 @@
       ],
       "status": "verified",
       "related": [
-        "/api/joist/sim",
-        "/api/joist/screen",
-        "/api/scenery-phet/reset-all-button",
-        "/api/tandem/phetio-object",
-        "/guides/phet-io-deep-dive"
+        "/guides/phet-io-and-instrumentation",
+        "/api/joist/screen"
       ],
       "prerequisites": [
         "/guides/phet-io-and-instrumentation"
@@ -9064,7 +9002,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 519,
+      "wordCount": 167,
       "url": "https://veillette.github.io/Almanach/api/tandem/tandem"
     },
     {
@@ -9563,7 +9501,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 436,
+      "wordCount": 432,
       "url": "https://veillette.github.io/Almanach/api/vegas/level-selection-button"
     },
     {
@@ -9592,7 +9530,7 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
-      "wordCount": 617,
+      "wordCount": 607,
       "url": "https://veillette.github.io/Almanach/api/vegas/level-selection-button-group"
     },
     {
@@ -9683,7 +9621,7 @@
         "https://scenerystack.org/reference/"
       ],
       "navOrder": 1,
-      "wordCount": 473,
+      "wordCount": 471,
       "url": "https://veillette.github.io/Almanach/patterns/model-view-separation"
     },
     {
@@ -9745,7 +9683,7 @@
         "https://scenerystack.org/reference/"
       ],
       "navOrder": 3,
-      "wordCount": 645,
+      "wordCount": 642,
       "url": "https://veillette.github.io/Almanach/patterns/derived-enablement-pattern"
     },
     {
@@ -9839,7 +9777,7 @@
         "https://scenerystack.org/reference/"
       ],
       "navOrder": 6,
-      "wordCount": 420,
+      "wordCount": 416,
       "url": "https://veillette.github.io/Almanach/patterns/enumeration-pattern"
     },
     {
@@ -9931,7 +9869,7 @@
         "https://scenerystack.org/reference/"
       ],
       "navOrder": 9,
-      "wordCount": 793,
+      "wordCount": 791,
       "url": "https://veillette.github.io/Almanach/patterns/immutable-vs-mutable-model-data"
     },
     {
@@ -9993,7 +9931,7 @@
         "https://scenerystack.org/reference/"
       ],
       "navOrder": 11,
-      "wordCount": 1007,
+      "wordCount": 1008,
       "url": "https://veillette.github.io/Almanach/patterns/singleton-and-namespace-conventions"
     },
     {
@@ -10109,7 +10047,7 @@
         "https://scenerystack.org/reference/"
       ],
       "navOrder": 15,
-      "wordCount": 479,
+      "wordCount": 477,
       "url": "https://veillette.github.io/Almanach/patterns/reset-all-pattern"
     },
     {
@@ -10138,7 +10076,7 @@
         "https://scenerystack.org/reference/"
       ],
       "navOrder": 16,
-      "wordCount": 662,
+      "wordCount": 660,
       "url": "https://veillette.github.io/Almanach/patterns/testing-model-logic-headlessly"
     },
     {
@@ -10159,7 +10097,7 @@
         "/api/joist/screen",
         "/api/joist/screen-view",
         "/patterns/model-view-separation",
-        "/patterns/phet-io-instrumentation-pattern"
+        "/guides/phet-io-and-instrumentation"
       ],
       "prerequisites": [
         "/patterns/model-view-separation"
@@ -10168,7 +10106,7 @@
         "https://www.npmjs.com/package/scenerystack"
       ],
       "navOrder": 17,
-      "wordCount": 660,
+      "wordCount": 667,
       "url": "https://veillette.github.io/Almanach/patterns/multi-screen-sim-structure"
     },
     {
@@ -10211,7 +10149,6 @@
       ],
       "status": "verified",
       "related": [
-        "/patterns/phet-io-instrumentation-pattern",
         "/patterns/model-view-separation",
         "/patterns/feature-flags-and-preferences-pattern"
       ],
@@ -10227,64 +10164,30 @@
       "url": "https://veillette.github.io/Almanach/patterns/query-parameters-pattern"
     },
     {
-      "path": "/patterns/phet-io-instrumentation-pattern",
-      "sourceFile": "docs/patterns/phet-io-instrumentation-pattern.md",
-      "title": "PhET-iO Instrumentation Pattern",
-      "description": "Deciding what to instrument with Tandem and structuring a PhET-iO-ready model.",
-      "category": "patterns",
-      "tags": [
-        "tandem",
-        "phet-io",
-        "architecture"
-      ],
-      "status": "verified",
-      "related": [
-        "/api/tandem/tandem",
-        "/api/joist/sim",
-        "/api/joist/screen",
-        "/patterns/model-view-separation",
-        "/patterns/reset-all-pattern",
-        "/patterns/multi-screen-sim-structure"
-      ],
-      "prerequisites": [
-        "/patterns/model-view-separation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "navOrder": 20,
-      "wordCount": 699,
-      "url": "https://veillette.github.io/Almanach/patterns/phet-io-instrumentation-pattern"
-    },
-    {
       "path": "/patterns/state-persistence-and-save-restore-patterns",
       "sourceFile": "docs/patterns/state-persistence-and-save-restore-patterns.md",
       "title": "State Persistence and Save/Restore Patterns",
-      "description": "Structuring model state as enumerable Properties so it can be saved and restored, whether by PhET-iO or by a simulation's own save/load feature.",
+      "description": "Structuring model state as enumerable Properties so it can be saved and restored by a simulation's own save/load feature.",
       "category": "patterns",
       "tags": [
-        "tandem",
-        "phet-io",
         "Property",
         "state",
         "persistence"
       ],
       "status": "verified",
       "related": [
-        "/patterns/phet-io-instrumentation-pattern",
         "/patterns/model-view-separation",
         "/patterns/reset-all-pattern"
       ],
       "prerequisites": [
-        "/patterns/model-view-separation",
-        "/patterns/phet-io-instrumentation-pattern"
+        "/patterns/model-view-separation"
       ],
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack",
         "https://scenerystack.org/reference/"
       ],
       "navOrder": 21,
-      "wordCount": 697,
+      "wordCount": 645,
       "url": "https://veillette.github.io/Almanach/patterns/state-persistence-and-save-restore-patterns"
     },
     {
@@ -11044,7 +10947,7 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://github.com/phetsims/mobius"
       ],
-      "wordCount": 1029,
+      "wordCount": 890,
       "url": "https://veillette.github.io/Almanach/examples/3d-scene-with-mobius"
     },
     {
@@ -11076,7 +10979,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 1050,
+      "wordCount": 1029,
       "url": "https://veillette.github.io/Almanach/examples/chart-driven-simulation-with-bamboo"
     },
     {
@@ -11113,7 +11016,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 1384,
+      "wordCount": 1368,
       "url": "https://veillette.github.io/Almanach/examples/full-accessible-multi-screen-sim"
     },
     {
@@ -11147,40 +11050,8 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 995,
+      "wordCount": 958,
       "url": "https://veillette.github.io/Almanach/examples/game-style-sim-with-vegas-scoring"
-    },
-    {
-      "path": "/examples/phet-io-state-restorable-sim",
-      "sourceFile": "docs/examples/phet-io-state-restorable-sim.md",
-      "title": "A PhET-iO State-Restorable Sim",
-      "description": "A worked example that goes past basic instrumentation to a model whose ENTIRE state - including a runtime-created list of elements via PhetioGroup - can be saved and restored by PhET-iO with no bespoke save/restore code.",
-      "category": "examples",
-      "tags": [
-        "example",
-        "tandem",
-        "phet-io",
-        "PhetioGroup",
-        "state",
-        "persistence"
-      ],
-      "status": "complete",
-      "related": [
-        "/examples/phet-io-instrumented-sim-example",
-        "/patterns/state-persistence-and-save-restore-patterns",
-        "/guides/phet-io-deep-dive",
-        "/patterns/phet-io-instrumentation-pattern",
-        "/patterns/reset-all-pattern"
-      ],
-      "prerequisites": [
-        "/examples/phet-io-instrumented-sim-example",
-        "/patterns/state-persistence-and-save-restore-patterns"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 1131,
-      "url": "https://veillette.github.io/Almanach/examples/phet-io-state-restorable-sim"
     },
     {
       "path": "/examples/sim-using-cookbook-recipes-end-to-end",
@@ -11212,7 +11083,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 1070,
+      "wordCount": 1047,
       "url": "https://veillette.github.io/Almanach/examples/sim-using-cookbook-recipes-end-to-end"
     },
     {
@@ -11245,7 +11116,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 1054,
+      "wordCount": 1029,
       "url": "https://veillette.github.io/Almanach/examples/sound-rich-simulation-with-tambo"
     },
     {
@@ -11277,7 +11148,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 800,
+      "wordCount": 750,
       "url": "https://veillette.github.io/Almanach/examples/accessible-control-panel-example"
     },
     {
@@ -11305,7 +11176,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 1077,
+      "wordCount": 1014,
       "url": "https://veillette.github.io/Almanach/examples/building-a-two-screen-simulation"
     },
     {
@@ -11336,7 +11207,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 742,
+      "wordCount": 698,
       "url": "https://veillette.github.io/Almanach/examples/demo-simulation-walkthrough"
     },
     {
@@ -11360,8 +11231,7 @@
         "/api/scenery/rich-drag-listener",
         "/api/scenery/keyboard-drag-listener",
         "/accessibility/alternative-input-overview",
-        "/accessibility/pdom",
-        "/api/tandem/tandem"
+        "/accessibility/pdom"
       ],
       "prerequisites": [
         "/patterns/drag-listeners"
@@ -11369,37 +11239,8 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 1025,
+      "wordCount": 885,
       "url": "https://veillette.github.io/Almanach/examples/migrating-to-rich-drag-listener"
-    },
-    {
-      "path": "/examples/phet-io-instrumented-sim-example",
-      "sourceFile": "docs/examples/phet-io-instrumented-sim-example.md",
-      "title": "PhET-iO Instrumented Sim Example",
-      "description": "A minimal simulation instrumented end-to-end with Tandem.",
-      "category": "examples",
-      "tags": [
-        "example",
-        "tandem",
-        "phet-io"
-      ],
-      "status": "verified",
-      "related": [
-        "/getting-started/your-first-simulation",
-        "/examples/demo-simulation-walkthrough",
-        "/patterns/reset-all-pattern",
-        "/api/axon/number-property",
-        "/api/axon/derived-property",
-        "/api/sun/checkbox"
-      ],
-      "prerequisites": [
-        "/getting-started/your-first-simulation"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 1100,
-      "url": "https://veillette.github.io/Almanach/examples/phet-io-instrumented-sim-example"
     },
     {
       "path": "/examples/scenery-layout-examples",
@@ -11483,7 +11324,7 @@
         "https://www.npmjs.com/package/scenerystack",
         "https://github.com/phetsims/mobius"
       ],
-      "wordCount": 552,
+      "wordCount": 548,
       "url": "https://veillette.github.io/Almanach/examples/three-js-integration"
     },
     {
@@ -11566,7 +11407,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 582,
+      "wordCount": 574,
       "url": "https://veillette.github.io/Almanach/cookbook/custom-slider-thumb-and-track"
     },
     {
@@ -11594,7 +11435,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 599,
+      "wordCount": 583,
       "url": "https://veillette.github.io/Almanach/cookbook/resizable-collapsible-panel"
     },
     {
@@ -11624,7 +11465,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 638,
+      "wordCount": 566,
       "url": "https://veillette.github.io/Almanach/cookbook/simple-score-and-level-selection-screen"
     },
     {
@@ -11680,7 +11521,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 544,
+      "wordCount": 536,
       "url": "https://veillette.github.io/Almanach/cookbook/custom-sound-effect-on-interaction"
     },
     {
@@ -11709,7 +11550,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 722,
+      "wordCount": 698,
       "url": "https://veillette.github.io/Almanach/cookbook/adding-a-screen-to-an-existing-multi-screen-sim"
     },
     {
@@ -11935,7 +11776,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 702,
+      "wordCount": 618,
       "url": "https://veillette.github.io/Almanach/cookbook/lazily-creating-an-expensive-node"
     },
     {
@@ -11964,7 +11805,7 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 630,
+      "wordCount": 612,
       "url": "https://veillette.github.io/Almanach/cookbook/draggable-node-bounded-to-an-area"
     },
     {
@@ -12022,36 +11863,8 @@
       "sourceRefs": [
         "https://www.npmjs.com/package/scenerystack"
       ],
-      "wordCount": 562,
+      "wordCount": 552,
       "url": "https://veillette.github.io/Almanach/cookbook/snapping-a-draggable-node-to-a-grid"
-    },
-    {
-      "path": "/cookbook/wiring-a-new-phet-io-instrumented-control",
-      "sourceFile": "docs/cookbook/wiring-a-new-phet-io-instrumented-control.md",
-      "title": "Wiring Up a New PhET-iO Instrumented Control",
-      "description": "Giving a new UI control a Tandem (and, if needed, an IOType) so it shows up correctly in PhET-iO state.",
-      "category": "cookbook",
-      "tags": [
-        "tandem",
-        "phet-io",
-        "Tandem",
-        "IOType",
-        "Checkbox"
-      ],
-      "status": "complete",
-      "related": [
-        "/api/tandem/tandem",
-        "/api/tandem/io-type",
-        "/patterns/phet-io-instrumentation-pattern"
-      ],
-      "prerequisites": [
-        "/patterns/phet-io-instrumentation-pattern"
-      ],
-      "sourceRefs": [
-        "https://www.npmjs.com/package/scenerystack"
-      ],
-      "wordCount": 712,
-      "url": "https://veillette.github.io/Almanach/cookbook/wiring-a-new-phet-io-instrumented-control"
     },
     {
       "path": "/meta/authoring-guide",
@@ -12072,7 +11885,7 @@
       ],
       "prerequisites": [],
       "sourceRefs": [],
-      "wordCount": 1381,
+      "wordCount": 1400,
       "url": "https://veillette.github.io/Almanach/meta/authoring-guide"
     },
     {
@@ -12124,7 +11937,7 @@
         "/getting-started/what-is-scenerystack"
       ],
       "sourceRefs": [],
-      "wordCount": 1022,
+      "wordCount": 1028,
       "url": "https://veillette.github.io/Almanach/meta/glossary"
     },
     {

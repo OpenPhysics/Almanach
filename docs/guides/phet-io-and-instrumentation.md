@@ -1,13 +1,12 @@
 ---
 title: PhET-iO and Instrumentation
-description: Conceptual guide to PhET-iO - what instrumentation buys you and how Tandem fits in.
+description: Why PhET-iO and Tandem exist in SceneryStack, and why typical SceneryStack apps can ignore them.
 category: guides
 tags: [phet-io, tandem, instrumentation]
 status: verified
 related:
   - /getting-started/your-first-simulation
-  - /patterns/model-view-separation
-  - /guides/building-your-first-screen
+  - /api/tandem/tandem
 prerequisites:
   - /getting-started/your-first-simulation
 sourceRefs:
@@ -17,79 +16,23 @@ navOrder: 18
 
 # PhET-iO and Instrumentation
 
-::: tip When to read the related pages
-This page is the **conceptual entry point** — what PhET-iO buys you and how `Tandem` fits in. For runtime dynamic elements and custom `IOType`s, read [PhET-iO Deep Dive](/guides/phet-io-deep-dive). For day-to-day wiring conventions (what to instrument, how to structure tandems), read [PhET-iO Instrumentation Pattern](/patterns/phet-io-instrumentation-pattern).
-:::
+**Most SceneryStack apps do not need PhET-iO or `Tandem`.** This page exists so the leftover API surface does not look mysterious — not so you wire instrumentation into every button.
 
-PhET-iO is the layer that turns a running simulation into something an external program can inspect, record, and control: every instrumented object's state can be serialized, saved, restored, and set remotely — the same mechanism that powers PhET's state-saving, data-collection, and interoperability features. **Instrumentation is opt-in and additive**: an uninstrumented simulation runs identically, just without that external surface.
+## Why this layer exists
 
-## Tandem: the instrumentation identifier
+PhET Interactive Simulations ships a product line called **PhET-iO**: wrappers and tooling that treat a running sim as an external API. An instrumented sim can be inspected, driven, logged, and have its full state saved and restored by something *outside* the browser tab — classroom data collection, automated wrappers, Studio, interoperability with other software.
 
-Every instrumentable object — `Property`, `Node`, `Screen`, `Emitter`, and the PhET-iO base class `PhetioObject` they build on — takes a `tandem` option. A `Tandem` is a hierarchical path name (mirroring where the object lives conceptually, not necessarily in the scene graph) that becomes that object's stable identifier in the PhET-iO API:
+To make that work, every interesting object needs a stable hierarchical address. That address is a [`Tandem`](/api/tandem/tandem). Properties, Nodes, Emitters, and screens that opt in get a tandem path like `mySim.myScreen.model.massProperty`, plus metadata and serialization hooks (`IOType`, `PhetioObject`, and friends under `scenerystack/tandem`).
 
-```ts
-import { Tandem } from 'scenerystack/tandem';
-import { NumberProperty } from 'scenerystack/axon';
+SceneryStack is the open library extracted from that codebase. The tandem APIs came along with it. They are real, maintained, and useful **if you are building PhET-iO**. They are not a SceneryStack best practice for ordinary interactive apps.
 
-const screenTandem = Tandem.ROOT.createTandem( 'myScreen' );
-const modelTandem = screenTandem.createTandem( 'model' );
+## What you should do in practice
 
-const massProperty = new NumberProperty( 5, {
-  tandem: modelTandem.createTandem( 'massProperty' ),
-  phetioDocumentation: 'the mass of the object, in kilograms'
-} );
-```
-
-| Tandem | Meaning |
+| Situation | What to do |
 | --- | --- |
-| `Tandem.ROOT` | The root of the tandem tree for the whole simulation |
-| `Tandem.REQUIRED` | Placeholder meaning "this tandem must be supplied by the caller" — used in components designed to always be instrumented |
-| `Tandem.OPTIONAL` | Placeholder meaning "instrumentation is optional here" |
-| `someTandem.createTandem( name )` | Creates a child tandem, extending the hierarchical path |
+| Building a typical SceneryStack sim or scenery scene | Omit `tandem` on buttons, sliders, Properties, listeners. Copy-paste examples in this Almanach do the same. |
+| Constructing a `Screen` / `Sim` | Pass the minimal `Tandem.ROOT.createTandem( '…' )` the API requires, then forget about it. See [Your First Simulation](/getting-started/your-first-simulation). |
+| Assertions complain that a tandem was "required" but not supplied | Pass `tandem: Tandem.OPTIONAL` (same as `Tandem.OPT_OUT`) to opt out, or supply a real child tandem only if you intentionally instrument. |
+| You actually need remote control / full state restore for wrappers | Read the thin [`api/tandem`](/api/tandem/tandem) stubs and the upstream PhET-iO docs — Almanach does not teach that workflow. |
 
-Every `Screen` requires a `tandem`, even in a simulation that never enables PhET-iO — see [Your First Simulation](/getting-started/your-first-simulation). Uninstrumented (`tandem: Tandem.OPTIONAL`, unsupplied) objects simply don't appear in the PhET-iO API; nothing breaks by omitting instrumentation, but nothing is inspectable/settable externally either.
-
-## What instrumentation buys you
-
-| Capability | How |
-| --- | --- |
-| Save/restore full simulation state | Every instrumented `Property`'s value is captured and can be reapplied later |
-| External control | Another program can set an instrumented `Property`'s value directly, driving the sim the same as a user interaction would |
-| A documented, stable API | `phetioDocumentation` and the tandem hierarchy together describe the sim's state surface for tooling and other consumers |
-| Data collection / logging | Instrumented `Emitter`s and state changes can be observed externally without modifying simulation code |
-
-## IOType: describing serialization
-
-Plain `Property<number>`/`Property<string>` instances serialize with the built-in `NumberIO`/`StringIO` `IOType`s automatically. Custom classes that extend `PhetioObject` (rather than composing existing instrumented Properties) describe their own serialization with an `IOType`:
-
-```ts
-import { IOType, NumberIO } from 'scenerystack/tandem';
-
-type MyThingState = { x: number; y: number };
-
-const MyThingIO = new IOType<MyThing, MyThingState>( 'MyThingIO', {
-  valueType: MyThing,
-  documentation: 'Serializes the position of a MyThing.',
-  toStateObject: myThing => ( { x: myThing.x, y: myThing.y } ),
-  applyState: ( myThing, state ) => {
-    myThing.x = state.x;
-    myThing.y = state.y;
-  },
-  stateSchema: {
-    x: NumberIO,
-    y: NumberIO
-  }
-} );
-```
-
-Most simulations never need to author a custom `IOType` directly — composing already-instrumented `Property`s (each with its own built-in `IOType`) inside a plain model class covers the overwhelming majority of cases, consistent with the [model-view separation](/patterns/model-view-separation) pattern where all state lives in `Property` instances.
-
-::: tip Instrument by default, even before you need PhET-iO
-Adding `tandem`/`phetioDocumentation` after the fact to a model that already has dozens of Properties is far more tedious than threading tandems through from the start. Most PhET simulations instrument their full model tree from day one, whether or not a given release actually ships PhET-iO features — the incremental cost per `Property` is one option.
-:::
-
-## Where to go next
-
-- [Building Your First Screen](/guides/building-your-first-screen) — threading tandems through a new screen's model and view
-- [Model-View Separation](/patterns/model-view-separation) — why instrumentable state lives in `Property` instances, not scattered fields
-- [Your First Simulation](/getting-started/your-first-simulation) — the minimum tandem wiring every `Screen` requires
+Do **not** thread tandems through every model Property and UI control "just in case." That cost is for PhET-iO product work, not for learning scenery, axon, or sun.

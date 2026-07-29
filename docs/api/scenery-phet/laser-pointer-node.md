@@ -7,7 +7,6 @@ tags: [scenery-phet, LaserPointerNode, optics, button]
 status: complete
 related:
   - /api/scenery-phet/probe-node
-  - /api/tandem/tandem
   - /api/axon/property
 prerequisites:
   - /api/axon/property
@@ -32,7 +31,6 @@ import { BooleanProperty } from 'scenerystack/axon';
 const onProperty = new BooleanProperty( false );
 
 const laserPointerNode = new LaserPointerNode( onProperty, {
-  tandem: tandem.createTandem( 'laserPointerNode' ),
   hasGlass: true // draws a small lens at the nozzle output
 } );
 ```
@@ -64,6 +62,3 @@ const laserPointerNode = new LaserPointerNode( onProperty, {
 | --- | --- |
 | `LaserPointerNode.DEFAULT_LASER_NODE_OPTIONS` | The frozen default options object, useful for building a variant that overrides only a few fields |
 
-::: tip `tandem` defaults to `Tandem.REQUIRED`
-Like other instrumentable scenery-phet components, `LaserPointerNode`'s default options set `tandem: Tandem.REQUIRED` and a `tandemNameSuffix` of `['LaserPointerNode', 'LightNode']` — omitting a real tandem asserts in an instrumented build. Always pass `tandem: someTandem.createTandem( '...' )` explicitly. See [Tandem](/api/tandem/tandem) for why `Tandem.REQUIRED` exists as a sentinel rather than a usable default.
-:::

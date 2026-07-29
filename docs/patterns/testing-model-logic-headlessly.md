@@ -80,7 +80,7 @@ This isn't an argument against ever exercising the view — some things (does th
 - Give the model a `step( dt: number )` method that a test calls directly with a fixed `dt`, rather than relying on the sim's real animation frame timing.
 - Expose enough state as `public readonly` Properties (per [Model-View Separation](/patterns/model-view-separation)) that a test can both drive the model (`model.speedProperty.value = 10`) and assert on the outcome without reaching into private fields.
 - Keep randomness injectable (a seeded `Random` instance passed in, not `Math.random()` called inline) so tests can be deterministic.
-- If a model class takes a `Tandem` (see [PhET-iO Instrumentation Pattern](/patterns/phet-io-instrumentation-pattern)), pass `Tandem.OPT_OUT` in tests that don't care about instrumentation, so the test isn't coupled to a particular tandem tree.
+- Prefer model constructors that do not require a `Tandem`. If a third-party model still takes one, pass `Tandem.OPTIONAL` (also exported as `Tandem.OPT_OUT`) so tests stay decoupled from instrumentation.
 
 ::: tip A model constructor with no scenery import is a testability signal, not just a layering rule
 If writing a test for a model class turns out to require importing `scenerystack/scenery` or constructing a `Display`, that's usually a sign the class has taken on view responsibility it shouldn't have — see [Model-View Separation](/patterns/model-view-separation) — rather than a sign the test needs more setup.

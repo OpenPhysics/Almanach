@@ -35,8 +35,7 @@ const rangeProperty = new Property( new Range( 0, 100 ) );
 const pumpNode = new BicyclePumpNode( numberOfParticlesProperty, rangeProperty, {
   width: 200,
   height: 250,
-  hoseAttachmentOffset: new Vector2( 100, -50 ),
-  tandem: tandem.createTandem( 'pumpNode' )
+  hoseAttachmentOffset: new Vector2( 100, -50 )
 } );
 ```
 

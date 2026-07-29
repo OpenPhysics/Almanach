@@ -22,7 +22,7 @@ navOrder: 6
 
 # The Enumeration Pattern
 
-When a piece of model state can only be one of a fixed, known set of values (a mode, a phase, a display style), model it as an `EnumerationValue` subclass plus `Enumeration`, not a string-literal union or a plain number. The pattern gives you real object identity for `===` comparisons and `switch`, automatic PhET-iO serialization, and a `Property` (`EnumerationProperty`) that validates writes against exactly that set of values at runtime — a raw `string` union only checks at compile time.
+When a piece of model state can only be one of a fixed, known set of values (a mode, a phase, a display style), model it as an `EnumerationValue` subclass plus `Enumeration`, not a string-literal union or a plain number. The pattern gives you real object identity for `===` comparisons and `switch`, and a `Property` (`EnumerationProperty`) that validates writes against exactly that set of values at runtime — a raw `string` union only checks at compile time.
 
 ## The core idea
 
@@ -67,9 +67,9 @@ function describe( intensity: Intensity ): string {
 | | `'high' \| 'low'` string union | `EnumerationValue` + `Enumeration` |
 | --- | --- | --- |
 | Compile-time safety | Yes | Yes |
-| Runtime validation (e.g. bad PhET-iO state, a typo from external code) | None | `EnumerationProperty` throws if the value isn't a member |
+| Runtime validation (typo / bad external write) | None | `EnumerationProperty` throws if the value isn't a member |
 | Iterating all values | Requires a separately-maintained array | `Intensity.enumeration.values` (in declaration order) |
-| PhET-iO serialization | Needs a hand-written `StringUnionIO` | Automatic `EnumerationIO` |
+| Stable object identity for `===` / `switch` | Strings only | Real instances |
 
 ::: tip Declare `enumeration` last, and never construct new instances elsewhere
 `Enumeration`'s constructor walks the class's static properties to find every `Intensity` instance, so `public static readonly enumeration = new Enumeration( Intensity )` must be the last static field in the class. `EnumerationValue`'s constructor also seals the class after construction — attempting `new Intensity()` from outside the class body throws, which is what guarantees `Intensity.HIGH` and `Intensity.LOW` are the only two instances that will ever exist.

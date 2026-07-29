@@ -22,15 +22,13 @@ sourceRefs:
 ```ts
 import { RectangularPushButton } from 'scenerystack/sun';
 import { Text } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 
 const stepButton = new RectangularPushButton( {
   content: new Text( 'Step' ),
   baseColor: 'yellow',
   listener: () => {
     model.step( 0.1 );
-  },
-  tandem: Tandem.REQUIRED
+  }
 } );
 ```
 
@@ -66,6 +64,3 @@ const stepButton = new RectangularPushButton( {
 `addListener`/`removeListener` exist for adding or removing listeners after construction. If you just need one listener and never remove it, pass `listener` in the options object — it's equivalent and shorter.
 :::
 
-::: warning `tandem` is required
-Every sun component in a real PhET-iO-instrumented sim needs a `tandem` — `RectangularPushButton` will assert if one isn't supplied. Even outside PhET-iO builds, it's good practice to always pass one.
-:::

@@ -1,7 +1,6 @@
 import { BooleanProperty } from 'scenerystack/axon';
 import { Text, VBox } from 'scenerystack/scenery';
 import { Checkbox, Panel } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -17,8 +16,8 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
     align: 'left',
     children: [
       new Text( 'Simulation Options' ),
-      new Checkbox( gravityEnabledProperty, new Text( 'Gravity' ), { tandem: Tandem.OPTIONAL } ),
-      new Checkbox( frictionEnabledProperty, new Text( 'Friction' ), { tandem: Tandem.OPTIONAL } )
+      new Checkbox( gravityEnabledProperty, new Text( 'Gravity' ) ),
+      new Checkbox( frictionEnabledProperty, new Text( 'Friction' ) )
     ]
   } );
 

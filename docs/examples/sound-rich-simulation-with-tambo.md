@@ -45,16 +45,14 @@ The ball's position is a `Vector2Property` confined to a thin horizontal strip v
 
 ```ts
 import { Vector2Property, Vector2, Bounds2 } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 class SoundDemoModel {
   public readonly positionProperty: Vector2Property;
   public static readonly DRAG_BOUNDS = new Bounds2( -200, -5, 200, 5 );
 
-  public constructor( tandem: Tandem ) {
+  public constructor() {
     this.positionProperty = new Vector2Property( new Vector2( 0, 0 ), {
-      validBounds: SoundDemoModel.DRAG_BOUNDS,
-      tandem: tandem.createTandem( 'positionProperty' )
+      validBounds: SoundDemoModel.DRAG_BOUNDS
     } );
   }
 
@@ -86,8 +84,7 @@ class SoundDemoScreenView extends ScreenView {
     const resetAllButton = new ResetAllButton( {
       listener: () => model.reset(),
       right: this.layoutBounds.maxX - 20,
-      bottom: this.layoutBounds.maxY - 20,
-      tandem: this.tandem.createTandem( 'resetAllButton' )
+      bottom: this.layoutBounds.maxY - 20
     } );
 
     // 2. SoundClip - a one-shot custom sound tied to a specific button press.
@@ -101,8 +98,7 @@ class SoundDemoScreenView extends ScreenView {
         launchSound.play();
       },
       centerX: this.layoutBounds.centerX,
-      top: 20,
-      tandem: this.tandem.createTandem( 'launchButton' )
+      top: 20
     } );
 
     // 3. Another SoundClip - a boundary cue, played only on the transition INTO a boundary.
@@ -168,7 +164,7 @@ import { Tandem } from 'scenerystack/tandem';
 const screenTandem = Tandem.ROOT.createTandem( 'soundDemoScreen' );
 
 const soundDemoScreen = new Screen(
-  () => new SoundDemoModel( screenTandem.createTandem( 'model' ) ),
+  () => new SoundDemoModel(),
   model => new SoundDemoScreenView( model, { tandem: screenTandem.createTandem( 'view' ) } ),
   {
     name: new Property( 'Sound Demo' ),

@@ -29,7 +29,6 @@ The model owns the temperature Property and appends a new (time, temperature) sa
 ```ts
 import { NumberProperty, Property } from 'scenerystack/axon';
 import { Range, Vector2 } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 class CoolingCupModel {
   public readonly temperatureProperty: NumberProperty;
@@ -39,10 +38,9 @@ class CoolingCupModel {
   private static readonly ROOM_TEMPERATURE = 22; // Celsius
   private static readonly COOLING_RATE = 0.05;   // per second
 
-  public constructor( tandem: Tandem ) {
+  public constructor() {
     this.temperatureProperty = new NumberProperty( 90, {
-      range: new Range( 22, 100 ),
-      tandem: tandem.createTandem( 'temperatureProperty' )
+      range: new Range( 22, 100 )
     } );
 
     // The full dataset the chart plots - not just the current value, so the LinePlot
@@ -149,8 +147,7 @@ class CoolingCupScreenView extends ScreenView {
     const resetAllButton = new ResetAllButton( {
       listener: () => model.reset(),
       right: this.layoutBounds.maxX - 20,
-      bottom: this.layoutBounds.maxY - 20,
-      tandem: this.tandem.createTandem( 'resetAllButton' )
+      bottom: this.layoutBounds.maxY - 20
     } );
 
     this.children = [ temperatureReadout, chartNode, resetAllButton ];
@@ -178,7 +175,7 @@ import { Tandem } from 'scenerystack/tandem';
 const screenTandem = Tandem.ROOT.createTandem( 'coolingCupScreen' );
 
 const coolingCupScreen = new Screen(
-  () => new CoolingCupModel( screenTandem.createTandem( 'model' ) ),
+  () => new CoolingCupModel(),
   model => new CoolingCupScreenView( model, { tandem: screenTandem.createTandem( 'view' ) } ),
   {
     name: new Property( 'Cooling Cup' ),

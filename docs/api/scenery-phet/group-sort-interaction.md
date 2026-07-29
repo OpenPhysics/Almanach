@@ -32,8 +32,7 @@ import { Range } from 'scenerystack/dot';
 
 // One model per screen (not per scene) — see GroupSelectModel's own doc comment.
 const groupSelectModel = new GroupSelectModel( {
-  getGroupItemValue: ( item: BarModel ) => item.valueProperty.value,
-  tandem: tandem.createTandem( 'groupSelectModel' )
+  getGroupItemValue: ( item: BarModel ) => item.valueProperty.value
 } );
 
 // One view per scene.

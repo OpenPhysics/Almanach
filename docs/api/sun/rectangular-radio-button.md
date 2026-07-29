@@ -23,14 +23,12 @@ sourceRefs:
 import { RectangularRadioButton } from 'scenerystack/sun';
 import { Text } from 'scenerystack/scenery';
 import { Property } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
 type Shape = 'circle' | 'square';
 const shapeProperty = new Property<Shape>( 'circle' );
 
 const circleButton = new RectangularRadioButton( shapeProperty, 'circle', {
-  content: new Text( 'Circle' ),
-  tandem: Tandem.REQUIRED
+  content: new Text( 'Circle' )
 } );
 ```
 

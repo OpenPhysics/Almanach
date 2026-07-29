@@ -8,7 +8,6 @@ status: complete
 related:
   - /api/joist/navigation-bar
   - /api/joist/home-screen
-  - /api/tandem/tandem
 prerequisites:
   - /api/joist/sim
   - /api/joist/navigation-bar
@@ -30,9 +29,8 @@ import type { Color, Node } from 'scenerystack/scenery';
 
 ```ts
 class MyChromeButton extends JoistButton {
-  public constructor( content: Node, navigationBarFillProperty: TReadOnlyProperty<Color>, tandem: Tandem ) {
+  public constructor( content: Node, navigationBarFillProperty: TReadOnlyProperty<Color> ) {
     super( content, navigationBarFillProperty, {
-      tandem: tandem,
       listener: () => console.log( 'pressed' )
     } );
   }
@@ -45,7 +43,7 @@ class MyChromeButton extends JoistButton {
 new JoistButton(
   content: Node,
   navigationBarFillProperty: TReadOnlyProperty<Color>,
-  providedOptions: JoistButtonOptions // tandem is required
+  providedOptions: JoistButtonOptions
 )
 ```
 

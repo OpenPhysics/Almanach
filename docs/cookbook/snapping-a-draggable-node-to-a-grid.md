@@ -28,7 +28,6 @@ sourceRefs:
 import { DragListener, Rectangle } from 'scenerystack/scenery';
 import { Property } from 'scenerystack/axon';
 import { Vector2, roundToInterval } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 const GRID_CELL_SIZE = 20; // model units per grid cell
 
@@ -53,9 +52,8 @@ pieceNode.addInputListener( new DragListener( {
   mapPosition: ( point: Vector2 ) => new Vector2(
     roundToInterval( point.x, GRID_CELL_SIZE ),
     roundToInterval( point.y, GRID_CELL_SIZE )
-  ),
+  )
 
-  tandem: Tandem.REQUIRED
 } ) );
 ```
 
@@ -76,8 +74,7 @@ pieceNode.addInputListener( new DragListener( {
   mapPosition: ( point: Vector2 ) => new Vector2(
     roundToInterval( point.x, GRID_CELL_SIZE ),
     roundToInterval( point.y, GRID_CELL_SIZE )
-  ),
-  tandem: Tandem.REQUIRED
+  )
 } ) );
 ```
 

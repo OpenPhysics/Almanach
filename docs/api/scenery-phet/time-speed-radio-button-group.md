@@ -32,8 +32,7 @@ const timeSpeedProperty = new EnumerationProperty( TimeSpeed.NORMAL );
 
 const timeSpeedRadioButtonGroup = new TimeSpeedRadioButtonGroup(
   timeSpeedProperty,
-  [ TimeSpeed.NORMAL, TimeSpeed.SLOW ],
-  { tandem: tandem.createTandem( 'timeSpeedRadioButtonGroup' ) }
+  [ TimeSpeed.NORMAL, TimeSpeed.SLOW ]
 );
 ```
 

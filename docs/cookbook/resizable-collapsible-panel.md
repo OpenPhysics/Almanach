@@ -28,7 +28,6 @@ import { AccordionBox } from 'scenerystack/sun';
 import { VBox, Text } from 'scenerystack/scenery';
 import { Checkbox } from 'scenerystack/sun';
 import { BooleanProperty } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
 // --- model-owned state the controls act on ---
 const gravityEnabledProperty = new BooleanProperty( true );
@@ -42,8 +41,8 @@ const controlsContent = new VBox( {
   spacing: 8,
   align: 'left',
   children: [
-    new Checkbox( gravityEnabledProperty, new Text( 'Gravity' ), { tandem: Tandem.REQUIRED } ),
-    new Checkbox( frictionEnabledProperty, new Text( 'Friction' ), { tandem: Tandem.REQUIRED } )
+    new Checkbox( gravityEnabledProperty, new Text( 'Gravity' ) ),
+    new Checkbox( frictionEnabledProperty, new Text( 'Friction' ) )
   ]
 } );
 
@@ -51,8 +50,7 @@ const controlsAccordionBox = new AccordionBox( controlsContent, {
   titleNode: new Text( 'Controls' ),
   expandedProperty: isControlsExpandedProperty,
   cornerRadius: 8,
-  titleAlignX: 'left',
-  tandem: Tandem.REQUIRED
+  titleAlignX: 'left'
 } );
 ```
 

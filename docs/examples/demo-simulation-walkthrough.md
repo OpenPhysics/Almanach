@@ -32,15 +32,13 @@ The model owns exactly one piece of state and knows nothing about scenery:
 ```ts
 import { NumberProperty } from 'scenerystack/axon';
 import { Range } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 class DemoModel {
   public readonly radiusProperty: NumberProperty;
 
-  public constructor( tandem: Tandem ) {
+  public constructor() {
     this.radiusProperty = new NumberProperty( 30, {
-      range: new Range( 10, 100 ),
-      tandem: tandem.createTandem( 'radiusProperty' )
+      range: new Range( 10, 100 )
     } );
   }
 
@@ -67,7 +65,6 @@ import { Circle, VBox } from 'scenerystack/scenery';
 import { HSlider } from 'scenerystack/sun';
 import { ResetAllButton } from 'scenerystack/scenery-phet';
 import { Range } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 class DemoScreenView extends ScreenView {
   public constructor( model: DemoModel, providedOptions: ScreenViewOptions ) {
@@ -83,13 +80,11 @@ class DemoScreenView extends ScreenView {
 
     // The one place radiusProperty IS written: user interaction with the slider.
     const slider = new HSlider( model.radiusProperty, new Range( 10, 100 ), {
-      accessibleName: 'Circle radius',
-      tandem: this.tandem.createTandem( 'slider' )
+      accessibleName: 'Circle radius'
     } );
 
     const resetAllButton = new ResetAllButton( {
-      listener: () => model.reset(),
-      tandem: this.tandem.createTandem( 'resetAllButton' )
+      listener: () => model.reset()
     } );
 
     const controls = new VBox( {
@@ -129,7 +124,7 @@ import { Tandem } from 'scenerystack/tandem';
 const screenTandem = Tandem.ROOT.createTandem( 'demoScreen' );
 
 const demoScreen = new Screen(
-  () => new DemoModel( screenTandem.createTandem( 'model' ) ),
+  () => new DemoModel(),
   model => new DemoScreenView( model, { tandem: screenTandem.createTandem( 'view' ) } ),
   {
     name: new Property( 'Demo' ),
@@ -153,4 +148,3 @@ Trace the demo end to end: the slider writes `radiusProperty`, the `link` callba
 - [Building a Two-Screen Simulation](/examples/building-a-two-screen-simulation) — the same shape, scaled to multiple screens
 - [Scenery Layout Examples](/examples/scenery-layout-examples) — more on `VBox`/`FlowBox`/`GridBox` arrangements
 - [Accessible Control Panel Example](/examples/accessible-control-panel-example) — a deeper PDOM-focused control cluster
-- [PhET-iO Instrumented Sim Example](/examples/phet-io-instrumented-sim-example) — instrumenting this same shape of sim fully

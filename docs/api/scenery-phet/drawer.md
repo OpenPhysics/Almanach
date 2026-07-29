@@ -32,8 +32,7 @@ const contentsNode = new Text( 'Extra info goes here' );
 
 const drawer = new Drawer( contentsNode, {
   open: false,
-  handlePosition: 'top',
-  tandem: tandem.createTandem( 'drawer' )
+  handlePosition: 'top'
 } );
 
 screenView.addChild( drawer );

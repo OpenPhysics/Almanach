@@ -10,7 +10,6 @@ related:
   - /api/scenery/keyboard-drag-listener
   - /accessibility/alternative-input-overview
   - /accessibility/pdom
-  - /api/tandem/tandem
 prerequisites:
   - /patterns/drag-listeners
 sourceRefs:
@@ -28,11 +27,10 @@ A typical older view — draggable, but with no keyboard path at all:
 ```ts
 // LegacyBallNode.ts — pointer dragging only
 import { Circle, DragListener } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 import type BallModel from './BallModel';
 
 export default class LegacyBallNode extends Circle {
-  public constructor( model: BallModel, tandem: Tandem ) {
+  public constructor( model: BallModel ) {
     super( 20, { fill: 'cornflowerblue', cursor: 'pointer' } );
 
     this.addInputListener( new DragListener( {
@@ -41,8 +39,7 @@ export default class LegacyBallNode extends Circle {
       dragBoundsProperty: model.dragBoundsProperty,
       allowTouchSnag: true,
       start: () => model.userControlledProperty.set( true ),
-      end: () => model.userControlledProperty.set( false ),
-      tandem: tandem.createTandem( 'dragListener' )
+      end: () => model.userControlledProperty.set( false )
     } ) );
   }
 }
@@ -57,11 +54,10 @@ This works fine for a mouse or touch user. There is no way to reach `LegacyBallN
 ```ts
 // BallNode.ts — pointer + keyboard dragging
 import { Circle, RichDragListener } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 import type BallModel from './BallModel';
 
 export default class BallNode extends Circle {
-  public constructor( model: BallModel, tandem: Tandem ) {
+  public constructor( model: BallModel ) {
     super( 20, {
       fill: 'cornflowerblue',
       cursor: 'pointer',
@@ -95,13 +91,7 @@ export default class BallNode extends Circle {
       keyboardDragListenerOptions: {
         dragSpeed: 150,
         shiftDragSpeed: 50
-      },
-
-      // 4. Pass the BARE tandem, not tandem.createTandem('dragListener').
-      //    RichDragListener creates its own 'dragListener' and
-      //    'keyboardDragListener' child tandems internally (see below) -
-      //    the old manual suffix would now double up the path.
-      tandem: tandem.createTandem( 'richDragListener' )
+      }
     } ) );
   }
 }
@@ -119,7 +109,6 @@ export default class BallNode extends Circle {
 | Mutual exclusion | N/A — only one modality exists | Starting a drag via one internal listener calls `interrupt()` on the other, so a drag is never simultaneously driven by both (handled internally, not something you write) |
 | `isPressedProperty` | True while the pointer drag is active | `DerivedProperty.or(...)` of both internal listeners' `isPressedProperty` — true if *either* is active |
 | `hotkeys` | Not applicable | Exposes `keyboardDragListener.hotkeys` at the top level, since `RichDragListener` participates in scenery's hotkey system |
-| Tandem shape | One tandem, used as-is | Split internally into `tandem.createTandem('dragListener')` and `tandem.createTandem('keyboardDragListener')` — pass the parent tandem, don't pre-suffix it |
 | Disposal | `dispose()` disposes the one listener | `dispose()` disposes `isPressedProperty` plus both internal listeners |
 
 ## Checking the migration worked
@@ -128,10 +117,6 @@ Two checks catch the mistakes this migration most commonly introduces:
 
 1. **Tab to the object.** If `BallNode` isn't reachable by keyboard, the most likely cause is a missing `tagName`/`focusable` on the Node itself — `RichDragListener` supplies the *listener* half of keyboard support, not the PDOM half.
 2. **Drag with arrow keys once focused.** If focus works but arrow keys do nothing, check that `keyboardDragListenerOptions` (or the shared `positionProperty`/`transform`) reached the internal `KeyboardDragListener` — a common copy/paste mistake is leaving keyboard-only options like `dragSpeed` at the top level, where `RichDragListener`'s options type doesn't recognize them.
-
-::: warning Don't keep a manually-suffixed tandem from the old `DragListener` call
-If the legacy code passed `tandem.createTandem( 'dragListener' )` to `DragListener`, migrating to `RichDragListener` and keeping that same suffixed tandem produces a `.../dragListener/dragListener` path once `RichDragListener` adds its own child tandem. Pass the parent tandem (e.g. `tandem.createTandem( 'richDragListener' )`) and let `RichDragListener` create its own children.
-:::
 
 ## Where to go next
 

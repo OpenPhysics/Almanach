@@ -1,7 +1,6 @@
 import { BooleanProperty } from 'scenerystack/axon';
 import { VBox, Text } from 'scenerystack/scenery';
 import { AccordionBox } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -22,8 +21,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
 
   const accordionBox = new AccordionBox( advancedContent, {
     titleNode: new Text( 'Advanced Settings' ),
-    expandedProperty: expandedProperty,
-    tandem: Tandem.OPTIONAL
+    expandedProperty: expandedProperty
   } );
 
   rootNode.addChild( accordionBox );

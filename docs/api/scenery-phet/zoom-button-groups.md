@@ -34,14 +34,11 @@ import { Range } from 'scenerystack/dot';
 const zoomLevelProperty = new NumberProperty( 2, { range: new Range( 0, 5 ) } );
 
 const zoomButtonGroup = new PlusMinusZoomButtonGroup( zoomLevelProperty, {
-  orientation: 'horizontal',
-  tandem: tandem.createTandem( 'zoomButtonGroup' )
+  orientation: 'horizontal'
 } );
 
 // Or, with magnifying-glass icons instead of flat +/- signs:
-const magnifyingZoomButtonGroup = new MagnifyingGlassZoomButtonGroup( zoomLevelProperty, {
-  tandem: tandem.createTandem( 'magnifyingZoomButtonGroup' )
-} );
+const magnifyingZoomButtonGroup = new MagnifyingGlassZoomButtonGroup( zoomLevelProperty );
 ```
 
 `zoomLevelProperty`'s range determines when each button auto-disables — the zoom-out button disables once applying `applyZoomOut` would fall outside the range, and likewise for zoom-in.

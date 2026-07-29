@@ -9,7 +9,6 @@ related:
   - /api/scenery-phet/bicycle-pump-node
   - /api/dot/range
   - /patterns/drag-listeners
-  - /patterns/phet-io-instrumentation-pattern
 prerequisites:
   - /api/axon/property
 sourceRefs:
@@ -32,9 +31,7 @@ const maxFlowRate = 10; // L/s
 const flowRateProperty = new Property( 0 );
 const enabledProperty = new Property( true );
 
-const faucetNode = new FaucetNode( maxFlowRate, flowRateProperty, enabledProperty, {
-  tandem: tandem.createTandem( 'faucetNode' )
-} );
+const faucetNode = new FaucetNode( maxFlowRate, flowRateProperty, enabledProperty );
 ```
 
 `FaucetNode`'s origin is the bottom-center of its spout, which makes it easy to align against wherever fluid should visually emerge.

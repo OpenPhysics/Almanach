@@ -1,7 +1,6 @@
 import { BooleanProperty } from 'scenerystack/axon';
 import { Text } from 'scenerystack/scenery';
 import { Checkbox } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -18,8 +17,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
       boxWidth: 16,
       checkboxColor: 'blue',
       touchAreaXDilation: 6,
-      touchAreaYDilation: 6,
-      tandem: Tandem.OPTIONAL
+      touchAreaYDilation: 6
     }
   );
 

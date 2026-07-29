@@ -23,14 +23,12 @@ sourceRefs:
 import { Checkbox } from 'scenerystack/sun';
 import { Text } from 'scenerystack/scenery';
 import { BooleanProperty } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
 const gravityEnabledProperty = new BooleanProperty( true );
 
 const gravityCheckbox = new Checkbox(
   gravityEnabledProperty,
-  new Text( 'Gravity' ),
-  { tandem: Tandem.REQUIRED }
+  new Text( 'Gravity' )
 );
 ```
 
@@ -55,8 +53,7 @@ const checkbox = new Checkbox( gravityEnabledProperty, new Text( 'Gravity' ), {
   boxWidth: 16,
   checkboxColor: 'blue',
   touchAreaXDilation: 6,
-  touchAreaYDilation: 6,
-  tandem: Tandem.REQUIRED
+  touchAreaYDilation: 6
 } );
 ```
 

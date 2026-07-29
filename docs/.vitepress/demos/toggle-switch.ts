@@ -1,7 +1,6 @@
 import { Property } from 'scenerystack/axon';
 import { Text, VBox } from 'scenerystack/scenery';
 import { ToggleSwitch } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -14,9 +13,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
 
   const readout = new Text( 'Units: metric' );
 
-  const toggleSwitch = new ToggleSwitch( unitsProperty, 'metric', 'imperial', {
-    tandem: Tandem.OPTIONAL
-  } );
+  const toggleSwitch = new ToggleSwitch( unitsProperty, 'metric', 'imperial' );
 
   const panel = new VBox( {
     spacing: 12,

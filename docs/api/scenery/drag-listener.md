@@ -82,6 +82,3 @@ This is the typical PhET pattern: give `DragListener` a `positionProperty` and a
 `DragListener` only responds to pointer input (mouse/touch/pen). If a draggable object also needs to work with a keyboard, don't hand-wire a separate [`KeyboardDragListener`](/api/scenery/keyboard-drag-listener) alongside it — use [`RichDragListener`](/api/scenery/rich-drag-listener), which composes both and keeps their shared options (`positionProperty`, `transform`, `dragBoundsProperty`, `start`/`drag`/`end`) in sync automatically.
 :::
 
-::: warning `tandem` defaults to required, and drag actions are read-only for PhET-iO
-Like `PressListener`/`FireListener`, `DragListener` defaults `tandem` to `Tandem.REQUIRED`. Its internal `dragAction` is also `phetioReadOnly: true` by default — PhET-iO can observe drag events in the data stream, but can't trigger them, since simulating a drag requires more state than a single data-stream call can carry.
-:::

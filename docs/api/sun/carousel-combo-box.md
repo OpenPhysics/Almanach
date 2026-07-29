@@ -25,7 +25,6 @@ sourceRefs:
 import { CarouselComboBox, type ComboBoxItem } from 'scenerystack/sun';
 import { Text } from 'scenerystack/scenery';
 import { Property } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
 type Element = 'hydrogen' | 'helium' | 'lithium' | 'beryllium' | 'boron' | 'carbon';
 const elementProperty = new Property<Element>( 'hydrogen' );
@@ -40,8 +39,7 @@ const items: ComboBoxItem<Element>[] = [
 ];
 
 const elementComboBox = new CarouselComboBox( elementProperty, items, {
-  carouselOptions: { itemsPerPage: 4 },
-  tandem: Tandem.REQUIRED
+  carouselOptions: { itemsPerPage: 4 }
 } );
 ```
 

@@ -37,7 +37,7 @@ soundManager.addSoundGenerator( myClip ); // the one shared audio mixer
 
 [`dotRandom`](/api/dot/random), [`stepTimer`/`animationFrameTimer`](/api/axon/timer), and `soundManager` (see [Working with Sound](/guides/working-with-sound)) all follow this shape, and for the same underlying reason in each case: there is exactly one meaningful instance for the whole sim, and constructing a second one would be actively wrong, not just redundant.
 
-- **`dotRandom`** — a sim's randomness needs to funnel through one seed so PhET-iO's seeded/reproducible playback works; a `new Random()` constructed independently in one file has no relationship to the seed everything else uses.
+- **`dotRandom`** — a sim's randomness needs to funnel through one seed so playback and tests stay reproducible; a `new Random()` constructed independently in one file has no relationship to the seed everything else uses.
 - **`stepTimer`/`animationFrameTimer`** — there is one running sim loop; a second, independently-constructed `Timer` instance wouldn't be driven by anything and would simply never fire.
 - **`soundManager`** — there is one audio output and one set of user sound preferences; two independent mixers would both try to own the same audio graph.
 

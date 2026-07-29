@@ -116,7 +116,7 @@ Add a live embed when the page documents an **interactive control** (button, sli
 
 ### Authoring a new demo
 
-1. Create `docs/.vitepress/demos/<demo-id>.ts` exporting `createDemo( rootNode )` and optional `width` / `height`. Use `Tandem.OPTIONAL` (not `Tandem.REQUIRED`) — Almanach embeds are not PhET-iO instrumented sims.
+1. Create `docs/.vitepress/demos/<demo-id>.ts` exporting `createDemo( rootNode )` and optional `width` / `height`. Omit `tandem` on components in Markdown examples. In the demo host, pass `tandem: Tandem.OPTIONAL` only when TypeScript's `PickRequired` demands it — Almanach embeds are not PhET-iO sims (see [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation)).
 2. Register the id in `docs/.vitepress/demos/registry.ts`.
 3. Add `<SceneryDemo demo="<demo-id>" />` to the Markdown page **after** its primary code snippet.
 4. Run `npm run demos:check` and `npm run build`.

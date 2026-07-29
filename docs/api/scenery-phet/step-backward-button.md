@@ -30,8 +30,7 @@ const stepBackwardButton = new StepBackwardButton( {
   listener: () => {
     model.step( -0.1 );
   },
-  enabledProperty: DerivedProperty.not( isPlayingProperty ),
-  tandem: tandem.createTandem( 'stepBackwardButton' )
+  enabledProperty: DerivedProperty.not( isPlayingProperty )
 } );
 ```
 

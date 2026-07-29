@@ -28,8 +28,7 @@ import { EraserButton } from 'scenerystack/scenery-phet';
 const clearButton = new EraserButton( {
   listener: () => {
     pointsProperty.reset();
-  },
-  tandem: tandem.createTandem( 'eraserButton' )
+  }
 } );
 ```
 

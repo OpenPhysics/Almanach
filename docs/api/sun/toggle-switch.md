@@ -22,14 +22,11 @@ sourceRefs:
 ```ts
 import { ToggleSwitch } from 'scenerystack/sun';
 import { Property } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
 type Units = 'metric' | 'imperial';
 const unitsProperty = new Property<Units>( 'metric' );
 
-const unitsSwitch = new ToggleSwitch( unitsProperty, 'metric', 'imperial', {
-  tandem: Tandem.REQUIRED
-} );
+const unitsSwitch = new ToggleSwitch( unitsProperty, 'metric', 'imperial' );
 ```
 
 <SceneryDemo demo="toggle-switch" />

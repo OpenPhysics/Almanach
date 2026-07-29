@@ -2,7 +2,6 @@ import { Property } from 'scenerystack/axon';
 import { RectangularRadioButton, RectangularRadioButtonGroup, type RectangularRadioButtonGroupItem } from 'scenerystack/sun';
 import { Circle, Node, Path, Rectangle, Text, VBox } from 'scenerystack/scenery';
 import { Shape } from 'scenerystack/kite';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -34,8 +33,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
   // Standalone RectangularRadioButton (the page's subject class), outside a group.
   const modeProperty = new Property<Mode>( 'off' );
   const standalone = new RectangularRadioButton( modeProperty, 'on', {
-    content: new Text( 'On' ),
-    tandem: Tandem.OPTIONAL
+    content: new Text( 'On' )
   } );
 
   const readout = new Text( '' );

@@ -1,7 +1,6 @@
 import { Property } from 'scenerystack/axon';
 import { Node, Text, VBox } from 'scenerystack/scenery';
 import { ComboBox, type ComboBoxItem } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -23,9 +22,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
     { value: 'cubits', createNode: () => new Text( 'cubits' ) }
   ];
 
-  const unitsComboBox = new ComboBox( unitsProperty, items, listParent, {
-    tandem: Tandem.OPTIONAL
-  } );
+  const unitsComboBox = new ComboBox( unitsProperty, items, listParent );
 
   unitsProperty.link( units => {
     readout.string = `Units: ${units}`;

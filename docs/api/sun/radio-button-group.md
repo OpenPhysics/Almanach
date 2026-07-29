@@ -23,7 +23,6 @@ A radio button group binds a settable `Property<T>` to a fixed set of mutually-e
 import { RectangularRadioButtonGroup, type RectangularRadioButtonGroupItem } from 'scenerystack/sun';
 import { Text } from 'scenerystack/scenery';
 import { Property } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
 type Shape = 'circle' | 'square';
 const shapeProperty = new Property<Shape>( 'circle' );
@@ -34,8 +33,7 @@ const items: RectangularRadioButtonGroupItem<Shape>[] = [
 ];
 
 const shapeRadioButtonGroup = new RectangularRadioButtonGroup( shapeProperty, items, {
-  orientation: 'horizontal',
-  tandem: Tandem.REQUIRED
+  orientation: 'horizontal'
 } );
 ```
 
@@ -53,7 +51,6 @@ const items: AquaRadioButtonGroupItem<Shape>[] = [
 
 const aquaGroup = new AquaRadioButtonGroup( shapeProperty, items, {
   orientation: 'vertical', // the default
-  tandem: Tandem.REQUIRED
 } );
 ```
 

@@ -35,8 +35,7 @@ Full content of every page is available at https://veillette.github.io/Almanach/
 - [Internationalization Deep Dive](https://veillette.github.io/Almanach/guides/internationalization-deep-dive): Runtime locale switching, right-to-left layout, and PatternStringProperty for pluralization and placeholders, building on the translation pipeline basics.
 - [Sim Lifecycle and Startup Sequence](https://veillette.github.io/Almanach/guides/sim-lifecycle-and-startup-sequence): The real sequence from Sim construction through start(), screen selection, and the running animation loop that steps Properties and listeners every frame.
 - [Preferences and Feature Flags](https://veillette.github.io/Almanach/guides/preferences-and-feature-flags): Using the Preferences dialog and query parameters to configure sim behavior.
-- [PhET-iO and Instrumentation](https://veillette.github.io/Almanach/guides/phet-io-and-instrumentation): Conceptual guide to PhET-iO - what instrumentation buys you and how Tandem fits in.
-- [PhET-iO Deep Dive](https://veillette.github.io/Almanach/guides/phet-io-deep-dive): PhetioGroup and PhetioCapsule for dynamically created elements, authoring a custom IOType, and how PhET-iO state save/restore actually works.
+- [PhET-iO and Instrumentation](https://veillette.github.io/Almanach/guides/phet-io-and-instrumentation): Why PhET-iO and Tandem exist in SceneryStack, and why typical SceneryStack apps can ignore them.
 - [Testing and QA Strategy Overview](https://veillette.github.io/Almanach/guides/testing-and-qa-strategy-overview): The layers of testing a SceneryStack simulation benefits from - headless unit tests, manual QA passes, and automated fuzz-testing.
 - [Continuous Integration for SceneryStack Projects](https://veillette.github.io/Almanach/guides/continuous-integration-for-scenerystack-projects): What a CI pipeline for a SceneryStack simulation repository typically checks - type-checking, linting, a production build, unit tests, and automated fuzzing.
 - [Modifying SceneryStack](https://veillette.github.io/Almanach/guides/modifying-scenerystack): Workflow for patching or contributing to the underlying common-code libraries.
@@ -364,14 +363,14 @@ Full content of every page is available at https://veillette.github.io/Almanach/
 
 ### tandem
 
-- [Built-in IOTypes](https://veillette.github.io/Almanach/api/tandem/built-in-io-types): A survey of tandem's ready-made IOType instances for JS primitives and common container shapes, and when to reach for one instead of writing a custom IOType.
-- [Disposable](https://veillette.github.io/Almanach/api/tandem/disposable): The base dispose-lifecycle class that PhetioObject (and therefore Node and every instrumented type) builds on.
-- [IOType](https://veillette.github.io/Almanach/api/tandem/io-type): Declares a class's PhET-iO serialization - state schema, methods, and documentation - independent of its runtime implementation.
-- [PhetioCapsule](https://veillette.github.io/Almanach/api/tandem/phetio-capsule): A PhET-iO-aware container for a single, lazily-created instrumented element, like an on-demand dialog.
-- [PhetioGroup](https://veillette.github.io/Almanach/api/tandem/phetio-group): A PhET-iO-aware container for a dynamically-growing/shrinking collection of instrumented elements, like electrons created during a sim.
-- [PhetioIDUtils and Tandem Naming Conventions](https://veillette.github.io/Almanach/api/tandem/phetio-id-utils-and-naming): Static string utilities for building and inspecting phetioIDs, and the naming conventions a tree of Tandems produces.
-- [PhetioObject](https://veillette.github.io/Almanach/api/tandem/phetio-object): The base class giving any object PhET-iO instrumentation - a tandem, an IOType, and metadata like phetioState/phetioReadOnly.
-- [Tandem](https://veillette.github.io/Almanach/api/tandem/tandem): The naming/instrumentation handle giving every PhET-iO-tracked element a stable tree address.
+- [Built-in IOTypes](https://veillette.github.io/Almanach/api/tandem/built-in-io-types): Ready-made PhET-iO serializers for primitives and containers — usually ignore unless you are building PhET-iO.
+- [Disposable](https://veillette.github.io/Almanach/api/tandem/disposable): The base dispose-lifecycle class that Node, Property, and other long-lived types build on.
+- [IOType](https://veillette.github.io/Almanach/api/tandem/io-type): PhET-iO serialization descriptor — usually ignore unless you are building PhET-iO.
+- [PhetioCapsule](https://veillette.github.io/Almanach/api/tandem/phetio-capsule): PhET-iO container for a single lazily created instrumented element — usually ignore unless you are building PhET-iO.
+- [PhetioGroup](https://veillette.github.io/Almanach/api/tandem/phetio-group): PhET-iO container for a dynamic collection of instrumented elements — usually ignore unless you are building PhET-iO.
+- [PhetioIDUtils and Tandem Naming Conventions](https://veillette.github.io/Almanach/api/tandem/phetio-id-utils-and-naming): String helpers for PhET-iO element IDs — usually ignore unless you are building PhET-iO.
+- [PhetioObject](https://veillette.github.io/Almanach/api/tandem/phetio-object): Base class for PhET-iO instrumentation — usually ignore unless you are building PhET-iO.
+- [Tandem](https://veillette.github.io/Almanach/api/tandem/tandem): The naming handle PhET-iO uses for instrumented elements — usually ignore it in SceneryStack apps.
 
 ### tappi
 
@@ -426,8 +425,7 @@ Full content of every page is available at https://veillette.github.io/Almanach/
 - [Multi-Screen Sim Structure](https://veillette.github.io/Almanach/patterns/multi-screen-sim-structure): Structuring model/view code across multiple Screens in one Sim.
 - [The Options Pattern](https://veillette.github.io/Almanach/patterns/options-pattern): The options-object convention for configuring Nodes and components.
 - [Query Parameters Pattern](https://veillette.github.io/Almanach/patterns/query-parameters-pattern): Using query parameters to drive optional/debug behavior.
-- [PhET-iO Instrumentation Pattern](https://veillette.github.io/Almanach/patterns/phet-io-instrumentation-pattern): Deciding what to instrument with Tandem and structuring a PhET-iO-ready model.
-- [State Persistence and Save/Restore Patterns](https://veillette.github.io/Almanach/patterns/state-persistence-and-save-restore-patterns): Structuring model state as enumerable Properties so it can be saved and restored, whether by PhET-iO or by a simulation's own save/load feature.
+- [State Persistence and Save/Restore Patterns](https://veillette.github.io/Almanach/patterns/state-persistence-and-save-restore-patterns): Structuring model state as enumerable Properties so it can be saved and restored by a simulation's own save/load feature.
 - [Command/Undo Pattern for Interactive Sims](https://veillette.github.io/Almanach/patterns/command-undo-pattern): Structuring a reversible user action as a command object with do/undo so a simulation can support undo, if it needs to - built on the same Property-based state that reset() and dispose() already rely on.
 - [Feature Flags and Preferences Pattern](https://veillette.github.io/Almanach/patterns/feature-flags-and-preferences-pattern): The narrow convention of gating an in-development or optional feature behind a single, consistently-named boolean Property.
 
@@ -467,14 +465,12 @@ Full content of every page is available at https://veillette.github.io/Almanach/
 - [A Chart-Driven Simulation with Bamboo](https://veillette.github.io/Almanach/examples/chart-driven-simulation-with-bamboo): A worked mini-sim where a model Property drives a live bamboo LinePlot through a ChartTransform, with an accessible description that tracks the trend.
 - [A Full Accessible Multi-Screen Sim](https://veillette.github.io/Almanach/examples/full-accessible-multi-screen-sim): Threading PDOM, keyboard, and Voicing support through every screen of a multi-screen sim from the first line of code, instead of retrofitting it later.
 - [A Game-Style Sim with Vegas Scoring](https://veillette.github.io/Almanach/examples/game-style-sim-with-vegas-scoring): A worked example combining vegas's LevelSelectionButton, ScoreDisplayNumberAndStar, GameAudioPlayer, and AllLevelsCompletedNode into a minimal level-selection and gameplay screen.
-- [A PhET-iO State-Restorable Sim](https://veillette.github.io/Almanach/examples/phet-io-state-restorable-sim): A worked example that goes past basic instrumentation to a model whose ENTIRE state - including a runtime-created list of elements via PhetioGroup - can be saved and restored by PhET-iO with no bespoke save/restore code.
 - [A Sim Using Cookbook Recipes End-to-End](https://veillette.github.io/Almanach/examples/sim-using-cookbook-recipes-end-to-end): A worked mini-scenario combining four cookbook recipes - a bounded draggable, grid snapping, a sound effect on interaction, and a hover tooltip - into one coherent grid-placement tool.
 - [A Sound-Rich Simulation with Tambo](https://veillette.github.io/Almanach/examples/sound-rich-simulation-with-tambo): A worked example wiring SoundClip, PitchedPopGenerator, and sharedSoundPlayers to several distinct interaction points in one small sim.
 - [Accessible Control Panel Example](https://veillette.github.io/Almanach/examples/accessible-control-panel-example): A fully accessible control panel combining sun components with PDOM.
 - [Building a Two-Screen Simulation](https://veillette.github.io/Almanach/examples/building-a-two-screen-simulation): Full example wiring two Screens with shared and per-screen model code.
 - [Demo Simulation Walkthrough](https://veillette.github.io/Almanach/examples/demo-simulation-walkthrough): Annotated tour of a minimal end-to-end demo sim.
 - [Migrating a Legacy Sim to RichDragListener](https://veillette.github.io/Almanach/examples/migrating-to-rich-drag-listener): A before/after walkthrough of replacing a pointer-only DragListener with RichDragListener to add keyboard dragging without restructuring the model.
-- [PhET-iO Instrumented Sim Example](https://veillette.github.io/Almanach/examples/phet-io-instrumented-sim-example): A minimal simulation instrumented end-to-end with Tandem.
 - [Scenery Layout Examples](https://veillette.github.io/Almanach/examples/scenery-layout-examples): Worked FlowBox/GridBox layouts for common UI arrangements.
 - [Standalone Scenery App Example](https://veillette.github.io/Almanach/examples/standalone-scenery-app-example): Using scenery as a standalone rendering library outside the joist shell.
 - [Three.js Integration](https://veillette.github.io/Almanach/examples/three-js-integration): Embedding a Three.js WebGL scene inside a scenery Node.
@@ -500,7 +496,6 @@ Full content of every page is available at https://veillette.github.io/Almanach/
 - [Making Any Node Draggable and Bounded to an Area](https://veillette.github.io/Almanach/cookbook/draggable-node-bounded-to-an-area): Attaching a DragListener to a Node so it writes a model positionProperty, clamped to a region with dragBoundsProperty.
 - [Placeholder Values in a Translated String](https://veillette.github.io/Almanach/cookbook/placeholder-values-in-a-translated-string): Using PatternStringProperty to build "{{count}} items"-style strings that stay translatable and update reactively.
 - [Snapping a Draggable Node to a Grid](https://veillette.github.io/Almanach/cookbook/snapping-a-draggable-node-to-a-grid): Using DragListener's mapPosition hook to round a dragged position onto fixed grid cells.
-- [Wiring Up a New PhET-iO Instrumented Control](https://veillette.github.io/Almanach/cookbook/wiring-a-new-phet-io-instrumented-control): Giving a new UI control a Tandem (and, if needed, an IOType) so it shows up correctly in PhET-iO state.
 
 ## Meta
 

@@ -2,7 +2,6 @@ import { NumberProperty, Property } from 'scenerystack/axon';
 import { Range } from 'scenerystack/dot';
 import { Text, VBox } from 'scenerystack/scenery';
 import { NumberSpinner } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -21,8 +20,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
 
   const spinner = new NumberSpinner(
     countProperty,
-    countRangeProperty,
-    { tandem: Tandem.OPTIONAL }
+    countRangeProperty
   );
 
   const panel = new VBox( {

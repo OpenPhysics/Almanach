@@ -2,7 +2,6 @@ import { BooleanProperty, Property } from 'scenerystack/axon';
 import { BooleanRectangularToggleButton, RectangularToggleButton } from 'scenerystack/sun';
 import { Path, Text, VBox } from 'scenerystack/scenery';
 import { Shape } from 'scenerystack/kite';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -34,7 +33,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
     speedProperty,
     'normal', // valueOff
     'slow',   // valueOn
-    { content: new Text( 'x' ), tandem: Tandem.OPTIONAL }
+    { content: new Text( 'x' ) }
   );
 
   const readout = new Text( '' );

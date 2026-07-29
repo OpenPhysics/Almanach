@@ -12,16 +12,15 @@ related:
   - /api/mobius/scene-and-camera-setup
   - /api/mobius/three-isometric-node
   - /api/mobius/three-utils-helpers
-  - /patterns/phet-io-instrumentation-pattern
   - /examples/three-js-integration
-  - /api/tandem/phetio-object
+  - /guides/phet-io-and-instrumentation
 sourceRefs:
   - https://www.npmjs.com/package/scenerystack
 ---
 
 # ThreeNode, ThreeInstrumentable, and ThreeObject3DPhetioObject
 
-These three exports from `scenerystack/mobius` solve two related but distinct problems: getting a three.js viewport onto the scenery scene graph at all (`ThreeNode`), and giving individual `THREE.Object3D` instances placed inside that viewport a PhET-iO identity (`ThreeInstrumentable` + `ThreeObject3DPhetioObject`).
+`ThreeNode` (from `scenerystack/mobius`) embeds a fixed-size three.js viewport in the scenery scene graph. `ThreeInstrumentable` / `ThreeObject3DPhetioObject` exist only for PhET-iO addressing of individual meshes — typical SceneryStack apps use `ThreeNode` alone (see [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation)).
 
 ## `ThreeNode`: a fixed-size three.js viewport
 
@@ -63,39 +62,6 @@ new ThreeNode( width: number, height: number, providedOptions?: ThreeNodeOptions
 | `render( target? )` | Renders the stage (`autoClear: true`) |
 | `dispose()` | Disposes the `stage` |
 
-## Instrumenting individual three.js objects
+## PhET-iO helpers (usually skip)
 
-`ThreeNode`/`ThreeIsometricNode` give the *viewport* a place in the scene graph, but a `THREE.Object3D` you add to `stage.threeScene` (a `THREE.Mesh`, `THREE.Group`, etc.) is not itself a scenery `Node` or a `PhetioObject` — three.js has no concept of PhET-iO. `ThreeObject3DPhetioObject` and the `ThreeInstrumentable` mixin exist to attach a PhET-iO identity to such objects by composition, so PhET-iO Studio can see and select them in the tree.
-
-```ts
-import { ThreeInstrumentable, THREE } from 'scenerystack/mobius';
-
-const InstrumentedMesh = ThreeInstrumentable( THREE.Mesh );
-
-const sphere = new InstrumentedMesh( geometry, material, {
-  tandem: tandem.createTandem( 'sphereMesh' )
-} );
-threeNode.stage.threeScene.add( sphere );
-// sphere.phetioObject is the underlying ThreeObject3DPhetioObject.
-```
-
-### `ThreeObject3DPhetioObject`
-
-```ts
-new ThreeObject3DPhetioObject( providedOptions?: PhetioObjectOptions )
-```
-
-A `PhetioObject` subclass with no extra state of its own: `phetioType` defaults to its own `ThreeObject3DIO`, and `tandem` defaults to `Tandem.REQUIRED` (you must supply one). It's meant to be held *by composition* inside a three.js object, not extended.
-
-### `ThreeInstrumentable( type )`
-
-A memoized mixin function: `ThreeInstrumentable( SomeThreeClass )` returns a subclass of `SomeThreeClass` whose constructor takes the usual three.js constructor arguments plus a trailing `PhetioObjectOptions` object, and which exposes a `phetioObject: ThreeObject3DPhetioObject` (constructed from those options). Its overridden `dispose()` calls the wrapped type's own `dispose()` first, then disposes `phetioObject`.
-
-| Member | Description |
-| --- | --- |
-| `phetioObject` | The `ThreeObject3DPhetioObject` instrumented for this instance |
-| `dispose()` | Calls the wrapped type's own `dispose()` first (if present), then disposes `phetioObject` |
-
-::: warning Instrumenting a three.js object does not capture its state
-`ThreeObject3DIO`'s `toStateObject`/`stateSchema` are both empty (`{}`) — wrapping a `THREE.Object3D` with `ThreeInstrumentable` only gives it an address in the PhET-iO tree for Studio to select and reference. It does **not** serialize or restore position, rotation, material, or any other three.js state on PhET-iO save/load. If your sim needs 3D object state to survive a state restore, you must model that state separately (e.g. as `Property`s on your own model) and use it to drive the three.js object, rather than relying on this instrumentation.
-:::
+`ThreeInstrumentable` and `ThreeObject3DPhetioObject` attach a PhET-iO address to a `THREE.Object3D`. Ordinary SceneryStack apps do not need them — add meshes to `stage.threeScene` directly. If you are deliberately building PhET-iO, see [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation).

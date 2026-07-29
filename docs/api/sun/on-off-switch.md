@@ -27,13 +27,10 @@ sourceRefs:
 ```ts
 import { OnOffSwitch } from 'scenerystack/sun';
 import { BooleanProperty } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
 const soundEnabledProperty = new BooleanProperty( true );
 
-const soundSwitch = new OnOffSwitch( soundEnabledProperty, {
-  tandem: Tandem.REQUIRED
-} );
+const soundSwitch = new OnOffSwitch( soundEnabledProperty );
 ```
 
 Unlike `Checkbox`, `OnOffSwitch` has no separate label argument — pair it with your own `Text` (or an `HBox`/`AlignBox` layout) if you need one, and use `accessibleName` for the accessible label.

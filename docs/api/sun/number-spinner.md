@@ -23,7 +23,6 @@ sourceRefs:
 import { NumberSpinner } from 'scenerystack/sun';
 import { NumberProperty, Property } from 'scenerystack/axon';
 import { Range } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 const countProperty = new NumberProperty( 3, {
   numberType: 'Integer',
@@ -34,9 +33,7 @@ const countRangeProperty = new Property( new Range( 0, 10 ) );
 
 const countSpinner = new NumberSpinner(
   countProperty,
-  countRangeProperty,
-  { tandem: Tandem.REQUIRED }
-);
+  countRangeProperty );
 ```
 
 <SceneryDemo demo="number-spinner" />

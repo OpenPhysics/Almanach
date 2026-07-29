@@ -33,8 +33,7 @@ const volumeProperty = new NumberProperty( 50, { range: new Range( 0, 100 ) } );
 
 const volumeSpinner = new FineCoarseSpinner( volumeProperty, {
   deltaFine: 1,
-  deltaCoarse: 10,
-  tandem: tandem.createTandem( 'volumeSpinner' )
+  deltaCoarse: 10
 } );
 ```
 

@@ -20,15 +20,13 @@ sourceRefs:
 
 ```ts
 import { StopSignNode } from 'scenerystack/scenery-phet';
-import { Tandem } from 'scenerystack/tandem';
 ```
 
 ## A minimal example
 
 ```ts
 const stopIcon = new StopSignNode( {
-  fillRadius: 18,
-  tandem: Tandem.REQUIRED.createTandem( 'stopIcon' )
+  fillRadius: 18
 } );
 ```
 
@@ -53,6 +51,3 @@ new StopSignNode( providedOptions?: StopSignNodeOptions )
 
 The three borders are built as three separate, fully-filled octagon `Path`s stacked in z-order (outer, then inner-stroke, then fill) rather than as actual `stroke`s on a single `Path` — that's why they're configured as `fillRadius`/`innerStrokeWidth`/`outerStrokeWidth` instead of ordinary `Path` `stroke`/`lineWidth` options.
 
-::: warning `tandem` is required by default
-`StopSignNode`'s options default `tandem: Tandem.REQUIRED` (with `tandemNameSuffix: 'StopSignNode'`) — omitting `tandem` will assert in an instrumented sim. Pass `Tandem.OPT_OUT` explicitly if this particular icon genuinely doesn't need PhET-iO instrumentation.
-:::

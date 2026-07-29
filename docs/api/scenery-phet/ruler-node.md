@@ -78,7 +78,7 @@ new RulerNode(
 | `unitsMajorTickIndex` | `0` | The units label is placed to the right of this major tick (by index) |
 | `unitsSpacing` | `3` | Horizontal gap between a tick label and the units label |
 | `tickMarksOnTop` / `tickMarksOnBottom` | `true` / `true` | Whether tick lines are drawn on each edge |
-| `instrumentUnitsLabelText` | `true` | Whether the internal units `Text` gets its own PhET-iO tandem |
+| `instrumentUnitsLabelText` | `true` | Whether the internal units `Text` is separately named for instrumentation (usually leave the default) |
 
 ::: warning `majorTickLabels.length` must match the tick count exactly
 `RulerNode` asserts `Math.floor( rulerWidth / majorTickWidth ) + 1 === majorTickLabels.length`. Passing too few or too many labels for the given `rulerWidth`/`majorTickWidth` combination throws in an assertion-enabled build rather than silently truncating or padding. Compute the label array's length the same way when generating it dynamically.

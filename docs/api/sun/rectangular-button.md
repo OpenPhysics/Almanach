@@ -35,7 +35,6 @@ Every concrete rectangular button constructs its own `ButtonModel` subclass and 
 ```ts
 import { RectangularButton, ButtonModel, ButtonInteractionState } from 'scenerystack/sun';
 import type { TReadOnlyProperty } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
 // Sketch of the seam RectangularPushButton, RectangularToggleButton, etc. all use internally —
 // write a subclass like this only when none of the built-in ones fit.
@@ -43,8 +42,7 @@ class MyCustomRectangularButton extends RectangularButton {
   public constructor( buttonModel: ButtonModel, interactionStateProperty: TReadOnlyProperty<ButtonInteractionState> ) {
     super( buttonModel, interactionStateProperty, {
       baseColor: 'orange',
-      cornerRadius: 8,
-      tandem: Tandem.REQUIRED
+      cornerRadius: 8
     } );
   }
 }

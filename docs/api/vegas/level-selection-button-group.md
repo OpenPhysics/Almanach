@@ -23,7 +23,6 @@ sourceRefs:
 import { LevelSelectionButtonGroup, type LevelSelectionButtonGroupItem } from 'scenerystack/vegas';
 import { NumberProperty } from 'scenerystack/axon';
 import { Text } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 
 const level1Score = new NumberProperty( 0 );
 const level2Score = new NumberProperty( 0 );
@@ -40,7 +39,6 @@ const buttonGroup = new LevelSelectionButtonGroup( items, {
   groupButtonWidth: 120,
   groupButtonHeight: 120,
   gameLevels: [ 1, 2 ], // value of the sim's gameLevels query parameter
-  tandem: Tandem.REQUIRED.createTandem( 'levelSelectionButtonGroup' )
 } );
 ```
 

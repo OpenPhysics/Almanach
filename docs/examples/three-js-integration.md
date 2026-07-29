@@ -63,8 +63,7 @@ class CubeScreenView extends MobiusScreenView {
 const cubeScreen = new CubeScreenView( {
   sceneNodeOptions: {
     cameraPosition: new Vector3( 0, 0.4, 2 )
-  },
-  tandem: screenTandem.createTandem( 'view' )
+  }
 } );
 ```
 

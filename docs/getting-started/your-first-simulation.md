@@ -95,7 +95,7 @@ A few things worth noting:
 | Piece | Why it's there |
 | --- | --- |
 | `onReadyToLaunch` | Waits for SceneryStack's asynchronous asset loader (fonts, images, strings) before constructing the `Sim`. Always launch this way, never call `new Sim(...)` directly at module scope. |
-| `Tandem` | PhET-iO's instrumentation identifier. Every `Screen` requires one, even if you never enable instrumentation — see [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation). |
+| `Tandem` | Inherited PhET-iO plumbing. Every `Screen` requires one — pass it and move on; do not thread tandems into model Properties or UI controls. See [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation). |
 | `name` | A `TReadOnlyProperty<string>`, not a plain string — this is what lets the sim title be translated. See [Translation and Localization](/guides/translation-and-localization). |
 
 Since a single-screen sim has no home screen or navigation-bar screen icons, `homeScreenIcon`/`navigationBarIcon` can be omitted; they become required in practice once you add a second screen (see [Building Your First Screen](/guides/building-your-first-screen)).
@@ -105,4 +105,4 @@ Since a single-screen sim has no home screen or navigation-bar screen icons, `ho
 - [Building Your First Screen](/guides/building-your-first-screen) — adding a second screen and the model/view split in more depth
 - [Model-View Separation](/patterns/model-view-separation) — the architecture this example already follows
 - [Scenery Basics](/guides/scenery-basics) — everything you can put inside a `ScreenView`
-- [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation) — what `Tandem` actually buys you
+- [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation) — why `Tandem` shows up on `Screen`, and why you can ignore the rest

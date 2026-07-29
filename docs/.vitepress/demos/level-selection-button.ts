@@ -2,7 +2,6 @@ import { NumberProperty } from 'scenerystack/axon';
 import { Text, VBox } from 'scenerystack/scenery';
 import { StarNode } from 'scenerystack/scenery-phet';
 import { LevelSelectionButton, ScoreDisplayNumberAndStar } from 'scenerystack/vegas';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -20,8 +19,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
     createScoreDisplay: score => new ScoreDisplayNumberAndStar( score ),
     listener: () => {
       scoreProperty.value = ( scoreProperty.value + 1 ) % 4;
-    },
-    tandem: Tandem.OPTIONAL
+    }
   } );
 
   const hint = new Text( 'Click the button to change the score' );

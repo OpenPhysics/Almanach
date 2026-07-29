@@ -30,7 +30,7 @@ const controls = new VBox( {
   align: 'left',
   children: [
     new Text( 'Options' ),
-    new Checkbox( gravityEnabledProperty, new Text( 'Gravity' ), { tandem: Tandem.REQUIRED } )
+    new Checkbox( gravityEnabledProperty, new Text( 'Gravity' ) )
   ]
 } );
 

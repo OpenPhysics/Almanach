@@ -44,8 +44,7 @@ const keyboardDragListener = new KeyboardDragListener( {
 // interactionCueParent hosts the little "Press Space to grab/release" and
 // "Use arrow keys" cue Nodes; it's usually the ScreenView itself.
 const grabDragInteraction = new GrabDragInteraction( ballNode, keyboardDragListener, screenView, {
-  objectToGrabString: 'Ball',
-  tandem: tandem.createTandem( 'grabDragInteraction' )
+  objectToGrabString: 'Ball'
 } );
 ```
 
@@ -86,12 +85,10 @@ import { GrabDragUsageTracker, GrabDragInteraction } from 'scenerystack/scenery-
 const sharedTracker = new GrabDragUsageTracker();
 
 const interactionA = new GrabDragInteraction( nodeA, dragListenerA, screenView, {
-  grabDragUsageTracker: sharedTracker,
-  tandem: tandemA
+  grabDragUsageTracker: sharedTracker
 } );
 const interactionB = new GrabDragInteraction( nodeB, dragListenerB, screenView, {
-  grabDragUsageTracker: sharedTracker,
-  tandem: tandemB
+  grabDragUsageTracker: sharedTracker
 } );
 ```
 

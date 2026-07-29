@@ -28,7 +28,6 @@ sourceRefs:
 import { LevelSelectionButton, ScoreDisplayNumberAndStar } from 'scenerystack/vegas';
 import { HBox, Circle, Text } from 'scenerystack/scenery';
 import { NumberProperty, Property } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
 const NUMBER_OF_LEVELS = 3;
 
@@ -58,7 +57,6 @@ const levelSelectionButtons = levelScoreProperties.map( ( scoreProperty, index )
       selectedLevelProperty.value = levelNumber;
     },
     soundPlayerIndex: index, // levels are zero-indexed and contiguous here
-    tandem: Tandem.REQUIRED
   } );
 } );
 
@@ -96,6 +94,3 @@ Because `LevelSelectionButton` takes `scoreProperty` directly (not a snapshot), 
 The level-selection screen shown here only needs `LevelSelectionButton`; once a level is actually being played, [`FiniteStatusBar`](/api/vegas/status-bars) is the standard way to show that level's own running score, "Level N" label, and a "Start Over" button pinned to the top of the `ScreenView` — a different, complementary piece from the selection screen itself.
 :::
 
-::: warning Keep the level-selection screen itself outside any one level's `Tandem` subtree
-Each `LevelSelectionButton`'s tandem, and each level's own `scoreProperty`, should live under a tandem naming scheme that's stable regardless of how many levels exist or which one is currently selected (e.g. `gameScreen.model.level1.scoreProperty`) — see [Multi-Screen Sim Structure](/patterns/multi-screen-sim-structure) for the broader convention of keeping each self-contained unit under its own tandem subtree.
-:::

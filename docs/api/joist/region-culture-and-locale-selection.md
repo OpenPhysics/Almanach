@@ -89,6 +89,3 @@ Three joist classes build the panels a sim's Preferences dialog shows for these 
 const localePanel = new LocalePanel( localeProperty );
 ```
 
-::: tip Preferences UI components are not PhET-iO instrumented
-`RegionAndCultureComboBox` and `LanguageSelectionNode`'s internal listeners deliberately use `Tandem.OPT_OUT` — Preferences controls are considered part of the platform chrome, not part of a sim's own instrumented API surface (see the `joist#744` discussion referenced in source comments). Don't expect to find these under a sim's PhET-iO tree; `localeProperty` and `regionAndCultureProperty` themselves *are* instrumented (under `Tandem.GENERAL_MODEL`), but the buttons that drive them are not.
-:::

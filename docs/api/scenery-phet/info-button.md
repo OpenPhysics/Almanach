@@ -28,8 +28,7 @@ import { InfoButton } from 'scenerystack/scenery-phet';
 const infoButton = new InfoButton( {
   listener: () => {
     infoDialog.show();
-  },
-  tandem: tandem.createTandem( 'infoButton' )
+  }
 } );
 ```
 

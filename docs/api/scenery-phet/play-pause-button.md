@@ -30,9 +30,7 @@ import { Property } from 'scenerystack/axon';
 ```ts
 const isPlayingProperty = new Property<boolean>( true );
 
-const playPauseButton = new PlayPauseButton( isPlayingProperty, {
-  tandem: tandem.createTandem( 'playPauseButton' )
-} );
+const playPauseButton = new PlayPauseButton( isPlayingProperty );
 ```
 
 <SceneryDemo demo="play-pause-button" />

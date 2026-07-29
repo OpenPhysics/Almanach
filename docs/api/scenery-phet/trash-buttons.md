@@ -30,15 +30,13 @@ const moveToTrashButton = new MoveToTrashButton( {
   arrowColor: 'blue',
   listener: () => {
     particlesProperty.value = [];
-  },
-  tandem: tandem.createTandem( 'moveToTrashButton' )
+  }
 } );
 
 const trashButton = new TrashButton( {
   listener: () => {
     selectedItemProperty.value = null;
-  },
-  tandem: tandem.createTandem( 'trashButton' )
+  }
 } );
 ```
 

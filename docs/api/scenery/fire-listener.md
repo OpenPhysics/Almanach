@@ -22,7 +22,6 @@ sourceRefs:
 
 ```ts
 import { Circle, FireListener } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 
 const button = new Circle( 25, {
   fill: 'dodgerblue',
@@ -30,8 +29,7 @@ const button = new Circle( 25, {
 } );
 
 button.addInputListener( new FireListener( {
-  fire: () => console.log( 'fired!' ),
-  tandem: Tandem.REQUIRED
+  fire: () => console.log( 'fired!' )
 } ) );
 ```
 
@@ -87,6 +85,3 @@ button.addInputListener( new FireListener( {
 If you just need "clicked," reach for `FireListener` — it already integrates with keyboard/PDOM activation. If you need to track pointer movement while pressed (dragging a `Node` around), use `PressListener` directly or [`DragListener`](/guides/scenery-input), which builds on the same `press`/`release`/`drag` shape.
 :::
 
-::: warning `tandem` defaults to required
-Both listeners default `tandem` to `Tandem.REQUIRED` (for PhET-iO instrumentation of user actions). If your project isn't PhET-iO-instrumented, pass `Tandem.OPT_OUT`, or supply a real tandem as shown above — leaving the default in place will throw if PhET-iO validation is active.
-:::

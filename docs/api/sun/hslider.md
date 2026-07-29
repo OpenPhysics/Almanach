@@ -23,15 +23,12 @@ sourceRefs:
 import { HSlider } from 'scenerystack/sun';
 import { NumberProperty } from 'scenerystack/axon';
 import { Range } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 const temperatureProperty = new NumberProperty( 20, {
   range: new Range( 0, 100 )
 } );
 
-const slider = new HSlider( temperatureProperty, new Range( 0, 100 ), {
-  tandem: Tandem.REQUIRED
-} );
+const slider = new HSlider( temperatureProperty, new Range( 0, 100 ) );
 ```
 
 <SceneryDemo demo="hslider" />

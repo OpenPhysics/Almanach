@@ -56,6 +56,3 @@ The trailing four parameters are forwarded straight to the underlying [`TinyEmit
 | `isSettable()` | Always returns `true` for `TinyProperty` |
 | `dispose()` | Unlinks all listeners, then disposes the underlying `TinyEmitter` |
 
-::: warning Not validated, not instrumented, no reset
-`TinyProperty` has no `validValues`/`valueType`/`isValidValue` checking, no `tandem`, and no `initialValue`/`reset()` — assigning any value of the declared type always succeeds silently. It exists purely as a memory-lean building block for framework internals (scenery Node state, [`DynamicProperty`](/api/axon/dynamic-property)'s internal wrapping, [`MappedProperty`](/api/axon/unit-conversion-property)). For simulation model state that simulation-author code creates directly, use [`Property`](/api/axon/property) (or a typed subclass) instead — the safety and PhET-iO support are almost always worth the extra bytes.
-:::

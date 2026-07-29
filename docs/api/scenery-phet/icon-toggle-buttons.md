@@ -31,17 +31,11 @@ const soundEnabledProperty = new Property<boolean>( true );
 const timerRunningProperty = new Property<boolean>( false );
 const eyeOpenProperty = new Property<boolean>( true );
 
-const soundToggleButton = new SoundToggleButton( soundEnabledProperty, {
-  tandem: tandem.createTandem( 'soundToggleButton' )
-} );
+const soundToggleButton = new SoundToggleButton( soundEnabledProperty );
 
-const timerToggleButton = new TimerToggleButton( timerRunningProperty, {
-  tandem: tandem.createTandem( 'timerToggleButton' )
-} );
+const timerToggleButton = new TimerToggleButton( timerRunningProperty );
 
-const eyeToggleButton = new EyeToggleButton( eyeOpenProperty, {
-  tandem: tandem.createTandem( 'eyeToggleButton' )
-} );
+const eyeToggleButton = new EyeToggleButton( eyeOpenProperty );
 ```
 
 ## The family

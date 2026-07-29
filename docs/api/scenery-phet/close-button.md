@@ -28,8 +28,7 @@ import { CloseButton } from 'scenerystack/scenery-phet';
 const closeButton = new CloseButton( {
   listener: () => {
     dialog.hide();
-  },
-  tandem: tandem.createTandem( 'closeButton' )
+  }
 } );
 ```
 

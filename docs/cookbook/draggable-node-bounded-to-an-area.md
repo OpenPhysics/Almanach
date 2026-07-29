@@ -27,7 +27,6 @@ The tool for this is a plain [`DragListener`](/api/scenery/drag-listener) (from 
 import { DragListener, Circle } from 'scenerystack/scenery';
 import { Property, NumberProperty } from 'scenerystack/axon';
 import { Bounds2, Vector2 } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 // --- model ---
 class TokenModel {
@@ -63,7 +62,6 @@ tokenNode.addInputListener( new DragListener( {
   // same (view/parent) coordinate frame tokenNode itself lives in. Pass a
   // ModelViewTransform2 via `transform` if your model uses different units.
 
-  tandem: Tandem.REQUIRED
 } ) );
 ```
 
@@ -86,7 +84,6 @@ function onContainerResized( newInteriorBounds: Bounds2 ): void {
 | `positionProperty` | The model `Property` written during the drag |
 | `dragBoundsProperty` | A `Property<Bounds2>` the written position is clamped into, in the same coordinate frame as `positionProperty` |
 | `transform` | A `ModelViewTransform2` to convert between model and view units; omit it when the model and view already share coordinates, as above |
-| `tandem` | Required for PhET-iO-instrumented sims; see [Tandem](/api/tandem/tandem) |
 
 ::: tip Pointer-only is not the full story
 This recipe intentionally covers only pointer dragging. A production control almost always also needs a keyboard path — either add a `KeyboardDragListener` alongside this `DragListener`, or replace both with a single `RichDragListener`, which accepts the same `positionProperty`/`dragBoundsProperty` options and adds arrow-key/WASD support for free. See the [full checklist](/patterns/drag-listeners#richdraglistener-both-at-once) for what else a well-behaved draggable needs (touch area dilation, `userControlledProperty` during animation).

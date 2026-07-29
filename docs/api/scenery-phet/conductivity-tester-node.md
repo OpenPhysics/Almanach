@@ -39,8 +39,7 @@ const conductivityTesterNode = new ConductivityTesterNode(
   brightnessProperty,
   positionProperty,
   positiveProbePositionProperty,
-  negativeProbePositionProperty,
-  { tandem: tandem.createTandem( 'conductivityTesterNode' ) }
+  negativeProbePositionProperty
 );
 ```
 
@@ -52,7 +51,7 @@ new ConductivityTesterNode(
   positionProperty: TProperty<Vector2>,
   positiveProbePositionProperty: TProperty<Vector2>,
   negativeProbePositionProperty: TProperty<Vector2>,
-  providedOptions: ConductivityTesterNodeOptions // tandem is required
+  providedOptions: ConductivityTesterNodeOptions
 )
 ```
 

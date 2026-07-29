@@ -58,15 +58,13 @@ The model is an ordinary `positionProperty`; nothing about the model changes for
 // MotionModel.ts
 import { Vector2Property, Vector2, Bounds2 } from 'scenerystack/dot';
 import { Property } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
 export default class MotionModel {
   public readonly positionProperty: Vector2Property;
   public readonly dragBoundsProperty: Property<Bounds2>;
 
-  public constructor( tandem: Tandem ) {
+  public constructor() {
     this.positionProperty = new Vector2Property( new Vector2( 0, 0 ), {
-      tandem: tandem.createTandem( 'positionProperty' )
     } );
     this.dragBoundsProperty = new Property( new Bounds2( -200, -150, 200, 150 ) );
   }
@@ -155,7 +153,7 @@ class ForcesScreenView extends ScreenView {
     super( providedOptions );
 
     const ballNode = new BallNode( model.ballModel );
-    const controlPanel = createPanelContent( model, this.tandem.createTandem( 'panel' ) ); // from the panel example
+    const controlPanel = createPanelContent( model ); // from the panel example
 
     this.pdomPlayAreaNode.pdomOrder = [ ballNode ];
     this.pdomControlAreaNode.pdomOrder = [ controlPanel ];

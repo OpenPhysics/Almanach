@@ -34,19 +34,14 @@ const isRunningProperty = new Property<boolean>( false );
 const isRecordingProperty = new Property<boolean>( false );
 
 // A play/stop toggle where stopping restarts from the beginning (unlike PlayPauseButton).
-const playStopButton = new PlayStopButton( isRunningProperty, {
-  tandem: tandem.createTandem( 'playStopButton' )
-} );
+const playStopButton = new PlayStopButton( isRunningProperty );
 
 // A record/stop toggle for a data-recording feature.
-const recordStopButton = new RecordStopButton( isRecordingProperty, {
-  tandem: tandem.createTandem( 'recordStopButton' )
-} );
+const recordStopButton = new RecordStopButton( isRecordingProperty );
 
 // The play/pause + step-forward group TimeControlNode builds internally.
 const buttonGroup = new PlayPauseStepButtonGroup( isRunningProperty, {
-  includeStepBackwardButton: true,
-  tandem: tandem.createTandem( 'buttonGroup' )
+  includeStepBackwardButton: true
 } );
 ```
 

@@ -23,15 +23,12 @@ sourceRefs:
 import { VSlider } from 'scenerystack/sun';
 import { NumberProperty } from 'scenerystack/axon';
 import { Range } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 const volumeProperty = new NumberProperty( 50, {
   range: new Range( 0, 100 )
 } );
 
-const volumeSlider = new VSlider( volumeProperty, new Range( 0, 100 ), {
-  tandem: Tandem.REQUIRED
-} );
+const volumeSlider = new VSlider( volumeProperty, new Range( 0, 100 ) );
 ```
 
 <SceneryDemo demo="v-slider" />

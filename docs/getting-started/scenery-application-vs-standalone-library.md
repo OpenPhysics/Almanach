@@ -20,13 +20,13 @@ navOrder: 6
 
 # Scenery Application vs. Standalone Library
 
-SceneryStack can be used two very different ways, and picking the right one up front saves you from unpicking a `Sim` later. The rule of thumb: **if you need multiple screens, a navigation bar, a home screen, PhET-iO instrumentation, or the Preferences dialog, use a `Sim` application. If you just need an interactive scene graph inside a page you already control, use `scenery` standalone.**
+SceneryStack can be used two very different ways, and picking the right one up front saves you from unpicking a `Sim` later. The rule of thumb: **if you need multiple screens, a navigation bar, a home screen, or the Preferences dialog, use a `Sim` application. If you just need an interactive scene graph inside a page you already control, use `scenery` standalone.**
 
 ## Full application: `Sim` + `Screen` + `ScreenView`
 
 This is the shape of every PhET simulation: a `Sim` owns one or more `Screen`s, each with a `ScreenView`, and `joist`/`sim` supplies the navigation bar, home screen, keyboard help, and Preferences dialog for free. See [Your First Simulation](/getting-started/your-first-simulation) for the full wiring — you don't manage a `Display` yourself, `Sim` does it internally via `SimDisplay`.
 
-Reach for this when your project is a self-contained, full-window interactive experience — especially if you want the accessibility, internationalization, and PhET-iO scaffolding that come with `joist` "for free."
+Reach for this when your project is a self-contained, full-window interactive experience — especially if you want the accessibility and internationalization scaffolding that come with `joist` "for free."
 
 ## Standalone: `scenery` without `joist`
 
@@ -68,7 +68,7 @@ Key differences from a `Sim`:
 | --- | --- | --- |
 | Owns the `Display` | Yes, internally (`SimDisplay`) | You create and size it |
 | Multi-screen / navigation bar / home screen | Built in | Not applicable — build your own UI |
-| Preferences dialog, PhET-iO | Built in | Opt in manually if needed |
+| Preferences dialog | Built in | Opt in manually if needed |
 | Sizing | Fills the browser window | You size the container and `Display` |
 | Render/animation loop | Managed by `Sim` | You call `display.updateOnRequestAnimationFrame(...)` |
 | Input events | Enabled automatically | You call `display.initializeEvents()` |

@@ -29,7 +29,6 @@ sourceRefs:
 ```ts
 import { NumberProperty, BooleanProperty, StringProperty } from 'scenerystack/axon';
 import { Range } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 // 'circle' | 'square' are this Property's only ever-valid values (enforced at runtime by
 // validValues below), but the Property itself is still typed as StringProperty (Property<string>)
@@ -39,17 +38,13 @@ class PanelModel {
   public readonly gravityEnabledProperty: BooleanProperty;
   public readonly shapeProperty: StringProperty;
 
-  public constructor( tandem: Tandem ) {
+  public constructor() {
     this.speedProperty = new NumberProperty( 1, {
-      range: new Range( 0, 5 ),
-      tandem: tandem.createTandem( 'speedProperty' )
+      range: new Range( 0, 5 )
     } );
-    this.gravityEnabledProperty = new BooleanProperty( true, {
-      tandem: tandem.createTandem( 'gravityEnabledProperty' )
-    } );
+    this.gravityEnabledProperty = new BooleanProperty( true );
     this.shapeProperty = new StringProperty( 'circle', {
-      validValues: [ 'circle', 'square' ],
-      tandem: tandem.createTandem( 'shapeProperty' )
+      validValues: [ 'circle', 'square' ]
     } );
   }
 
@@ -71,14 +66,12 @@ import { Panel } from 'scenerystack/sun';
 import { HSlider, Checkbox, RectangularRadioButtonGroup, type RectangularRadioButtonGroupItem } from 'scenerystack/sun';
 import { ResetAllButton } from 'scenerystack/scenery-phet';
 import { Range } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
-function createPanelContent( model: PanelModel, tandem: Tandem ) {
+function createPanelContent( model: PanelModel ) {
 
   const speedSlider = new HSlider( model.speedProperty, new Range( 0, 5 ), {
     accessibleName: 'Speed',
-    accessibleHelpText: 'Adjust how fast objects move.',
-    tandem: tandem.createTandem( 'speedSlider' )
+    accessibleHelpText: 'Adjust how fast objects move.'
   } );
 
   const gravityCheckbox = new Checkbox(
@@ -87,8 +80,7 @@ function createPanelContent( model: PanelModel, tandem: Tandem ) {
     {
       // accessibleName is inferred from the Text label here - see Checkbox's own docs -
       // but accessibleHelpText still needs to be supplied explicitly.
-      accessibleHelpText: 'Toggle whether gravity pulls objects downward.',
-      tandem: tandem.createTandem( 'gravityCheckbox' )
+      accessibleHelpText: 'Toggle whether gravity pulls objects downward.'
     }
   );
 
@@ -98,13 +90,11 @@ function createPanelContent( model: PanelModel, tandem: Tandem ) {
   ];
   const shapeRadioButtonGroup = new RectangularRadioButtonGroup( model.shapeProperty, shapeItems, {
     orientation: 'horizontal',
-    accessibleName: 'Object shape',
-    tandem: tandem.createTandem( 'shapeRadioButtonGroup' )
+    accessibleName: 'Object shape'
   } );
 
   const resetAllButton = new ResetAllButton( {
-    listener: () => model.reset(),
-    tandem: tandem.createTandem( 'resetAllButton' )
+    listener: () => model.reset()
   } );
 
   const content = new VBox( {
@@ -141,7 +131,7 @@ class PanelScreenView extends ScreenView {
   public constructor( model: PanelModel, providedOptions: ScreenViewOptions ) {
     super( providedOptions );
 
-    const panel = createPanelContent( model, this.tandem.createTandem( 'panel' ) );
+    const panel = createPanelContent( model );
     panel.rightTop = this.layoutBounds.rightTop.plusXY( -20, 20 );
     this.addChild( panel );
 

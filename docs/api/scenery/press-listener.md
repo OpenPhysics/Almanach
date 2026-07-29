@@ -21,15 +21,13 @@ sourceRefs:
 
 ```ts
 import { Node, Circle, PressListener } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 
 const magnifier = new Node( { children: [ new Circle( 20, { fill: 'lightblue' } ) ], cursor: 'pointer' } );
 
 const magnifyListener = new PressListener( {
   press: () => magnifier.setScaleMagnitude( 1.5 ),
   release: () => magnifier.setScaleMagnitude( 1 ),
-  canStartPress: () => !magnifier.isDisposed,
-  tandem: Tandem.OPT_OUT
+  canStartPress: () => !magnifier.isDisposed
 } );
 
 magnifier.addInputListener( magnifyListener );
@@ -75,6 +73,3 @@ Beyond the `isPressedProperty`/`isOverProperty`/`isHoveringProperty`/`isHighligh
 If the shape of the interaction is genuinely custom — press-and-hold-to-charge, multi-touch gesture recognition, or anything that needs `isOverOrFocusedProperty`/`overPointers` — build on `PressListener` directly rather than working around `FireListener`'s fire semantics or `DragListener`'s coordinate machinery. Both of those subclasses exist specifically to save you from reimplementing this state for the two most common cases.
 :::
 
-::: warning `tandem` still defaults to required
-Like `FireListener` and `DragListener`, a directly-constructed `PressListener` defaults `tandem` to `Tandem.REQUIRED` and defaults `phetioReadOnly: true` on its internal press/release `PhetioAction`s. Pass `Tandem.OPT_OUT` for non-instrumented sim code, as shown above.
-:::

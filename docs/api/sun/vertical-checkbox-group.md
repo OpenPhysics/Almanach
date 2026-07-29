@@ -55,10 +55,6 @@ Each `VerticalCheckboxGroupItem` needs its own `property` and a `createNode()` t
 
 Per-item `options` (on each `VerticalCheckboxGroupItem`) override `checkboxOptions` for that one checkbox, same precedence as `RectangularRadioButtonGroupItem.options` overriding `radioButtonOptions`.
 
-::: tip Each checkbox keeps its own PhET-iO identity
-Give every item a `tandemName` (e.g. `'gravityCheckbox'`) rather than relying on index-based naming — `VerticalCheckboxGroup` creates each `Checkbox`'s tandem via `options.tandem.createTandem( item.tandemName )` when supplied, or falls back to `Tandem.OPTIONAL` otherwise.
-:::
-
 ::: warning This is a layout convenience, not a mutually-exclusive group
 Because each checkbox is bound to its own `Property<boolean>`, any number of them (including zero or all) can be checked simultaneously. If you need exactly-one-of-N selection, reach for [Radio Button Groups](/api/sun/radio-button-group) instead — `VerticalCheckboxGroup` and radio button groups solve different problems despite the similar vertical-list appearance.
 :::

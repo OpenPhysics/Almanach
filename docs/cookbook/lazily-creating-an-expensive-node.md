@@ -102,6 +102,3 @@ Pick the "hide, keep alive" version by default — it's simpler and avoids repea
 `this.expensiveGraphNode?.dispose()` is not just defensive style here — it's the load-bearing check for "was this ever actually constructed." Skipping the `?.` and calling `.dispose()` unconditionally would throw whenever the section was collapsed for an entire session and `expensiveGraphNode` stayed `null`.
 :::
 
-::: warning Don't lazily construct Nodes PhET-iO needs to see unconditionally
-If the expensive Node carries PhET-iO-instrumented state (its own `tandem`), lazily creating it means that state doesn't exist until the gating condition first fires — which can be a problem for PhET-iO state restoration (a saved state expecting the element to already exist). Reserve this pattern for purely visual, uninstrumented subtrees, and instrument the underlying model data unconditionally instead if a PhET-iO client needs to observe it before the view ever appears.
-:::

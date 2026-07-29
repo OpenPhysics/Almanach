@@ -32,9 +32,7 @@ const preferencesModel = new PreferencesModel( {
     customPreferences: [ {
       createContent: parentTandem => {
         const label = new Text( 'Show grid' );
-        const toggle = new ToggleSwitch( showGridProperty, false, true, {
-          tandem: parentTandem.createTandem( 'showGridSwitch' )
-        } );
+        const toggle = new ToggleSwitch( showGridProperty, false, true );
 
         // PreferencesControl handles the label/control/description layout for you.
         const control = new PreferencesControl( {
@@ -107,14 +105,14 @@ You would only construct one directly if building an entirely custom Preferences
 new PreferencesTabs(
   supportedTabs: PreferencesType[],
   selectedPanelProperty: TProperty<PreferencesType>,
-  providedOptions: PreferencesTabsOptions // tandem is required
+  providedOptions: PreferencesTabsOptions
 )
 
 new PreferencesTab(
   labelProperty: TReadOnlyProperty<string>,
   property: TProperty<PreferencesType>,
   value: PreferencesType,
-  providedOptions: PreferencesTabOptions // tandem is required
+  providedOptions: PreferencesTabOptions
 )
 ```
 

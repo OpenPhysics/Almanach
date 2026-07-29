@@ -30,8 +30,7 @@ const stepForwardButton = new StepForwardButton( {
   listener: () => {
     model.step( 0.1 );
   },
-  enabledProperty: DerivedProperty.not( isPlayingProperty ),
-  tandem: tandem.createTandem( 'stepForwardButton' )
+  enabledProperty: DerivedProperty.not( isPlayingProperty )
 } );
 ```
 

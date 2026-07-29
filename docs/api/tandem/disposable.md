@@ -1,13 +1,13 @@
 ---
 title: Disposable
-description: The base dispose-lifecycle class that PhetioObject (and therefore Node and every instrumented type) builds on.
+description: The base dispose-lifecycle class that Node, Property, and other long-lived types build on.
 category: api
 library: tandem
 tags: [tandem, axon, Disposable, dispose, lifecycle]
 status: verified
 related:
-  - /api/tandem/phetio-object
   - /patterns/dispose-and-memory-management
+  - /api/tandem/phetio-object
 prerequisites:
   - /patterns/dispose-and-memory-management
 sourceRefs:
@@ -16,7 +16,7 @@ sourceRefs:
 
 # Disposable
 
-`Disposable`'s real import is `scenerystack/axon`, not `scenerystack/tandem` — but it's documented in this section because [`PhetioObject`](/api/tandem/phetio-object) extends it directly, making it the base of the dispose lifecycle for every instrumented class in the tandem/phet-io world (and, transitively, every `Node`, `Property`, and UI component built on `PhetioObject`). If you're calling `super.dispose()` inside an overridden `dispose()` method anywhere in a `PhetioObject` subclass, this is the class whose `dispose()` you eventually reach at the top of the chain.
+`Disposable`'s real import is `scenerystack/axon`, not `scenerystack/tandem` — but it's documented in this section because [`PhetioObject`](/api/tandem/phetio-object) extends it, and therefore every `Node`, `Property`, and UI component that builds on `PhetioObject` inherits the same dispose lifecycle. If you're calling `super.dispose()` inside an overridden `dispose()` method, this is the class whose `dispose()` you eventually reach at the top of the chain.
 
 ```ts
 import { Disposable, type DisposableOptions } from 'scenerystack/axon';
@@ -33,7 +33,7 @@ class MyResource extends Disposable {
 }
 ```
 
-Most SceneryStack code never extends `Disposable` directly — you get it for free through `Node` or `PhetioObject` — but understanding it clarifies exactly what `dispose()` guarantees you across the whole class hierarchy. See [Dispose and Memory Management](/patterns/dispose-and-memory-management) for the broader convention of when *you* need to write disposal code at all.
+Most SceneryStack code never extends `Disposable` directly — you get it for free through `Node` — but understanding it clarifies exactly what `dispose()` guarantees you across the whole class hierarchy. See [Dispose and Memory Management](/patterns/dispose-and-memory-management) for the broader convention of when *you* need to write disposal code at all.
 
 ## What `dispose()` guarantees
 

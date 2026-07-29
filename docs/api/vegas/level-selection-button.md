@@ -32,8 +32,7 @@ const levelButton = new LevelSelectionButton( levelIconNode, scoreProperty, {
   buttonWidth: 150,
   buttonHeight: 150,
   createScoreDisplay: score => new ScoreDisplayNumberAndStar( score ),
-  listener: () => selectLevel( 1 ),
-  tandem: tandem.createTandem( 'level1Button' )
+  listener: () => selectLevel( 1 )
 } );
 ```
 

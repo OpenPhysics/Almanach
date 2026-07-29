@@ -24,7 +24,6 @@ sourceRefs:
 import { NumberPicker } from 'scenerystack/sun';
 import { NumberProperty, Property } from 'scenerystack/axon';
 import { Range } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 const countProperty = new NumberProperty( 3, {
   numberType: 'Integer',
@@ -33,9 +32,7 @@ const countProperty = new NumberProperty( 3, {
 
 const countRangeProperty = new Property( new Range( 0, 10 ) );
 
-const countPicker = new NumberPicker( countProperty, countRangeProperty, {
-  tandem: Tandem.REQUIRED
-} );
+const countPicker = new NumberPicker( countProperty, countRangeProperty );
 ```
 
 As with `NumberSpinner`, the range argument is a `TReadOnlyProperty<Range>` (not a plain `Range`), so the picker can respond if the allowed bounds change dynamically.

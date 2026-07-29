@@ -13,9 +13,8 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
 
   const readout = new Text( 'Sound: on' );
 
-  const soundSwitch = new OnOffSwitch( soundEnabledProperty, {
-    tandem: Tandem.OPTIONAL
-  } );
+  // Tandem.OPTIONAL satisfies the required options argument; demos are not instrumented.
+  const soundSwitch = new OnOffSwitch( soundEnabledProperty, { tandem: Tandem.OPTIONAL } );
 
   soundEnabledProperty.link( enabled => {
     readout.string = `Sound: ${enabled ? 'on' : 'off'}`;

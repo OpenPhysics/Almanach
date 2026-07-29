@@ -5,7 +5,6 @@ category: patterns
 tags: [query-parameters, conventions]
 status: verified
 related:
-  - /patterns/phet-io-instrumentation-pattern
   - /patterns/model-view-separation
   - /patterns/feature-flags-and-preferences-pattern
 prerequisites:

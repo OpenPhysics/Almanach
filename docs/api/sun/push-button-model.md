@@ -44,14 +44,12 @@ sourceRefs:
 
 ```ts
 import { PushButtonModel, RectangularButton, PushButtonInteractionStateProperty } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
 
 // What RectangularPushButton does internally — only write this directly when building
 // a custom button Node that RectangularButton/RoundButton don't already cover.
 const buttonModel = new PushButtonModel( {
   fireOnDown: false,
-  listener: () => console.log( 'fired!' ),
-  tandem: Tandem.REQUIRED.createTandem( 'buttonModel' )
+  listener: () => console.log( 'fired!' )
 } );
 
 const interactionStateProperty = new PushButtonInteractionStateProperty( buttonModel );

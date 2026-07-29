@@ -23,7 +23,6 @@ sourceRefs:
 import { HSlider, DefaultSliderTrack } from 'scenerystack/sun';
 import { NumberProperty, Property } from 'scenerystack/axon';
 import { Range, Dimension2 } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 const volumeProperty = new NumberProperty( 50, { range: new Range( 0, 100 ) } );
 const rangeProperty = new Property( new Range( 0, 100 ) );
@@ -33,13 +32,11 @@ const customTrack = new DefaultSliderTrack( volumeProperty, rangeProperty, {
   fillEnabled: 'green',
   fillDisabled: 'lightgray',
   cornerRadius: 1.5,
-  enabledRangeProperty: rangeProperty,
-  tandem: Tandem.REQUIRED.createTandem( 'trackNode' )
+  enabledRangeProperty: rangeProperty
 } );
 
 const slider = new HSlider( volumeProperty, new Range( 0, 100 ), {
-  trackNode: customTrack,
-  tandem: Tandem.REQUIRED
+  trackNode: customTrack
 } );
 ```
 

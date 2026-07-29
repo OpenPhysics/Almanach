@@ -3,7 +3,6 @@ import { Dimension2, Range } from 'scenerystack/dot';
 import { Checkbox, HSlider } from 'scenerystack/sun';
 import { ValueGaugeNode } from 'scenerystack/scenery-phet';
 import { Text, VBox } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -30,9 +29,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
   };
   numberDisplayVisibleProperty.link( numberDisplayVisibleListener );
 
-  const numberDisplayCheckbox = new Checkbox( numberDisplayVisibleProperty, new Text( 'Show numeric readout' ), {
-    tandem: Tandem.OPTIONAL
-  } );
+  const numberDisplayCheckbox = new Checkbox( numberDisplayVisibleProperty, new Text( 'Show numeric readout' ) );
 
   const panel = new VBox( { spacing: 22, align: 'center', children: [ gauge, slider, numberDisplayCheckbox ] } );
 

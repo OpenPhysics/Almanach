@@ -22,7 +22,6 @@ sourceRefs:
 ```ts
 import { AccordionBox } from 'scenerystack/sun';
 import { VBox, Text } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 
 const graphContent = new VBox( {
   spacing: 6,
@@ -31,8 +30,7 @@ const graphContent = new VBox( {
 
 const graphAccordionBox = new AccordionBox( graphContent, {
   titleNode: new Text( 'Graph' ),
-  expandedDefaultValue: false,
-  tandem: Tandem.REQUIRED
+  expandedDefaultValue: false
 } );
 ```
 
@@ -47,8 +45,7 @@ const isGraphExpandedProperty = new BooleanProperty( false );
 
 const graphAccordionBox = new AccordionBox( graphContent, {
   titleNode: new Text( 'Graph' ),
-  expandedProperty: isGraphExpandedProperty,
-  tandem: Tandem.REQUIRED
+  expandedProperty: isGraphExpandedProperty
 } );
 ```
 

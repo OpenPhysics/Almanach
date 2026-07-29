@@ -47,7 +47,7 @@ bodyNode.addInputListener( new RichDragListener( {
 | --- | --- | --- |
 | `dragListenerOptions` | `{}` | Additional/overriding options passed only to the internal `DragListener` (e.g. `allowTouchSnag`, `mouseButton`) |
 | `keyboardDragListenerOptions` | `{}` | Additional/overriding options passed only to the internal `KeyboardDragListener` (e.g. `dragSpeed`, `keyboardDragDirection`) |
-| `tandem` | `Tandem.REQUIRED` | Split internally into `tandem.createTandem('dragListener')` / `'keyboardDragListener'` for PhET-iO |
+| `tandem` | `Tandem.REQUIRED` | Optional instrumentation handle; omit for ordinary apps |
 
 `start`/`drag`/`end` given directly on `RichDragListener` fire for *either* input type; listener-specific callbacks in `dragListenerOptions`/`keyboardDragListenerOptions` fire in addition to (not instead of) the shared ones.
 

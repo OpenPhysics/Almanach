@@ -3,7 +3,6 @@ import { Dimension2, Range } from 'scenerystack/dot';
 import { Checkbox, HSlider } from 'scenerystack/sun';
 import { GaugeNode } from 'scenerystack/scenery-phet';
 import { Text, VBox } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -36,9 +35,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
   };
   invalidReadingProperty.link( invalidReadingListener );
 
-  const invalidReadingCheckbox = new Checkbox( invalidReadingProperty, new Text( 'Invalid reading (NaN)' ), {
-    tandem: Tandem.OPTIONAL
-  } );
+  const invalidReadingCheckbox = new Checkbox( invalidReadingProperty, new Text( 'Invalid reading (NaN)' ) );
 
   const panel = new VBox( {
     spacing: 14,

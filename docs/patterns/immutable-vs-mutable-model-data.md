@@ -61,7 +61,7 @@ Not everything should be wrapped in a fresh object on every change. In-place mut
 | --- | --- |
 | The object is *not* itself a `Property`'s `.value` — it's a private working buffer/accumulator local to one method, never observed directly | The object *is* what a `Property` holds, and other code needs to be notified when it changes |
 | A hot per-frame loop (particle simulation, many-body physics) where allocating a new `Vector2` per object per frame is a measurable performance cost | Correctness/observability matters more than the allocation cost — the overwhelming majority of simulation model state |
-| The mutated object's identity genuinely doesn't matter to anyone downstream | Something (a view, a `DerivedProperty`, PhET-iO state capture) needs to react specifically to *this* value changing |
+| The mutated object's identity genuinely doesn't matter to anyone downstream | Something (a view, a `DerivedProperty`, …) needs to react specifically to *this* value changing |
 
 ```ts
 // A hot inner loop updating many particles' positions per frame: mutating in place

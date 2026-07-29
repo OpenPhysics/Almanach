@@ -30,7 +30,7 @@ It is published as a single npm package, [`scenerystack`](https://www.npmjs.com/
 | **scenery-phet** | `scenerystack/scenery-phet` | Simulation-specific reusable components: arrows, thermometers, `PhetFont` |
 | **twixt** | `scenerystack/twixt` | Animation and easing |
 | **joist** | `scenerystack/sim` (app shell classes) / `scenerystack/joist` (preferences panels, locale utilities) | Application shell: `Sim`, `Screen`, `ScreenView`, navigation bar — see [Troubleshooting](/getting-started/troubleshooting-common-setup-errors) for why the import subpath differs from the library name |
-| **tandem** | `scenerystack/tandem` | PhET-iO instrumentation and serialization |
+| **tandem** | `scenerystack/tandem` | PhET-iO naming/serialization (usually ignore; see [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation)) |
 | **phetcommon** | `scenerystack/phetcommon` | Shared utilities, notably `ModelViewTransform2` |
 
 ## Installation

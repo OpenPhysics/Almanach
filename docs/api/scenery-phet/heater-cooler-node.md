@@ -31,9 +31,7 @@ const heatCoolAmountProperty = new NumberProperty( 0, {
   range: new Range( -1, 1 )
 } );
 
-const heaterCoolerNode = new HeaterCoolerNode( heatCoolAmountProperty, {
-  tandem: tandem.createTandem( 'heaterCoolerNode' )
-} );
+const heaterCoolerNode = new HeaterCoolerNode( heatCoolAmountProperty );
 ```
 
 Step your model's heat/cool logic off `heatCoolAmountProperty` directly (e.g. `heatCoolAmountProperty.value * maxHeatingRate`); `HeaterCoolerNode` only reflects and lets the user drag the value, it does not apply any heating/cooling itself.

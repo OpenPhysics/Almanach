@@ -59,7 +59,7 @@ function createAdvancedTwoScreenIcon(): ScreenIcon {
 }
 ```
 
-**3. Give the screen its own `Tandem` subtree, created from `Tandem.ROOT` exactly like the existing screens:**
+**3. Pass the `Tandem` `Screen` requires** (boilerplate — see [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation)):
 
 ```ts
 import { Screen } from 'scenerystack/sim';
@@ -103,7 +103,7 @@ Nothing about `introScreen`/`advancedScreen`'s own code changes — `createModel
 
 | Check | Why |
 | --- | --- |
-| The new screen's tandem name is unique and doesn't collide with an existing one | `Tandem.createTandem` on an already-used name reuses the existing child rather than erroring loudly in every case — a typo'd duplicate name can silently misname the new screen's tree |
+| The new screen's `name` and icons are set | Omitting them on a multi-screen sim silently degrades the home screen / nav bar |
 | `homeScreenIcon` (and, if built separately, `navigationBarIcon`) share the same aspect ratio | `Screen` asserts this at construction — see [Building a Custom ScreenIcon](/cookbook/building-a-custom-screen-icon) |
 | The new screen's `name` is genuinely translatable (a real string `Property`, not a raw string) | Every other screen's name already goes through the sim's string/locale pipeline; a plain string here is the one screen that silently won't translate |
 | Nothing in the new screen's model/view imports from `advanced/` or `intro/` directly | Anything two screens both need belongs in `common/`, not screen-to-screen imports — see [Multi-Screen Sim Structure](/patterns/multi-screen-sim-structure#what-goes-where) |

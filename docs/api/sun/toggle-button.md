@@ -23,7 +23,6 @@ Unlike [`RectangularPushButton`](/api/sun/rectangular-push-button), a toggle but
 import { BooleanRectangularToggleButton } from 'scenerystack/sun';
 import { Path } from 'scenerystack/scenery';
 import { BooleanProperty } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 import playIconShape from './playIconShape.js';
 import pauseIconShape from './pauseIconShape.js';
 
@@ -34,8 +33,7 @@ const playPauseButton = new BooleanRectangularToggleButton(
   new Path( pauseIconShape, { fill: 'black' } ), // shown when isPlayingProperty === true
   new Path( playIconShape, { fill: 'black' } ),  // shown when isPlayingProperty === false
   {
-    baseColor: 'yellow',
-    tandem: Tandem.REQUIRED
+    baseColor: 'yellow'
   }
 );
 ```
@@ -60,7 +58,7 @@ const speedButton = new RoundToggleButton(
   speedProperty,
   'normal', // valueOff
   'slow',   // valueOn
-  { content: new Text( 'x' ), tandem: Tandem.REQUIRED }
+  { content: new Text( 'x' ) }
 );
 ```
 

@@ -28,7 +28,6 @@ The biggest practical difference from `RectangularButton` is how sizing works: t
 import { RoundButton } from 'scenerystack/sun'; // for type reference only — construct a concrete subclass
 import { RoundPushButton } from 'scenerystack/sun';
 import { Path } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 import iconShape from './iconShape.js';
 
 // A concrete RoundButton-based class, sized explicitly rather than by content:
@@ -36,8 +35,7 @@ const iconButton = new RoundPushButton( {
   content: new Path( iconShape, { fill: 'black', maxWidth: 20 } ),
   radius: 24,
   baseColor: 'yellow',
-  listener: () => model.reset(),
-  tandem: Tandem.REQUIRED
+  listener: () => model.reset()
 } );
 ```
 

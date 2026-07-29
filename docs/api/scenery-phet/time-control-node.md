@@ -32,8 +32,7 @@ const isPlayingProperty = new Property<boolean>( true );
 const timeControlNode = new TimeControlNode( isPlayingProperty, {
   playPauseStepButtonOptions: {
     includeStepBackwardButton: true
-  },
-  tandem: tandem.createTandem( 'timeControlNode' )
+  }
 } );
 ```
 

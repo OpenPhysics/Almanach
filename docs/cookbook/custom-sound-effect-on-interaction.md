@@ -27,7 +27,6 @@ Both cases use the same building block: a [`SoundClip`](/api/tambo/sound-clip) w
 import { SoundClip, soundManager } from 'scenerystack/tambo';
 import { RectangularPushButton } from 'scenerystack/sun';
 import { Text } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 import buttonClick_mp3 from './buttonClick_mp3.js'; // a WrappedAudioBuffer from an audio asset import
 
 const buttonClickSound = new SoundClip( buttonClick_mp3, {
@@ -43,8 +42,7 @@ const launchButton = new RectangularPushButton( {
   listener: () => {
     model.launch();
     buttonClickSound.play();
-  },
-  tandem: Tandem.REQUIRED
+  }
 } );
 ```
 

@@ -94,9 +94,7 @@ class MoleculePreviewScreenView extends ScreenView {
     this.moleculeThreeNode.stage.threeScene.add( new THREE.DirectionalLight( 0xffffff, 1 ) );
 
     // ThreeNode is a plain Node - it composes with ordinary 2D layout containers.
-    const rotateCheckbox = new Checkbox( model.rotationEnabledProperty, new Text( 'Rotate' ), {
-      tandem: this.tandem.createTandem( 'rotateCheckbox' )
-    } );
+    const rotateCheckbox = new Checkbox( model.rotationEnabledProperty, new Text( 'Rotate' ) );
 
     const controlsColumn = new VBox( {
       spacing: 10,
@@ -130,23 +128,6 @@ A few things worth noticing:
 | `.layout()` called once, explicitly | Recomputes the stage's pixel dimensions from the Node's current global bounds; call it again after any transform change that affects `moleculeThreeNode`'s placement, since (unlike `MobiusScreenView`) nothing calls it for you automatically |
 | `.render()` called every `step()` | `ThreeNode` doesn't render itself on a timer — the hosting `ScreenView`'s `step(dt)` is responsible, the same as `MobiusScreenView.step()` does internally for its own stage |
 
-## Instrumenting a mesh for PhET-iO, if needed
-
-If a specific `THREE.Object3D` needs its own PhET-iO identity (so Studio can select or reference it), wrap its constructor with `ThreeInstrumentable` rather than trying to attach a `tandem` to the plain three.js object directly — three.js objects have no PhET-iO concept of their own (see [ThreeNode, ThreeInstrumentable, and ThreeObject3DPhetioObject](/api/mobius/node-wrapping-conventions#instrumenting-individual-three-js-objects)):
-
-```ts
-import { ThreeInstrumentable, THREE } from 'scenerystack/mobius';
-
-const InstrumentedMesh = ThreeInstrumentable( THREE.Mesh );
-
-const instrumentedMolecule = new InstrumentedMesh( geometry, material, {
-  tandem: this.tandem.createTandem( 'moleculeMesh' )
-} );
-this.moleculeThreeNode.stage.threeScene.add( instrumentedMolecule );
-```
-
-This only gives PhET-iO Studio an address for the object to select — it does **not** save/restore its position or rotation on state restore; model that state as ordinary `Property`s if it needs to survive a PhET-iO save/load.
-
 ## Choosing between the two options
 
 | Use `MobiusScreenView` (full-screen) | Use `ThreeNode` (fixed-size) |
@@ -164,4 +145,4 @@ Whichever Node you reach for, the actual three.js objects (`THREE.Scene`, `THREE
 - [Three.js Integration](/examples/three-js-integration) — the full-screen `MobiusScreenView` path in depth
 - [ThreeStage](/api/mobius/scene-and-camera-setup) — the scene/camera/renderer object both options above share
 - [ThreeUtils](/api/mobius/three-utils-helpers) — coordinate conversions and the `isWebGLEnabled()` guard
-- [ThreeNode, ThreeInstrumentable, and ThreeObject3DPhetioObject](/api/mobius/node-wrapping-conventions) — the fixed-size viewport and PhET-iO instrumentation details used above
+- [ThreeNode](/api/mobius/node-wrapping-conventions) — the fixed-size viewport Node used above

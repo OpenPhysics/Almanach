@@ -45,9 +45,7 @@ const items: ComboBoxDisplayItem<Quantity>[] = [
   { choice: 'current', numberProperty: currentProperty, range: new Range( 0, 2 ), units: 'A' }
 ];
 
-const display = new ComboBoxDisplay( choiceProperty, items, listParent, {
-  tandem: tandem.createTandem( 'quantityDisplay' )
-} );
+const display = new ComboBoxDisplay( choiceProperty, items, listParent );
 
 screenView.addChild( display );
 screenView.addChild( listParent ); // must be an ancestor high enough not to be clipped

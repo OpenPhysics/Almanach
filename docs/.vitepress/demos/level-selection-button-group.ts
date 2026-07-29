@@ -20,13 +20,14 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
     options: { listener: () => { selectedProperty.value = i + 1; } }
   } ) );
 
+  // Tandem.OPTIONAL satisfies PickRequired<'tandem'> for the demo host; not for PhET-iO.
   const group = new LevelSelectionButtonGroup( items, {
+    tandem: Tandem.OPTIONAL,
     levelSelectionButtonOptions: { baseColor: '#DCEBFB' },
     flowBoxOptions: { spacing: 16 },
     groupButtonWidth: 120,
     groupButtonHeight: 120,
-    gameLevels: [ 1, 2, 3 ],
-    tandem: Tandem.OPTIONAL
+    gameLevels: [ 1, 2, 3 ]
   } );
 
   const readout = new Text( '' );

@@ -27,7 +27,6 @@ This page documents the `ComboBox` control simulation authors use. The internal 
 import { ComboBox, type ComboBoxItem } from 'scenerystack/sun';
 import { Text, Node } from 'scenerystack/scenery';
 import { Property } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
 type Units = 'meters' | 'feet';
 const unitsProperty = new Property<Units>( 'meters' );
@@ -40,9 +39,7 @@ const items: ComboBoxItem<Units>[] = [
   { value: 'feet', createNode: () => new Text( 'feet' ) }
 ];
 
-const unitsComboBox = new ComboBox( unitsProperty, items, listParent, {
-  tandem: Tandem.REQUIRED
-} );
+const unitsComboBox = new ComboBox( unitsProperty, items, listParent );
 
 // listParent must be added to the scene graph as an ancestor of unitsComboBox,
 // typically near the top of the ScreenView so the popup list isn't clipped.

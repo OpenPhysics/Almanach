@@ -6,7 +6,6 @@ import {
   type AquaRadioButtonGroupItem,
   type RectangularRadioButtonGroupItem
 } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -31,13 +30,11 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
   ];
 
   const rectangularGroup = new RectangularRadioButtonGroup( rectangularProperty, rectangularItems, {
-    orientation: 'horizontal',
-    tandem: Tandem.OPTIONAL
+    orientation: 'horizontal'
   } );
 
   const aquaGroup = new AquaRadioButtonGroup( aquaProperty, aquaItems, {
-    orientation: 'vertical',
-    tandem: Tandem.OPTIONAL
+    orientation: 'vertical'
   } );
 
   const rectangularReadout = new Text( 'Rectangular: circle' );

@@ -125,6 +125,8 @@ export const bounceScreen = new Screen(
 );
 ```
 
+The `tandem` / `createTandem( 'view' )` lines are required by `Screen`'s API — inherited PhET-iO boilerplate. Pass them and stop; do not thread tandems through the model or controls unless you are deliberately building PhET-iO (see [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation)).
+
 ## 5. Adding it to the Sim
 
 Pass every screen's exported `Screen` instance to `Sim` in array order — that order becomes both the home screen layout and the navigation bar order:
@@ -147,6 +149,6 @@ Since `Screen`'s `createModel`/`createView` factories run lazily and users can s
 
 ## Where to go next
 
-- [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation) — what the `tandem` wiring above actually enables
+- [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation) — why the `tandem` lines above exist, and why you can ignore them afterward
 - [Scenery Layout](/guides/scenery-layout) — arranging a screen's controls with `FlowBox`/`GridBox` instead of manual positions
 - [The Reset-All Pattern](/patterns/reset-all-pattern) — the full contract for `model.reset()` and `ResetAllButton`

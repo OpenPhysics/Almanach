@@ -2,7 +2,6 @@ import { NumberProperty } from 'scenerystack/axon';
 import { Range, Dimension2 } from 'scenerystack/dot';
 import { Text, VBox } from 'scenerystack/scenery';
 import { VSlider } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -17,8 +16,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
   const readout = new Text( '50%' );
 
   const slider = new VSlider( volumeProperty, new Range( 0, 100 ), {
-    trackSize: new Dimension2( 8, 120 ),
-    tandem: Tandem.OPTIONAL
+    trackSize: new Dimension2( 8, 120 )
   } );
   slider.addMajorTick( 0, new Text( '0%', { fontSize: 14 } ) );
   slider.addMajorTick( 100, new Text( '100%', { fontSize: 14 } ) );

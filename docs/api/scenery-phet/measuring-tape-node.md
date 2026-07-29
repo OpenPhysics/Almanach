@@ -9,7 +9,6 @@ related:
   - /api/scenery-phet/ruler-node
   - /api/phetcommon/model-view-transform
   - /api/axon/derived-property
-  - /api/tandem/tandem
 prerequisites:
   - /api/axon/property
   - /api/phetcommon/model-view-transform
@@ -32,7 +31,6 @@ import { Property } from 'scenerystack/axon';
 const unitsProperty = new Property( { name: 'cm', multiplier: 100 } );
 
 const measuringTapeNode = new MeasuringTapeNode( unitsProperty, {
-  tandem: tandem.createTandem( 'measuringTapeNode' ),
   dragBounds: layoutBounds.eroded( 20 ) // model-coordinate Bounds2 the tape stays within
 } );
 

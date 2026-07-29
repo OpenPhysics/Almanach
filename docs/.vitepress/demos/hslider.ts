@@ -2,7 +2,6 @@ import { BooleanProperty, NumberProperty, Property } from 'scenerystack/axon';
 import { Range, Dimension2 } from 'scenerystack/dot';
 import { Text, VBox } from 'scenerystack/scenery';
 import { Checkbox, HSlider } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -20,8 +19,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
   const readout = new Text( '20 °C' );
   const slider = new HSlider( temperatureProperty, range, {
     trackSize: new Dimension2( 220, 5 ),
-    enabledRangeProperty: enabledRangeProperty,
-    tandem: Tandem.OPTIONAL
+    enabledRangeProperty: enabledRangeProperty
   } );
   slider.addMajorTick( 0, new Text( '0°', { fontSize: 12 } ) );
   slider.addMajorTick( 100, new Text( '100°', { fontSize: 12 } ) );
@@ -34,9 +32,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
   };
   narrowEnabledProperty.link( updateNarrow );
 
-  const narrowCheckbox = new Checkbox( narrowEnabledProperty, new Text( 'Narrow enabled range' ), {
-    tandem: Tandem.OPTIONAL
-  } );
+  const narrowCheckbox = new Checkbox( narrowEnabledProperty, new Text( 'Narrow enabled range' ) );
 
   const panel = new VBox( {
     spacing: 10,

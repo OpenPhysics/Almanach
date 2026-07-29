@@ -1,7 +1,6 @@
 import { Property } from 'scenerystack/axon';
 import { ABSwitch } from 'scenerystack/sun';
 import { Text, VBox } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -14,12 +13,10 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
   const modeProperty = new Property<Mode>( 'slow' );
 
   const labelA = new Text( 'Slow', {
-    fontSize: 18,
-    tandem: Tandem.OPTIONAL.createTandem( 'labelA' )
+    fontSize: 18
   } );
   const labelB = new Text( 'Fast', {
-    fontSize: 18,
-    tandem: Tandem.OPTIONAL.createTandem( 'labelB' )
+    fontSize: 18
   } );
 
   const abSwitch = new ABSwitch( modeProperty, 'slow', labelA, 'fast', labelB );

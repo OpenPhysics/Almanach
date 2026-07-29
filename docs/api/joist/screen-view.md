@@ -51,7 +51,7 @@ class MyScreenView extends ScreenView {
 new ScreenView( providedOptions?: ScreenViewOptions )
 ```
 
-`tandem` defaults to `Tandem.REQUIRED` and, when instrumented, is asserted to be named exactly `'view'` — pass `screenTandem.createTandem( 'view' )` from your `Screen`'s `createView` factory, not an arbitrary name.
+`tandem` defaults to `Tandem.REQUIRED`. When you pass one from `Screen`'s `createView` factory, the conventional name is `'view'` (`screenTandem.createTandem( 'view' )`) — treat this as Screen boilerplate, not a reason to instrument the rest of the view (see [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation)).
 
 ## Options
 

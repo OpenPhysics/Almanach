@@ -2,7 +2,6 @@ import { NumberProperty, Property } from 'scenerystack/axon';
 import { Range } from 'scenerystack/dot';
 import { Text, VBox } from 'scenerystack/scenery';
 import { NumberPicker } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -18,9 +17,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
 
   const readout = new Text( 'Apples: 3' );
 
-  const countPicker = new NumberPicker( countProperty, countRangeProperty, {
-    tandem: Tandem.OPTIONAL
-  } );
+  const countPicker = new NumberPicker( countProperty, countRangeProperty );
 
   countProperty.link( count => {
     readout.string = `Apples: ${count}`;

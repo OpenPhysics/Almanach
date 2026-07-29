@@ -54,8 +54,7 @@ const button = new TextPushButton( 'Randomize', {
   font: new Font( { size: 16, weight: 'bold' } ),
   textFill: 'white',
   baseColor: 'purple',
-  maxTextWidth: 120,
-  tandem: Tandem.REQUIRED
+  maxTextWidth: 120
 } );
 ```
 

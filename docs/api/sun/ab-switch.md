@@ -54,6 +54,6 @@ The constructor takes `( property, valueA, labelA, valueB, labelB, options? )` �
 | --- | --- |
 | `onInputEmitter` | `TEmitter` that fires after the bound `Property`'s value actually changes as a result of user input (clicking a label, or dragging/clicking the switch) — not fired for programmatic changes to the Property |
 
-::: warning Both label Nodes need their own tandem, and the Property must use reference equality
-`ABSwitch` asserts that `labelA.tandem` and `labelB.tandem` are set (they need their own PhET-iO identity, since each gets a `PressListener` attached), and — same requirement as `OnOffSwitch` — that `property.valueComparisonStrategy === 'reference'`, since it compares `property.value` against `valueA`/`valueB` with `===`.
+::: warning The Property must use reference equality
+`ABSwitch` asserts that `property.valueComparisonStrategy === 'reference'` (same requirement as `OnOffSwitch`), since it compares `property.value` against `valueA`/`valueB` with `===`.
 :::

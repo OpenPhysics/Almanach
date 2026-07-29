@@ -91,10 +91,10 @@ When the view needs to *change* the model (a slider, a [drag listener](/patterns
 massSlider = new HSlider( model.massProperty, model.massProperty.range );
 ```
 
-The Property is the single source of truth; the slider both writes it and reacts to it, so external changes (reset, PhET-iO, another control) stay consistent for free.
+The Property is the single source of truth; the slider both writes it and reacts to it, so external changes (reset, another control) stay consistent for free.
 
 ## Why this matters at scale
 
 - **Testability** — the model runs and is assertable without a DOM.
 - **Multiple views** — a chart, a readout, and the scene graph can all observe the same Property without coordination.
-- **Reset, undo, PhET-iO serialization** — all become mechanical when state is enumerable Properties instead of scattered fields.
+- **Reset, undo, save/load** — all become mechanical when state is enumerable Properties instead of scattered fields.

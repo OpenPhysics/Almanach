@@ -7,7 +7,6 @@ tags: [scenery-phet, Keypad, NumberAccumulator, AbstractKeyAccumulator, Bidirect
 status: complete
 related:
   - /accessibility/keyboard-input-and-hotkeys
-  - /api/tandem/tandem
   - /api/axon/derived-string-property
 prerequisites:
   - /api/scenery/node
@@ -21,7 +20,6 @@ sourceRefs:
 
 ```ts
 import { Keypad, NumberAccumulator } from 'scenerystack/scenery-phet';
-import { Tandem } from 'scenerystack/tandem';
 ```
 
 ## A minimal example

@@ -43,16 +43,14 @@ export default SharedConstants;
 ```ts
 // IntroModel.ts
 import { NumberProperty } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 import SharedConstants from './SharedConstants';
 
 export default class IntroModel {
   public readonly radiusProperty: NumberProperty;
 
-  public constructor( tandem: Tandem ) {
+  public constructor() {
     this.radiusProperty = new NumberProperty( 30, {
-      range: SharedConstants.RADIUS_RANGE,
-      tandem: tandem.createTandem( 'radiusProperty' )
+      range: SharedConstants.RADIUS_RANGE
     } );
   }
 
@@ -84,8 +82,7 @@ export default class IntroScreenView extends ScreenView {
     const resetAllButton = new ResetAllButton( {
       listener: () => model.reset(),
       right: this.layoutBounds.maxX - 20,
-      bottom: this.layoutBounds.maxY - 20,
-      tandem: this.tandem.createTandem( 'resetAllButton' )
+      bottom: this.layoutBounds.maxY - 20
     } );
 
     this.children = [ circle, resetAllButton ];
@@ -100,20 +97,17 @@ export default class IntroScreenView extends ScreenView {
 ```ts
 // LabModel.ts
 import { NumberProperty, StringProperty } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 import SharedConstants from './SharedConstants';
 
 export default class LabModel {
   public readonly radiusProperty: NumberProperty;
   public readonly colorProperty: StringProperty;
 
-  public constructor( tandem: Tandem ) {
+  public constructor() {
     this.radiusProperty = new NumberProperty( 30, {
-      range: SharedConstants.RADIUS_RANGE,
-      tandem: tandem.createTandem( 'radiusProperty' )
+      range: SharedConstants.RADIUS_RANGE
     } );
     this.colorProperty = new StringProperty( 'cornflowerblue', {
-      tandem: tandem.createTandem( 'colorProperty' )
     } );
   }
 
@@ -151,13 +145,11 @@ export default class LabScreenView extends ScreenView {
       { value: 'orangered', createNode: () => new Text( 'Red' ) }
     ];
     const colorRadioButtonGroup = new RectangularRadioButtonGroup( model.colorProperty, colorItems, {
-      orientation: 'horizontal',
-      tandem: this.tandem.createTandem( 'colorRadioButtonGroup' )
+      orientation: 'horizontal'
     } );
 
     const resetAllButton = new ResetAllButton( {
-      listener: () => model.reset(),
-      tandem: this.tandem.createTandem( 'resetAllButton' )
+      listener: () => model.reset()
     } );
 
     const controls = new VBox( {
@@ -195,7 +187,7 @@ function createIcon( fill: string ): ScreenIcon {
 
 const introTandem = Tandem.ROOT.createTandem( 'introScreen' );
 const introScreen = new Screen(
-  () => new IntroModel( introTandem.createTandem( 'model' ) ),
+  () => new IntroModel(),
   model => new IntroScreenView( model, { tandem: introTandem.createTandem( 'view' ) } ),
   {
     name: new Property( 'Intro' ),
@@ -208,7 +200,7 @@ const introScreen = new Screen(
 
 const labTandem = Tandem.ROOT.createTandem( 'labScreen' );
 const labScreen = new Screen(
-  () => new LabModel( labTandem.createTandem( 'model' ) ),
+  () => new LabModel(),
   model => new LabScreenView( model, { tandem: labTandem.createTandem( 'view' ) } ),
   {
     name: new Property( 'Lab' ),
@@ -242,4 +234,3 @@ If you omit either icon, `Screen` synthesizes a default from `backgroundColorPro
 
 - [Demo Simulation Walkthrough](/examples/demo-simulation-walkthrough) — the same one-screen shape in more annotated detail
 - [Model-View Separation](/patterns/model-view-separation) — why `SharedConstants` holds data, not behavior
-- [PhET-iO Instrumented Sim Example](/examples/phet-io-instrumented-sim-example) — instrumenting a sim like this one fully

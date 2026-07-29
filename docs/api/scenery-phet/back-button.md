@@ -31,8 +31,7 @@ import { BackButton } from 'scenerystack/scenery-phet';
 const backButton = new BackButton( {
   listener: () => {
     sceneProperty.value = 'levelSelection';
-  },
-  tandem: tandem.createTandem( 'backButton' )
+  }
 } );
 ```
 

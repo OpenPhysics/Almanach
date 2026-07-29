@@ -1,7 +1,6 @@
 import { NumberProperty } from 'scenerystack/axon';
 import { Text } from 'scenerystack/scenery';
 import { RectangularPushButton } from 'scenerystack/sun';
-import { Tandem } from 'scenerystack/tandem';
 import { centerInDisplay } from './shared/center-in-display.js';
 import type { DemoModule } from './types.js';
 
@@ -17,8 +16,7 @@ export function createDemo( rootNode: import( 'scenerystack/scenery' ).Node ): (
     baseColor: 'yellow',
     listener: () => {
       countProperty.value++;
-    },
-    tandem: Tandem.OPTIONAL
+    }
   } );
 
   countProperty.link( count => {

@@ -27,9 +27,7 @@ import { ComboBox } from 'scenerystack/sun';
 
 // You interact with ComboBox directly; ComboBoxListBox is what appears
 // when the user presses the button, built internally from the same items.
-const unitsComboBox = new ComboBox( unitsProperty, items, listParent, {
-  tandem: Tandem.REQUIRED
-} );
+const unitsComboBox = new ComboBox( unitsProperty, items, listParent );
 ```
 
 Structurally, `ComboBoxListBox` extends [`Panel`](/api/sun/panel) — the list of items is a `VBox` of `ComboBoxListItemNode`s, wrapped in the same rounded-rectangle background `Panel` provides elsewhere in `sun`. It handles its own keyboard navigation (arrow keys move focus between visible items, `Home`/`End` jump to the first/last, `Escape`/`Tab` close the list and return focus to the combo box's button) and its own opened/closed/selection sound generation.

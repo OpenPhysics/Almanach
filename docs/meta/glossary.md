@@ -27,7 +27,7 @@ The string a screen reader announces for a focusable element in the PDOM — the
 
 ## brand
 
-A build-time flag (`phet` vs. `phet-io`, among others) that determines which features compile into a sim — notably whether PhET-iO instrumentation is active. See [Tandem](/api/tandem/tandem).
+A build-time flag (`phet` vs. `phet-io`, among others) that determines which features compile into a PhET sim — notably whether PhET-iO instrumentation is active. Most SceneryStack apps never set this. See [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation).
 
 ## DerivedProperty
 
@@ -51,7 +51,7 @@ An axon primitive for a momentary event with no persisted value — "did X just 
 
 ## EnumerationValue / Enumeration
 
-The pattern for modeling a closed set of values (a mode, a phase) as real object instances with identity, instead of a string-literal union — gives runtime-validated `EnumerationProperty` writes and automatic PhET-iO serialization. See [The Enumeration Pattern](/patterns/enumeration-pattern).
+The pattern for modeling a closed set of values (a mode, a phase) as real object instances with identity, instead of a string-literal union — gives runtime-validated `EnumerationProperty` writes. See [The Enumeration Pattern](/patterns/enumeration-pattern).
 
 ## Hotkey
 
@@ -87,11 +87,11 @@ Scenery's hidden tree of real HTML elements, mirroring the scene graph's interac
 
 ## phet-io / PhET-iO
 
-PhET's instrumentation and interoperability system: giving simulation elements a stable, addressable identity (via `Tandem`) so external wrappers can inspect, control, save, and restore sim state. See [The PhET-iO Instrumentation Pattern](/patterns/phet-io-instrumentation-pattern).
+PhET's external instrumentation product: wrappers can inspect, control, save, and restore sim state via stable [`Tandem`](/api/tandem/tandem) addresses. SceneryStack inherited the APIs; typical SceneryStack apps do not use them. See [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation).
 
 ## PhetioObject
 
-The base class (from `tandem`) that gives an object PhET-iO identity — a `Tandem`, serialization hooks, and lifecycle events — when it's instrumented. `Property`, `Node`, `Screen`, and `Sim` are all `PhetioObject`s. See [Tandem](/api/tandem/tandem).
+The base class (from `tandem`) that can give an object PhET-iO identity when instrumented. `Property`, `Node`, and `Screen` extend it, but you usually ignore the instrumentation options. See [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation).
 
 ## Property
 
@@ -111,7 +111,7 @@ The recommended default for new draggable code: composes an internal `DragListen
 
 ## Screen
 
-One self-contained model/view pair within a `Sim` — owns its own `Tandem` subtree, `homeScreenIcon`, `navigationBarIcon`, and translated `name`. See [Multi-Screen Sim Structure](/patterns/multi-screen-sim-structure) and [Screen](/api/joist/screen).
+One self-contained model/view pair within a `Sim` — owns a required `Tandem` (boilerplate), plus `homeScreenIcon`, `navigationBarIcon`, and translated `name`. See [Multi-Screen Sim Structure](/patterns/multi-screen-sim-structure) and [Screen](/api/joist/screen).
 
 ## ScreenView
 
@@ -123,7 +123,7 @@ The application shell that owns a list of `Screen`s, builds the home screen and 
 
 ## Tandem
 
-The naming-tree node that gives every PhET-iO-tracked element a stable, hierarchical address (`mySim.myScreen.model.temperatureProperty`), built up by calling `createTandem()` down through a model/view's constructors. See [Tandem](/api/tandem/tandem).
+PhET-iO's naming-tree handle for instrumented elements. `Screen` still requires one; everyday components do not need you to pass it. See [Tandem](/api/tandem/tandem) and [PhET-iO and Instrumentation](/guides/phet-io-and-instrumentation).
 
 ## TInputListener
 

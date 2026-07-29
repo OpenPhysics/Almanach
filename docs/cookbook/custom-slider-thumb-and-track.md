@@ -26,7 +26,6 @@ import { HSlider } from 'scenerystack/sun';
 import { NumberProperty } from 'scenerystack/axon';
 import { Range } from 'scenerystack/dot';
 import { Circle, Rectangle } from 'scenerystack/scenery';
-import { Tandem } from 'scenerystack/tandem';
 
 const volumeProperty = new NumberProperty( 50, {
   range: new Range( 0, 100 )
@@ -49,8 +48,7 @@ const customThumb = new Circle( 12, {
 
 const volumeSlider = new HSlider( volumeProperty, new Range( 0, 100 ), {
   trackNode: customTrack,
-  thumbNode: customThumb,
-  tandem: Tandem.REQUIRED
+  thumbNode: customThumb
 } );
 ```
 

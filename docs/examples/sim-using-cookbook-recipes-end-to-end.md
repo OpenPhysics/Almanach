@@ -28,7 +28,6 @@ The model owns the token's position and the bounds it's confined to, following [
 
 ```ts
 import { Vector2Property, Vector2, Bounds2 } from 'scenerystack/dot';
-import { Tandem } from 'scenerystack/tandem';
 
 class GridTokenModel {
   public static readonly GRID_CELL_SIZE = 20;
@@ -36,10 +35,9 @@ class GridTokenModel {
 
   public readonly positionProperty: Vector2Property;
 
-  public constructor( tandem: Tandem ) {
+  public constructor() {
     this.positionProperty = new Vector2Property( new Vector2( 0, 0 ), {
-      validBounds: GridTokenModel.PLAY_AREA_BOUNDS,
-      tandem: tandem.createTandem( 'positionProperty' )
+      validBounds: GridTokenModel.PLAY_AREA_BOUNDS
     } );
   }
 
@@ -66,10 +64,9 @@ import { DragListener, Circle, Node, Text } from 'scenerystack/scenery';
 import { roundToInterval, Vector2 } from 'scenerystack/dot';
 import { Property } from 'scenerystack/axon';
 import { SoundClip, soundManager } from 'scenerystack/tambo';
-import { Tandem } from 'scenerystack/tandem';
 import gridSnap_mp3 from './gridSnap_mp3.js';
 
-const model = new GridTokenModel( Tandem.REQUIRED );
+const model = new GridTokenModel();
 const cellSize = GridTokenModel.GRID_CELL_SIZE;
 
 // --- recipe 3: a custom sound effect on interaction ---
@@ -139,9 +136,8 @@ tokenNode.addInputListener( new DragListener( {
       gridSnapSound.play();
       previousCell = currentCell;
     }
-  },
+  }
 
-  tandem: Tandem.REQUIRED
 } ) );
 
 const sceneRoot = new Node( { children: [ tokenNode, tooltip ] } );

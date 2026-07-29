@@ -29,13 +29,11 @@ import { RefreshButton, RestartButton, ReturnButton, CameraButton, StarButton } 
 
 ```ts
 const refreshButton = new RefreshButton( {
-  listener: () => model.reshuffle(),
-  tandem: tandem.createTandem( 'refreshButton' )
+  listener: () => model.reshuffle()
 } );
 
 const restartButton = new RestartButton( {
-  listener: () => model.restart(),
-  tandem: tandem.createTandem( 'restartButton' )
+  listener: () => model.restart()
 } );
 ```
 

@@ -26,7 +26,6 @@ sourceRefs:
 
 ```ts
 import { NumberProperty, BooleanProperty, DerivedProperty, type TReadOnlyProperty } from 'scenerystack/axon';
-import { Tandem } from 'scenerystack/tandem';
 
 class GameModel {
   public static readonly NUMBER_OF_LEVELS = 2;
@@ -36,18 +35,13 @@ class GameModel {
   public readonly allLevelsCompletedProperty: TReadOnlyProperty<boolean>;
   private readonly levelCompletedProperties: BooleanProperty[];
 
-  public constructor( tandem: Tandem ) {
+  public constructor() {
     this.levelScoreProperties = [];
     this.levelCompletedProperties = [];
 
     for ( let level = 1; level <= GameModel.NUMBER_OF_LEVELS; level++ ) {
-      const levelTandem = tandem.createTandem( `level${level}` );
-      this.levelScoreProperties.push( new NumberProperty( 0, {
-        tandem: levelTandem.createTandem( 'scoreProperty' )
-      } ) );
-      this.levelCompletedProperties.push( new BooleanProperty( false, {
-        tandem: levelTandem.createTandem( 'completedProperty' )
-      } ) );
+      this.levelScoreProperties.push( new NumberProperty( 0 ) );
+      this.levelCompletedProperties.push( new BooleanProperty( false ) );
     }
 
     this.allLevelsCompletedProperty = DerivedProperty.and( this.levelCompletedProperties );
@@ -90,8 +84,7 @@ class GameScreenView extends ScreenView {
         buttonWidth: 120,
         buttonHeight: 120,
         createScoreDisplay: score => new ScoreDisplayNumberAndStar( score ),
-        listener: () => this.showChallenge( levelIndex ),
-        tandem: this.tandem.createTandem( `level${levelIndex + 1}Button` )
+        listener: () => this.showChallenge( levelIndex )
       } )
     );
 
@@ -172,7 +165,7 @@ import { Tandem } from 'scenerystack/tandem';
 const screenTandem = Tandem.ROOT.createTandem( 'gameScreen' );
 
 const gameScreen = new Screen(
-  () => new GameModel( screenTandem.createTandem( 'model' ) ),
+  () => new GameModel(),
   model => new GameScreenView( model, { tandem: screenTandem.createTandem( 'view' ) } ),
   {
     name: new Property( 'Game' ),

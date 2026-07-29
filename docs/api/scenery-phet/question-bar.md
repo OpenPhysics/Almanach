@@ -26,8 +26,7 @@ import { QuestionBar } from 'scenerystack/scenery-phet';
 
 ```ts
 const questionBar = new QuestionBar( this.layoutBounds, this.visibleBoundsProperty, {
-  questionString: 'How does temperature affect pressure?',
-  tandem: tandem.createTandem( 'questionBar' )
+  questionString: 'How does temperature affect pressure?'
 } );
 this.addChild( questionBar );
 ```
